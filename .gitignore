@@ -2,3 +2,5 @@ ClineClean/
 Local_LLM_runable/
 previous-proposal/
 agent-work/
+data/
+.venv/
