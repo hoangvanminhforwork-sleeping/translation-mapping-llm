@@ -14,6 +14,6 @@
   ],
   "dim": 768,
   "paired_cosine_mean": -0.012394393794238567,
-  "quantisation_error_max": 0.03125,
+  "quantisation_error_max": 3.1249999921101335e-08,
   "self_retrieval_top1": 1.0
 }
