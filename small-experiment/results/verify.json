@@ -1,0 +1,19 @@
+{
+  "pairs": 12000,
+  "embedding_rows": {
+    "en/cls": 12000,
+    "en/last": 12000,
+    "en/mean": 12000,
+    "vi/cls": 12000,
+    "vi/last": 12000,
+    "vi/mean": 12000
+  },
+  "test_shape": [
+    2000,
+    768
+  ],
+  "dim": 768,
+  "paired_cosine_mean": -0.012394393794238567,
+  "quantisation_error_max": 0.03125,
+  "self_retrieval_top1": 1.0
+}

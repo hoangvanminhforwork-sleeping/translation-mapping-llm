@@ -1,0 +1,18 @@
+{
+  "models": {
+    "en": "BAAI/bge-base-en-v1.5",
+    "vi": "bkai-foundation-models/vietnamese-bi-encoder"
+  },
+  "inserted": 72000,
+  "db": {
+    "pairs": 12000,
+    "embeddings": {
+      "en/cls": 12000,
+      "en/last": 12000,
+      "en/mean": 12000,
+      "vi/cls": 12000,
+      "vi/last": 12000,
+      "vi/mean": 12000
+    }
+  }
+}

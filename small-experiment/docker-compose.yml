@@ -1,0 +1,25 @@
+# MySQL 9.x gives us the native VECTOR(768) type + DISTANCE(); no pgvector needed.
+# Data lives on D: inside the project (agents.md: nothing on C:).
+services:
+  mysql:
+    image: mysql:9.4
+    container_name: csi-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: csi_proto
+      MYSQL_DATABASE: csi_proto
+    ports:
+      - "3307:3306"
+    command:
+      - "--innodb-buffer-pool-size=128M"
+      - "--max-allowed-packet=64M"
+      - "--performance-schema=OFF"
+      - "--skip-log-bin"
+    mem_limit: 600m
+    volumes:
+      - ./artifacts/mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-pcsi_proto"]
+      interval: 5s
+      timeout: 5s
+      retries: 40

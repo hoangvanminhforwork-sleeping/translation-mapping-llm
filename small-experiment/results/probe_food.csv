@@ -1,0 +1,2 @@
+encoder,pooling,n_pos,n_neg,folds,accuracy,f1,balanced_accuracy,roc_auc,accuracy_std,f1_std,balanced_accuracy_std,roc_auc_std,majority_baseline
+BAAI/bge-base-en-v1.5,mean,10000,10000,5,0.99265,0.9926470026944116,0.99265,0.9997316000000002,0.0008746427842267787,0.0008778737808232315,0.0008746427842268231,7.028844143956494e-05,0.5

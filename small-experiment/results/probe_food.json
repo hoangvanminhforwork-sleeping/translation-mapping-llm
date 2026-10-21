@@ -1,0 +1,16 @@
+{
+  "encoder": "BAAI/bge-base-en-v1.5",
+  "pooling": "mean",
+  "n_pos": 10000,
+  "n_neg": 10000,
+  "folds": 5,
+  "accuracy": 0.99265,
+  "f1": 0.9926470026944116,
+  "balanced_accuracy": 0.99265,
+  "roc_auc": 0.9997316000000002,
+  "accuracy_std": 0.0008746427842267787,
+  "f1_std": 0.0008778737808232315,
+  "balanced_accuracy_std": 0.0008746427842268231,
+  "roc_auc_std": 7.028844143956494e-05,
+  "majority_baseline": 0.5
+}

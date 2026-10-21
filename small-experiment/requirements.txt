@@ -1,0 +1,16 @@
+# Python 3.12.  Torch must come from the CUDA 12.8 wheel index (see install_env.ps1).
+# Lower/upper bounds only; exact resolved versions are frozen into requirements.lock.txt
+# by install_env.ps1 after a successful install (reproducibility = the lock file).
+torch==2.7.1
+transformers>=4.51,<5
+numpy>=1.26,<3
+pandas>=2.2,<3
+pyarrow>=17
+duckdb>=1.1,<2
+scikit-learn>=1.5,<2
+pymysql>=1.1,<2
+matplotlib>=3.9,<4
+tqdm>=4.66
+python-dotenv>=1.0
+nbconvert>=7.16
+ipykernel>=6.29
