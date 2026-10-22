@@ -128,3 +128,5 @@ You are expected to exercise technical judgment and choose appropriate implement
 - PLEASE STOP and ASK FOR USER APPROVAL
 
 - It is possible that I forget to mention something, or I could be really tired that I did not specify 
+
+- Always confirm the tasks with users before executing
