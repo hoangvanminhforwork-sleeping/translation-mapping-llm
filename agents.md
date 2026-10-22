@@ -38,7 +38,7 @@ You are expected to exercise technical judgment and choose appropriate implement
 - This is to help you understand the device status
 
 - And before any mission, especially running LLM locally: Please inspect the system about the processes
-+ Propose what app I should close (Zalo, ChatGPT, Gemini...)
++ Propose what app I should close (Zalo, ChatGPT, Gemini...)...even VS code. You run code throguh terminals, not VS code, so I guess closes VS code is fine
 + So you may have more RAM to work
 + Mostly for intensive resources task required, you should ask me which processes I/you should kill to have more resources
 + Moreover, when running LLM, before that, I always ensure that my laptop is in charged, and I turn on Fan Speed Setting for better inference performance
