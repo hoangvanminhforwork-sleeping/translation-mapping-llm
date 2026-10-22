@@ -130,3 +130,8 @@ You are expected to exercise technical judgment and choose appropriate implement
 - It is possible that I forget to mention something, or I could be really tired that I did not specify 
 
 - Always confirm the tasks with users before executing
+
+# 8. Get-ChildItem and Recurse
+- If you know the address of the project: In this case: Culinary_CSI_Translation....
+- Why not write commands to ignore the prefix: Ignore 'D:\HANU_FIT\NCKH\Culinary_CSI_Translation_Though_Dynamic_Fact_Insertion`
+- Which means ignore the repeated parts
