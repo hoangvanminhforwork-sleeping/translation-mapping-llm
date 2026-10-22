@@ -1,0 +1,51 @@
+{
+  "models": {
+    "en": "BAAI/bge-base-en-v1.5",
+    "vi": "bkai-foundation-models/vietnamese-bi-encoder"
+  },
+  "poolings": {
+    "en/mean": {
+      "shape": [
+        12000,
+        768
+      ],
+      "norm_mean": 15.473567962646484
+    },
+    "en/cls": {
+      "shape": [
+        12000,
+        768
+      ],
+      "norm_mean": 15.94014835357666
+    },
+    "en/last": {
+      "shape": [
+        12000,
+        768
+      ],
+      "norm_mean": 17.759004592895508
+    },
+    "vi/mean": {
+      "shape": [
+        12000,
+        768
+      ],
+      "norm_mean": 5.533134937286377
+    },
+    "vi/cls": {
+      "shape": [
+        12000,
+        768
+      ],
+      "norm_mean": 6.841331958770752
+    },
+    "vi/last": {
+      "shape": [
+        12000,
+        768
+      ],
+      "norm_mean": 6.841331958770752
+    }
+  },
+  "pairs_sha256": "8ac9561b03a6f755224afedd80782557b0dfc33779b8d9d9ce910750394160bc"
+}

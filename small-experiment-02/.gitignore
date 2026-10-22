@@ -1,0 +1,7 @@
+# experiment 02 local
+.venv/
+artifacts/
+maps/
+agent-work/nltk_data/
+__pycache__/
+*.pyc
