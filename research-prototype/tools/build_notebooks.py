@@ -103,7 +103,8 @@ Pairing rule from the mission: this model is compared **{pair} with {pair}** (`{
 rows = [("d_model", cfg.d_model), ("encoder layers", cfg.num_layers),
         ("decoder layers", cfg.num_decoder_layers), ("heads", cfg.num_heads),
         ("d_ff", cfg.d_ff), ("vocab", cfg.vocab_size),
-        ("relative buckets", cfg.relative_attention_num_buckets), ("max positions", cfg.n_positions)]
+        ("relative buckets", cfg.relative_attention_num_buckets),
+        ("max positions", getattr(cfg, "n_positions", getattr(cfg, "max_position_embeddings", "n/a")))]
 enc = sum(p.numel() for p in model.encoder.parameters())
 dec = sum(p.numel() for p in model.decoder.parameters())
 emb = model.shared.weight.numel()
