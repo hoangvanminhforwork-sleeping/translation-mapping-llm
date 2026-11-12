@@ -1,0 +1,4 @@
+model,lang,size_class,n,exact_match,exact_match_norm,empty_rate,bleu,chrf,tok_recall,tok_precision,mean_hyp_words,mean_ref_words
+vit5-base,vi,base,2000,0.0,0.0,0.0,13.25,19.04,0.2664,0.1374,40.57,26.6
+flan-t5-base,en,base,2000,0.0265,0.029,0.0,8.4,23.44,0.3358,0.7272,8.43,21.09
+vit5-large,vi,large,2000,0.0,0.0,0.309,0.0,1.38,0.038,0.2679,3.59,26.57

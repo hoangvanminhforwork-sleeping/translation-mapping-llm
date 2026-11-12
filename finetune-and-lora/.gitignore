@@ -1,0 +1,18 @@
+# --- environment (re-derivable, GB)
+.venv/
+__pycache__/
+*.pyc
+
+# --- scratch
+prototype/agent-work/
+
+# --- derived: 50k training pairs (~25 MB) rebuild in 20 s from the parquet.
+# The sha256 of the exact file used is committed in prototype/data/train_manifest.json,
+# so the training run stays traceable without the bytes.
+prototype/data/train_copy_*.jsonl
+
+# NOT ignored (evidence trail, git-62):
+#   adapters/<model>/            the trained LoRA adapters (a few MB each)
+#   prototype/results/*.csv      training curves + before/after table
+#   prototype/results/raw/*.jsonl every generated hypothesis
+#   prototype/data/eval_sources.jsonl + *_manifest.json

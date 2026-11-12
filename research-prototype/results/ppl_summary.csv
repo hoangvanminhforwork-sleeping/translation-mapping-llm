@@ -1,0 +1,3 @@
+model,lang,tokens,ppl_all,nll_all,dish_tokens,nll_dish,ppl_dish,rank_dish,nll_other,ppl_other,rank_other,delta_nll,delta_ci_lo,delta_ci_hi,dish_harder_sentences,sentences
+vit5-base,vi,1385,74.21,4.307,221,14.846,2803425.14,1148.2,2.306,10.03,27.2,14.468,12.855,16.163,96,100
+flan-t5-base,en,1948,1.17,0.16,416,0.065,1.07,1.0,0.185,1.2,1.3,-0.107,-0.144,-0.068,22,100

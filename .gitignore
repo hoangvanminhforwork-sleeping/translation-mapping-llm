@@ -1,6 +1,19 @@
+# --- personal / machine-specific (git-62: contains device + personal information)
 ClineClean/
 Local_LLM_runable/
+
+# --- internal-only documents (not for reviewers)
 previous-proposal/
+
+# --- scratch + environment (re-derivable, large)
 agent-work/
-data/
 .venv/
+__pycache__/
+*.pyc
+
+# --- large input corpus. ANCHORED on purpose: `data/` would also hide
+# research-prototype/data/culinary_100_pairs.jsonl, which is authored source data.
+/data/
+
+# --- model weights (re-downloadable, GB-sized)
+research-prototype/models/

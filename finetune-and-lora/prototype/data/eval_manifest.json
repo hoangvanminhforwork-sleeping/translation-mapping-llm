@@ -1,0 +1,8 @@
+{
+  "eval_rows": 4000,
+  "per_lang": 2000,
+  "source_sha256": {
+    "vi": "16064554723a49211cb3f44e212facda60bb4ed25a6722dbd4c4bb3f47bf881b",
+    "en": "1cbfc6b4ecc5a97c61ffdbb7d02e244e42591e4c73acddd53311c2756013f835"
+  }
+}

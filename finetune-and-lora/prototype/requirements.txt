@@ -1,0 +1,11 @@
+# finetune-and-lora — Python 3.12.10 (verified), Windows, RTX 3050 4 GB
+# torch comes from the cu128 index: the cu124 index has no 2.7.1 for Windows/sm_86.
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.7.1
+transformers==4.57.6
+peft==0.21.2
+accelerate==1.15.0
+sentencepiece==0.2.3
+duckdb==1.5.6
+sacrebleu==2.5.1
+numpy==2.5.4

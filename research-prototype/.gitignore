@@ -1,0 +1,13 @@
+# research-prototype — local, disposable, or re-derivable
+.venv/
+models/
+agent-work/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# NOT ignored (git-62: results are the evidence trail):
+#   results/*.csv          headline metrics
+#   results/raw/*.jsonl    every generated hypothesis, needed to re-check BLEU
+#   data/*.jsonl|csv       the authored 100-pair test set
+#   notebooks/             the analysis surface

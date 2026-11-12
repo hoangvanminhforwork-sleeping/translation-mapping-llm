@@ -1,0 +1,2 @@
+model,n,exact_before,exact_after,flipped_to_exact,broke_previously_exact,bleu_after,chrf_after,mean_hyp_words_after,mean_ref_words
+vit5-base,736,0.0,0.966,711,0,99.59,99.6,26.9,26.97

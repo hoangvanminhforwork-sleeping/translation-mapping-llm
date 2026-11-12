@@ -1,0 +1,17 @@
+# research-prototype - Python 3.12.10 (verified on this machine), Windows
+# torch comes from the cu128 index: the cu124 index has no 2.7.1 for Windows/sm_86.
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.7.1
+transformers==4.57.6
+sentencepiece==0.2.3
+accelerate==1.15.0
+pandas==2.3.3
+pyarrow==26.0.0
+duckdb==1.5.6
+sacrebleu==2.5.1
+matplotlib==3.11.2
+nbconvert==7.17.2
+nbclient==0.11.0
+nbformat==5.11.1
+ipykernel==7.4.0
+hf_transfer==0.1.9

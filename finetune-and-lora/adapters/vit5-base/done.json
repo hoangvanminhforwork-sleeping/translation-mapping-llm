@@ -1,0 +1,11 @@
+{
+  "model": "vit5-base",
+  "train_rows": 50000,
+  "steps": 3125,
+  "seconds": 1253.7,
+  "sent_per_s": 39.88,
+  "final_loss_100": 0.0284,
+  "trainable_params": 1769472,
+  "total_params": 227720448,
+  "adapter_mb": 6.78
+}
