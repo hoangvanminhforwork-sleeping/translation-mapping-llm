@@ -68,8 +68,9 @@ Get-Content prototype\results\before_after.csv
 
 ## 5. What you should look at
 
-1. **The delta, not the absolute number.** A model that goes from 0 % to 80 % on copying has learned a
-   *mechanism*; whether that mechanism transfers to mapped vectors is the next open question.
+1. **The delta, not the absolute number.** 0.0 % → 96.6 % on the same sentences means the model learned a
+   *mechanism* (route the source token to the output), not a phrase table — 50k sentences cannot memorise
+   2,000 unseen ones. Whether that mechanism transfers to mapped vectors is the next open question.
 2. **`mean_hyp_words_after` vs `mean_ref_words`.** If the model still produces much shorter output than the
    reference, it learned to truncate rather than to copy.
 3. **Adapters are small.** ~1 MB of trainable weights flipped the behaviour of a 227 M-parameter model — that
