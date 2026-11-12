@@ -59,6 +59,12 @@ Resume: adapters are written every 500 steps with `progress.json`; the next run 
 - **Clock discipline.** A 40-line markdown file took ~50 minutes of wall-clock in the first mission. Writing
   prose while a job runs is free; writing prose while the GPU idles is not. *Lesson:* launch the long job
   first, then write.
+- **Killing a child does not stop the parent.** Three background chains were alive at once because each
+  `& python ...` sat inside a PowerShell block: killing the Python process let the shell continue to the next
+  command, which spawned another model load. Three evaluations then shared a 4 GB GPU and everything ran at
+  0.8 sentences/s. *Lesson:* before killing work, kill the **shell** that owns the chain (`Get-CimInstance
+  Win32_Process` → filter `powershell.exe`), then verify the GPU is idle. One job at a time on 4 GB VRAM is
+  faster than three jobs contending.
 
 ## 5. If you want to go deeper
 
