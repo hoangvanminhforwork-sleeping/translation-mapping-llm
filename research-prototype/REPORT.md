@@ -3,9 +3,9 @@
 ## 0. One line
 
 DONE: 3/4 models on the 2,000-sentence copy test (Flan-T5-large not run); the copy gate **fails on every
-model measured**, which is the prototype's main finding. Dish-name perplexity ran for the base pair;
-zero-shot BLEU was written and smoke-tested but not executed — the GPU was reassigned to the fine-tuning
-mission at your instruction.
+model measured**, which is the prototype's main finding. ViT5-large is the worst: 30.9 % empty outputs and
+3.6 words against a 26.6-word reference. Dish-name perplexity ran for the base pair; zero-shot BLEU was
+written and smoke-tested but not executed — the GPU was reassigned to the fine-tuning mission.
 
 ## 1. What you asked for / what I delivered
 
@@ -68,7 +68,7 @@ python -m src.run_all copy --models vit5-base flan-t5-base vit5-large
 model           n     exact_match_norm   bleu    chrf    tok_recall   mean_hyp_words / mean_ref_words
 vit5-base       2000  0.0000             13.25   19.04   0.2664       40.57 / 26.60
 flan-t5-base    2000  0.0290              8.40   23.44   0.3358        8.43 / 21.09
-vit5-large      1960  not scored (run interrupted at 1,960/2,000 by the time box)
+vit5-large       2000  0.0000              0.00    1.38    0.0380       3.59 / 26.57   (30.9% empty outputs)
 flan-t5-large      0  not run
 
 python -m src.run_all ppl
@@ -101,7 +101,10 @@ and the per-token tables `results/ppl_tokens_*.csv`.
    the Vietnamese name is not. Do not generalise "food is hard" across languages.
 3. **The zero-shot BLEU has not been measured** — the GPU went to fine-tuning. Treat any translation claim as
    unsupported until `python -m src.run_all translate` runs.
-4. **Flan-T5-large is missing.** Its copy run never started; the number is absent, not zero.
+4. **ViT5-large fails differently from ViT5-base.** It is not "the same failure, bigger": 30.9 % of its
+   outputs are empty and the rest average 3.6 words. Scaling the encoder made the model *less* willing to
+   repeat, which is why the fine-tuning had to start with the base model.
+5. **Flan-T5-large is missing.** Its copy run never started; the number is absent, not zero.
 
 ## 6. Left in place / not done
 
