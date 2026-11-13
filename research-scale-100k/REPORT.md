@@ -100,8 +100,34 @@ A BLEU number alone cannot distinguish "bad translation" from "echo" from "loop"
    of 0.008 / 0.1 % mean the two 768-d spaces are related almost linearly in 97,743 paired examples. That
    claim is unaffected by the decoder's collapse, and it is the reusable part of today's work.
 
-## 4. What this does NOT show
+### 3.4 Partial fourth run — adapter-free decoder (interrupted, no BLEU)
 
+Because §3.3 blames the copy adapter, the same comparison was restarted with **plain flan-t5-base** (no
+adapter). Only the geometry half finished before the session was stopped:
+
+| quantity | LoRA space (adapter on) | base space (adapter off) |
+|---|---|---|
+| λ chosen on val | 0.0 | 1.0 |
+| cosine (test) | 0.8535 | **0.8039** |
+| retrieval@1 (test) | 0.514 | **0.584** |
+| identity control (cosine / R@1) | 0.0083 / 0.001 | 0.0066 / 0.001 |
+
+The map transfers *better* into the untouched base space (58.4 % vs 51.4 % top-1 retrieval) even though
+cosine is slightly lower. Two readings, not separable today: the copy adapter reshaped the space into
+something less linearly reachable, or the base space is simply cleaner. Saved artefacts:
+`data/map_vi_en_base.npz`, `data/enc_flan_en_base.npy`, `data/enc_flan_vi_test_base.npy`,
+`results/control_base_mapping_vi_en_base.json`.
+
+**Generation was interrupted**, so there is no base-decoder BLEU: `gen_base_mapped.jsonl` and
+`gen_base_flan_encoder.jsonl` do not exist (the script writes both only after generating both). Resume:
+
+```powershell
+cd research-scale-100k
+.\.venv\Scripts\python.exe -m src.control_basedecoder   # skips the existing .npy, refits, generates
+.\.venv\Scripts\python.exe tools\score_base.py          # BLEU + structural diagnostics, CPU
+```
+
+## 4. What this does NOT show
 * **It is not a claim about the method in general.** One representation (pooled last encoder state), one
   decoder (base-size, copy-tuned, not translation-tuned), one corpus (mixed legal/literary, not culinary).
 * **en → vi has no BLEU.** Only its geometry is measured. Generating Vietnamese from mapped vectors needs

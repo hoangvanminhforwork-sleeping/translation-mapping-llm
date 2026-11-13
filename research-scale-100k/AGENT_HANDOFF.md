@@ -14,8 +14,9 @@
 | 2 | two 100k×768 matrices | DONE | `data/enc_vit5_vi.npy`, `data/enc_flan_en.npy` (+ `enc_flan_vi_test.npy` control) |
 | 3 | linear map, both directions | DONE | `data/map_vi_en.npz`, `data/map_en_vi.npz`; cos 0.853/0.858, R@1 0.514/0.506 |
 | 4 | BLEU (vi→en, n=1,000) | DONE | `results/bleu_vi_en.json`: mapped 0.141 / flan_encoder 3.115 / zero-shot 0.240 |
-| 5 | executed notebook | DONE (or see §5 if missing) | `01_mapping_100k.ipynb` |
+| 5 | executed notebook | DONE | `01_mapping_100k.ipynb` (8/8 code cells executed) |
 | 6 | en→vi BLEU | NOT DONE | geometry only; needs the vit5 decoder |
+| 7 | adapter-free decoder control | **PARTIAL — geometry done, generation interrupted at 10:42** | `data/map_vi_en_base.npz`, `results/control_base_mapping_vi_en_base.json` (cosine 0.804, R@1 0.584). No `gen_base_*.jsonl`, no BLEU. Resume with `python -m src.control_basedecoder` then `python tools\score_base.py` |
 
 ## 2. Environment as measured
 

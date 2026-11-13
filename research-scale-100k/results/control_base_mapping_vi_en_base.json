@@ -1,0 +1,98 @@
+{
+  "lambda": 1.0,
+  "val": {
+    "mse": 0.0011,
+    "cosine": 0.7998,
+    "retrieval_at_1": 0.597,
+    "n_query": 1000,
+    "n_gallery": 97743
+  },
+  "test": {
+    "mse": 0.00105,
+    "cosine": 0.8039,
+    "retrieval_at_1": 0.584,
+    "n_query": 1000,
+    "n_gallery": 97743
+  },
+  "control_identity_test": {
+    "mse": 0.26064,
+    "cosine": 0.0066,
+    "retrieval_at_1": 0.001,
+    "n_query": 1000,
+    "n_gallery": 97743
+  },
+  "sweep": [
+    {
+      "lambda": 0.0,
+      "mse": 0.0011,
+      "cosine": 0.7997,
+      "retrieval_at_1": 0.606,
+      "n_query": 1000,
+      "n_gallery": 97743
+    },
+    {
+      "lambda": 0.0001,
+      "mse": 0.0011,
+      "cosine": 0.7997,
+      "retrieval_at_1": 0.604,
+      "n_query": 1000,
+      "n_gallery": 97743
+    },
+    {
+      "lambda": 0.01,
+      "mse": 0.0011,
+      "cosine": 0.7997,
+      "retrieval_at_1": 0.603,
+      "n_query": 1000,
+      "n_gallery": 97743
+    },
+    {
+      "lambda": 0.1,
+      "mse": 0.0011,
+      "cosine": 0.7997,
+      "retrieval_at_1": 0.604,
+      "n_query": 1000,
+      "n_gallery": 97743
+    },
+    {
+      "lambda": 1.0,
+      "mse": 0.0011,
+      "cosine": 0.7998,
+      "retrieval_at_1": 0.597,
+      "n_query": 1000,
+      "n_gallery": 97743
+    },
+    {
+      "lambda": 10.0,
+      "mse": 0.00111,
+      "cosine": 0.7986,
+      "retrieval_at_1": 0.565,
+      "n_query": 1000,
+      "n_gallery": 97743
+    },
+    {
+      "lambda": 100.0,
+      "mse": 0.00117,
+      "cosine": 0.7859,
+      "retrieval_at_1": 0.348,
+      "n_query": 1000,
+      "n_gallery": 97743
+    },
+    {
+      "lambda": 1000.0,
+      "mse": 0.00141,
+      "cosine": 0.7375,
+      "retrieval_at_1": 0.029,
+      "n_query": 1000,
+      "n_gallery": 97743
+    },
+    {
+      "lambda": 10000.0,
+      "mse": 0.00176,
+      "cosine": 0.651,
+      "retrieval_at_1": 0.001,
+      "n_query": 1000,
+      "n_gallery": 97743
+    }
+  ]
+}
