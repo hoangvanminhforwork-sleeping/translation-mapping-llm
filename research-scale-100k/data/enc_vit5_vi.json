@@ -1,0 +1,12 @@
+{
+  "tag": "vit5_vi",
+  "model": "vit5-base",
+  "adapter": false,
+  "rows": 99743,
+  "dim": 768,
+  "batch": 96,
+  "max_len": 64,
+  "pooling": "masked_mean",
+  "seconds": 118.8,
+  "file": "enc_vit5_vi.npy"
+}

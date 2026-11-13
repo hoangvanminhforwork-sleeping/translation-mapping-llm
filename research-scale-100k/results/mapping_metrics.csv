@@ -1,0 +1,9 @@
+direction,split,mse,cosine,retrieval_at_1
+vi_en,val,0.00091,0.8508,0.509
+vi_en,test,0.00088,0.8535,0.514
+vi_en,identity,0.26078,0.0083,0.001
+vi_en,mean,0.00163,0.7028,0.0
+en_vi,val,0.07221,0.8596,0.515
+en_vi,test,0.07018,0.8577,0.506
+en_vi,identity,0.26078,0.0083,0.0
+en_vi,mean,0.12161,0.7324,0.0

@@ -2,9 +2,10 @@
 
 ## 0. One line
 
-DONE 1/4 models: `vit5-base` LoRA adapter trained on 50k copy examples and evaluated on 736 of the fixed
-2,000 sentences — **exact copies 0.0 % → 96.6 %** (711 fixed, 0 broken, BLEU 99.59). `flan-t5-base` training
-was cut at step ~250 by the midnight stop; `vit5-large` / `flan-t5-large` were not started.
+DONE 2/4 models. `vit5-base` LoRA: exact copies **0.0 % → 96.6 %** on 736 of the fixed 2,000 sentences
+(711 fixed, 0 broken, BLEU 99.59). `flan-t5-base` LoRA: **2.9 % → 99.8 %** on the **full 2,000**
+(1,938 fixed, 0 broken, BLEU 99.97) — completed 2026-11-13 in 26.6 min. `vit5-large` / `flan-t5-large`
+were not started.
 
 ## 1. What you asked for / what I delivered
 
@@ -33,18 +34,22 @@ was cut at step ~250 by the midnight stop; `vit5-large` / `flan-t5-large` were n
 | model | n | exact **before** | exact **after** | fixed | broken | BLEU after | chrF after | hyp/ref words |
 |---|---|---|---|---|---|---|---|---|
 | `vit5-base` | 736 | 0.0 % | **96.6 %** | 711 | 0 | 99.59 | 99.60 | 26.9 / 27.0 |
-| `flan-t5-base` | — | 2.65 % (baseline, n=2000) | not evaluated | — | — | — | — | — |
+| `flan-t5-base` | 2000 | 2.9 % | **99.8 %** | 1938 | 0 | 99.97 | 99.98 | 21.08 / 21.09 |
 | `vit5-large` | — | not evaluated | not trained | — | — | — | — | — |
 | `flan-t5-large` | — | not evaluated | not trained | — | — | — | — | — |
 
-Training (VitV5-base, 1 epoch on 50k, 3,125 steps, 20.9 min, 39.9 sent/s, 1,817 MB VRAM):
+Training, 1 epoch on 50k, greedy decode at eval:
 
-| step | loss |
-|---|---|
-| 0 | 3.516 |
-| 50 | 0.159 |
-| 1562 | ~0.03 |
-| 3124 | 0.065 (last-100 mean 0.028) |
+| model | steps | wall time | sent/s | VRAM | last-100 loss | adapter |
+|---|---|---|---|---|---|---|
+| `vit5-base` | 3,125 | 20.9 min | 39.9 | 1,817 MB | 0.028 | ~1 MB |
+| `flan-t5-base` | 1,563 | **26.6 min** | **31.4** | 4,021 MB | **0.0219** | 6.78 MB |
+
+`flan-t5-base` has 1,563 steps, not 3,125: the first run used batch 16 (twice the steps). Both runs are
+one epoch over the same 50,000 rows.
+
+**The 4.9 sent/s figure in the 2026-11-12 handoff was contention, not the model.** The same run reached
+31.4 sent/s when it owned the GPU. Before reporting "this model is slow", check what else is on the device.
 
 **Why n = 736 and not 2,000:** generation is autoregressive and some test sentences are 100+ words; the
 remaining 1,264 rows would not finish before the midnight deadline. The 736 are ids 0–735 of the fixed,

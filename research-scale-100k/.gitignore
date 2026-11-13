@@ -1,0 +1,17 @@
+# --- environment (re-derivable, 6.2 GB)
+.venv/
+__pycache__/
+*.pyc
+
+# --- inputs (re-derivable: pairs in ~25 s, matrices in ~2 min per model)
+# NOTE: gitignore has no inline comments; a trailing "# ..." becomes part of the pattern.
+data/pairs_100k.parquet
+data/enc_*.npy
+agent-work/
+
+# Committed on purpose (evidence trail, git-62):
+#   data/pairs_manifest.json   sha256 + row counts of the exact pair file used
+#   data/enc_*.json            per-matrix throughput manifest
+#   data/map_*.npz             768x768 learned maps (~2.4 MB each)
+#   results/*.csv|json|jsonl   sweep, metrics, BLEU, every generated hypothesis
+#   *.ipynb                    executed in place; the outputs are the evidence

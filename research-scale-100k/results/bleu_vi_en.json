@@ -1,0 +1,28 @@
+{
+  "n": 1000,
+  "mean_ref_tokens": 17.5,
+  "note": "sacrebleu corpus_bleu default tokenizer 13a, lowercase=False",
+  "scores": {
+    "mapped": {
+      "bleu": 0.141,
+      "chrf": 4.947,
+      "empty": 14,
+      "mean_hyp_tokens": 22.0,
+      "n": 1000
+    },
+    "flan_encoder": {
+      "bleu": 3.115,
+      "chrf": 10.424,
+      "empty": 0,
+      "mean_hyp_tokens": 15.07,
+      "n": 1000
+    },
+    "zeroshot_vit5": {
+      "bleu": 0.24,
+      "chrf": 6.245,
+      "empty": 0,
+      "mean_hyp_tokens": 60.2,
+      "n": 1000
+    }
+  }
+}

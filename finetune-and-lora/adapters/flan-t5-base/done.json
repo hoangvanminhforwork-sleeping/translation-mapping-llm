@@ -1,0 +1,11 @@
+{
+  "model": "flan-t5-base",
+  "train_rows": 50000,
+  "steps": 1563,
+  "seconds": 1593.2,
+  "sent_per_s": 31.39,
+  "final_loss_100": 0.0219,
+  "trainable_params": 1769472,
+  "total_params": 249347328,
+  "adapter_mb": 6.78
+}

@@ -1,0 +1,72 @@
+{
+  "pairs_sha256": "4f1051e14bcb1193f4ba37db86e668da812d29d0419b5a67110afc4a122afe07",
+  "rows": {
+    "train": 97743,
+    "val": 1000,
+    "test": 1000
+  },
+  "directions": {
+    "vi_en": {
+      "lambda": 0.0,
+      "val": {
+        "mse": 0.00091,
+        "cosine": 0.8508,
+        "retrieval_at_1": 0.509,
+        "n_query": 1000,
+        "n_gallery": 97743
+      },
+      "test": {
+        "mse": 0.00088,
+        "cosine": 0.8535,
+        "retrieval_at_1": 0.514,
+        "n_query": 1000,
+        "n_gallery": 97743
+      },
+      "control_identity_test": {
+        "mse": 0.26078,
+        "cosine": 0.0083,
+        "retrieval_at_1": 0.001,
+        "n_query": 1000,
+        "n_gallery": 97743
+      },
+      "control_mean_test": {
+        "mse": 0.00163,
+        "cosine": 0.7028,
+        "retrieval_at_1": 0.0,
+        "n_query": 1000,
+        "n_gallery": 97743
+      }
+    },
+    "en_vi": {
+      "lambda": 0.01,
+      "val": {
+        "mse": 0.07221,
+        "cosine": 0.8596,
+        "retrieval_at_1": 0.515,
+        "n_query": 1000,
+        "n_gallery": 97743
+      },
+      "test": {
+        "mse": 0.07018,
+        "cosine": 0.8577,
+        "retrieval_at_1": 0.506,
+        "n_query": 1000,
+        "n_gallery": 97743
+      },
+      "control_identity_test": {
+        "mse": 0.26078,
+        "cosine": 0.0083,
+        "retrieval_at_1": 0.0,
+        "n_query": 1000,
+        "n_gallery": 97743
+      },
+      "control_mean_test": {
+        "mse": 0.12161,
+        "cosine": 0.7324,
+        "retrieval_at_1": 0.0,
+        "n_query": 1000,
+        "n_gallery": 97743
+      }
+    }
+  }
+}

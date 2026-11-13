@@ -13,9 +13,12 @@
 | 2 | Fixed eval set (same 2,000 as baseline) | DONE | `data/eval_sources.jsonl` | 2,000 vi + 2,000 en = 4,000 rows |
 | 3 | LoRA harness | DONE | `src/train.py` | resumable, 500-step adapter checkpoints |
 | 4 | `vit5-base` adapter | **DONE** | `../adapters/vit5-base/` | 0.0 % → 96.6 % exact on n=736 |
-| 5 | `flan-t5-base` adapter | **NOT DELIVERED** | `results/train_flan-t5-base.csv` (251 steps, loss 0.001–0.04) | killed at the midnight stop before the first 500-step checkpoint, so nothing was saved |
+| 5 | `flan-t5-base` adapter | **DONE (2026-11-13)** | `../adapters/flan-t5-base/` + `results/before_after.csv` | 2.9 % → **99.8 %** exact on the **full 2,000** (1,938 fixed, 0 broken, BLEU 99.97), 26.6 min, `done.json` written |
 | 6 | `vit5-large` adapter | NOT RUN | — | ~45 min |
 | 7 | `flan-t5-large` adapter | NOT RUN | — | ~45 min |
+
+Also done on 2026-11-13: `src/config.py` `SAVE_EVERY` 500 → 250 (a time-boxed run keeps a usable
+adapter); the `vit5-base` eval is still 736/2,000 and can be completed with the same command.
 
 ## 2. Frozen — do not touch
 - `research-prototype/results/raw/copy_*.jsonl` — the eval set is copied from these; deleting them breaks

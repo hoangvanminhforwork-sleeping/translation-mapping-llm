@@ -1,0 +1,12 @@
+{
+  "tag": "flan_en",
+  "model": "flan-t5-base",
+  "adapter": true,
+  "rows": 99743,
+  "dim": 768,
+  "batch": 96,
+  "max_len": 64,
+  "pooling": "masked_mean",
+  "seconds": 124.8,
+  "file": "enc_flan_en.npy"
+}

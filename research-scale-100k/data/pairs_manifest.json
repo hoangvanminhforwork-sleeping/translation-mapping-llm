@@ -1,0 +1,19 @@
+{
+  "file": "pairs_100k.parquet",
+  "rows": 99743,
+  "skipped_equal_vi_score": 257,
+  "n_total_requested": 100000,
+  "seed": 42,
+  "split": {
+    "train": 97743,
+    "val": 1000,
+    "test": 1000
+  },
+  "len_chars": {
+    "min": 20,
+    "max": 300
+  },
+  "corpus": "data\\data\\train-*.parquet",
+  "sha256": "4f1051e14bcb1193f4ba37db86e668da812d29d0419b5a67110afc4a122afe07",
+  "built_utc": "2026-11-13T02:33:34Z"
+}

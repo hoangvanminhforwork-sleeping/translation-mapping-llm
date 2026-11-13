@@ -1,0 +1,18 @@
+# research-scale-100k - Python 3.12.10 (verified on this machine), Windows
+# Same pins as research-prototype (the .venv was copied from it) + what this folder added.
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.7.1
+transformers==4.57.6
+peft==0.21.2
+sentencepiece==0.2.3
+accelerate==1.15.0
+pandas==2.3.3
+pyarrow==26.0.0
+duckdb==1.5.6
+sacrebleu==2.5.1
+matplotlib==3.11.2
+nbconvert==7.17.2
+nbclient==0.11.0
+nbformat==5.11.1
+ipykernel==7.4.0
+pypdf==6.1.3

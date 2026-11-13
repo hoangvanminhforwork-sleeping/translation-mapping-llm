@@ -49,6 +49,6 @@ WARMUP = 100
 GRAD_CLIP = 1.0
 MAX_LEN = 64
 MAX_NEW_TOKENS = 128
-SAVE_EVERY = 500
+SAVE_EVERY = 250  # was 500; halved on 2026-11-13 so a time-boxed run keeps a usable adapter
 LOG_EVERY = 50
 DTYPE = "bfloat16"
