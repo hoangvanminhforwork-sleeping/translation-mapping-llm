@@ -1,0 +1,82 @@
+{
+  "n_test_pairs": 2000,
+  "n_test_tokens": 48604,
+  "chance_r1": 0.0005,
+  "protocol": "paired retrieval: query = mapped source tokens; gallery = target tokens of the same 2,000 pairs",
+  "directions": {
+    "vi_en": {
+      "lambda": 0.0,
+      "map_shards": 18,
+      "map_pairs_seen": 3452741,
+      "rows": [
+        {
+          "variant": "map",
+          "token_cosine": 0.4514979422092438,
+          "token_mse": 7.4850873947143555,
+          "sentence_cosine": 0.7509931921958923,
+          "sentence_mse": 1.3699049949645996,
+          "retrieval@1": 0.4875,
+          "margin_mean": -0.011121702380478382,
+          "margin_frac_positive": 0.4875
+        },
+        {
+          "variant": "identity",
+          "token_cosine": 0.003799654543399811,
+          "token_mse": 687.9244995117188,
+          "sentence_cosine": 0.010028152726590633,
+          "sentence_mse": 200.0404052734375,
+          "retrieval@1": 0.001,
+          "margin_mean": -0.09437981992959976,
+          "margin_frac_positive": 0.001
+        },
+        {
+          "variant": "mean",
+          "token_cosine": 0.3233846127986908,
+          "token_mse": 8.463606834411621,
+          "sentence_cosine": 0.5758863091468811,
+          "sentence_mse": 2.051191806793213,
+          "retrieval@1": 0.0005,
+          "margin_mean": -0.1588006168603897,
+          "margin_frac_positive": 0.0005
+        }
+      ]
+    },
+    "en_vi": {
+      "lambda": 0.0,
+      "map_shards": 18,
+      "map_pairs_seen": 0,
+      "rows": [
+        {
+          "variant": "map",
+          "token_cosine": 0.4511811137199402,
+          "token_mse": 530.4461669921875,
+          "sentence_cosine": 0.8143554925918579,
+          "sentence_mse": 69.98861694335938,
+          "retrieval@1": 0.44,
+          "margin_mean": -0.020513297989964485,
+          "margin_frac_positive": 0.44
+        },
+        {
+          "variant": "identity",
+          "token_cosine": 0.003799654543399811,
+          "token_mse": 687.9244995117188,
+          "sentence_cosine": 0.010028152726590633,
+          "sentence_mse": 200.0404052734375,
+          "retrieval@1": 0.0005,
+          "margin_mean": -0.09294697642326355,
+          "margin_frac_positive": 0.0005
+        },
+        {
+          "variant": "mean",
+          "token_cosine": 0.3563307821750641,
+          "token_mse": 587.6576538085938,
+          "sentence_cosine": 0.6927165389060974,
+          "sentence_mse": 105.2419204711914,
+          "retrieval@1": 0.0005,
+          "margin_mean": -0.14589104056358337,
+          "margin_frac_positive": 0.0005
+        }
+      ]
+    }
+  }
+}

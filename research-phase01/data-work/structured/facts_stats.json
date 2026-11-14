@@ -1,0 +1,48 @@
+{
+ "vn_mon_an_truyen_thong": {
+  "pages": 223,
+  "chunks": 58,
+  "candidates": 463,
+  "kept": 423,
+  "dropped": 40,
+  "deduped_out": 0
+ },
+ "vn_van_hoa_am_thuc": {
+  "pages": 260,
+  "chunks": 84,
+  "candidates": 1267,
+  "kept": 1001,
+  "dropped": 266,
+  "deduped_out": 3
+ },
+ "us_american_cuisine": {
+  "pages": 31,
+  "chunks": 8,
+  "candidates": 66,
+  "kept": 55,
+  "dropped": 11,
+  "deduped_out": 0
+ },
+ "us_food_younger_land": {
+  "pages": 70,
+  "chunks": 15,
+  "candidates": 105,
+  "kept": 68,
+  "dropped": 37,
+  "deduped_out": 0
+ },
+ "us_sioux_chef": {
+  "pages": 2,
+  "chunks": 1,
+  "candidates": 0,
+  "kept": 0,
+  "dropped": 0,
+  "deduped_out": 0
+ },
+ "_total": {
+  "candidates": 1901,
+  "verified": 1547,
+  "written": 1544,
+  "verified_quote_rate": 0.8138
+ }
+}

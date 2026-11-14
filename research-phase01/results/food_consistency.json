@@ -1,0 +1,26 @@
+{
+  "n": 200,
+  "backend": "reflex",
+  "probe_threshold": 0.0,
+  "decision_threshold": 0.5,
+  "agreement_probe_vs_decision": 0.985,
+  "kappa_probe_vs_decision": 0.0,
+  "probe_vs_lexicon": {
+    "accuracy": 0.5,
+    "kappa": 0.0
+  },
+  "decision_vs_lexicon": {
+    "accuracy": 0.515,
+    "kappa": 0.030000000000000027
+  },
+  "confusion_probe_decision": {
+    "both_food": 0,
+    "both_not": 197,
+    "probe_only": 0,
+    "decision_only": 3
+  },
+  "mean_decision_prob": 0.01375988818229602,
+  "mean_probe_margin": -12.954485893249512,
+  "windows_per_sentence": 2.01,
+  "api_errors": 0
+}

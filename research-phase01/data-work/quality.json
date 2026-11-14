@@ -1,0 +1,78 @@
+{
+  "books": {
+    "vn_mon_an_truyen_thong": {
+      "pages_total": 223,
+      "pages_with_md": 223,
+      "missing": 0,
+      "blank": 0,
+      "image_only": 0,
+      "suspicious": 0,
+      "suspicious_pages": [],
+      "api_failures": 0,
+      "failure_reasons": [],
+      "truncated_retried": 0,
+      "mean_chars_per_page": 1010,
+      "usd": 0.028854
+    },
+    "vn_van_hoa_am_thuc": {
+      "pages_total": 260,
+      "pages_with_md": 260,
+      "missing": 0,
+      "blank": 0,
+      "image_only": 0,
+      "suspicious": 1,
+      "suspicious_pages": [
+        195
+      ],
+      "api_failures": 0,
+      "failure_reasons": [],
+      "truncated_retried": 0,
+      "mean_chars_per_page": 1323,
+      "usd": 0.026862
+    },
+    "us_american_cuisine": {
+      "pages_total": 31,
+      "pages_with_md": 31,
+      "missing": 0,
+      "blank": 0,
+      "image_only": 0,
+      "suspicious": 0,
+      "suspicious_pages": [],
+      "api_failures": 0,
+      "failure_reasons": [],
+      "truncated_retried": 0,
+      "mean_chars_per_page": 966,
+      "usd": 0.003339
+    },
+    "us_sioux_chef": {
+      "pages_total": 2,
+      "pages_with_md": 2,
+      "missing": 0,
+      "blank": 0,
+      "image_only": 0,
+      "suspicious": 0,
+      "suspicious_pages": [],
+      "api_failures": 0,
+      "failure_reasons": [],
+      "truncated_retried": 0,
+      "mean_chars_per_page": 887,
+      "usd": 0.000226
+    },
+    "us_food_younger_land": {
+      "pages_total": 70,
+      "pages_with_md": 70,
+      "missing": 0,
+      "blank": 0,
+      "image_only": 0,
+      "suspicious": 0,
+      "suspicious_pages": [],
+      "api_failures": 0,
+      "failure_reasons": [],
+      "truncated_retried": 0,
+      "mean_chars_per_page": 832,
+      "usd": 0.007442
+    }
+  },
+  "total_usd": 0.066723,
+  "total_pages": 586
+}

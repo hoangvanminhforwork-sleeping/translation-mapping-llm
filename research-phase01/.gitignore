@@ -1,0 +1,26 @@
+# --- environment (re-derivable, 6.2 GB, shared with research-scale-100k)
+.venv/
+__pycache__/
+*.pyc
+
+# --- inputs (re-derivable: pairs in ~4 min, statistics in ~1 h of GPU)
+# NOTE: gitignore has no inline comments; a trailing "# ..." becomes part of the pattern.
+data/pairs.parquet
+data/stats/
+data/probe_feats.npy
+data/probe_labels.npz
+data/probe_model.npz
+
+# --- rendered PDF pages (194 MB, re-renderable in ~2 min from the PDFs)
+data-work/pages/
+
+# --- API response caches (re-derivable for ~$0.15 of the DataWorker budget)
+data-work/**/cache/
+
+# Committed on purpose (evidence trail, git-62):
+#   data/pairs_manifest.json   sha256, row counts, split rule, exclusion list
+#   data/map_vi_en.npz         768x768 W + b, ~2.4 MB: the actual fitted artefact
+#   results/*.csv|json|jsonl   sweep, geometry, BLEU/chrF/COMET, every hypothesis, probe metrics
+#   data-work/markdown/        OCR text of 586 pages: the M1 input for reviewers
+#   data-work/structured/      vn_dishes.csv, culture_facts.jsonl, facts.db
+#   *.ipynb                    executed in place; the outputs are the evidence

@@ -1,0 +1,295 @@
+{
+ "failures": [],
+ "skipped": [
+  {
+   "start": 25428,
+   "raw_title": "I. NGUYÊN LIỆU;",
+   "reason": "empty_part ing=0 dir=0"
+  },
+  {
+   "start": 59215,
+   "raw_title": "I. NGUYÊN LIỆU;",
+   "reason": "empty_part ing=3 dir=0"
+  },
+  {
+   "start": 80184,
+   "raw_title": "1. Tồn trữ thực phẩm ờ trạng thái sống",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 80189,
+   "raw_title": "2. Hạn chế sự sống",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 80196,
+   "raw_title": "3. Tiêu diệt sự sống",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 80207,
+   "raw_title": "1. Tồh trữ thực phẩm bằng acid",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 80246,
+   "raw_title": "a) Thữnh (tỉệt) trùng ở nhiệt độ Cữo",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 80425,
+   "raw_title": "1. PHẦN GIỚI THIỆU CHUNG",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 80457,
+   "raw_title": "2. PHẦN THựC HIỆN MẪU",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 81137,
+   "raw_title": "2.Skieai",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 81340,
+   "raw_title": "0.5cm.",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 81418,
+   "raw_title": "1. CÁC MÓN TỒN TRỮ BANG ACID",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 81434,
+   "raw_title": "2. CÁC MÓN TỒN TRỮ BẰNG nhiệt",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 81495,
+   "raw_title": "4. CÁC MÓN TỔN TRỮ BANG HIỆN TƯỢNG LẺN MEN",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 84158,
+   "raw_title": "1. Trà",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 84211,
+   "raw_title": "15. Nước dảu tảy",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 84225,
+   "raw_title": "1. Cà phẻ",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 84259,
+   "raw_title": "4. RưỢu cocktail",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 84280,
+   "raw_title": "15. Các loại rưỢu hỗn hợp pha chế",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 84330,
+   "raw_title": "20. Cocktail trái cây",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 84400,
+   "raw_title": "31. Kem chuôi xay mịn",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 84486,
+   "raw_title": "32. Kem rượu mùi",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 86201,
+   "raw_title": "14. Sữo/ cÁua/ (^ì^aouti/)",
+   "reason": "empty_part ing=8 dir=0"
+  },
+  {
+   "start": 86225,
+   "raw_title": "2. Lên men",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88020,
+   "raw_title": "9. VCem' tanỶ",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88569,
+   "raw_title": "3. Xốt cà (dùng với các món chiên)",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88599,
+   "raw_title": "1. Cách khử mùỉ hâi của dẩu phộng",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88605,
+   "raw_title": "2. Cách luộc rau không bị bié'n màu vì gió",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88610,
+   "raw_title": "3. Cách rửa rau cho thât hết sáu",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88615,
+   "raw_title": "4. Tránh dùng thuốc muối để bỏ vào thức ăn",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88620,
+   "raw_title": "5. Nâ'u nước dùng đưỢc trong",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88640,
+   "raw_title": "6. Muốn tôm quết nhuyễn đưực dai",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88675,
+   "raw_title": "10. Cách gỉừ khoai ít rã ra khỉ nâu nướng",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88680,
+   "raw_title": "11. Cách gỉữ khoai đưdc tráng",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88688,
+   "raw_title": "12. Cách giữ mùi rửỢư trong khi nấu",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88699,
+   "raw_title": "14. Cách làm hết mùỉ hôỉ lông gà vịt",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88713,
+   "raw_title": "17. Nướng cá không bị tróc da và ngon",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88742,
+   "raw_title": "20. Muốn md đưỢc trong",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88759,
+   "raw_title": "1. Cách gíữ rau và xà lách làu bị héo",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88764,
+   "raw_title": "2. Cách để dành bông cái lâu bị hư thôi",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88772,
+   "raw_title": "3. Cách giữ gìn trải cầy",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88795,
+   "raw_title": "5. Cách bảo quản cá tươi M 3 cách)",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88812,
+   "raw_title": "6. Cách bảo quản chanh tươi, cam tươi",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88823,
+   "raw_title": "7. Cách bảo quản mỡ nươc",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88829,
+   "raw_title": "8. Cách bảo quản triỉng",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88834,
+   "raw_title": "9. Cách dể dành khoaỉ tây",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88840,
+   "raw_title": "10. Cách rộng cua dể dành lâu",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88850,
+   "raw_title": "12. Tránh phơi nắng khỉ gạo bị ấm",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88856,
+   "raw_title": "13. Giữ gln nưdc châm không bị váng mốc",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88887,
+   "raw_title": "16. Cách làtn nưdc đả (không cần tủ iạnh)",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88900,
+   "raw_title": "18. Cách bảo quản trà",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88905,
+   "raw_title": "19. Cách giữ gìn bột không bỉ mốc",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88912,
+   "raw_title": "1. Cách trừ mùi hôí trong tủ lạnh",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88923,
+   "raw_title": "2. Cách trừ mủi hôi củâ chai hũ",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88936,
+   "raw_title": "â. Cách làm mất mùí hành dính vào dao",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88941,
+   "raw_title": "4. Cách chùi rửa soong nhôm bị đen",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88964,
+   "raw_title": "8. Làm mất mùỉ hôi ỏ chảo soong bằng gang",
+   "reason": "model_is_recipe=false"
+  },
+  {
+   "start": 88970,
+   "raw_title": "9. Bảo quản tủ lạnh",
+   "reason": "model_is_recipe=false"
+  }
+ ]
+}

@@ -1,0 +1,4344 @@
+[
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   8,
+   9,
+   10
+  ],
+  "reason": "quote_not_in_page",
+  "page": 9,
+  "subject": "bột cà ri",
+  "quote": "Tuy gọi loại bột cà ri nhưng đây là một tổng hợp từ nhiều loại gia vị khác nhau mà trong đó lá cà ri là chính với: nghệ "
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   13,
+   14,
+   15
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "cà muối",
+  "object": "dùng hũ thuỷ tinh miệng rộng, có nắp đậy, cỡ vừa đủ làm số cà muối muối",
+  "quote": "- Dùng hũ thuỷ tinh miệng rộng, có nắp đậy, cỡ vừa đủ làm số cà muối muối."
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   16,
+   17,
+   18
+  ],
+  "reason": "quote_not_in_page",
+  "page": 17,
+  "subject": "Mắm tôm chua",
+  "quote": "Cho tôm vào thau, đổ hết rượu vào ... xốc đều tôm trong thau, để qua 25 - 30 phút, tôm ngấm rượu sẽ chết và ửng đỏ đầu r"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   16,
+   17,
+   18
+  ],
+  "reason": "quote_not_in_page",
+  "page": 17,
+  "subject": "Nếp (xôi)",
+  "quote": "rượu nếp sẽ làm cho tôm ở trong một dung môi có chất chua của rượu nếp."
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   19,
+   20
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Thịt kho",
+  "object": "luộc chín trứng, lột vỏ rồi thả vào nồi thịt kho để kho chung",
+  "quote": "Luộc chín trứng, thả vào tô nước lọc cho dễ lóc vỏ, lột vỏ trứng, thả vào nồi th"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   19,
+   20
+  ],
+  "reason": "quote_not_in_page",
+  "page": 20,
+  "subject": "Thịt kho",
+  "quote": "Khi hâm nếu thấy cạn"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   21,
+   22
+  ],
+  "reason": "quote_not_in_page",
+  "page": 22,
+  "subject": "thịt kho tàu",
+  "quote": "nhưng kho như thế nào thì các bạn cũng hãy lưu ý khi dùng hắc xì dầu để kho thì cứ kho nhỏ lửa cho đến khi phần mỡ trong"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   23,
+   24
+  ],
+  "reason": "quote_not_in_page",
+  "page": 23,
+  "subject": "Thịt bò",
+  "quote": "Tẩm ướp mỗi một kí lô thịt đã cắt miếng với: 2,5 muỗng cà phê muối + 0,5 muỗng cà phê tiêu + 1 muỗng súp vun tỏi và hành"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   25,
+   26,
+   27
+  ],
+  "reason": "quote_not_in_page",
+  "page": 27,
+  "subject": "Nước dùng dấm chua",
+  "quote": "500gr cà chua chín, rửa sạch, ngắt cuống, chẻ dọc làm tám."
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   28,
+   29,
+   30
+  ],
+  "reason": "quote_not_in_page",
+  "page": 29,
+  "subject": "Xôi vò",
+  "quote": "Dùng xứng lớn, có tầng hấp lỗ nhỏ, loại chuyên dùng để hong gạo nếp. Không hong nếp đã trộn đậu quá nhiều mỗi lần hong, "
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   28,
+   29,
+   30
+  ],
+  "reason": "quote_not_in_page",
+  "page": 30,
+  "subject": "Chè hoa cau",
+  "quote": "Đây cũng là món chè truyền thống của VN rất thường dược dùng để cúng trong các dịp thôi nôi, đầy tháng trẻ em..."
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   31,
+   32
+  ],
+  "reason": "bad_relation",
+  "relation": "regional_identity",
+  "quote": "Tạo vị chua cho nước canh cho món canh chua VN tùy vùng, tùy người dùng những lo"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   31,
+   32
+  ],
+  "reason": "quote_not_in_page",
+  "page": 32,
+  "subject": "Rau ngổ hay còn gọi là rau ôm",
+  "quote": "- Rau ngổ hay còn gọi là rau ôm, lật lấy phần non, ngắt khúc ngắn 5cm rửa sạch"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   31,
+   32
+  ],
+  "reason": "quote_not_in_page",
+  "page": 32,
+  "subject": "Đậu bắp",
+  "quote": "- Đậu bắp cắt bỏ cuống, cắt chéo lát mỏng"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   31,
+   32
+  ],
+  "reason": "quote_not_in_page",
+  "page": 32,
+  "subject": "Bạc hà",
+  "quote": "- Bạc hà tước vỏ, cắt xéo khúc ngắn."
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   33,
+   34
+  ],
+  "reason": "quote_not_in_page",
+  "page": 34,
+  "subject": "rau",
+  "quote": "Đồng bằng Nam bộ VN vốn có nhiều các loại rau"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   35,
+   36,
+   37
+  ],
+  "reason": "bad_relation",
+  "relation": "is_used_for",
+  "quote": "Bếp VN thường dùng nước màu dừa để kho cá thịt, tạo vị đắng ngọt, pha màu"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   45,
+   46,
+   47,
+   48
+  ],
+  "reason": "quote_not_in_page",
+  "page": 45,
+  "subject": "món sườn heo xào chua ngọt",
+  "quote": "nhưng đó phải là củ kiệu đã ngâm qua ít nhất 5 ngày, nếu không kiệu sẽ còn hăng nồng"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   45,
+   46,
+   47,
+   48
+  ],
+  "reason": "quote_not_in_page",
+  "page": 47,
+  "subject": "Cơm Hến",
+  "quote": "Khi ăn, cho vào chén hoặc tô... rau, cơm, vài muỗng nhỏ nạc hến, chan nước hến nóng vừa đủ ướt cơm."
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   65,
+   66,
+   67,
+   68,
+   69
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Cánh gà chiên nước mắm",
+  "object": "chiên",
+  "quote": "Chờ chảo nóng, cho cánh gà vào chiên."
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   65,
+   66,
+   67,
+   68,
+   69
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Cá bơn tấm rượu bỏ lò",
+  "object": "bỏ lò",
+  "quote": "vừa chín tới vớt ra. Rượu vang đỏ, lọc mịn, cô cạn cùng nước dùng cá, nêm muối t"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   65,
+   66,
+   67,
+   68,
+   69
+  ],
+  "reason": "quote_not_in_page",
+  "page": 67,
+  "subject": "Cá nấu dấm",
+  "quote": "Cá chép (cá trắm): 1 kg"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   75,
+   76,
+   77,
+   78,
+   79
+  ],
+  "reason": "quote_not_in_page",
+  "page": 79,
+  "subject": "Bò sốt gan",
+  "quote": "dùng chung với bánh mì."
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   80,
+   81,
+   82,
+   83,
+   84
+  ],
+  "reason": "quote_not_in_page",
+  "page": 80,
+  "subject": "Kim Tiền Kê",
+  "quote": "hay chuyến đi picnic."
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   80,
+   81,
+   82,
+   83,
+   84
+  ],
+  "reason": "quote_not_in_page",
+  "page": 80,
+  "subject": "Mỡ gáy",
+  "quote": "mỡ gáy cắt miếng như thịt, ướp với đường, để chỗ nắng hay nóng cho đến khi mỡ trong vắt."
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   80,
+   81,
+   82,
+   83,
+   84
+  ],
+  "reason": "quote_not_in_page",
+  "page": 82,
+  "subject": "Củ sen",
+  "quote": "Củ sen gọt vỏ thái miếng như quả trám nhỏ luộc chín."
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   95,
+   96,
+   97,
+   98,
+   99
+  ],
+  "reason": "quote_not_in_page",
+  "page": 97,
+  "subject": "Mực hoa cúc",
+  "quote": "Cho mực vào hấp chín"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   100,
+   101,
+   102,
+   103,
+   104
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Chiên giòn",
+  "object": "Dầu sôi, lăn từng viên trứng qua bột chiên giòn, cho vào chảo, chiên vàng, vớt ra, để ráo dầu",
+  "quote": "Chiên giòn: Dầu sôi, lăn từng viên trứng qua bột chiên giòn, cho vào chảo, chiên"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   120,
+   121,
+   122,
+   123,
+   124
+  ],
+  "reason": "quote_not_in_page",
+  "page": 124,
+  "subject": "Tôm kho đánh",
+  "quote": "Dùng với bún hoặc cơm."
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   139,
+   140,
+   141,
+   142,
+   143
+  ],
+  "reason": "quote_not_in_page",
+  "page": 139,
+  "subject": "Vịt quay trộn măng",
+  "quote": "dọn kèm với xì dầu."
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   159,
+   160,
+   161,
+   162,
+   163
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Mướp đắng",
+  "object": "rạch bên hông trái mướp đắng, lấy hết hột, ngâm với nước có pha một chút muối 15 phút",
+  "quote": "Dùng dao bén rạch bên hông trái mướp đắng, lấy hết hột, ngâm với nước có pha một"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   159,
+   160,
+   161,
+   162,
+   163
+  ],
+  "reason": "quote_not_in_page",
+  "page": 163,
+  "subject": "Mướp đắng nhồi thịt",
+  "quote": "Nhồi hỗn hợp trên vào trái mướp đắng, miết cho mịn. Dùng một cọng hành trụng sơ quấn quanh trái. Xếp mướp đắng vào nồi. "
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   174,
+   175,
+   176,
+   177,
+   178
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Mắm ruốc Huế",
+  "object": "Huế",
+  "quote": "Mắm ruốc Huế là một trong các nguyên liệu có thể chế biến thành nhiều món ăn hấp"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   179,
+   180,
+   181,
+   182,
+   183
+  ],
+  "reason": "quote_not_in_page",
+  "page": 179,
+  "subject": "Mắm cá cơm trộn dứa",
+  "quote": "Dùng với cơm nóng"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   179,
+   180,
+   181,
+   182,
+   183
+  ],
+  "reason": "quote_not_in_page",
+  "page": 179,
+  "subject": "Mắm cá cơm trộn dứa",
+  "quote": "dọn kèm với rau sống."
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   184,
+   185,
+   186,
+   187,
+   188
+  ],
+  "reason": "quote_not_in_page",
+  "page": 184,
+  "subject": "Canh chua hoa so đũa",
+  "quote": "Dùng với cơm hoặc bún."
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   199,
+   200,
+   201,
+   202,
+   203
+  ],
+  "reason": "quote_not_in_page",
+  "page": 199,
+  "subject": "Bò nướng bơ",
+  "quote": "Đặt phần mỡ sườn ngửa trên vỉ, dưới là xoong hứng hạ thấp xuống rồi nướng đến lúc thước đo chỉ 700 độ C là cỡ tái (trong"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   204,
+   205,
+   206,
+   207
+  ],
+  "reason": "quote_not_in_page",
+  "page": 205,
+  "subject": "Cá ngừ hấp cải rổ",
+  "quote": "Ăn nóng cùng với bánh mì"
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   204,
+   205,
+   206,
+   207
+  ],
+  "reason": "quote_not_in_page",
+  "page": 207,
+  "subject": "Bún hoa",
+  "quote": "ăn nóng với nước tương."
+ },
+ {
+  "book": "vn_mon_an_truyen_thong",
+  "chunk": [
+   213,
+   214,
+   215,
+   216,
+   217
+  ],
+  "reason": "quote_not_in_page",
+  "page": 213,
+  "subject": "Mì ngũ sắc",
+  "quote": "Ăn nóng với nước tương."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   7,
+   8,
+   10
+  ],
+  "reason": "quote_not_in_page",
+  "page": 7,
+  "subject": "Văn hóa ẩm thực Việt Nam",
+  "quote": "nhưng để tìm hiểu đầy đủ văn hoá ẩm thực dân gian Việt Nam thì phải đi tìm gương mặt ẩm thực của ba miền Nam — Trung — B"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   11,
+   12,
+   13
+  ],
+  "reason": "quote_not_in_page",
+  "page": 13,
+  "subject": "Trồng trọt",
+  "quote": "với sự xuất hiện của Trồng trọt và Chăn nuôi"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   11,
+   12,
+   13
+  ],
+  "reason": "quote_not_in_page",
+  "page": 13,
+  "subject": "Chó",
+  "quote": "Chó giữ nhà"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   14,
+   15,
+   16
+  ],
+  "reason": "quote_not_in_page",
+  "page": 14,
+  "subject": "Nông nghiệp Việt Nam",
+  "quote": "tuy mới bận tâm chính là Ruộng lúa nước song Nó về cơ bản không phải là Nông nghiệp độc canh Lúa (Monoculture) mà vẫn là"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   14,
+   15,
+   16
+  ],
+  "reason": "quote_not_in_page",
+  "page": 14,
+  "subject": "Vùng thung đồi",
+  "quote": "Ở vùng thung đồi, các tộc thiểu số và người Kinh Việt vẫn có Nà và Nương rẫy."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   14,
+   15,
+   16
+  ],
+  "reason": "quote_not_in_page",
+  "page": 14,
+  "subject": "Châu thổ",
+  "quote": "Ở Châu thổ vẫn có ruộng lúa, bãi dâu, bãi sắn, nương ngô"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   14,
+   15,
+   16
+  ],
+  "reason": "quote_not_in_page",
+  "page": 14,
+  "subject": "Thủy sản",
+  "quote": "thì có vô vàn các tiểu hệ sinh thái, với Ao, Hồ, Đầm, Lạch, Sông ngòi"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   14,
+   15,
+   16
+  ],
+  "reason": "quote_not_in_page",
+  "page": 14,
+  "subject": "Đa dạng sinh học",
+  "quote": "Đa dạng sinh học (Biological Diversity) tất nhiên dẫn đến Đa dạng ẩm thực (Gastronomic Diversity)"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   14,
+   15,
+   16
+  ],
+  "reason": "quote_not_in_page",
+  "page": 16,
+  "subject": "Giao lưu văn hóa",
+  "quote": "Giao lưu văn hóa, Tiếp biến - Đan xen – Giao lưu văn hóa là một Quy luật."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   14,
+   15,
+   16
+  ],
+  "reason": "quote_not_in_page",
+  "page": 16,
+  "subject": "Văn hóa",
+  "quote": "Văn hóa là Động, là Biến đổi"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   17,
+   18,
+   19
+  ],
+  "reason": "quote_not_in_page",
+  "page": 17,
+  "subject": "cơm tấm",
+  "quote": "không bao giờ “giã từ” ... cơm tấm"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   17,
+   18,
+   19
+  ],
+  "reason": "quote_not_in_page",
+  "page": 17,
+  "subject": "mì Quảng",
+  "quote": "Mì Quảng vẫn tồn tại."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   20,
+   21,
+   22
+  ],
+  "reason": "quote_not_in_page",
+  "page": 22,
+  "subject": "cơm + rau + cá + mắm",
+  "quote": "hoặc cơm + rau + cá + mắm (mắm tôm, mắm tép, mắm cá cơm, cá thu...) qua \"công thức\" của GS sinh thái - nông học Nhật Bản"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   23,
+   24,
+   25
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "đình làng",
+  "object": "cơm - cỗ diễn ra ở đình làng",
+  "quote": "Và có việc làng là có cơm - cỗ diễn ra ở đình làng."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   23,
+   24,
+   25
+  ],
+  "reason": "quote_not_in_page",
+  "page": 24,
+  "subject": "đầu gà, thủ lợn",
+  "quote": "Đầu gà, thủ lợn là dành cho các vị tiên thứ chỉ"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   23,
+   24,
+   25
+  ],
+  "reason": "quote_not_in_page",
+  "page": 24,
+  "subject": "phao câu, đuôi lợn",
+  "quote": "cái phao câu, cái đuôi lợn là dành cho 'thằng mỡ', một nhân vật thấp kém nhất làng"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   23,
+   24,
+   25
+  ],
+  "reason": "quote_not_in_page",
+  "page": 24,
+  "subject": "mâm cao cổ đây ('cổ 3 tầng')",
+  "quote": "có món ăn 'hèm' riêng như Đình Bảng - xứ Bắc mâm cao cổ đây ('cổ 3 tầng')"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   23,
+   24,
+   25
+  ],
+  "reason": "quote_not_in_page",
+  "page": 24,
+  "subject": "Châu thổ Bắc Bộ",
+  "quote": "Châu thổ Bắc Bộ: 'Tương cà gia bản', 'cơm gà cá gỏi'"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   23,
+   24,
+   25
+  ],
+  "reason": "quote_not_in_page",
+  "page": 24,
+  "subject": "Miền Nam",
+  "quote": "Miền Nam: 'Cá lóc nướng trui', 'cua rùa rang muối'"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   29,
+   30,
+   31,
+   32
+  ],
+  "reason": "quote_not_in_page",
+  "page": 29,
+  "subject": "Người Ấn Độ",
+  "quote": "nhưng họ uống sữa Trâu"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   29,
+   30,
+   31,
+   32
+  ],
+  "reason": "quote_not_in_page",
+  "page": 29,
+  "subject": "Chăn nuôi",
+  "quote": "chăn nuôi là phụ."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   29,
+   30,
+   31,
+   32
+  ],
+  "reason": "quote_not_in_page",
+  "page": 29,
+  "subject": "Bưởi",
+  "quote": "ăn bưởi mùa thu"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   29,
+   30,
+   31,
+   32
+  ],
+  "reason": "quote_not_in_page",
+  "page": 30,
+  "subject": "Canh rươi, chá rươi, mắm rươi",
+  "quote": "do đó có canh rươi, chá rươi, mắm rươi... là những món ăn đặc sản ở vùng ven biển châu thổ Bắc Bộ (= châu thổ sông Nhị -"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   29,
+   30,
+   31,
+   32
+  ],
+  "reason": "quote_not_in_page",
+  "page": 30,
+  "subject": "Dưa La, cà Láng, nem Báng, tương Bần, nước mắm Vạn Vân, cá rô Đầm Sét",
+  "quote": "Từng vùng miền có khí hậu - thời tiết khác nhau, địa hình đất đai có những yếu tố vi lượng khác nhau, có phong tục tập q"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   29,
+   30,
+   31,
+   32
+  ],
+  "reason": "quote_not_in_page",
+  "page": 30,
+  "subject": "Ổi Quảng Bá, cá Hồ Tây",
+  "quote": "Ổi Quảng Bá, cá Hồ Tây"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   33,
+   34,
+   35
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "chó",
+  "object": "tín ngưỡng hóa kiểu dân gian là \"chó sủa ma",
+  "quote": "Chó được nuôi để giữ nhà, canh trộm đêm khuya và được tín ngưỡng hóa kiểu dân gi"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   36,
+   37,
+   38
+  ],
+  "reason": "quote_not_in_page",
+  "page": 37,
+  "subject": "hấp",
+  "quote": "Một \"dị bản\" của luộc là hấp (đun cách thủy, dùng hơi nước làm chín thức ăn)."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   36,
+   37,
+   38
+  ],
+  "reason": "quote_not_in_page",
+  "page": 37,
+  "subject": "Món luộc",
+  "quote": "Món luộc được coi là một bản sắc, một món ăn vượt trội, được ưa thích của người Việt Nam - Hà Nội."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   36,
+   37,
+   38
+  ],
+  "reason": "quote_not_in_page",
+  "page": 37,
+  "subject": "Rim",
+  "quote": "là Rim (sâm sấp nước hay khô): Cá kho, thịt kho, thịt rim,... sau đó có khi còn vùi trấu, vùi rơm để kéo dài thời gian c"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   36,
+   37,
+   38
+  ],
+  "reason": "quote_not_in_page",
+  "page": 37,
+  "subject": "om",
+  "quote": "sau đó có khi còn vùi trấu, vùi rơm để kéo dài thời gian cho thức ăn nhừ, gọi là om."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   36,
+   37,
+   38
+  ],
+  "reason": "quote_not_in_page",
+  "page": 37,
+  "subject": "món lẩu",
+  "quote": "đến nay đã được dân gian hóa (và do ảnh hưởng của miền Nam sau giải phóng và ngược đến ảnh hưởng văn hóa ẩm thực Quảng Đ"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   36,
+   37,
+   38
+  ],
+  "reason": "quote_not_in_page",
+  "page": 37,
+  "subject": "Lẩu",
+  "quote": "Lẩu - Cù lao tiếng Quảng Đông, theo GS Trần, có gốc rễ từ chữ Pu - lao (melayu), Việt hóa thành Cù lao"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   36,
+   37,
+   38
+  ],
+  "reason": "quote_not_in_page",
+  "page": 37,
+  "subject": "Lẩu",
+  "quote": "Lẩu cũng là món \"tả pí lù\" và cũng là một đặc sản phương Nam ven biển, gần cận biển."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   36,
+   37,
+   38
+  ],
+  "reason": "quote_not_in_page",
+  "page": 38,
+  "subject": "Com (cơm tẻ, cơm nếp)",
+  "quote": "Thực ra, muốn đi tìm một biểu tượng điển hình của nền văn minh Văn hóa Lúa nước của Việt Nam và Đông Nam Á và văn hóa ẩm"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   36,
+   37,
+   38
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Canh",
+  "object": "bát canh (canh cua, canh cá...) trong bữa ăn truyền thống",
+  "quote": "Sau đó là Canh (nước ngọt bùi vớt cá, thịt, riêu cua, lá rau...). Mắm đựng thức "
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   36,
+   37,
+   38
+  ],
+  "reason": "quote_not_in_page",
+  "page": 38,
+  "subject": "bữa cơm hàng ngày của người Việt châu thổ",
+  "quote": "GS Trần Quốc Vượng đã công thức hóa bữa cơm hàng người của người Việt châu thổ là: Cơm - Rau - Cá"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   36,
+   37,
+   38
+  ],
+  "reason": "quote_not_in_page",
+  "page": 38,
+  "subject": "bữa ăn hàng ngày của Đông Nam Á",
+  "quote": "GS.TS nông - sinh thái học Fukui Hayao của đại học Nhật Bản (Kyoto University), tiếp lời GS Trần, đã công thức hóa bữa ă"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   36,
+   37,
+   38
+  ],
+  "reason": "quote_not_in_page",
+  "page": 38,
+  "subject": "bữa ăn của người Hà Nội, người Việt hiện nay",
+  "quote": "Có thể đưa ra một công thức về bữa ăn của người Hà Nội, người Việt hiện nay là: Cơm - Rau - Cá - Tương - Mắm - Thịt"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   39,
+   40,
+   41
+  ],
+  "reason": "quote_not_in_page",
+  "page": 39,
+  "subject": "Cơm nắm - muối vừng - ruốc thịt",
+  "quote": "hay những bữa cơm bè bạn, nhóm người (thậm chí trở lại cổ truyền là cơm nắm - muối vừng - ruốc thịt)."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   39,
+   40,
+   41
+  ],
+  "reason": "quote_not_in_page",
+  "page": 40,
+  "subject": "Cơm Phố",
+  "quote": "Cơm Phố ở Lê Văn Hưu"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   42,
+   43,
+   44,
+   45
+  ],
+  "reason": "bad_relation",
+  "relation": "ingredient_composition",
+  "quote": "do vậy mô hình văn hóa ẩm thực cổ truyền là:\n\n*Cơm - rau - cá - tương - nước mắm"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   46,
+   47,
+   48
+  ],
+  "reason": "quote_not_in_page",
+  "page": 47,
+  "subject": "bánh phở nhiều hàn the",
+  "quote": "An toàn thực phẩm còn liên quan đến việc bón phân hóa học, phun thuốc trừ sâu, chế biến thức ăn có chất hóa học độc hại "
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   46,
+   47,
+   48
+  ],
+  "reason": "quote_not_in_page",
+  "page": 47,
+  "subject": "phở có phooc môn",
+  "quote": "An toàn thực phẩm còn liên quan đến việc bón phân hóa học, phun thuốc trừ sâu, chế biến thức ăn có chất hóa học độc hại "
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   46,
+   47,
+   48
+  ],
+  "reason": "quote_not_in_page",
+  "page": 48,
+  "subject": "ăn chắc mặc bền",
+  "quote": "- Ăn chắc mặc bền."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   46,
+   47,
+   48
+  ],
+  "reason": "quote_not_in_page",
+  "page": 48,
+  "subject": "bánh vang đỏ của giáo dân Công giáo trong lễ Misa",
+  "quote": "...như chuyện được ban chút bánh, chút vang đỏ của giáo dân Công giáo trong lễ Misa."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   49,
+   50,
+   51
+  ],
+  "reason": "quote_not_in_page",
+  "page": 51,
+  "subject": "Ếch tháng mười",
+  "quote": "- *Ếch tháng mười, người Hà Nội (béo tót mỡ màng).*"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   52,
+   53,
+   54
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Rươi",
+  "object": "phố Hàng Rươi",
+  "quote": "để Hà Nội có phố Hàng Rươi"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   55,
+   56,
+   57
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Cốm Vòng",
+  "object": "Vòng",
+  "quote": "*Cốm Vòng, gạo Tám Mễ Trì"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   55,
+   56,
+   57
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "gạo Tám Mễ Trì",
+  "object": "Mễ Trì",
+  "quote": "*Cốm Vòng, gạo Tám Mễ Trì"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   55,
+   56,
+   57
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Tương Bán",
+  "object": "Bán",
+  "quote": "*Cốm Vòng, gạo Tám Mễ Trì\n*Tương Bán, húng Láng còn gì ngon hơn."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   55,
+   56,
+   57
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "húng Láng",
+  "object": "Láng",
+  "quote": "*Cốm Vòng, gạo Tám Mễ Trì\n*Tương Bán, húng Láng còn gì ngon hơn."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   55,
+   56,
+   57
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Trà Long Tỉnh",
+  "object": "Long Tỉnh",
+  "quote": "Tôi cũng đã đến tham quan khu xóm thôn Long Tỉnh làm\nTrà Long Tỉnh ở Giang Nam."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   55,
+   56,
+   57
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Chè Tân Cương",
+  "object": "Tân Cương",
+  "quote": "Thế còn Chè Tân Cương \"lấy (xoa) mốc\" đậm đà chất ngọt lịm (nay gọi chung là \"Ch"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   58,
+   59,
+   60,
+   61
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Gạo Tám Mễ Trì",
+  "object": "Tám Mễ Trì",
+  "quote": "Mà nỡ bỏ đi vựa gạo Tám Mễ Trì?"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   58,
+   59,
+   60,
+   61
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Cá Anh Vũ Việt Trì",
+  "object": "Việt Trì",
+  "quote": "nói gì đến cá Anh Vũ Việt Trì!"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   62,
+   63
+  ],
+  "reason": "quote_not_in_page",
+  "page": 62,
+  "subject": "Cốm Vòng gạo tám Mễ Trì",
+  "quote": "Cốm Vòng gạo tám Mễ Trì / Tương Bần húng Láng còn gì ngon hơn."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   62,
+   63
+  ],
+  "reason": "quote_not_in_page",
+  "page": 63,
+  "subject": "uống",
+  "quote": "uống ban đầu là để thỏa mãn nhu cầu của cái khát: \"Đói ăn, khát uống\""
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   62,
+   63
+  ],
+  "reason": "quote_not_in_page",
+  "page": 63,
+  "subject": "Rượu ngon",
+  "quote": "Rượu ngon không có bạn hiền / Không mua không phải không tiền không mua."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   62,
+   63
+  ],
+  "reason": "quote_not_in_page",
+  "page": 63,
+  "subject": "phường Thụy Chương",
+  "quote": "Ức Trai Nguyễn Trãi từ năm 1435 khi viết cuốn Dư địa chí đã ghi nhận phường Thụy Chương của Thăng Long - Đông Kinh (nay "
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   62,
+   63
+  ],
+  "reason": "quote_not_in_page",
+  "page": 63,
+  "subject": "Em là con gái Kẻ Mơ",
+  "quote": "Em là con gái Kẻ Mơ / Em đi bán rượu tình cờ gặp anh"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   64,
+   65
+  ],
+  "reason": "quote_not_in_page",
+  "page": 64,
+  "subject": "tiếng rao quà",
+  "quote": "người Hà Nội còn thưởng thức ăn uống bằng tai (thính giác) như những lời rao quà sớm mai hay tối xẩm"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   69,
+   70
+  ],
+  "reason": "quote_not_in_page",
+  "page": 70,
+  "subject": "Hệ sinh thái Việt Nam và Đông Nam Á",
+  "quote": "Khi bàn về các Hệ sinh thái Việt Nam và Đông Nam Á, nhiều học giả trọng, ngoài nước đã nói đến tính phồn tạp hơn là tính"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   71,
+   72,
+   73
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Rau",
+  "object": "rau dại và rau trồng",
+  "quote": "Rau có rau dại và rau trồng."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   71,
+   72,
+   73
+  ],
+  "reason": "quote_not_in_page",
+  "page": 72,
+  "subject": "mắm",
+  "quote": "có thể là gốc Chăm"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   71,
+   72,
+   73
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Tương",
+  "object": "xôi ngô - đậu nành (đậu tương)",
+  "quote": "Tương (xôi ngô - đậu nành (đậu tương) để lên men)"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   71,
+   72,
+   73
+  ],
+  "reason": "quote_not_in_page",
+  "page": 73,
+  "subject": "người Hà Nội và vùng châu thổ sông Nhị - Hồng",
+  "quote": "trước đây người Hà Nội và vùng châu thổ sông Nhị - Hồng quen dùng cá (thủy sản) nước ngọt ở sông - hồ - ao - đầm"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   74,
+   75
+  ],
+  "reason": "quote_not_in_page",
+  "page": 74,
+  "subject": "người Việt Nam",
+  "quote": "Trong văn hóa ẩm thực, người Việt Nam cũng có ba cách ăn: Ăn toàn diện, tức ăn bằng ngũ quan."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   74,
+   75
+  ],
+  "reason": "quote_not_in_page",
+  "page": 74,
+  "subject": "món ăn",
+  "quote": "Các món ăn thường đa vị (tôi nhấn mạnh - NTB) không (ít) có món nào đơn thuần một vị."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   74,
+   75
+  ],
+  "reason": "quote_not_in_page",
+  "page": 75,
+  "subject": "món ăn Huế",
+  "quote": "món ăn Huế vẫn là một kết quả của một thời đại cung đình Nguyễn mà bà phu nhân của hiệp tá Đại học sĩ Hồng Kháng - là bà"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   78,
+   79,
+   80
+  ],
+  "reason": "quote_not_in_page",
+  "page": 79,
+  "subject": "món ăn Việt Nam",
+  "quote": "nhiều học giả ẩm thực cho rằng, cùng với *ngôn ngữ*, các món ăn thể hiện rõ *bản sắc dân tộc*."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   78,
+   79,
+   80
+  ],
+  "reason": "bad_relation",
+  "relation": "history_change",
+  "quote": "từ sau Đại chiến thế giới thứ II và nhất là sau năm 1975, bếp núc và các món ăn "
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   78,
+   79,
+   80
+  ],
+  "reason": "bad_relation",
+  "relation": "history_change",
+  "quote": "do cần thích nghi với khí hậu tự nhiên - xã hội - văn hóa nước chủ nhà - thức ăn"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   78,
+   79,
+   80
+  ],
+  "reason": "bad_relation",
+  "relation": "origin_geography",
+  "quote": "đã được ghi lại sớm nhất là từ *Lĩnh Nam chích quái*(32)."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   78,
+   79,
+   80
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "ẩm thực",
+  "object": "Không gian xã hội ẩm thực",
+  "quote": "tiến sĩ Jean Prévre Prulain coi chuyện ẩm thực là \"*Không gian xã hội ẩm thực*\" "
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   78,
+   79,
+   80
+  ],
+  "reason": "bad_relation",
+  "relation": "origin_geography",
+  "quote": "Cái ăn, cái uống, cái hút... vốn lấy từ *môi trường tự nhiên* rồi cải biến đi, v"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   81,
+   82,
+   83,
+   84
+  ],
+  "reason": "quote_not_in_page",
+  "page": 82,
+  "subject": "Ẩm thực",
+  "quote": "cần coi ẩm thực, nói theo Marcel Mauss, là một \"sự kiện xã hội - nhân văn tổng thể\" đầy chất văn hóa."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   85,
+   86,
+   87
+  ],
+  "reason": "quote_not_in_page",
+  "page": 86,
+  "subject": "Nồi niêu gốm",
+  "quote": "Cái nồi niêu gốm có từ thời Đá mới vạn năm"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   88,
+   89,
+   90
+  ],
+  "reason": "quote_not_in_page",
+  "page": 88,
+  "subject": "Rượu cần",
+  "quote": "Rượu cần bên cổng chiêng"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   88,
+   89,
+   90
+  ],
+  "reason": "quote_not_in_page",
+  "page": 88,
+  "subject": "Thắng cố",
+  "quote": "Thắng cố bên Khèn Mèo"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   88,
+   89,
+   90
+  ],
+  "reason": "quote_not_in_page",
+  "page": 88,
+  "subject": "Gỏi cá",
+  "quote": "Gỏi cá bên hát bả trạo"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   88,
+   89,
+   90
+  ],
+  "reason": "bad_relation",
+  "relation": "ingredient_composition",
+  "quote": "Đã lên mô hình Ăn Việt cổ truyền là: *Cơm - Rau - Cá*"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   88,
+   89,
+   90
+  ],
+  "reason": "bad_relation",
+  "relation": "ingredient_composition",
+  "quote": "hay mô hình mở rộng chung cho cả Đông Nam Á là: *Cơm - Rau - Mắm - ớt*"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   91,
+   92,
+   93
+  ],
+  "reason": "bad_relation",
+  "relation": "history_change",
+  "quote": "Café = Cà phê, \"Le Café = nước cà phê, nhưng với thời gian, cái ngoại sinh lắng "
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   91,
+   92,
+   93
+  ],
+  "reason": "bad_relation",
+  "relation": "history_change",
+  "quote": "Với xu hướng mở cửa, với sự hiện tồn của mấy triệu người Việt Nam ở các châu lục"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   91,
+   92,
+   93
+  ],
+  "reason": "bad_relation",
+  "relation": "history_change",
+  "quote": "việc nấu nướng, sửa soạn đồ ăn thức uống nay đã trở thành một nghề chuyên nghiệp"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   91,
+   92,
+   93
+  ],
+  "reason": "quote_not_in_page",
+  "page": 93,
+  "subject": "Cao lầu",
+  "quote": "cao lâu Hội An"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   91,
+   92,
+   93
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Rượu Kim Long",
+  "object": "Kim Long",
+  "quote": "các loại rượu Kim Long, Bàu Đá, Bàu Đen..."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   91,
+   92,
+   93
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Rượu Bàu Đá",
+  "object": "Bàu Đá",
+  "quote": "các loại rượu Kim Long, Bàu Đá, Bàu Đen..."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   91,
+   92,
+   93
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Rượu Bàu Đen",
+  "object": "Bàu Đen",
+  "quote": "các loại rượu Kim Long, Bàu Đá, Bàu Đen..."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   91,
+   92,
+   93
+  ],
+  "reason": "quote_not_in_page",
+  "page": 94,
+  "subject": "Nhà hàng đặc sản tư nhân kiểu nhà Rồng Vàng",
+  "quote": "Họ rất khuyến khích và đánh giá cao các nhà hàng đặc sản tư nhân kiểu nhà Rồng Vàng"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   91,
+   92,
+   93
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Bánh đậu Hải Dương",
+  "object": "Hải Dương",
+  "quote": "bánh đậu Hải Dương"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   91,
+   92,
+   93
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Bánh gai bà Thi Nam Định",
+  "object": "Nam Định",
+  "quote": "bánh gai bà Thi Nam Định..."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   91,
+   92,
+   93
+  ],
+  "reason": "quote_not_in_page",
+  "page": 94,
+  "subject": "Nem Trẻ (Trá = Nem)",
+  "quote": "nem Trẻ (Trá = Nem) ở phố Hải Phòng của Đà Nẵng"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   91,
+   92,
+   93
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Nem Thanh Hóa",
+  "object": "Thanh Hóa",
+  "quote": "nem Thanh Hóa"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   94,
+   95,
+   96
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "tiến Sơn Tây",
+  "object": "Sơn Tây",
+  "quote": "\"tiến\" Sơn Tây hay \"chuối ngự\" Đại Hoàng Hà Nam... có tự bao giờ"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   94,
+   95,
+   96
+  ],
+  "reason": "quote_not_in_page",
+  "page": 94,
+  "subject": "chuối ngự",
+  "quote": "\"tiến\" Sơn Tây hay \"chuối ngự\" Đại Hoàng Hà Nam... có tự bao giờ"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   94,
+   95,
+   96
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Tạp chí Văn hóa nghệ thuật ăn uống của Hội Văn nghệ dân gian Việt Nam",
+  "object": "Việt Nam",
+  "quote": "Tạp chí Văn hóa nghệ thuật ăn uống của Hội Văn nghệ dân gian Việt Nam, mới \"trìn"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   94,
+   95,
+   96
+  ],
+  "reason": "quote_not_in_page",
+  "page": 95,
+  "subject": "Cách ăn uống",
+  "quote": "Cách ăn uống là cách sống, là bản sắc văn hóa."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   97,
+   98,
+   99
+  ],
+  "reason": "quote_not_in_page",
+  "page": 97,
+  "subject": "ốc vặn",
+  "quote": "người tiền sử, học đổ rác thành đống, thành cồn, đủ thứ vỏ sò, ốc, hến (ốc vặn đã được chặt đứt để ngoáy ăn chẳng hạn)"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   97,
+   98,
+   99
+  ],
+  "reason": "quote_not_in_page",
+  "page": 99,
+  "subject": "cà - ràng",
+  "quote": "ở thời đại kim khí các tỉnh miền Trung - Nam, họ còn tìm thấy các loại \"cà - ràng\""
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   97,
+   98,
+   99
+  ],
+  "reason": "quote_not_in_page",
+  "page": 99,
+  "subject": "cà - ràng",
+  "quote": "(Đầu rau bếp 3 chân gắn vào một chậu đất nung để có thể đem theo đun nấu trên thuyền đánh cá, kiểu \"hỏa lò\" của miền Bắc"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   103,
+   104,
+   105
+  ],
+  "reason": "quote_not_in_page",
+  "page": 105,
+  "subject": "Trâu",
+  "quote": "Trâu với cặp sừng như trăng khuyaét, được coi là biểu tượng của Trăng."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   111,
+   112,
+   113
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Đũa",
+  "object": "vợ chồng như đũa có đôi",
+  "quote": "Vợ chồng như đũa có đôi"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   111,
+   112,
+   113
+  ],
+  "reason": "quote_not_in_page",
+  "page": 113,
+  "subject": "Thủ tục ly dị",
+  "quote": "thì thủ tục ly dị của một đôi vợ chồng trước cửa quan là bẻ đũa."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   111,
+   112,
+   113
+  ],
+  "reason": "quote_not_in_page",
+  "page": 113,
+  "subject": "Nước mưa",
+  "quote": "mà tốt nhất là nước mưa"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   116,
+   117,
+   118
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Rau",
+  "object": "rau trồng, rau dại",
+  "quote": "Rau là kể cả rau trồng (nhất là rau muống) lẫn rau dại (ngổ, má, sam...)."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   116,
+   117,
+   118
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "canh cua, bún riêu cua",
+  "object": "Cua",
+  "quote": "còn là Cua với canh cua, bún riêu cua..."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   119,
+   120,
+   121
+  ],
+  "reason": "quote_not_in_page",
+  "page": 119,
+  "subject": "Bún ba chỉ",
+  "quote": "bún ba chỉ (hơi ngậy)"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   119,
+   120,
+   121
+  ],
+  "reason": "quote_not_in_page",
+  "page": 119,
+  "subject": "Bếp Việt Nam",
+  "quote": "Bếp Việt Nam (VN cuisine) có đủ món nướng (chả nướng trong món bún chả...)"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   119,
+   120,
+   121
+  ],
+  "reason": "quote_not_in_page",
+  "page": 119,
+  "subject": "Bếp Việt Nam",
+  "quote": "món rán (cá rán, chim rán)"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   119,
+   120,
+   121
+  ],
+  "reason": "quote_not_in_page",
+  "page": 119,
+  "subject": "Bếp Việt Nam",
+  "quote": "món quay (gà, heo, ngỗng vịt... quay)"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   119,
+   120,
+   121
+  ],
+  "reason": "quote_not_in_page",
+  "page": 119,
+  "subject": "Bếp Việt Nam",
+  "quote": "Bếp Việt Nam thích ăn \"cả Cái lẫn Nước\" nên trội vượt về món Luộc."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   119,
+   120,
+   121
+  ],
+  "reason": "quote_not_in_page",
+  "page": 119,
+  "subject": "Nộm",
+  "quote": "các loại Nộm (rau, đu đủ, hành, gừng, thịt heo/ bò...)."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   119,
+   120,
+   121
+  ],
+  "reason": "quote_not_in_page",
+  "page": 119,
+  "subject": "Con Gà tục tác Lá Chanh",
+  "quote": "Con Gà tục tác Lá Chanh\nCon Lợn ủn ìn mua Hành cho tôi!"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   119,
+   120,
+   121
+  ],
+  "reason": "quote_not_in_page",
+  "page": 119,
+  "subject": "Cần",
+  "quote": "ăn tái (cần tái)"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   119,
+   120,
+   121
+  ],
+  "reason": "quote_not_in_page",
+  "page": 119,
+  "subject": "Cải",
+  "quote": "ăn nhừ (cải nhừ)."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   122,
+   123,
+   124
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "xứ Huế",
+  "object": "xứ Huế của núi - rừng",
+  "quote": "Còn theo chiều ngang Tây - Đông, đã vài lần(³⁵) tôi nói đến *xứ Huế của núi - rừ"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   122,
+   123,
+   124
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "xứ Huế",
+  "object": "xứ Huế của Đồi - nương",
+  "quote": "*xứ Huế của Đồi - nương* (vùng lãng tẩm Đế vương - Ngự Bình cũng vốn là đồi)"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   122,
+   123,
+   124
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "xứ Huế",
+  "object": "xứ Huế của châu thổ",
+  "quote": "*xứ Huế của châu thổ*, hẹp thỏi với sông Bồ, Bạch Yến, với An Cựu, sông Truồi..."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   122,
+   123,
+   124
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "xứ Huế",
+  "object": "xứ Huế của Đầm Phá",
+  "quote": "*xứ Huế của Đầm Phá* (Tam Giang - Cầu Hai) và các Cửa Cảng: Cửa Eo, Cửa Thuận, T"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   122,
+   123,
+   124
+  ],
+  "reason": "quote_not_in_page",
+  "page": 123,
+  "subject": "chợ Đông Ba",
+  "quote": "ta cũng có thể \"nói điêu\" theo ông mà mệnh danh chợ Đông Ba là cái bụng của thành phố Huế"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   134,
+   135,
+   136
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Yến sào",
+  "object": "Công ty Yến sào Khánh Hòa",
+  "quote": "ông nói GS T.Q.V vào Nha Trang mua hay xin Công ty Yến sào Khánh Hòa ít tổ yến r"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   134,
+   135,
+   136
+  ],
+  "reason": "bad_relation",
+  "relation": "ingredient_composition",
+  "quote": "Yến tốt là thế này: ổ tròn, trắng đều, phía dưới ít đen bần (đen tức là có nhiều"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   134,
+   135,
+   136
+  ],
+  "reason": "bad_relation",
+  "relation": "ingredient_composition",
+  "quote": "Yến tốt đúng là yến trắng như cụ Phát Đạt nói, nhưng tốt nhất thì phải vừa trắng"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   134,
+   135,
+   136
+  ],
+  "reason": "quote_not_in_page",
+  "page": 136,
+  "subject": "Yến thả gà",
+  "quote": "Đấy là món \"Yến thả\" hay còn gọi là món \"yến thả gà\". Đấy là món *ăn mặn*, hay là món *khai vị* của các cụ tôi, trước kh"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   134,
+   135,
+   136
+  ],
+  "reason": "quote_not_in_page",
+  "page": 136,
+  "subject": "Yến thả gà",
+  "quote": "Đấy là món \"Yến thả\" hay còn gọi là món \"yến thả gà\". Đấy là món *ăn mặn*, hay là món *khai vị* của các cụ tôi, trước kh"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   137,
+   138,
+   139
+  ],
+  "reason": "bad_relation",
+  "relation": "pairing_serving",
+  "quote": "Phải là bát nhỏ, như bát ăn chè ấy"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   137,
+   138,
+   139
+  ],
+  "reason": "bad_relation",
+  "relation": "pairing_serving",
+  "quote": "Nước đường sôi, trong, rồi, múc ra bát (bát nhỏ, mà dân Hà Nội gọi là bát (ăn) c"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   137,
+   138,
+   139
+  ],
+  "reason": "bad_relation",
+  "relation": "health_belief",
+  "quote": "nhưng yến tráng miệng chỉ ăn hơi âm ấm, không nóng quá, không lạnh quá mới được"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   137,
+   138,
+   139
+  ],
+  "reason": "bad_relation",
+  "relation": "regional_identity",
+  "quote": "Bát nhỏ! Bát kiểu như người Hà Nội chúng tôi ngày xưa gọi, không to như bát ăn c"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   137,
+   138,
+   139
+  ],
+  "reason": "bad_relation",
+  "relation": "history_change",
+  "quote": "lúc còn chiến tranh, chúng tôi phải mua yến đóng hộp ở Hồng Kông... Nay ta có yế"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   137,
+   138,
+   139
+  ],
+  "reason": "bad_relation",
+  "relation": "origin_geography",
+  "quote": "Tôi nghe nói Nha Trang có sản lượng yến sào nhiều nhất nước, chiếm đâu 85% tổng "
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   140,
+   141,
+   142
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Cam Bố Hạ, bưởi Đoan Hùng, quất, quýt, chuối ngự xứ Nam",
+  "object": "xứ Nam",
+  "quote": "rồi cam Bố Hạ, bưởi Đoan Hùng, quất, quýt, chuối ngự xứ Nam"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   146,
+   147,
+   148,
+   149
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "rau muống Sơn Tây",
+  "object": "Sơn Tây",
+  "quote": "Nói đến Sơn Tây, người Hà Nội nghĩ ngay đến món rau muống Sơn Tây xưa không chỉ "
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   146,
+   147,
+   148,
+   149
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "bưởi Đoan Hùng",
+  "object": "Đoan Hùng",
+  "quote": "Nhắc đến xứ Đoài xưa nay người ta cũng không thể không nhắc đến xa thì bưởi Đoan"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   146,
+   147,
+   148,
+   149
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Hồng Bạch Hạc",
+  "object": "Hạc",
+  "quote": "và Hồng Bạch Hạc (dân gian gọi là Hồng Hạc)"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   146,
+   147,
+   148,
+   149
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Bánh cuốn Thanh Trì",
+  "object": "Thanh Trì",
+  "quote": "Bánh cuốn Thanh Trì\nBánh Dì (Dày) Quán Gánh.\n\nThanh Trì là tên một làng thuộc hu"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   146,
+   147,
+   148,
+   149
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Cơm Văn Giáp",
+  "object": "Văn Giáp",
+  "quote": "Văn Giáp là một làng thuộc Thường Tín gần kề Quán Gánh và làng Nhị Khê quê hương"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   146,
+   147,
+   148,
+   149
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Rượu Ké Mơ",
+  "object": "Ké Mơ",
+  "quote": "Rượu Ké Mơ\n*Cờ Mộ Trạch.*\n\nVùng Hà Đông xưa cũng cho nền văn hóa ẩm thực Hà Nội "
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   146,
+   147,
+   148,
+   149
+  ],
+  "reason": "quote_not_in_page",
+  "page": 149,
+  "subject": "Bún sen Tứ Kỳ",
+  "quote": "gần đó từ xưa đến ngày nay Hà Đông còn cung cấp cho Hà Nội một loại bún rất ngon: Bún sen Tứ Kỳ"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   146,
+   147,
+   148,
+   149
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Bún Vân Đình",
+  "object": "Vân Đình",
+  "quote": "không thể không nói đến bún Vân Đình của mảnh đất Hà Đông, chính người Vân Đình "
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   153,
+   154,
+   155
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Phở",
+  "object": "bánh phở",
+  "quote": "Dân 3 làng cũng ra thành phố bán Phở, đều dân Nam Trực cả. Từ Vân Cù xuống đông,"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   159,
+   160,
+   161
+  ],
+  "reason": "bad_relation",
+  "relation": "history_change",
+  "quote": "có thể nấu lên chan với món bánh đa đã thành món, lạ miệng dễ ăn, có lẽ vì thế l"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   159,
+   160,
+   161
+  ],
+  "reason": "quote_not_in_page",
+  "page": 159,
+  "subject": "Phở",
+  "quote": "Khá lên thì mở hiệu"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   162,
+   163
+  ],
+  "reason": "quote_not_in_page",
+  "page": 162,
+  "subject": "ngưu nhục phấn",
+  "quote": "chan với thịt bò hầm"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   162,
+   163
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "phở ông Mậu",
+  "object": "ông Mậu",
+  "quote": "ông (Mậu) chăm chút vào thùng hầm xương từ nửa đêm"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   164,
+   165,
+   166
+  ],
+  "reason": "quote_not_in_page",
+  "page": 165,
+  "subject": "Bà chủ Phở Thìn",
+  "quote": "bà chủ người Nam Định"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   167,
+   168,
+   169
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "ngán",
+  "object": "rượu ngán",
+  "quote": "Rồi đổ rượu gạo trắng ngon vào."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   167,
+   168,
+   169
+  ],
+  "reason": "quote_not_in_page",
+  "page": 168,
+  "subject": "rượu ngán",
+  "quote": "Đàng này rượu ngán đặc sản vùng biển Đông bắc của \"chúng em\" có đầy đủ 4 đặc tính: Tươi - Thơm - Mát - Bổ."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   167,
+   168,
+   169
+  ],
+  "reason": "quote_not_in_page",
+  "page": 168,
+  "subject": "diếp cá",
+  "quote": "Rau gia vị là Diếp cá - Lá mơ."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   167,
+   168,
+   169
+  ],
+  "reason": "quote_not_in_page",
+  "page": 169,
+  "subject": "bánh cuốn chả mực",
+  "quote": "Cũng mực tươi nguyên mới lấy từ thuyền câu lên, giã nhuyễn, hòa chút bột, bỏ vào chảo dầu sôi ngập, rán ròn."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   170,
+   171,
+   172
+  ],
+  "reason": "quote_not_in_page",
+  "page": 172,
+  "subject": "phiên chợ vùng cao",
+  "quote": "Theo những người dân địa phương cho biết, phiên chợ vùng cao diễn ra rất đông vui. Bà con đi chợ ăn mặc quần áo dân tộc "
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   170,
+   171,
+   172
+  ],
+  "reason": "quote_not_in_page",
+  "page": 172,
+  "subject": "bà con",
+  "quote": "sau khi mua bán trao đổi hàng nông lâm thổ sản mới sà vào ngồi quanh các chảo thắng cố nghi ngút khói, chen mùi lửa, béo"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   173,
+   174,
+   175,
+   176
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "rượu San Lùng",
+  "object": "San Lùng",
+  "quote": "Rượu San Lùng ở đây trong vắt, nồng đậm và thơm lừng"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   173,
+   174,
+   175,
+   176
+  ],
+  "reason": "bad_relation",
+  "relation": "health_belief",
+  "quote": "Nghe nói đây là một loại thuốc quý, bổ âm bổ dương..."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   173,
+   174,
+   175,
+   176
+  ],
+  "reason": "quote_not_in_page",
+  "page": 174,
+  "subject": "nậm pịa",
+  "quote": "nhưng lạ nhất cái bản sắc văn hóa ẩm thực sâu đậm ở đây là món nậm pịa, một thứ xúp húp đầu bữa nấu bằng phèo lòng non d"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   173,
+   174,
+   175,
+   176
+  ],
+  "reason": "bad_relation",
+  "relation": "health_belief",
+  "quote": "Một thứ thuốc, văn hóa ẩm thực chữa bệnh đấy."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   173,
+   174,
+   175,
+   176
+  ],
+  "reason": "bad_relation",
+  "relation": "health_belief",
+  "quote": "Uống vào, uống thường xuyên, không bao giờ đau bụng."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   173,
+   174,
+   175,
+   176
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "đào Sa Pa",
+  "object": "Sa Pa",
+  "quote": "Còn hoa quả đặc sản vùng núi phía Bắc thì nào đào Sa Pa, mận Hậu, bạt ngàn nương"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   177,
+   178,
+   179
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Lân",
+  "object": "tứ linh: long - ly (lân) - qui - phượng (phụng)",
+  "quote": "“Lân” là một con vật thần thoại thuộc tứ linh: long - ly (lân) - qui - phượng (p"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   177,
+   178,
+   179
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "ốc nhồi thịt băm",
+  "object": "thịt băm",
+  "quote": "ốc nhồi thịt băm v.v..."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   180,
+   181,
+   182
+  ],
+  "reason": "quote_not_in_page",
+  "page": 181,
+  "subject": "Bánh nướng",
+  "quote": "Rõ ràng đây là một ảnh hưởng Trung Hoa mà trực tiếp là Quảng Đông"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   180,
+   181,
+   182
+  ],
+  "reason": "quote_not_in_page",
+  "page": 181,
+  "subject": "Cốm",
+  "quote": "Hà Nội phải có cốm."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   186,
+   187,
+   188
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "trà",
+  "object": "sao khô trà, sao khô và tẩm thêm hương liệu để giữ gìn và bảo quản",
+  "quote": "người Hoa ... mới biết sao khô trà, sao khô và tẩm thêm hương liệu để giữ gìn và"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   189,
+   190,
+   191,
+   192
+  ],
+  "reason": "quote_not_in_page",
+  "page": 190,
+  "subject": "Com",
+  "quote": "nhưng bao trùm là *Gạo*."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   189,
+   190,
+   191,
+   192
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "rau muống",
+  "object": "Rau",
+  "quote": "nổi bật là *rau muống*."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   189,
+   190,
+   191,
+   192
+  ],
+  "reason": "quote_not_in_page",
+  "page": 192,
+  "subject": "Mắm",
+  "quote": "Mắm là một đặc sản Đông Nam Á"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   189,
+   190,
+   191,
+   192
+  ],
+  "reason": "quote_not_in_page",
+  "page": 192,
+  "subject": "Lào - Thái",
+  "quote": "Lào - Thái có *mắm ngóe*"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   189,
+   190,
+   191,
+   192
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Tương",
+  "object": "đạm thực vật (từ đậu tương, ngô, gạo)",
+  "quote": "*Tương* (dựa vào đạm thực vật (từ đậu tương, ngô, gạo) muối và cũng cho lên men)"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   193,
+   194,
+   196
+  ],
+  "reason": "bad_relation",
+  "relation": "history_change",
+  "quote": "người Thái Lan trước đây nửa thế kỷ không biết công nghệ làm nước mắm (sau học c"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   193,
+   194,
+   196
+  ],
+  "reason": "quote_not_in_page",
+  "page": 193,
+  "subject": "cá Thu",
+  "quote": "Chỉ ăn cá Thu - kho, rán"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   193,
+   194,
+   196
+  ],
+  "reason": "quote_not_in_page",
+  "page": 194,
+  "subject": "Mắm Ngũ Quảng - Nam)) - Nha Trang - Phan Thiết",
+  "quote": "Mắm Ngũ Quảng - Nam)) - Nha Trang - Phan Thiết, mắm tôm chua độc đáo cứ Huế..."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   193,
+   194,
+   196
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "mắm tôm Gò Công",
+  "object": "Gò Công",
+  "quote": "Bà ra Huế làm hoàng hậu của vua Thiệu Trị, nhớ quê, bả sai chờ thuyền mang \"gạo "
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   193,
+   194,
+   196
+  ],
+  "reason": "bad_relation",
+  "relation": "history_change",
+  "quote": "một đôi đường xa \"mắm tôm Gò Công\" thành \"mắm tôm chua xứ Huế\""
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   193,
+   194,
+   196
+  ],
+  "reason": "quote_not_in_page",
+  "page": 194,
+  "subject": "mắm",
+  "quote": "lại để dành được lâu"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   193,
+   194,
+   196
+  ],
+  "reason": "quote_not_in_page",
+  "page": 194,
+  "subject": "mắm",
+  "quote": "mắm có liên quan mật thiết đền \"xã hội tính\" (Socialité)"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   193,
+   194,
+   196
+  ],
+  "reason": "quote_not_in_page",
+  "page": 194,
+  "subject": "mắm",
+  "quote": "và khả năng xã hội hóa (Sociabilité)"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   193,
+   194,
+   196
+  ],
+  "reason": "quote_not_in_page",
+  "page": 194,
+  "subject": "biết ăn",
+  "quote": "Và biết ăn thì cũng biết đổi trao"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   197,
+   198,
+   199
+  ],
+  "reason": "quote_not_in_page",
+  "page": 198,
+  "subject": "lunch",
+  "quote": "nhưng vì sao người Anh - Mỹ phân biệt *lunch* (bữa ăn trưa)"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   197,
+   198,
+   199
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Phở xào Hàng Điếu",
+  "object": "Hàng Điếu",
+  "quote": "ăn \"Phở xào Hàng Điếu\""
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   197,
+   198,
+   199
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Bánh cuốn Hàng Cân",
+  "object": "Hàng Cân",
+  "quote": "ăn \"Bánh cuốn Hàng Cân\""
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   197,
+   198,
+   199
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Miến lươn Hàng Đồng",
+  "object": "Hàng Đồng",
+  "quote": "ăn \"Miến lươn Hàng Đồng\""
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   200,
+   201,
+   202
+  ],
+  "reason": "quote_not_in_page",
+  "page": 200,
+  "subject": "GS.TS Ngô Đức Thịnh",
+  "quote": "GS.TS Ngô Đức Thịnh... khi bàn về Văn hóa ẩm thực, ông đã đưa ra một *hệ phân loại* sau đây"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   200,
+   201,
+   202
+  ],
+  "reason": "quote_not_in_page",
+  "page": 201,
+  "subject": "xôi",
+  "quote": "cỗ Tết... thì \"dứt khoát\" phải có *xôi*"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   200,
+   201,
+   202
+  ],
+  "reason": "quote_not_in_page",
+  "page": 201,
+  "subject": "xôi",
+  "quote": "cỗ cưới... thì \"dứt khoát\" phải có *xôi*"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   203,
+   204,
+   205,
+   206
+  ],
+  "reason": "quote_not_in_page",
+  "page": 204,
+  "subject": "Canh",
+  "quote": "Canh, nhất thiết phải có... là rau: rau muống, rau ngót, mồng tơi, rau đay, rau cải..."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   207,
+   208,
+   209
+  ],
+  "reason": "bad_relation",
+  "relation": "history_change",
+  "quote": "Người Hà Nội chúng ta ngày nay trước cơ chế thị trường, bữa trưa không còn là bữ"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   207,
+   208,
+   209
+  ],
+  "reason": "quote_not_in_page",
+  "page": 209,
+  "subject": "văn hóa ẩm thực Việt Nam",
+  "quote": "Chính vì vậy người ta có quyền nói về *một nền văn hóa ẩm thực Việt Nam*, cho dù theo chúng tôi hiểu, văn hóa vừa là cái"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   207,
+   208,
+   209
+  ],
+  "reason": "bad_relation",
+  "relation": "ingredient_composition",
+  "quote": "GS. Trần Quốc Vượng khi ông công thức hóa bữa ăn cổ truyền của người Việt Nam hà"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   207,
+   208,
+   209
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Rau",
+  "object": "rau dại và rau trồng ngoài vườn - bãi, ăn sống, ăn luộc, ăn xào",
+  "quote": "Rau bao gồm cả rau dại và rau trồng ngoài vườn - bãi, ăn sống, ăn luộc, ăn xào.."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   207,
+   208,
+   209
+  ],
+  "reason": "quote_not_in_page",
+  "page": 209,
+  "subject": "rượu ngô",
+  "quote": "rượu ngô của người HMông"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   207,
+   208,
+   209
+  ],
+  "reason": "quote_not_in_page",
+  "page": 209,
+  "subject": "rượu thốc",
+  "quote": "rượu thốc của người Dao"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   207,
+   208,
+   209
+  ],
+  "reason": "quote_not_in_page",
+  "page": 209,
+  "subject": "phi, moi",
+  "quote": "phi, moi của xứ Thanh"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   210,
+   211,
+   212
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "nước mắm Phan Thiết",
+  "object": "Phan Thiết",
+  "quote": "hay như nước mắm Nam Ô (Đà Nẵng), nước mắm Phan Thiết, nước mắm Hòn, Phú Quốc..."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   210,
+   211,
+   212
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "nước mắm Hòn",
+  "object": "Hòn",
+  "quote": "hay như nước mắm Nam Ô (Đà Nẵng), nước mắm Phan Thiết, nước mắm Hòn, Phú Quốc..."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   210,
+   211,
+   212
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "nước mắm Phú Quốc",
+  "object": "Phú Quốc",
+  "quote": "hay như nước mắm Nam Ô (Đà Nẵng), nước mắm Phan Thiết, nước mắm Hòn, Phú Quốc..."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   210,
+   211,
+   212
+  ],
+  "reason": "bad_relation",
+  "relation": "ingredient_composition",
+  "quote": "GS nông -sinh thái học Nhật Bản Fukui Hayao lại muốn công thức hóa bữa ăn hàng n"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   210,
+   211,
+   212
+  ],
+  "reason": "quote_not_in_page",
+  "page": 210,
+  "subject": "nhút",
+  "quote": "sơ mít làm \"nhút\""
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   213,
+   214,
+   215,
+   216
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "bánh cuốn Thanh Trì",
+  "object": "Thanh Trì",
+  "quote": "với các món \"bánh cuốn Thanh Trì, bánh dây Quán Gánh\""
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   213,
+   214,
+   215,
+   216
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "bánh dây Quán Gánh",
+  "object": "Quán Gánh",
+  "quote": "với các món \"bánh cuốn Thanh Trì, bánh dây Quán Gánh\""
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   213,
+   214,
+   215,
+   216
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Hồng Cốm mùa thu",
+  "object": "mùa thu",
+  "quote": "rồi Hồng Cốm mùa thu."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   213,
+   214,
+   215,
+   216
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Cốm Vòng",
+  "object": "Vòng",
+  "quote": "*Cốm Vòng, Gạo Tám Mễ Trì*"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   213,
+   214,
+   215,
+   216
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Gạo Tám Mễ Trì",
+  "object": "Mễ Trì",
+  "quote": "*Cốm Vòng, Gạo Tám Mễ Trì*"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   213,
+   214,
+   215,
+   216
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Tương Bần",
+  "object": "Bần",
+  "quote": "*Tương Bần húng Láng còn gì ngon hơn.*"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   213,
+   214,
+   215,
+   216
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "húng Láng",
+  "object": "Láng",
+  "quote": "*Tương Bần húng Láng còn gì ngon hơn.*"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   217,
+   218,
+   219
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "rượu Kẻ Mơ",
+  "object": "Kẻ Mơ",
+  "quote": "Nào “rượu Kẻ Mơ”"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   217,
+   218,
+   219
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "bánh cuốn Thanh Trì",
+  "object": "Thanh Trì",
+  "quote": "“bánh cuốn Thanh Trì"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   217,
+   218,
+   219
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "bánh dì (dày) Quán Gánh",
+  "object": "Quán Gánh",
+  "quote": "bánh dì (dày) Quán Gánh”"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   217,
+   218,
+   219
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "cơm Văn Giáp",
+  "object": "Văn Giáp",
+  "quote": "“cơm Văn Giáp"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   217,
+   218,
+   219
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "táp (thịt bò tái - NTB) Cầu Dền",
+  "object": "Cầu Dền",
+  "quote": "táp (thịt bò tái - NTB) Cầu Dền"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   217,
+   218,
+   219
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "chè Quán Tiên",
+  "object": "Quán Tiên",
+  "quote": "chè Quán Tiên”"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   217,
+   218,
+   219
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "cốm Vòng",
+  "object": "Vòng",
+  "quote": "“cốm Vòng"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   217,
+   218,
+   219
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "gạo tám Mễ Trì",
+  "object": "Mễ Trì",
+  "quote": "gạo tám Mễ Trì"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   217,
+   218,
+   219
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "tương Bần",
+  "object": "Bần",
+  "quote": "tương Bần"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   217,
+   218,
+   219
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "húng Láng",
+  "object": "Láng",
+  "quote": "húng Láng...”, xa xa hơn, là “hồng Bạch Hạc”"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   217,
+   218,
+   219
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "hồng Bạch Hạc",
+  "object": "Bạch Hạc",
+  "quote": "“hồng Bạch Hạc”"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   217,
+   218,
+   219
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "cam Bố Hạ",
+  "object": "Bố Hạ",
+  "quote": "“cam Bố Hạ”"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   217,
+   218,
+   219
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "bánh đậu xanh Hải Dương",
+  "object": "Hải Dương",
+  "quote": "“bánh đậu xanh Hải Dương”"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   217,
+   218,
+   219
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "bánh gai Ninh Giang",
+  "object": "Ninh Giang",
+  "quote": "“bánh gai Ninh Giang”"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   217,
+   218,
+   219
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "nem Báng (Đình Bảng)",
+  "object": "Đình Bảng",
+  "quote": "“nem Báng (Đình Bảng)”"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   217,
+   218,
+   219
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "nem Phùng (Đan Phượng)",
+  "object": "Đan Phượng",
+  "quote": "“nem Phùng (Đan Phượng)”"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   220,
+   221
+  ],
+  "reason": "bad_relation",
+  "relation": "history_change",
+  "quote": "từ khi Hà Nội bị biến thành “nhượng địa” - từ thời Đồng Khánh 1888 - thì bộ mặt "
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   220,
+   221
+  ],
+  "reason": "quote_not_in_page",
+  "page": 221,
+  "subject": "Pánh rán cao lầu",
+  "quote": "Sự xuất hiện các cửa hiệu cao lầu, cao lầu (nhà hai tầng - gỗ) với Pánh (bánh) rán cao lầu, pánh rán tẩu là một"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   222,
+   223
+  ],
+  "reason": "quote_not_in_page",
+  "page": 223,
+  "subject": "Hà Nội",
+  "quote": "Hà Nội ăn cay vừa phải"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   224,
+   225,
+   226
+  ],
+  "reason": "quote_not_in_page",
+  "page": 224,
+  "subject": "Phở",
+  "quote": "phở Bắc"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   224,
+   225,
+   226
+  ],
+  "reason": "quote_not_in_page",
+  "page": 224,
+  "subject": "Bún bò giò heo",
+  "quote": "bún bò giò heo Huế"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   224,
+   225,
+   226
+  ],
+  "reason": "quote_not_in_page",
+  "page": 224,
+  "subject": "Hủ tiếu",
+  "quote": "hủ tiếu Mỹ Tho"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   224,
+   225,
+   226
+  ],
+  "reason": "quote_not_in_page",
+  "page": 224,
+  "subject": "Marie Claire",
+  "quote": "Năm 1937, Marie Claire đề xuất những khuyến cáo có tính thực dụng về ẩm thực và sức khỏe"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   224,
+   225,
+   226
+  ],
+  "reason": "quote_not_in_page",
+  "page": 225,
+  "subject": "Thực đơn của Scarsdale",
+  "quote": "làm đẹp của Scarsdale"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   227,
+   228
+  ],
+  "reason": "quote_not_in_page",
+  "page": 227,
+  "subject": "bánh giò",
+  "quote": "ở đây sự sành ăn của người Hà Nội được thể hiện ở từng chi tiết như bánh giò phải được làm bằng bột lọc"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   227,
+   228
+  ],
+  "reason": "quote_not_in_page",
+  "page": 227,
+  "subject": "bánh gio",
+  "quote": "Bánh gio ăn với mật giọt"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   227,
+   228
+  ],
+  "reason": "quote_not_in_page",
+  "page": 228,
+  "subject": "món ăn nóng, cay",
+  "quote": "Mùa đông là mùa thích hợp với những món ăn nóng, cay"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   229,
+   230,
+   231
+  ],
+  "reason": "quote_not_in_page",
+  "page": 229,
+  "subject": "xôi nén",
+  "quote": "xôi nén không ăn lót dạ"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   232,
+   233,
+   234
+  ],
+  "reason": "quote_not_in_page",
+  "page": 232,
+  "subject": "Mồng Một",
+  "quote": "Mồng Một thì ở nhà Cha"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   232,
+   233,
+   234
+  ],
+  "reason": "quote_not_in_page",
+  "page": 232,
+  "subject": "Mồng Hai",
+  "quote": "Mồng Hai nhà Mẹ"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   232,
+   233,
+   234
+  ],
+  "reason": "quote_not_in_page",
+  "page": 232,
+  "subject": "Mồng Ba",
+  "quote": "mồng Ba nhà Thầy"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   232,
+   233,
+   234
+  ],
+  "reason": "quote_not_in_page",
+  "page": 232,
+  "subject": "Thịt mỡ - Dưa hành - Câu đối ĐỎ - Cây nêu - Tràng pháo - Bánh chưng XANH",
+  "quote": "Thịt mỡ - Dưa hành - Câu đối ĐỎ\nCây nêu - Tràng pháo - Bánh chưng XANH"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   232,
+   233,
+   234
+  ],
+  "reason": "quote_not_in_page",
+  "page": 241,
+  "subject": "Dưa - hành",
+  "quote": "Dưa - hành là cái \"đối trọng\" với thịt mỡ"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   235,
+   236,
+   237
+  ],
+  "reason": "quote_not_in_page",
+  "page": 235,
+  "subject": "bánh dày",
+  "quote": "bánh dày ngày Tết ở dạng mochi (bánh nhỏ tròn, như dạng bánh dày đôi kẹp giò chả vẫn bán làm Quà hàng ngày Hà Nội), có ở"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   235,
+   236,
+   237
+  ],
+  "reason": "bad_relation",
+  "relation": "history_change",
+  "quote": "còn ở Kẻ Chợ Hà Nội thì bánh chưng luộc, bánh chưng rán... đã \"xuống cấp - giải "
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   235,
+   236,
+   237
+  ],
+  "reason": "empty_subject_object",
+  "quote": "Và lại còn triết lý sống chung \"lá lành đùm lá rách\" rất \"thường ngày\" mà cũng r"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   238,
+   239,
+   240
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "chiếu",
+  "object": "phố Hàng Chiếu",
+  "quote": "phố *Hàng Chiếu* bán chiếu"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   238,
+   239,
+   240
+  ],
+  "reason": "quote_not_in_page",
+  "page": 239,
+  "subject": "Ngõ Hàng Dừa",
+  "quote": "Cũng nên nhắc đến *Ngõ Hàng Dừa* bên trong phố Nguyễn Khuyến"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   238,
+   239,
+   240
+  ],
+  "reason": "quote_not_in_page",
+  "page": 239,
+  "subject": "dừa tre",
+  "quote": "có nhiều dân nghèo làm nghề vớt dừa tre đem bán."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   238,
+   239,
+   240
+  ],
+  "reason": "quote_not_in_page",
+  "page": 239,
+  "subject": "Hàng Điều",
+  "quote": "Và *Hàng Điều* có nhiều nhà làm điều, bán điều hút thuốc lào."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   238,
+   239,
+   240
+  ],
+  "reason": "quote_not_in_page",
+  "page": 239,
+  "subject": "Hàng Cau",
+  "quote": "Nên nói đến *Hàng Cau*, tên phố cũ gần cửa ô Đông An thế kỷ XVIII, nay là đoạn đầu phố Hàng Bè, tại đó trước đây có nhiề"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   238,
+   239,
+   240
+  ],
+  "reason": "quote_not_in_page",
+  "page": 239,
+  "subject": "cau tươi, cau khô",
+  "quote": "từ miền Nam Trung Bộ (\"Bộ lạc Cau\" thời Chăm pa) chở ra bằng thuyền."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   238,
+   239,
+   240
+  ],
+  "reason": "quote_not_in_page",
+  "page": 239,
+  "subject": "Hàng Đường",
+  "quote": "Về nguyên liệu chế biến đồ ẩm thực ta nên nhắc đến *Hàng Đường*"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   238,
+   239,
+   240
+  ],
+  "reason": "quote_not_in_page",
+  "page": 239,
+  "subject": "Hàng Mắm",
+  "quote": "rồi *Hàng Mắm*, *Hàng Muối* ngoài cửa ô Ưu Nghĩa xưa."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   238,
+   239,
+   240
+  ],
+  "reason": "quote_not_in_page",
+  "page": 239,
+  "subject": "Hàng Muối",
+  "quote": "rồi *Hàng Mắm*, *Hàng Muối* ngoài cửa ô Ưu Nghĩa xưa."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   238,
+   239,
+   240
+  ],
+  "reason": "quote_not_in_page",
+  "page": 240,
+  "subject": "phường Hàng Thịt",
+  "quote": "Thế kỷ XVII - XVIII trong một tấm bia cổ ở chùa Chương Phố Hiến có ghi phường Hàng Thịt."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   238,
+   239,
+   240
+  ],
+  "reason": "quote_not_in_page",
+  "page": 240,
+  "subject": "ngõ Hàng Thịt",
+  "quote": "Chỉ thấy tên ngõ Hàng Thịt ở cuối phố Hai Bà Trưng giáp Hàng Lọng (đường Lê Duẩn nay)"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   238,
+   239,
+   240
+  ],
+  "reason": "quote_not_in_page",
+  "page": 240,
+  "subject": "ngõ Hàng Thịt",
+  "quote": "bên trong là gia đình xưa của những người đi bán thịt rong"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   238,
+   239,
+   240
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Rươi",
+  "object": "mùa Rươi ngắn ngủi cuối Thu đầu Đông",
+  "quote": "Ai trong chúng ta cũng biết mùa Rươi ngắn ngủi cuối Thu đầu Đông:"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   238,
+   239,
+   240
+  ],
+  "reason": "quote_not_in_page",
+  "page": 241,
+  "subject": "Báo Khánh",
+  "quote": "Trước xưa ở thời Lê nó nằm giữa khu vực chùa - tháp Báo Thiên và Hành cung Khánh Thụy nên đầu phố bên kia mang tên ghép "
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   241,
+   242,
+   243,
+   244
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "Hàng Cơm",
+  "object": "quán trọ - hàng cơm cho học trò trường Giám",
+  "quote": "Hàng Cơm (đoạn phố Văn Miếu, xưa có nhiều quán trọ - hàng cơm cho học trò trường"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   241,
+   242,
+   243,
+   244
+  ],
+  "reason": "quote_not_in_page",
+  "page": 243,
+  "subject": "đồ đất nung hay đồ gốm",
+  "quote": "Đồ đất nung hay đồ gốm là một biểu hiện rõ rệt của sự định cư."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   241,
+   242,
+   243,
+   244
+  ],
+  "reason": "quote_not_in_page",
+  "page": 243,
+  "subject": "nồi niêu",
+  "quote": "Đồ nấu nướng như nồi niêu để luộc, nấu, om kho các loại thực vật, động vật."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   241,
+   242,
+   243,
+   244
+  ],
+  "reason": "quote_not_in_page",
+  "page": 243,
+  "subject": "chum, vại, thúng",
+  "quote": "Đồ đựng lớn để dự trữ lương thực tương đối lâu dài vài ba tháng hay thậm chí cả năm như các loại chum, vại, thúng..."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   241,
+   242,
+   243,
+   244
+  ],
+  "reason": "quote_not_in_page",
+  "page": 243,
+  "subject": "lọ đựng hạt giống vừng, đậu xanh, lạc",
+  "quote": "có cả lọ đựng hạt giống vừng, đậu xanh, lạc, có phủ tro ở trên để chống ẩm."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   245,
+   246,
+   247
+  ],
+  "reason": "quote_not_in_page",
+  "page": 247,
+  "subject": "đồ gốm thô",
+  "quote": "Bẻ những mảnh gốm ra để quan sát ta có thể thấy xương gốm là đất sét pha cát thô và mịn. Và có cả bã thực vật băm nhỏ tr"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   251,
+   252,
+   253
+  ],
+  "reason": "quote_not_in_page",
+  "page": 251,
+  "subject": "Chợ Đồng Xuân",
+  "quote": "\"Chợ Đồng Xuân là cái Bụng của Thành phố (Hà Nội)\""
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   251,
+   252,
+   253
+  ],
+  "reason": "quote_not_in_page",
+  "page": 253,
+  "subject": "Bún bò giò heo",
+  "quote": "Huế là *Bún bò giò heo*"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   254,
+   255,
+   256,
+   257
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "gỏi cá",
+  "object": "xứ sở quê hương của các món gỏi cá",
+  "quote": "Và xứ Nam miệt biển cũng là xứ sở quê hương của các món gỏi cá."
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   254,
+   255,
+   256,
+   257
+  ],
+  "reason": "bad_relation",
+  "relation": "history_change",
+  "quote": "(Một luận điểm rất cơ bản của công trình \"Quà Hà Nội\" của tôi là: Quà Hà Nội vốn"
+ },
+ {
+  "book": "vn_van_hoa_am_thuc",
+  "chunk": [
+   254,
+   255,
+   256,
+   257
+  ],
+  "reason": "quote_not_in_page",
+  "page": 255,
+  "subject": "Mắm Nghệ lòng dòn",
+  "quote": "*Mắm Nghệ lòng dòn\n*Rượu ngon cơm trắng"
+ },
+ {
+  "book": "us_american_cuisine",
+  "chunk": [
+   15,
+   16,
+   17,
+   18
+  ],
+  "reason": "quote_not_in_page",
+  "page": 17,
+  "subject": "public dining establishments",
+  "quote": "The evolution of the restaurant industry in the United States began in the early 19th century with the rise of public di"
+ },
+ {
+  "book": "us_american_cuisine",
+  "chunk": [
+   15,
+   16,
+   17,
+   18
+  ],
+  "reason": "quote_not_in_page",
+  "page": 17,
+  "subject": "lavish hotels",
+  "quote": "Initially, lavish hotels were among the first to offer public dining options, catering mainly to wealthy patrons."
+ },
+ {
+  "book": "us_american_cuisine",
+  "chunk": [
+   15,
+   16,
+   17,
+   18
+  ],
+  "reason": "quote_not_in_page",
+  "page": 17,
+  "subject": "Diners",
+  "quote": "Diners, a quintessentially American institution, began appearing around the turn of the 20th century."
+ },
+ {
+  "book": "us_american_cuisine",
+  "chunk": [
+   15,
+   16,
+   17,
+   18
+  ],
+  "reason": "quote_not_in_page",
+  "page": 17,
+  "subject": "Diners",
+  "quote": "They were initially simple, mobile lunch cars that catered to the working class."
+ },
+ {
+  "book": "us_american_cuisine",
+  "chunk": [
+   15,
+   16,
+   17,
+   18
+  ],
+  "reason": "quote_not_in_page",
+  "page": 17,
+  "subject": "pancakes",
+  "quote": "Classic diner dishes such as pancakes, hamburgers, and meatloaf remain staples of American comfort food."
+ },
+ {
+  "book": "us_american_cuisine",
+  "chunk": [
+   15,
+   16,
+   17,
+   18
+  ],
+  "reason": "quote_not_in_page",
+  "page": 17,
+  "subject": "hamburgers",
+  "quote": "Classic diner dishes such as pancakes, hamburgers, and meatloaf remain staples of American comfort food."
+ },
+ {
+  "book": "us_american_cuisine",
+  "chunk": [
+   15,
+   16,
+   17,
+   18
+  ],
+  "reason": "quote_not_in_page",
+  "page": 17,
+  "subject": "meatloaf",
+  "quote": "Classic diner dishes such as pancakes, hamburgers, and meatloaf remain staples of American comfort food."
+ },
+ {
+  "book": "us_american_cuisine",
+  "chunk": [
+   19,
+   20,
+   21,
+   22
+  ],
+  "reason": "quote_not_in_page",
+  "page": 20,
+  "subject": "farm-to-table movement",
+  "quote": "The farm-to-table movement, spearheaded by chefs like Alice Waters of Chez Panisse, emphasized fresh, locally-sourced in"
+ },
+ {
+  "book": "us_american_cuisine",
+  "chunk": [
+   23,
+   24,
+   25,
+   26
+  ],
+  "reason": "quote_not_in_page",
+  "page": 24,
+  "subject": "Oaxacan cooking styles",
+  "quote": "Additionally, regional Mexican cooking styles—such as Oaxacan and Yucatecan—are increasingly celebrated in more authenti"
+ },
+ {
+  "book": "us_american_cuisine",
+  "chunk": [
+   23,
+   24,
+   25,
+   26
+  ],
+  "reason": "quote_not_in_page",
+  "page": 24,
+  "subject": "Yucatecan cooking styles",
+  "quote": "Additionally, regional Mexican cooking styles—such as Oaxacan and Yucatecan—are increasingly celebrated in more authenti"
+ },
+ {
+  "book": "us_american_cuisine",
+  "chunk": [
+   27,
+   28,
+   29,
+   30
+  ],
+  "reason": "bad_relation",
+  "relation": "is_driven_by",
+  "quote": "These trends are driven by various factors, including health concerns, environme"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "reason": "quote_not_in_page",
+  "page": 14,
+  "subject": "Stuffed Eggs",
+  "quote": "Stuffed Eggs and Jellied Apples from Mississippi."
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "reason": "quote_not_in_page",
+  "page": 14,
+  "subject": "Jellied Apples",
+  "quote": "Stuffed Eggs and Jellied Apples from Mississippi."
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "reason": "quote_not_in_page",
+  "page": 14,
+  "subject": "Seafood Gumbo",
+  "quote": "Seafood Gumbo and Barbecue Sauce showcasing seafood and barbecue traditions."
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "reason": "quote_not_in_page",
+  "page": 14,
+  "subject": "Barbecue Sauce",
+  "quote": "Seafood Gumbo and Barbecue Sauce showcasing seafood and barbecue traditions."
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "reason": "quote_not_in_page",
+  "page": 14,
+  "subject": "Chitterlings",
+  "quote": "Chitterlings, a classic dish representing the heritage of African American cuisine."
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "reason": "quote_not_in_page",
+  "page": 14,
+  "subject": "Chicken Bog",
+  "quote": "Chicken Bog, a gathering staple in South Carolina characterized by its simplicity and heartiness."
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "reason": "bad_relation",
+  "relation": "demonstrates",
+  "quote": "and the Big Quarterly celebration in Delaware, demonstrate the communal aspect o"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "reason": "bad_relation",
+  "relation": "demonstrates",
+  "quote": "and the Big Quarterly celebration in Delaware, demonstrate the communal aspect o"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   19,
+   20,
+   21,
+   22,
+   23
+  ],
+  "reason": "quote_not_in_page",
+  "page": 21,
+  "subject": "salmon",
+  "quote": "Local variations of salmon preparation emerged, with residents of Yachats emphasizing unique techniques like sweet-brini"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   19,
+   20,
+   21,
+   22,
+   23
+  ],
+  "reason": "quote_not_in_page",
+  "page": 21,
+  "subject": "salmon",
+  "quote": "Traditional feasts by Indigenous peoples showcased salmon cooked in smokehouses, highlighting their culinary heritage."
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   19,
+   20,
+   21,
+   22,
+   23
+  ],
+  "reason": "quote_not_in_page",
+  "page": 21,
+  "subject": "geoducks",
+  "quote": "Geoducks, large clams native to Washington State, have a unique appearance and preparation method."
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   19,
+   20,
+   21,
+   22,
+   23
+  ],
+  "reason": "quote_not_in_page",
+  "page": 22,
+  "subject": "beaver tails",
+  "quote": "Game meats such as beaver tails and wild ducks feature in local diets, often prepared using traditional methods."
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   19,
+   20,
+   21,
+   22,
+   23
+  ],
+  "reason": "quote_not_in_page",
+  "page": 22,
+  "subject": "wild ducks",
+  "quote": "Game meats such as beaver tails and wild ducks feature in local diets, often prepared using traditional methods."
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   19,
+   20,
+   21,
+   22,
+   23
+  ],
+  "reason": "quote_not_in_page",
+  "page": 22,
+  "subject": "dandelion greens",
+  "quote": "Wild food foraging remains a cultural practice, with ingredients like dandelion greens and wild berries becoming a part "
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   19,
+   20,
+   21,
+   22,
+   23
+  ],
+  "reason": "quote_not_in_page",
+  "page": 22,
+  "subject": "wild berries",
+  "quote": "Wild food foraging remains a cultural practice, with ingredients like dandelion greens and wild berries becoming a part "
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   19,
+   20,
+   21,
+   22,
+   23
+  ],
+  "reason": "degenerate_subject_object",
+  "subject": "salmon",
+  "object": "annual salmon barbecues",
+  "quote": "Community events like annual salmon barbecues and pioneer dinners illustrate the"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   19,
+   20,
+   21,
+   22,
+   23
+  ],
+  "reason": "quote_not_in_page",
+  "page": 22,
+  "subject": "potato salad",
+  "quote": "Traditional dishes, particularly those raised from pioneers’ roots, such as salmon, potato salad, and desserts, remain s"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   19,
+   20,
+   21,
+   22,
+   23
+  ],
+  "reason": "quote_not_in_page",
+  "page": 22,
+  "subject": "desserts",
+  "quote": "Traditional dishes, particularly those raised from pioneers’ roots, such as salmon, potato salad, and desserts, remain s"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   19,
+   20,
+   21,
+   22,
+   23
+  ],
+  "reason": "quote_not_in_page",
+  "page": 23,
+  "subject": "lamb dishes",
+  "quote": "Basque immigrants brought unique culinary traditions, primarily involving lamb dishes, which have evolved within their I"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   19,
+   20,
+   21,
+   22,
+   23
+  ],
+  "reason": "quote_not_in_page",
+  "page": 23,
+  "subject": "Sheepherders Ball",
+  "quote": "Celebrations, such as the annual Sheepherders Ball, reflect their cultural identity through food."
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   19,
+   20,
+   21,
+   22,
+   23
+  ],
+  "reason": "quote_not_in_page",
+  "page": 23,
+  "subject": "Depression Cake",
+  "quote": "Original recipes and adaptations like “Depression Cake” showcase inventive cooking in response to necessity, capturing t"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   24,
+   25,
+   26,
+   27,
+   28
+  ],
+  "reason": "quote_not_in_page",
+  "page": 27,
+  "subject": "grunion fry festival",
+  "quote": "A unique Californian fishing tradition, the grunion fry festival, draws crowds to the beaches for a night of catching an"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   39,
+   40,
+   41,
+   42,
+   43
+  ],
+  "reason": "quote_not_in_page",
+  "page": 41,
+  "subject": "May Breakfast",
+  "quote": "The May Breakfast in Rhode Island gained popularity thanks to Roby King Wilbur's initiative in 1867, which drew inspirat"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   49,
+   50,
+   51,
+   52,
+   53
+  ],
+  "reason": "bad_relation",
+  "relation": "developed_from",
+  "quote": "The chapter discusses various traditional food practices, including the preparat"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   49,
+   50,
+   51,
+   52,
+   53
+  ],
+  "reason": "bad_relation",
+  "relation": "are_staples_in",
+  "quote": "Local ingredients are central to Midwest cooking, with staples like corn, beans,"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   58,
+   59,
+   60,
+   61,
+   62
+  ],
+  "reason": "bad_relation",
+  "relation": "are_associated_with",
+  "quote": "Traditional foods, such as salmon, wild game, and native foraged items, are cent"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   58,
+   59,
+   60,
+   61,
+   62
+  ],
+  "reason": "bad_relation",
+  "relation": "serve_as",
+  "quote": "Recipes that have been passed down through generations serve as touchstones for "
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   58,
+   59,
+   60,
+   61,
+   62
+  ],
+  "reason": "bad_relation",
+  "relation": "reinforce",
+  "quote": "Food preparation and communal meals, including traditions like the salmon bake a"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   58,
+   59,
+   60,
+   61,
+   62
+  ],
+  "reason": "bad_relation",
+  "relation": "was_shaped_by",
+  "quote": "This migration established a unique cultural identity that blended Midwestern an"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   58,
+   59,
+   60,
+   61,
+   62
+  ],
+  "reason": "bad_relation",
+  "relation": "adapted_with",
+  "quote": "Traditional practices, such as homemade tortilla-making, adapted with the introd"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   58,
+   59,
+   60,
+   61,
+   62
+  ],
+  "reason": "bad_relation",
+  "relation": "were_prepared_by",
+  "quote": "Tortillas were central to the Southwest's food culture, with early practices inv"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   58,
+   59,
+   60,
+   61,
+   62
+  ],
+  "reason": "bad_relation",
+  "relation": "gained_widespread_popularity_among",
+  "quote": "However, as technology evolved with machines in the 1960s, tortillas became comm"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   58,
+   59,
+   60,
+   61,
+   62
+  ],
+  "reason": "bad_relation",
+  "relation": "held",
+  "quote": "Iowans held annual picnics, both winter and summer, that mirrored the communal a"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   58,
+   59,
+   60,
+   61,
+   62
+  ],
+  "reason": "bad_relation",
+  "relation": "shifted_to_focus_on",
+  "quote": "The 1940s saw a shift from calorie counting to a focus on vitamins and minerals,"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   58,
+   59,
+   60,
+   61,
+   62
+  ],
+  "reason": "bad_relation",
+  "relation": "was_developed_to_counteract",
+  "quote": "This prompted the development of new food products aimed at addressing nutrition"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   58,
+   59,
+   60,
+   61,
+   62
+  ],
+  "reason": "bad_relation",
+  "relation": "utilized",
+  "quote": "The Choctaw Indians utilized traditional cooking methods like beating and soakin"
+ },
+ {
+  "book": "us_food_younger_land",
+  "chunk": [
+   58,
+   59,
+   60,
+   61,
+   62
+  ],
+  "reason": "bad_relation",
+  "relation": "showcased",
+  "quote": "Their communal feasting during special occasions, like weddings or funerals, sho"
+ }
+]

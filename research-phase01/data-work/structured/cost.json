@@ -1,0 +1,28 @@
+{
+ "calls": 552,
+ "prompt_tokens": 819916,
+ "completion_tokens": 479655,
+ "cost_usd": 0.086084,
+ "cost_usd_estimated": 0.086951,
+ "by_stage": {
+  "facts": {
+   "calls": 356,
+   "prompt_tokens": 634408,
+   "completion_tokens": 404414,
+   "cost_usd": 0.071318
+  },
+  "dishes": {
+   "calls": 195,
+   "prompt_tokens": 185465,
+   "completion_tokens": 75221,
+   "cost_usd": 0.014762
+  },
+  "smoketest": {
+   "calls": 1,
+   "prompt_tokens": 43,
+   "completion_tokens": 20,
+   "cost_usd": 4e-06
+  }
+ },
+ "history": []
+}

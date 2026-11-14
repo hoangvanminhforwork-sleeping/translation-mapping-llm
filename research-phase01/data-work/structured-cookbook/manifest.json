@@ -1,0 +1,8 @@
+{
+ "prompt_ver": "v1",
+ "model": "qwen/qwen3.7-flash",
+ "blocks": 1293,
+ "rows": 1235,
+ "source_lines": 90050,
+ "blocks_digest": "20ae529a357030b8a2d400d684664d77d68e6ceb"
+}

@@ -1,0 +1,44 @@
+{
+  "file": "recipes_vn_all.csv",
+  "rows": 1402,
+  "by_origin": {
+    "cookbook_md": 1235,
+    "pdf_ocr": 167
+  },
+  "columns": [
+    "id",
+    "title",
+    "ingredients",
+    "directions",
+    "link",
+    "source",
+    "NER",
+    "origin"
+  ],
+  "duplicate_titles_after_normalisation": 81,
+  "duplicate_examples": [
+    "BÚN RIÊU CUA",
+    "Bánh Bao Nhân Thịt",
+    "Bánh Bột Lọc",
+    "Bánh Giòn",
+    "Bánh Trung Thu",
+    "Bánh bao nhân thịt",
+    "Bánh bột lọc",
+    "Bánh khoai mì hấp",
+    "Bánh khoai mì nướng",
+    "Bánh mì",
+    "Bánh nướng",
+    "Bánh nếp nhân thịt",
+    "Bánh rán bột mì",
+    "Bánh trung thu",
+    "Bánh tráng bột mì",
+    "Bánh xèo",
+    "Bánh ít",
+    "Bánh ít nhân đậu xanh",
+    "Bánh đậu phộng",
+    "Bánh đậu xanh"
+  ],
+  "schema": "RecipeNLG: id,title,ingredients,directions,link,source,NER (arrays are JSON strings)",
+  "caveat": "cookbook_md titles are 57% reconstructed from ingredients/steps where OCR damaged the title line; pdf_ocr rows keep the printed title",
+  "sha256": "53277edd992a2673303a6b773c5e15d683d0a67b400f281ac3518b9484cc2410"
+}

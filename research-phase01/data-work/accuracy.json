@@ -1,0 +1,74 @@
+{
+  "us_american_cuisine": {
+    "pages_scored": 27,
+    "mean_char_similarity": 0.9874,
+    "mean_word_similarity": 0.989,
+    "min_char_similarity": 0.826,
+    "worst_pages": [
+      [
+        0.826,
+        27
+      ],
+      [
+        0.847,
+        16
+      ],
+      [
+        0.997,
+        6
+      ],
+      [
+        0.998,
+        3
+      ],
+      [
+        0.998,
+        4
+      ]
+    ]
+  },
+  "us_sioux_chef": {
+    "pages_scored": 2,
+    "mean_char_similarity": 0.9474,
+    "mean_word_similarity": 0.939,
+    "min_char_similarity": 0.895,
+    "worst_pages": [
+      [
+        0.895,
+        1
+      ],
+      [
+        1.0,
+        2
+      ]
+    ]
+  },
+  "us_food_younger_land": {
+    "pages_scored": 60,
+    "mean_char_similarity": 0.9833,
+    "mean_word_similarity": 0.9943,
+    "min_char_similarity": 0.778,
+    "worst_pages": [
+      [
+        0.778,
+        14
+      ],
+      [
+        0.799,
+        17
+      ],
+      [
+        0.852,
+        16
+      ],
+      [
+        0.882,
+        13
+      ],
+      [
+        0.936,
+        38
+      ]
+    ]
+  }
+}

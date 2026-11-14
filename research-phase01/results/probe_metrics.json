@@ -1,0 +1,17 @@
+{
+  "n": {
+    "train": 99929,
+    "val": 21413,
+    "test": 21414
+  },
+  "classes": {
+    "1": "RecipeNLG title+ingredients",
+    "0": "MTET sentence, no food lexeme"
+  },
+  "weight_decay": 1.0,
+  "val_auc": 0.9999993970580591,
+  "test_auc": 0.9999999688182102,
+  "test_accuracy": 0.9998599047352199,
+  "test_f1": 0.9998999899989999,
+  "embedding": "flan-t5-base encoder, masked-mean, max_len 64, no LoRA adapter"
+}

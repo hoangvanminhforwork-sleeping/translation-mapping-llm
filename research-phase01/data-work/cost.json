@@ -1,0 +1,10 @@
+{
+  "model": "qwen/qwen3.7-flash",
+  "price_input_usd_per_m": 0.03,
+  "price_output_usd_per_m": 0.13,
+  "cumulative_usd": 0.066722,
+  "limit_usd": 0.5,
+  "updated": "2026-11-14T15:13:21",
+  "pages_ocr": 586,
+  "note": "incl. smoke tests, 4 experiments and 4 redo calls"
+}

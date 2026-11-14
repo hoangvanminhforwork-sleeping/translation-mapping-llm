@@ -1,0 +1,19 @@
+{
+  "steps": 3126,
+  "pairs_seen": 100000,
+  "wall_min": 43.3,
+  "batch": 64,
+  "lr": 0.001,
+  "max_pairs": 100000,
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "targets": "decoder only"
+  },
+  "channels": [
+    "native",
+    "mapped"
+  ],
+  "encoder_frozen": true
+}

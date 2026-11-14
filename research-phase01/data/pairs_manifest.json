@@ -1,0 +1,23 @@
+{
+  "file": "pairs.parquet",
+  "rows": 3456741,
+  "split": {
+    "train": 3452741,
+    "val": 2000,
+    "test": 2000
+  },
+  "split_rule": "ORDER BY md5(vi); first 2000 = test, next 2000 = val, rest = train",
+  "vi_side_rule": "higher count of non-ASCII chars; ties dropped",
+  "len_chars": [
+    20,
+    300
+  ],
+  "corpus": "data\\data\\train-*.parquet",
+  "excluded_from": {
+    "scaled_100k": "research-scale-100k\\data\\pairs_100k.parquet",
+    "copy_lora_train_50k": "finetune-and-lora\\prototype\\data\\train_copy_50000.jsonl",
+    "copy_lora_eval_4k": "finetune-and-lora\\prototype\\data\\eval_sources.jsonl"
+  },
+  "sha256": "d99030e3ee1d765c81c20d72762d27281d58781e6d838dbd275bc180f9596083",
+  "built_utc": "2026-11-14T07:55:18+00:00"
+}

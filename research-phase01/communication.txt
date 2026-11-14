@@ -1,0 +1,11 @@
+Do not touch anything in C disk
+Because I just sometimes check my laptop
+if you need admin rights to approve, but I am absent...so..the task is stuck
+
+And hope you do not forget that
+For each tool call, you have to use time as sensor
+And for 10 tool calls, please check the laptop 
+
+This file is created for communication between me and you without interrupt you, please check this file in every 50 tool calls
+
+Please check the temperature of CPU and GPU too, that is also need to measure, becareful, do not put much pressure on GPU

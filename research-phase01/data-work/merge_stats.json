@@ -1,0 +1,52 @@
+[
+  {
+    "book": "vn_mon_an_truyen_thong",
+    "pages_total": 223,
+    "pages_merged": 223,
+    "blank_skipped": 0,
+    "image_only": 0,
+    "missing": [],
+    "out": "research-phase01\\data-work\\markdown\\vn_mon_an_truyen_thong.md",
+    "bytes": 297664
+  },
+  {
+    "book": "vn_van_hoa_am_thuc",
+    "pages_total": 260,
+    "pages_merged": 260,
+    "blank_skipped": 0,
+    "image_only": 0,
+    "missing": [],
+    "out": "research-phase01\\data-work\\markdown\\vn_van_hoa_am_thuc.md",
+    "bytes": 460720
+  },
+  {
+    "book": "us_american_cuisine",
+    "pages_total": 31,
+    "pages_merged": 31,
+    "blank_skipped": 0,
+    "image_only": 0,
+    "missing": [],
+    "out": "research-phase01\\data-work\\markdown\\us_american_cuisine.md",
+    "bytes": 31151
+  },
+  {
+    "book": "us_sioux_chef",
+    "pages_total": 2,
+    "pages_merged": 2,
+    "blank_skipped": 0,
+    "image_only": 0,
+    "missing": [],
+    "out": "research-phase01\\data-work\\markdown\\us_sioux_chef.md",
+    "bytes": 1869
+  },
+  {
+    "book": "us_food_younger_land",
+    "pages_total": 70,
+    "pages_merged": 70,
+    "blank_skipped": 0,
+    "image_only": 0,
+    "missing": [],
+    "out": "research-phase01\\data-work\\markdown\\us_food_younger_land.md",
+    "bytes": 61400
+  }
+]

@@ -1,0 +1,63 @@
+{
+  "dishes": {
+    "valid_json_ingredients": 167,
+    "valid_json_directions": 167,
+    "valid_json_NER": 167,
+    "rows": 167,
+    "columns": [
+      "id",
+      "title",
+      "ingredients",
+      "directions",
+      "link",
+      "source",
+      "NER"
+    ],
+    "empty_titles": 0,
+    "duplicate_titles": 2,
+    "invalid_cells": 0,
+    "median_ingredients": 6.0,
+    "median_directions": 6.0
+  },
+  "facts": {
+    "tables": [
+      "facts",
+      "dishes",
+      "provenance"
+    ],
+    "rows_db": 1544,
+    "by_book": {
+      "us_american_cuisine": 55,
+      "us_food_younger_land": 68,
+      "vn_mon_an_truyen_thong": 423,
+      "vn_van_hoa_am_thuc": 998
+    },
+    "relations": {
+      "is_associated_with": 587,
+      "is_prepared_by": 344,
+      "is_served_with": 153,
+      "originates_from": 148,
+      "symbolises": 114,
+      "is_made_from": 100,
+      "is_eaten_at": 98
+    },
+    "quote_verified": 1544,
+    "quote_missing_page": 0,
+    "quote_verified_rate": 1.0,
+    "n_distinct_subjects": 1151,
+    "rows_jsonl": 1544,
+    "db_matches_jsonl": true
+  },
+  "cookbook_dishes": {
+    "rows": 1235,
+    "columns": [
+      "id",
+      "title",
+      "ingredients",
+      "directions",
+      "link",
+      "source",
+      "NER"
+    ]
+  }
+}

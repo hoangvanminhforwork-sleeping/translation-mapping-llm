@@ -1,0 +1,109 @@
+{
+  "mapped": {
+    "bleu": 6.279917352578082,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 28.14630359816847,
+    "n": 2000,
+    "empty_rate": 0.001,
+    "degenerate_rate": 0.144,
+    "vi_word_rate": 7.272198385571959e-05,
+    "ref_vi_word_rate": 0.001694817878892336,
+    "mean_hyp_words": 20.647147147147148,
+    "mean_ref_words": 17.406,
+    "bleu_ci95": [
+      5.8583685992863055,
+      6.731985475883942
+    ],
+    "bleu_boot_std": 0.21903077443157945,
+    "comet": 0.6000060897618532,
+    "comet_mean_sentence": 0.6000060897618532
+  },
+  "native": {
+    "bleu": 3.847543287640394,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 18.721565991253595,
+    "n": 2000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.2155,
+    "vi_word_rate": 0.0009696410019623687,
+    "ref_vi_word_rate": 0.001694817878892336,
+    "mean_hyp_words": 21.6575,
+    "mean_ref_words": 17.406,
+    "bleu_ci95": [
+      3.4334380395165622,
+      4.336776850954441
+    ],
+    "bleu_boot_std": 0.23264656788055238,
+    "comet": 0.44260762447863816,
+    "comet_mean_sentence": 0.44260762447863816
+  },
+  "identity": {
+    "bleu": 0.011390650613638458,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 10.990917235989821,
+    "n": 2000,
+    "empty_rate": 0.077,
+    "degenerate_rate": 0.0305,
+    "vi_word_rate": 0.03623838606037801,
+    "ref_vi_word_rate": 0.001694817878892336,
+    "mean_hyp_words": 18.715601300108343,
+    "mean_ref_words": 17.406,
+    "bleu_ci95": [
+      0.007874846576295948,
+      0.013885518810186443
+    ],
+    "bleu_boot_std": 0.0016725478876207663,
+    "comet": 0.2878590437471867,
+    "comet_mean_sentence": 0.2878590437471867
+  },
+  "baseline": {
+    "bleu": 22.267148120681064,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 45.3089095338048,
+    "n": 2000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.0015,
+    "vi_word_rate": 0.0006901094764578563,
+    "ref_vi_word_rate": 0.001694817878892336,
+    "mean_hyp_words": 15.9395,
+    "mean_ref_words": 17.406,
+    "bleu_ci95": [
+      21.3862355002868,
+      23.253812131922338
+    ],
+    "bleu_boot_std": 0.47782905708789153,
+    "comet": 0.751932353079319,
+    "comet_mean_sentence": 0.751932353079319
+  },
+  "paired_native_minus_mapped": {
+    "mean": -2.4362296299161397,
+    "ci95": [
+      -3.0251067677293855,
+      -1.8176714874285491
+    ],
+    "p_other_le_mapped": 1.0,
+    "n_boot": 1000,
+    "reading": "positive mean = this channel beats mapped; P(other<=mapped) near 1 means mapped is significantly better"
+  },
+  "paired_identity_minus_mapped": {
+    "mean": -6.273833675335493,
+    "ci95": [
+      -6.721293453566928,
+      -5.847550547987579
+    ],
+    "p_other_le_mapped": 1.0,
+    "n_boot": 1000,
+    "reading": "positive mean = this channel beats mapped; P(other<=mapped) near 1 means mapped is significantly better"
+  },
+  "paired_baseline_minus_mapped": {
+    "mean": 15.979855030503352,
+    "ci95": [
+      15.06687326299241,
+      16.995513762178444
+    ],
+    "p_other_le_mapped": 0.0,
+    "n_boot": 1000,
+    "reading": "positive mean = this channel beats mapped; P(other<=mapped) near 1 means mapped is significantly better"
+  },
+  "comet_checkpoint": "Unbabel/wmt22-comet-da"
+}
