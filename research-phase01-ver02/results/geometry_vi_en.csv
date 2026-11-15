@@ -1,0 +1,5 @@
+direction,variant,token_cosine,token_mse,sentence_cosine,sentence_mse,retrieval_at_1,margin_mean,margin_frac_positive
+vi_en,map,0.4429,9.569760,0.7641,1.416283,0.0884,-0.0629,0.0884
+vi_en,identity,0.0906,33.924290,0.2700,6.638978,0.0040,-0.1099,0.0040
+vi_en,mean,0.3542,10.470226,0.6671,1.872298,0.0002,-0.1399,0.0002
+vi_en,lgbm,0.4388,9.583561,0.7332,1.563220,0.0556,-0.0663,0.0556

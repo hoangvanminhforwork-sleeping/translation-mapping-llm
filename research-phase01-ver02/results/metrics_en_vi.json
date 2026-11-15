@@ -1,0 +1,78 @@
+{
+  "mapped": {
+    "bleu": 2.9956997170960626,
+    "chrf": 15.660668973767796,
+    "n": 3000,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "ref_vi_word_rate": 0.7996938329202508,
+    "mean_nll": 3.5399511999487876,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.15233333333333332,
+    "vi_word_rate": 0.8366151422664172,
+    "mean_hyp_words": 20.314,
+    "bleu_ci95": [
+      2.7540002401896446,
+      3.408377952688687
+    ],
+    "bleu_boot_std": 0.1597584883331314,
+    "comet": 0.4659792193472385,
+    "comet_n": 1000
+  },
+  "native": {
+    "bleu": 3.5447391957709775,
+    "chrf": 15.561204753597169,
+    "n": 3000,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "ref_vi_word_rate": 0.7996938329202508,
+    "mean_nll": 3.4826229001283644,
+    "empty_rate": 0.0006666666666666666,
+    "degenerate_rate": 0.18766666666666668,
+    "vi_word_rate": 0.8130307467057101,
+    "mean_hyp_words": 20.50366911274183,
+    "bleu_ci95": [
+      3.2938529179811913,
+      3.960667571105656
+    ],
+    "bleu_boot_std": 0.16971500117238,
+    "comet": 0.4185095799267292,
+    "comet_n": 1000
+  },
+  "identity": {
+    "bleu": 0.07167027935657197,
+    "chrf": 8.685689603361476,
+    "n": 3000,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "ref_vi_word_rate": 0.7996938329202508,
+    "mean_nll": 5.219669382472833,
+    "empty_rate": 0.0023333333333333335,
+    "degenerate_rate": 0.5876666666666667,
+    "vi_word_rate": 0.7947863522058138,
+    "mean_hyp_words": 32.28566655529569,
+    "bleu_ci95": [
+      0.05549064471042096,
+      0.10701362045593812
+    ],
+    "bleu_boot_std": 0.013543455546258175,
+    "comet": 0.2904721719622612,
+    "comet_n": 1000
+  },
+  "paired_native_minus_mapped": {
+    "mean": 0.5624144894335797,
+    "ci95": [
+      0.25485666345574964,
+      0.9731035849509503
+    ],
+    "p_other_le_mapped": 0.0,
+    "n_boot": 100
+  },
+  "paired_identity_minus_mapped": {
+    "mean": -2.9303368055645933,
+    "ci95": [
+      -3.3384173418749956,
+      -2.6769735574953195
+    ],
+    "p_other_le_mapped": 1.0,
+    "n_boot": 100
+  },
+  "comet_checkpoint": "Unbabel/wmt22-comet-da (local checkpoint)"
+}

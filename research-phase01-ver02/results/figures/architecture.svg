@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="250" viewBox="0 0 960 250">
+<defs><marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+<path d="M0,0 L10,4 L0,8 z" fill="#333"/></marker></defs>
+<rect x="10" y="95" width="120" height="60" rx="10" fill="#eef3f8" stroke="#1f4e79"/>
+<text x="70" y="120" text-anchor="middle" font-family="Segoe UI" font-size="13">Source text</text>
+<text x="70" y="138" text-anchor="middle" font-family="Segoe UI" font-size="11" fill="#555">x (vi)</text>
+<rect x="170" y="95" width="140" height="60" rx="10" fill="#dbe7f3" stroke="#1f4e79"/>
+<text x="240" y="118" text-anchor="middle" font-family="Segoe UI" font-size="13">M_s encoder</text>
+<text x="240" y="136" text-anchor="middle" font-family="Segoe UI" font-size="11" fill="#555">t5-small-vi (60M)</text>
+<rect x="350" y="95" width="150" height="60" rx="10" fill="#fbe5d6" stroke="#c55a11"/>
+<text x="425" y="118" text-anchor="middle" font-family="Segoe UI" font-size="13">Map f (512x512)</text>
+<text x="425" y="136" text-anchor="middle" font-family="Segoe UI" font-size="11" fill="#555">ridge | LightGBM</text>
+<rect x="540" y="95" width="150" height="60" rx="10" fill="#dbe7f3" stroke="#1f4e79"/>
+<text x="615" y="118" text-anchor="middle" font-family="Segoe UI" font-size="13">M_t decoder</text>
+<text x="615" y="136" text-anchor="middle" font-family="Segoe UI" font-size="11" fill="#555">t5-small (60M) + LoRA</text>
+<rect x="730" y="95" width="120" height="60" rx="10" fill="#eef3f8" stroke="#1f4e79"/>
+<text x="790" y="120" text-anchor="middle" font-family="Segoe UI" font-size="13">Target text</text>
+<text x="790" y="138" text-anchor="middle" font-family="Segoe UI" font-size="11" fill="#555">y-hat (en)</text>
+<line x1="130" y1="125" x2="166" y2="125" stroke="#333" stroke-width="2" marker-end="url(#a)"/>
+<line x1="310" y1="125" x2="346" y2="125" stroke="#333" stroke-width="2" marker-end="url(#a)"/>
+<line x1="500" y1="125" x2="536" y2="125" stroke="#333" stroke-width="2" marker-end="url(#a)"/>
+<line x1="690" y1="125" x2="726" y2="125" stroke="#333" stroke-width="2" marker-end="url(#a)"/>
+<text x="425" y="80" text-anchor="middle" font-family="Segoe UI" font-size="11" fill="#c55a11">H_s -> H_t (token-aligned)</text>
+<text x="425" y="185" text-anchor="middle" font-family="Segoe UI" font-size="11" fill="#555">fitted on 80% of one shard, never sees the test 10%</text>
+<text x="240" y="60" text-anchor="middle" font-family="Segoe UI" font-size="11" fill="#555">frozen</text>
+<text x="615" y="60" text-anchor="middle" font-family="Segoe UI" font-size="11" fill="#555">frozen except LoRA</text>
+</svg>

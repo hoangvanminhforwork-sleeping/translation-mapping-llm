@@ -1,0 +1,580 @@
+{
+  "lora_file": "train-00000-of-00014",
+  "eligible": [
+    "train-00001-of-00014",
+    "train-00002-of-00014",
+    "train-00003-of-00014",
+    "train-00004-of-00014",
+    "train-00005-of-00014",
+    "train-00006-of-00014",
+    "train-00007-of-00014",
+    "train-00008-of-00014",
+    "train-00009-of-00014",
+    "train-00010-of-00014",
+    "train-00011-of-00014",
+    "train-00012-of-00014",
+    "train-00013-of-00014"
+  ],
+  "protocol": "Coreset selection: which shard is the most representative and the most diverse?\n\nProtocol (mission \u00a73.3)\n  1. Encode a stratified 50k-row sample of every shard with the Vietnamese model (mean-pooled, 512-d).\n  2. Centre, L2-normalise, and (by default) drop the first principal direction. Raw mean-pooled\n     transformer states are strongly anisotropic: one direction carries most of the variance and\n     hides domain structure, which is the same anisotropy that makes \"cosine 0.7\" look impressive\n     in the mapping results.\n  3. MiniBatchKMeans with K = 4 (the number of MTet domains = number of dataset fields); K = 32 is a\n     sensitivity check.\n  4. Per shard: representativeness (1 - mean distance to the assigned centroid), diversity\n     (normalised cluster entropy), outlier_rate (share beyond the global 95th pct), coverage\n     (clusters with >= 0.5 % of the shard), and JS divergence from the pooled cluster histogram.\n  5. score = mean of the four z-scores across shards; a 100x within-shard bootstrap gives the\n     sampling SD of that score, so a 0.1 difference can be called noise instead of a finding.\n\nThe LoRA shard is ineligible: an earlier agent already sampled it for copy fine-tuning.\n\nOutputs: results/coreset.csv, results/coreset.json, data/chosen_shard.json\n",
+  "runs": {
+    "k4": {
+      "info": {
+        "k": 4,
+        "drop_pc": 1,
+        "n_sample": 700000,
+        "p95_dist": 1.0134187936782837,
+        "inertia": 54080.66015625,
+        "n_boot": 100
+      },
+      "rows": [
+        {
+          "file": "train-00008-of-00014",
+          "n": 50000,
+          "rep": 0.051667213439941406,
+          "diversity": 0.9959402191929485,
+          "outlier_rate": 0.05186,
+          "coverage": 1.0,
+          "js": 1.6178127735730027e-05,
+          "mean_dist": 0.9483327865600586,
+          "sd": {
+            "rep": 0.00019925199862466534,
+            "diversity": 0.0003518252196392221,
+            "outlier_rate": 0.0009824886767795342,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": 0.7007833150495486,
+          "score_sd": 0.4626378090020112
+        },
+        {
+          "file": "train-00004-of-00014",
+          "n": 50000,
+          "rep": 0.05177122354507446,
+          "diversity": 0.995921476956118,
+          "outlier_rate": 0.05124,
+          "coverage": 1.0,
+          "js": 2.2239308060046183e-05,
+          "mean_dist": 0.9482287764549255,
+          "sd": {
+            "rep": 0.0001878846039143632,
+            "diversity": 0.00034301885764357806,
+            "outlier_rate": 0.0009062860254908493,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": 0.6408475516107695,
+          "score_sd": 0.44013880643673553
+        },
+        {
+          "file": "train-00005-of-00014",
+          "n": 50000,
+          "rep": 0.051973581314086914,
+          "diversity": 0.9960697326283974,
+          "outlier_rate": 0.0495,
+          "coverage": 1.0,
+          "js": 1.1857683426435661e-05,
+          "mean_dist": 0.9480264186859131,
+          "sd": {
+            "rep": 0.00018685369324097115,
+            "diversity": 0.0003533085452013827,
+            "outlier_rate": 0.0010766559338990338,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": 0.5480175473804161,
+          "score_sd": 0.47101802538913956
+        },
+        {
+          "file": "train-00007-of-00014",
+          "n": 50000,
+          "rep": 0.051219403743743896,
+          "diversity": 0.9965174745372463,
+          "outlier_rate": 0.0499,
+          "coverage": 1.0,
+          "js": 0.00011042865016139725,
+          "mean_dist": 0.9487805962562561,
+          "sd": {
+            "rep": 0.0002086816300891683,
+            "diversity": 0.000336375600089175,
+            "outlier_rate": 0.0008873967320201263,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": 0.1883929324422135,
+          "score_sd": 0.4456499012506095
+        },
+        {
+          "file": "train-00003-of-00014",
+          "n": 50000,
+          "rep": 0.0513039231300354,
+          "diversity": 0.9960523032236404,
+          "outlier_rate": 0.05088,
+          "coverage": 1.0,
+          "js": 1.2323945483722304e-05,
+          "mean_dist": 0.9486960768699646,
+          "sd": {
+            "rep": 0.00021373342054159617,
+            "diversity": 0.000346659348423885,
+            "outlier_rate": 0.000929900876437914,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": 0.12974751223384276,
+          "score_sd": 0.4605730427287433
+        },
+        {
+          "file": "train-00002-of-00014",
+          "n": 50000,
+          "rep": 0.051679134368896484,
+          "diversity": 0.9954196079688912,
+          "outlier_rate": 0.0507,
+          "coverage": 1.0,
+          "js": 5.890983993488266e-05,
+          "mean_dist": 0.9483208656311035,
+          "sd": {
+            "rep": 0.00018264482445212247,
+            "diversity": 0.0003270086500283296,
+            "outlier_rate": 0.0009348228495281871,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": -0.04852214902090221,
+          "score_sd": 0.4317542959931279
+        },
+        {
+          "file": "train-00012-of-00014",
+          "n": 50000,
+          "rep": 0.05145937204360962,
+          "diversity": 0.9958843288107697,
+          "outlier_rate": 0.04986,
+          "coverage": 1.0,
+          "js": 1.2422868266122517e-05,
+          "mean_dist": 0.9485406279563904,
+          "sd": {
+            "rep": 0.00019096736304507778,
+            "diversity": 0.00034138850337286095,
+            "outlier_rate": 0.0011088973081399376,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": -0.10786478319614606,
+          "score_sd": 0.4714037900433877
+        },
+        {
+          "file": "train-00009-of-00014",
+          "n": 50000,
+          "rep": 0.051681697368621826,
+          "diversity": 0.9958900592305758,
+          "outlier_rate": 0.04886,
+          "coverage": 1.0,
+          "js": 4.5472952345680033e-07,
+          "mean_dist": 0.9483183026313782,
+          "sd": {
+            "rep": 0.00020925389814078162,
+            "diversity": 0.00032476602628922686,
+            "outlier_rate": 0.0009379880383032613,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": -0.11056962889241834,
+          "score_sd": 0.4463451281562063
+        },
+        {
+          "file": "train-00010-of-00014",
+          "n": 50000,
+          "rep": 0.0517238974571228,
+          "diversity": 0.995611006600319,
+          "outlier_rate": 0.04904,
+          "coverage": 1.0,
+          "js": 3.5255134862514264e-05,
+          "mean_dist": 0.9482761025428772,
+          "sd": {
+            "rep": 0.00019857311713847038,
+            "diversity": 0.0003474206185676661,
+            "outlier_rate": 0.0009021352448496842,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": -0.26197716809927174,
+          "score_sd": 0.4482730301326426
+        },
+        {
+          "file": "train-00001-of-00014",
+          "n": 50000,
+          "rep": 0.051373422145843506,
+          "diversity": 0.9957342657374196,
+          "outlier_rate": 0.05,
+          "coverage": 1.0,
+          "js": 6.356909079837624e-06,
+          "mean_dist": 0.9486265778541565,
+          "sd": {
+            "rep": 0.00018233133147857924,
+            "diversity": 0.0003755387835610916,
+            "outlier_rate": 0.0009047270527623235,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": -0.30183797889725134,
+          "score_sd": 0.4572694136882578
+        },
+        {
+          "file": "train-00006-of-00014",
+          "n": 50000,
+          "rep": 0.05157095193862915,
+          "diversity": 0.9955811444123268,
+          "outlier_rate": 0.04964,
+          "coverage": 1.0,
+          "js": 4.417309860368468e-05,
+          "mean_dist": 0.9484290480613708,
+          "sd": {
+            "rep": 0.00020520594953310777,
+            "diversity": 0.00034341108039146406,
+            "outlier_rate": 0.000987898780240162,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": -0.3059821257751586,
+          "score_sd": 0.4618703738042811
+        },
+        {
+          "file": "train-00013-of-00014",
+          "n": 50000,
+          "rep": 0.05180877447128296,
+          "diversity": 0.9954791933603336,
+          "outlier_rate": 0.0482,
+          "coverage": 1.0,
+          "js": 6.006183797353261e-05,
+          "mean_dist": 0.948191225528717,
+          "sd": {
+            "rep": 0.00019911070706704108,
+            "diversity": 0.0003549337388366392,
+            "outlier_rate": 0.0010648602537422455,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": -0.5010717032964006,
+          "score_sd": 0.47663351975516915
+        },
+        {
+          "file": "train-00011-of-00014",
+          "n": 50000,
+          "rep": 0.05135232210159302,
+          "diversity": 0.9955422739350753,
+          "outlier_rate": 0.04958,
+          "coverage": 1.0,
+          "js": 2.6251520833885057e-05,
+          "mean_dist": 0.948647677898407,
+          "sd": {
+            "rep": 0.00019671795400976833,
+            "diversity": 0.0003419311306710371,
+            "outlier_rate": 0.0010277138901464745,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": -0.6051960134958378,
+          "score_sd": 0.46214151164864864
+        },
+        {
+          "file": "train-00000-of-00014",
+          "n": 50000,
+          "rep": 0.05131697654724121,
+          "diversity": 0.9959757779240233,
+          "outlier_rate": 0.05072,
+          "coverage": 1.0,
+          "js": 9.216060842442671e-06,
+          "mean_dist": 0.9486830234527588,
+          "sd": {
+            "rep": 0.000199560119134255,
+            "diversity": 0.0003336539147663495,
+            "outlier_rate": 0.0009765669459898794,
+            "coverage": 0.0
+          },
+          "eligible": false,
+          "score": NaN,
+          "score_sd": 0.451310117363989
+        }
+      ],
+      "chosen": "train-00008-of-00014"
+    },
+    "k32": {
+      "info": {
+        "k": 32,
+        "drop_pc": 1,
+        "n_sample": 700000,
+        "p95_dist": 0.9763959050178528,
+        "inertia": 46044.08203125,
+        "n_boot": 100
+      },
+      "rows": [
+        {
+          "file": "train-00007-of-00014",
+          "n": 50000,
+          "rep": 0.1267566680908203,
+          "diversity": 0.9946751247008025,
+          "outlier_rate": 0.0512,
+          "coverage": 1.0,
+          "js": 0.0004162591591573505,
+          "mean_dist": 0.8732433319091797,
+          "sd": {
+            "rep": 0.0003457345662069297,
+            "diversity": 0.0002610794772468775,
+            "outlier_rate": 0.0009593541786014174,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": 0.7679194674032288,
+          "score_sd": 0.6151647994120991
+        },
+        {
+          "file": "train-00008-of-00014",
+          "n": 50000,
+          "rep": 0.12688642740249634,
+          "diversity": 0.9944995407429066,
+          "outlier_rate": 0.0502,
+          "coverage": 1.0,
+          "js": 0.00026182689925626705,
+          "mean_dist": 0.8731135725975037,
+          "sd": {
+            "rep": 0.00032958319713558357,
+            "diversity": 0.0002461347147972111,
+            "outlier_rate": 0.0010533111790919148,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": 0.5155814008694474,
+          "score_sd": 0.5985978609640706
+        },
+        {
+          "file": "train-00011-of-00014",
+          "n": 50000,
+          "rep": 0.12667608261108398,
+          "diversity": 0.9944345142146043,
+          "outlier_rate": 0.0511,
+          "coverage": 1.0,
+          "js": 0.00031828942915848634,
+          "mean_dist": 0.873323917388916,
+          "sd": {
+            "rep": 0.00029084122792842333,
+            "diversity": 0.00026082940784592985,
+            "outlier_rate": 0.000996056604817216,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": 0.36345090187897905,
+          "score_sd": 0.5585887793252681
+        },
+        {
+          "file": "train-00009-of-00014",
+          "n": 50000,
+          "rep": 0.12682580947875977,
+          "diversity": 0.9942328861954602,
+          "outlier_rate": 0.05092,
+          "coverage": 1.0,
+          "js": 0.00029005835255285404,
+          "mean_dist": 0.8731741905212402,
+          "sd": {
+            "rep": 0.00033309534299512763,
+            "diversity": 0.00023670393585763008,
+            "outlier_rate": 0.0010351792115377897,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": 0.3096988740286052,
+          "score_sd": 0.596010044200472
+        },
+        {
+          "file": "train-00006-of-00014",
+          "n": 50000,
+          "rep": 0.12689048051834106,
+          "diversity": 0.9943381929033729,
+          "outlier_rate": 0.05006,
+          "coverage": 1.0,
+          "js": 0.00037866057652881325,
+          "mean_dist": 0.8731095194816589,
+          "sd": {
+            "rep": 0.0003436226635240742,
+            "diversity": 0.00023755650914100682,
+            "outlier_rate": 0.0009018598338988162,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": 0.3091507722212962,
+          "score_sd": 0.5957181763887516
+        },
+        {
+          "file": "train-00003-of-00014",
+          "n": 50000,
+          "rep": 0.12683075666427612,
+          "diversity": 0.9943637200992966,
+          "outlier_rate": 0.05012,
+          "coverage": 1.0,
+          "js": 0.0002826849490726083,
+          "mean_dist": 0.8731692433357239,
+          "sd": {
+            "rep": 0.00033526411241144565,
+            "diversity": 0.0002247143930193239,
+            "outlier_rate": 0.0010882826654872344,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": 0.2670909546416288,
+          "score_sd": 0.5983670707011726
+        },
+        {
+          "file": "train-00001-of-00014",
+          "n": 50000,
+          "rep": 0.12652498483657837,
+          "diversity": 0.9943903989265299,
+          "outlier_rate": 0.05114,
+          "coverage": 1.0,
+          "js": 0.00031843769195165437,
+          "mean_dist": 0.8734750151634216,
+          "sd": {
+            "rep": 0.000359634570920794,
+            "diversity": 0.00021849837280223387,
+            "outlier_rate": 0.0009943133510116416,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": 0.10985309315663364,
+          "score_sd": 0.6142564199866482
+        },
+        {
+          "file": "train-00004-of-00014",
+          "n": 50000,
+          "rep": 0.1268075704574585,
+          "diversity": 0.9940818629383341,
+          "outlier_rate": 0.05062,
+          "coverage": 1.0,
+          "js": 0.0001998777787912151,
+          "mean_dist": 0.8731924295425415,
+          "sd": {
+            "rep": 0.00031693319756048445,
+            "diversity": 0.0002527969905381165,
+            "outlier_rate": 0.0008876432616766716,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": 0.04418575262925245,
+          "score_sd": 0.5717896822132653
+        },
+        {
+          "file": "train-00010-of-00014",
+          "n": 50000,
+          "rep": 0.12684577703475952,
+          "diversity": 0.9941844620270218,
+          "outlier_rate": 0.04932,
+          "coverage": 1.0,
+          "js": 0.00017015113762933176,
+          "mean_dist": 0.8731542229652405,
+          "sd": {
+            "rep": 0.0003234879624140724,
+            "diversity": 0.00023637275170744325,
+            "outlier_rate": 0.0009227319437409759,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": -0.10371413371002801,
+          "score_sd": 0.5738894251745484
+        },
+        {
+          "file": "train-00013-of-00014",
+          "n": 50000,
+          "rep": 0.12639373540878296,
+          "diversity": 0.9943550458576145,
+          "outlier_rate": 0.05078,
+          "coverage": 1.0,
+          "js": 0.0001712508847967702,
+          "mean_dist": 0.873606264591217,
+          "sd": {
+            "rep": 0.0003424664853804671,
+            "diversity": 0.00026435619188983257,
+            "outlier_rate": 0.000921688428917278,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": -0.20295045315952526,
+          "score_sd": 0.609770155227119
+        },
+        {
+          "file": "train-00002-of-00014",
+          "n": 50000,
+          "rep": 0.1267959475517273,
+          "diversity": 0.9940039485179593,
+          "outlier_rate": 0.0489,
+          "coverage": 1.0,
+          "js": 0.00033358662565910273,
+          "mean_dist": 0.8732040524482727,
+          "sd": {
+            "rep": 0.0003292921936785429,
+            "diversity": 0.0002679526105294188,
+            "outlier_rate": 0.0009056978745696604,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": -0.47578372301737426,
+          "score_sd": 0.5954711685300459
+        },
+        {
+          "file": "train-00005-of-00014",
+          "n": 50000,
+          "rep": 0.1269574761390686,
+          "diversity": 0.993721959381968,
+          "outlier_rate": 0.04798,
+          "coverage": 1.0,
+          "js": 0.00024296392672027562,
+          "mean_dist": 0.8730425238609314,
+          "sd": {
+            "rep": 0.0002940053306718938,
+            "diversity": 0.0002704317207992688,
+            "outlier_rate": 0.0009935781599854133,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": -0.7811175443255678,
+          "score_sd": 0.5671741520254059
+        },
+        {
+          "file": "train-00012-of-00014",
+          "n": 50000,
+          "rep": 0.12636971473693848,
+          "diversity": 0.9941351922671398,
+          "outlier_rate": 0.04832,
+          "coverage": 1.0,
+          "js": 0.0002934563283555834,
+          "mean_dist": 0.8736302852630615,
+          "sd": {
+            "rep": 0.00032001273259440327,
+            "diversity": 0.0002523828172455848,
+            "outlier_rate": 0.0008739504791462732,
+            "coverage": 0.0
+          },
+          "eligible": true,
+          "score": -1.0768822982266146,
+          "score_sd": 0.5737800377526319
+        },
+        {
+          "file": "train-00000-of-00014",
+          "n": 50000,
+          "rep": 0.1267620325088501,
+          "diversity": 0.9943395574197192,
+          "outlier_rate": 0.04934,
+          "coverage": 1.0,
+          "js": 0.000266328947211491,
+          "mean_dist": 0.8732379674911499,
+          "sd": {
+            "rep": 0.0003489576824730329,
+            "diversity": 0.0002597175940284046,
+            "outlier_rate": 0.000856737439359341,
+            "coverage": 0.0
+          },
+          "eligible": false,
+          "score": NaN,
+          "score_sd": 0.6091821462908261
+        }
+      ],
+      "chosen": "train-00007-of-00014"
+    }
+  },
+  "chosen": "train-00008-of-00014"
+}

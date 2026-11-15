@@ -1,0 +1,13 @@
+{
+  "file": "train-00008-of-00014",
+  "rule": "max mean z-score of rep/diversity/outlier/coverage, K=4, top PC removed",
+  "score": 0.7007833150495486,
+  "score_sd": 0.4626378090020112,
+  "runner_up": {
+    "file": "train-00004-of-00014",
+    "score": 0.6408475516107695
+  },
+  "score_spread_across_shards": 1.3059793285453865,
+  "exchangeable": true,
+  "k32_chosen": "train-00007-of-00014"
+}
