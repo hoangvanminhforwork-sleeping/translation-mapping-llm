@@ -14,7 +14,8 @@ re-derivable files on the laptop.
 | `data/per_sent_vi_en.npz` | ~100 KB | per-sentence cosine, used by the mining join |
 | `results/*.csv`, `results/*.json`, `results/*.jsonl` | ~15 MB | every number in the paper |
 | `results/figures/*` | ~0.5 MB | every figure |
-| `adapters/copy-t5-small/` | 4.1 MB | copy LoRA (readout gate) |
+| `adapters/copy-t5-small/` | 4.1 MB | copy LoRA, English decoder (readout gate) |
+| `adapters/copy-t5-small-vi/` | 4.1 MB | copy LoRA, Vietnamese decoder (gate fails: 13.5 %) |
 | `adapters/trans-t5-small-vi-en/` | 4.1 MB | translation LoRA, vi→en |
 | `adapters/trans-t5-small-en-vi/` | 4.1 MB | translation LoRA, en→vi |
 | `01_results.ipynb` | ~200 KB | executed notebook |

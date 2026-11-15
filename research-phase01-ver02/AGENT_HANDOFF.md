@@ -18,7 +18,7 @@
 | 2 | coreset + shard choice | `results/coreset.{csv,json}`, `data/chosen_shard.json` |
 | 3 | ridge, both directions | `data/map_vi_en.npz`, `data/map_en_vi.npz`, `results/ridge_sweep.csv` |
 | 4 | 512 LightGBM boosters | `data/lgbm/vi_en.pkl.gz` (42 MB), `results/lgbm_metrics.json` |
-| 5 | copy gate | `results/copy_gate_en*.json`, `adapters/copy-t5-small/` |
+| 5 | copy gate, both models | `results/copy_gate_{en,vi}*.json`, `adapters/copy-t5-small{,-vi}/` |
 | 6 | translation adapters | `adapters/trans-t5-small-vi-en/`, `adapters/trans-t5-small-en-vi/` |
 | 7 | generation, 5 channels | `results/gen_vi_en_{mapped,lgbm,native,identity,copy}.jsonl` |
 | 8 | generation, 3 channels | `results/gen_en_vi_{mapped,native,identity}.jsonl` |
@@ -63,7 +63,11 @@ Measured throughput on the RTX 3050 4 GB / 7.7 GB RAM laptop:
 2. **`native` beats `mapped` on BLEU but loses on chrF and reference NLL** (4.17 vs 2.84 BLEU, 15.35
    vs 19.96 chrF, 3.37 vs 3.20 NLL). `native` degenerates into token loops 31.6 % of the time
    (`the sex of the sex of …`). BLEU is precision-oriented and rewards it; the other metrics do not.
-3. **The copy gate passes but the copy readout fails.** 85.9 % exact copy from the model's own
+3. **The copy gate passes for English and fails for Vietnamese.** 85.9 % exact from the English
+   model's own encoder after 200 LoRA steps; 13.5 % from the Vietnamese model after 15 k examples
+   (copy loss 0.39 vs 0.02). The Vietnamese decoder learns *when to stop* (22.7 vs 22.4 words) but
+   not *what to emit*. That is why en→vi has no `copy` channel.
+4. **The copy readout fails even where the gate passes.** 85.9 % exact copy from the model's own
    encoder, 0.37 BLEU / 95 % degenerate when fed mapped vectors. The readout is
    distribution-specific; the naive "predict the vector then copy it" story is falsified.
 

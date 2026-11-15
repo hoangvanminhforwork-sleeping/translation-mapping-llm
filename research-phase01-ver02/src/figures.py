@@ -203,16 +203,19 @@ def fig_bleu():
     if not rows:
         return
     d = pd.DataFrame(rows)
-    order = ["mapped", "lgbm", "native", "identity", "copy"]
+    order = [c for c in ("mapped", "lgbm", "native", "identity", "copy") if c in set(d.channel)]
     fig, ax = plt.subplots(figsize=(5.4, 2.8))
     w = 0.38
-    for i, dirn in enumerate(d.direction.unique()):
-        g = d[d.direction == dirn].set_index("channel").reindex(order).dropna(subset=["bleu"])
-        x = np.arange(len(g)) + (i - 0.5) * w
-        ax.bar(x, g.bleu, w, yerr=[g.bleu - g.lo, g.hi - g.bleu], capsize=2,
+    dirs = list(d.direction.unique())
+    for i, dirn in enumerate(dirs):
+        g = d[d.direction == dirn].set_index("channel").reindex(order)
+        x = np.arange(len(order)) + (i - (len(dirs) - 1) / 2) * w
+        ok = np.isfinite(g.bleu.to_numpy())
+        ax.bar(x[ok], g.bleu.to_numpy()[ok], w,
+               yerr=[(g.bleu - g.lo).to_numpy()[ok], (g.hi - g.bleu).to_numpy()[ok]], capsize=2,
                color=[C_MAIN, C_ALT][i], label=dirn.replace("_", "→"))
-        ax.set_xticks(np.arange(len(g)))
-        ax.set_xticklabels(g.index, rotation=20, fontsize=7)
+    ax.set_xticks(np.arange(len(order)))
+    ax.set_xticklabels(order, rotation=20, fontsize=7)
     ax.set_ylabel("BLEU (95% bootstrap CI)")
     ax.legend(frameon=False, fontsize=7)
     save(fig, "fig_bleu.png")

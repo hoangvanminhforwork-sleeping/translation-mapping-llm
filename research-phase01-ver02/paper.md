@@ -285,29 +285,39 @@ the width of a pen stroke; the annotation marks the (arbitrary) winner.*
 
 ## 3.2 Readout gate
 
-*Table 2. Identity copy, no prompt, 1,000 sentences. Source: `results/copy_gate_*.json`.*
+*Table 2. Identity copy, no prompt, 1,000 sentences per model. Source: `results/copy_gate_*.json`.*
 
 | model | adapter | exact match | empty | hyp/ref words |
 |---|---|---|---|---|
 | `t5-small` (en) | none | 9.6 % | 1.6 % | 16.9 / 17.1 |
 | `t5-small` (en) | LoRA r=16, 6.4 k sentences | **85.9 %** | 0.0 % | 17.2 / 17.1 |
+| `t5-small-vietnamese` | none | **0.0 %** | 0.7 % | 8.1 / 22.4 |
+| `t5-small-vietnamese` | LoRA r=16, 15 k sentences | 13.5 % | 0.1 % | 22.7 / 22.4 |
 
-The 60 M model can already copy 9.6 % of sentences zero-shot — better than the 2.9 % measured for
-flan-t5-base in phase 01, despite being 3.7× smaller. A decoder-only LoRA of 1.03 M parameters
-(1.68 %) lifts this to 85.9 % after only 200 steps. **The gate passes**: the decoder can render a
-target-space vector, so a downstream BLEU gap can be attributed to the map.
+The gate **passes for the English decoder and fails for the Vietnamese one.** The English model can
+already copy 9.6 % of sentences zero-shot — better than the 2.9 % measured for flan-t5-base in
+phase 01, despite being 3.7× smaller — and a decoder-only LoRA of 1.03 M parameters (1.68 %) lifts
+this to 85.9 % after only 200 steps. The Vietnamese model copies nothing zero-shot (it emits 8 words
+for 22-word references) and reaches only 13.5 % after 15 k examples: its copy loss plateaus at 0.39
+against 0.02 for the English model. Its outputs have the right *length* (22.7 vs 22.4 words) but not
+the right *tokens*, i.e. it learned when to stop, not what to emit.
+
+This asymmetry is itself a result: **the readout gate is a property of the decoder, not of the
+method.** It is why the en→vi direction has no `copy` channel, and why a translation adapter is
+mandatory there rather than optional.
 
 Two caveats, both load-bearing. First, the copy task has $T_{\text{out}}=T_{\text{in}}$, so a decoder
-can score well by learning a positional identity map; the adapter is therefore used only as a
-readout *diagnostic*, and the translation numbers come from the separately trained adapter (§3.4).
+can score well by learning a positional identity map; the adapters are therefore used only as
+readout *diagnostics*, and the translation numbers come from the separately trained adapters (§3.5).
 Second, 85.9 % is not 99 %: 14 % of sentences still fail to be reproduced from a *perfect* vector,
 which is a floor on what any map can achieve through this readout.
 
 ![training](results/figures/fig_training.png)
 
-*Figure 3. Left: copy-LoRA loss on the identity task (both models). Right: translation-LoRA loss
-for the two channels of the vi→en adapter; `mapped` tracks `native` from the first steps, so the
-adapter is not learning one channel at the expense of the other.*
+*Figure 3. Left: copy-LoRA loss on the identity task. The Vietnamese decoder plateaus two orders of
+magnitude higher than the English one — the quantitative form of the gate failure in Table 2.
+Right: translation-LoRA loss for the two channels of the vi→en adapter; `mapped` tracks `native`
+from the first steps, so the adapter is not learning one channel at the expense of the other.*
 
 ## 3.3 Map geometry
 
