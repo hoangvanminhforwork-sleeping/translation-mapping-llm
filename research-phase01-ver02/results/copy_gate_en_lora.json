@@ -1,0 +1,11 @@
+{
+  "side": "en",
+  "adapter": true,
+  "tag": "",
+  "n": 1000,
+  "exact_match": 0.859,
+  "empty_rate": 0.0,
+  "mean_hyp_words": 17.16,
+  "mean_ref_words": 17.139,
+  "sent_per_s": 3.7
+}

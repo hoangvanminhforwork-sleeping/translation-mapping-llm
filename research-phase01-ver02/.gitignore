@@ -1,0 +1,35 @@
+# --- environment (re-derivable; the venv is shared with research-scale-100k)
+.venv/
+__pycache__/
+*.pyc
+
+# --- secrets: never commit
+.env
+
+# --- inputs (re-derivable: pairs in ~5 min with DuckDB)
+data/pairs.parquet
+data/stats/
+data/duckdb_tmp/
+data/chosen.parquet
+
+# --- large intermediates, pushed as GitHub release assets instead
+#     (see ARTIFACTS.md; every one is rebuilt by a documented command)
+data/sent_sample_fp16.npy
+data/sent_vi_fp16.npy
+data/lgbm/
+
+agent-work/
+
+# NOTE: gitignore has no inline comments. A trailing "# ..." becomes part of the pattern,
+# which silently stops it from matching. Comments go on their own line.
+
+# Committed on purpose (evidence trail):
+#   data/pairs_manifest.json   sha256, per-shard counts, split rule, exclusions
+#   data/chosen_shard.json     which shard the coreset selected, and the four scores
+#   data/map_*.npz             512x512 W + b, ~1 MB each: the fitted artefact
+#   data/sent_sample_meta.parquet  row -> shard map for the released embedding asset
+#   data/per_sent_*.npz        per-sentence errors used by the mining join
+#   results/*.csv|json|jsonl   sweep, geometry, BLEU/chrF/COMET, LGBM-vs-ridge, coreset, mining
+#   results/figures/*          every figure in the paper
+#   adapters/                  LoRA adapters (~4 MB each)
+#   *.ipynb                    executed in place; the outputs are the evidence

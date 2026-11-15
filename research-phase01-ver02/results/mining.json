@@ -1,0 +1,141 @@
+{
+  "m1_m2_nonlinearity": {
+    "r2_ridge_mean": 0.09181181760504842,
+    "r2_lgbm_mean": 0.11599479409276553,
+    "delta_mean": 0.024182976487717098,
+    "delta_median": 0.021541232429887425,
+    "frac_dims_improved": 1.0,
+    "frac_dims_worse": 0.0,
+    "delta_p90": 0.03657650847192786,
+    "delta_p10": 0.01334408424856538,
+    "corr_ridge_r2_vs_delta": 0.5080189103857932,
+    "trees_per_dim_mean": 150.0,
+    "features_used_mean": 457.208984375,
+    "token_mse_ridge": 8.860604286193848,
+    "token_mse_lgbm": 8.631148103839807,
+    "token_cosine_ridge": 0.4594803750514984,
+    "token_cosine_lgbm": 0.4775672186111904,
+    "n_tokens_train": 90000
+  },
+  "m3_decoder_tolerance_vi_en": {
+    "mapped": {
+      "n": 3000,
+      "pearson_cos_nll": 0.011936457647207148,
+      "spearman_cos_nll": 0.015019242781584667,
+      "nll_quartiles": [
+        3.1762843753496806,
+        3.193143233617147,
+        3.201420554161072,
+        3.2162280332247417
+      ],
+      "cos_quartiles": [
+        0.6515931724309921,
+        0.7212885951201121,
+        0.7573800151348113,
+        0.8035465045770009
+      ]
+    },
+    "lgbm": {
+      "n": 3000,
+      "pearson_cos_nll": 0.00431617169585667,
+      "spearman_cos_nll": 0.004520510947727996,
+      "nll_quartiles": [
+        3.355100220680237,
+        3.415086402654648,
+        3.3535300109386443,
+        3.383616205851237
+      ],
+      "cos_quartiles": [
+        0.6346732766032219,
+        0.7031475941340128,
+        0.7375395931402842,
+        0.781668434381485
+      ]
+    }
+  },
+  "m4_layer_transfer_vi_en": {
+    "layers": {
+      "0": {
+        "token_cosine_mean": 0.023653868585824966,
+        "n_tokens": 48921
+      },
+      "1": {
+        "token_cosine_mean": 0.04063614085316658,
+        "n_tokens": 48921
+      },
+      "2": {
+        "token_cosine_mean": 0.0756944864988327,
+        "n_tokens": 48921
+      },
+      "3": {
+        "token_cosine_mean": 0.09735935181379318,
+        "n_tokens": 48921
+      },
+      "4": {
+        "token_cosine_mean": 0.10752266645431519,
+        "n_tokens": 48921
+      },
+      "5": {
+        "token_cosine_mean": 0.08917819708585739,
+        "n_tokens": 48921
+      },
+      "6": {
+        "token_cosine_mean": 0.442534476518631,
+        "n_tokens": 48921
+      }
+    },
+    "n_pairs": 2000
+  },
+  "m3_decoder_tolerance_en_vi": {
+    "mapped": {
+      "n": 3000,
+      "pearson_cos_nll": -0.004546533330026445,
+      "spearman_cos_nll": -0.00802646644827699,
+      "nll_quartiles": [
+        3.5510393578211468,
+        3.530476938088735,
+        3.549856162071228,
+        3.528432341814041
+      ],
+      "cos_quartiles": [
+        0.7108494227727254,
+        0.8016625476678213,
+        0.8454791305859883,
+        0.8870635884602864
+      ]
+    }
+  },
+  "m4_layer_transfer_en_vi": {
+    "layers": {
+      "0": {
+        "token_cosine_mean": 0.05324122682213783,
+        "n_tokens": 44643
+      },
+      "1": {
+        "token_cosine_mean": 0.13302142918109894,
+        "n_tokens": 44643
+      },
+      "2": {
+        "token_cosine_mean": 0.16458715498447418,
+        "n_tokens": 44643
+      },
+      "3": {
+        "token_cosine_mean": 0.18612493574619293,
+        "n_tokens": 44643
+      },
+      "4": {
+        "token_cosine_mean": 0.19410815834999084,
+        "n_tokens": 44643
+      },
+      "5": {
+        "token_cosine_mean": 0.19133520126342773,
+        "n_tokens": 44643
+      },
+      "6": {
+        "token_cosine_mean": 0.479328989982605,
+        "n_tokens": 44643
+      }
+    },
+    "n_pairs": 2000
+  }
+}

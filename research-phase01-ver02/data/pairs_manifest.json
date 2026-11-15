@@ -1,0 +1,36 @@
+{
+  "file": "pairs.parquet",
+  "rows": 6668910,
+  "per_file": {
+    "train-00000-of-00014": 439869,
+    "train-00001-of-00014": 479303,
+    "train-00002-of-00014": 479445,
+    "train-00003-of-00014": 479056,
+    "train-00004-of-00014": 478790,
+    "train-00005-of-00014": 479054,
+    "train-00006-of-00014": 479242,
+    "train-00007-of-00014": 479160,
+    "train-00008-of-00014": 479394,
+    "train-00009-of-00014": 479329,
+    "train-00010-of-00014": 478878,
+    "train-00011-of-00014": 478967,
+    "train-00012-of-00014": 479182,
+    "train-00013-of-00014": 479241
+  },
+  "dedup": "per (file, vi)",
+  "id_rule": "row_number() OVER (ORDER BY md5(vi), file)",
+  "vi_side_rule": "higher count of non-ASCII chars; ties dropped",
+  "len_chars": [
+    20,
+    300
+  ],
+  "corpus": "data\\data\\train-*.parquet",
+  "excluded_from": {
+    "scaled_100k": "research-scale-100k\\data\\pairs_100k.parquet",
+    "copy_lora_train_50k": "finetune-and-lora\\prototype\\data\\train_copy_50000.jsonl",
+    "copy_lora_eval_4k": "finetune-and-lora\\prototype\\data\\eval_sources.jsonl"
+  },
+  "lora_file": "train-00000-of-00014",
+  "sha256": "6f175d40098231fb985b6ef1af7676b95157ba2c6ecc428376bf2fd4236c7aa4",
+  "built_utc": "2026-11-15T07:38:57+00:00"
+}
