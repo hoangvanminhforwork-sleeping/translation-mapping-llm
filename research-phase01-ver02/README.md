@@ -59,18 +59,19 @@ cd research-phase01-ver02
 $py = "..\research-scale-100k\.venv\Scripts\python.exe"   # shared venv, not copied
 
 & $py -m src.build_pairs                              # ~5 min, CPU+DuckDB
-& $py -m src.embed sentence_sample --per-file 50000    # ~15 min, GPU (coreset input)
-& $py -m src.coreset                                  # seconds, CPU -> data/chosen_shard.json
-& $py -m src.embed moments --file <chosen shard>       # ~15 min, GPU
+& $py -m src.embed sentence_sample --per-file 50000    # ~5 min, GPU (coreset input)
+& $py -m src.coreset                                  # ~4 min, CPU -> data/chosen_shard.json
+& $py -m src.embed moments --file <chosen shard>       # ~8 min, GPU
+& $py -m src.embed subset  --file <chosen shard>       # ~1 min, writes data/chosen.parquet
 & $py -m src.fit_ridge                                # seconds, CPU
-& $py -m src.fit_lgbm --tokens 120000 --threads 8     # ~10 min, CPU
+& $py -m src.fit_lgbm --tokens 100000 --threads 8     # ~38 min, CPU
 & $py -m src.copy_gate eval  --side en                # zero-shot copy gate
 & $py -m src.copy_gate train --side en --pairs 50000  # only if the gate fails
 & $py -m src.copy_gate eval  --side en --adapter
-& $py -m src.train_decoder --direction vi_en --pairs 80000
-& $py -m src.generate --direction vi_en --n 5000
-& $py -m src.score --direction vi_en --comet
-& $py -m src.eval_geometry --direction vi_en
+& $py -m src.train_decoder --direction vi_en --pairs 60000   # ~9 min, GPU
+& $py -m src.generate --direction vi_en --n 3000 --batch 64 --max-new 48
+& $py -m src.score --direction vi_en
+& $py -m src.eval_geometry --direction vi_en --n 5000
 & $py -m src.mine; & $py -m src.figures
 & $py tools\make_notebook.py; & $py tools\execute_notebook.py
 ```

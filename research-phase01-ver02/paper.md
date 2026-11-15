@@ -246,7 +246,7 @@ representativeness, cluster entropy, outlier rate, coverage and JS divergence fr
 histogram. A 100× within-shard bootstrap gives the sampling SD of the composite score.
 
 **Split.** Inside the chosen shard, 80/10/10 by position in the md5 order:
-**383,516 / 47,939 / 47,939** pairs. Generation is measured on the first 5,000 test pairs; COMET on
+**383,516 / 47,939 / 47,939** pairs. Generation is measured on the first 3,000 test pairs; COMET on
 the first 1,000. The LoRA shard (`train-00000`) is never part of the map corpus.
 
 ---

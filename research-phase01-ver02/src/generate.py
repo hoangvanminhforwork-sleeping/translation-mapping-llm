@@ -124,7 +124,7 @@ def main(direction: str, n: int, batch: int, max_new: int, conds: list[str], for
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--direction", choices=["vi_en", "en_vi"], required=True)
-    ap.add_argument("--n", type=int, default=5000)
+    ap.add_argument("--n", type=int, default=C.N_GEN)
     ap.add_argument("--batch", type=int, default=32)
     ap.add_argument("--max-new", type=int, default=64)
     ap.add_argument("--channels", default=",".join(ALL))
