@@ -278,6 +278,11 @@ so "which shard is most representative" has no meaningful answer, and any choice
 | train / val / test | 383,516 / 47,939 / 47,939 |
 | LoRA shard (excluded) | `train-00000-of-00014` |
 
+![coreset](results/figures/fig_coreset.png)
+
+*Figure 2. Per-shard representativeness and cluster entropy at K = 4. The bars differ by less than
+the width of a pen stroke; the annotation marks the (arbitrary) winner.*
+
 ## 3.2 Readout gate
 
 *Table 2. Identity copy, no prompt, 1,000 sentences. Source: `results/copy_gate_*.json`.*
@@ -297,6 +302,12 @@ can score well by learning a positional identity map; the adapter is therefore u
 readout *diagnostic*, and the translation numbers come from the separately trained adapter (§3.4).
 Second, 85.9 % is not 99 %: 14 % of sentences still fail to be reproduced from a *perfect* vector,
 which is a floor on what any map can achieve through this readout.
+
+![training](results/figures/fig_training.png)
+
+*Figure 3. Left: copy-LoRA loss on the identity task (both models). Right: translation-LoRA loss
+for the two channels of the vi→en adapter; `mapped` tracks `native` from the first steps, so the
+adapter is not learning one channel at the expense of the other.*
 
 ## 3.3 Map geometry
 
@@ -349,6 +360,12 @@ given the same sentences, trees win; given new sentences, they do not.
 
 The ridge λ sweep is flat for vi→en (best relative gain $7\times10^{-9}$ at 9.28 M tokens), i.e. no
 regularisation is needed at this sample size; en→vi prefers λ=10 with a 1.7×10⁻³ relative gain.
+
+![r2](results/figures/fig_r2_ridge_vs_lgbm.png)
+
+*Figure 4. Per-dimension $R^2$, ridge vs LightGBM, on the same 90 k/10 k token split. Every point
+lies above the diagonal — the in-sample story — and yet the same mappers reverse order on held-out
+sentences (Table 3).*
 
 ## 3.5 Generation: five channels, one decoder
 
@@ -403,6 +420,17 @@ therefore **falsified**. A decoder trained on its own encoder's distribution doe
 predicted distribution, even when the prediction is good enough to carry the topic. The readout has
 to be trained on the injected channel; that is what the translation adapter does.
 
+![bleu](results/figures/fig_bleu.png)
+
+*Figure 5. BLEU per channel with 95 % bootstrap intervals, both directions. The error bars are
+narrower than every channel gap that matters, which is why the ordering is reported rather than the
+absolute values.*
+
+![tolerance](results/figures/fig_tolerance.png)
+
+*Figure 6. Per-sentence mapped cosine against the decoder's NLL of the reference. The trend line is
+flat: representation error does not predict what the decoder does (Pearson +0.012).*
+
 ## 3.6 The reverse direction, en → vi
 
 The same pipeline was run in the other direction: `t5-small` encoder → $W_{en\to vi}$ → a
@@ -438,6 +466,13 @@ The reverse map is *better* than the forward one on every geometry metric — re
 distinctive per sentence, so a good map retrieves more often. It is not consistent with generation,
 where en→vi BLEU (3.00) is only marginally above vi→en (2.84): retrieval and generation measure
 different things, again.
+
+![layers](results/figures/fig_layers.png)
+
+*Figure 7. Layer-wise transfer: token cosine between the mapped state at source layer ℓ and the
+target's final state. The target information is created by the last layer; L1–L5 are flat and
+useless. Intermediate-layer injection, the configuration the original proposal treated as
+interesting, would map almost nothing.*
 
 
 
