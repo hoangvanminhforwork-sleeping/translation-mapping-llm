@@ -1,0 +1,16 @@
+{
+  "direction": "en_vi",
+  "steps": 1876,
+  "pairs_seen": 60000,
+  "batch": 64,
+  "lr": 0.001,
+  "wall_min": 8.5,
+  "lora_r": 16,
+  "targets": "decoder only",
+  "channels": [
+    "native",
+    "mapped"
+  ],
+  "encoder_frozen": true,
+  "shard": "train-00008-of-00014"
+}

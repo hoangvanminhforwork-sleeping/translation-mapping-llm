@@ -1,0 +1,55 @@
+# Artefacts — what is where, and how to get it back
+
+Two rules, from the mission: name artefacts so they can be remembered, and do not keep large
+re-derivable files on the laptop.
+
+## 1. Committed to git (small, needed to read the paper)
+
+| path | size | what it is |
+|---|---|---|
+| `data/map_vi_en.npz` | 1.0 MB | 512×512 ridge map vi→en + intercept + λ |
+| `data/map_en_vi.npz` | 1.0 MB | 512×512 ridge map en→vi |
+| `data/pairs_manifest.json` | 1 KB | sha256, per-shard counts, split rule, exclusions |
+| `data/chosen_shard.json` | 1 KB | coreset scores and the chosen shard |
+| `data/per_sent_vi_en.npz` | ~100 KB | per-sentence cosine, used by the mining join |
+| `results/*.csv`, `results/*.json`, `results/*.jsonl` | ~15 MB | every number in the paper |
+| `results/figures/*` | ~0.5 MB | every figure |
+| `adapters/copy-t5-small/` | 4.1 MB | copy LoRA, English decoder (readout gate) |
+| `adapters/copy-t5-small-vi/` | 4.1 MB | copy LoRA, Vietnamese decoder (gate fails: 13.5 %) |
+| `adapters/trans-t5-small-vi-en/` | 4.1 MB | translation LoRA, vi→en |
+| `adapters/trans-t5-small-en-vi/` | 4.1 MB | translation LoRA, en→vi |
+| `01_results.ipynb` | ~200 KB | executed notebook |
+
+## 2. GitHub release assets (large, re-derivable, deleted locally after upload)
+
+Release tag: **`ver02-artifacts`** on `hoangvanminhforwork-sleeping/translation-mapping-llm`.
+
+| asset filename | display label | size | how to re-create |
+|---|---|---|---|
+| `sent_sample_fp16.npy` | `ver02-coreset-embeddings-700k.npy` | 716.8 MB | `python -m src.embed sentence_sample --per-file 50000` (~5 min) |
+| `vi_en.pkl.gz` | `ver02-lgbm-512boosters-vi-en.pkl.gz` | 44.2 MB | `python -m src.fit_lgbm --tokens 100000 --threads 8` (~38 min) |
+
+Download:
+```powershell
+$gh = "..\agent-work\bin\gh\bin\gh.exe"
+& $gh release download ver02-artifacts --repo hoangvanminhforwork-sleeping/translation-mapping-llm --dir data
+```
+
+The embedding file is a `(700000, 512)` float16 array: 50,000 mean-pooled Vietnamese sentences from
+each of the 14 shards, in `id` order. Row → shard mapping is in `data/sent_sample_meta.parquet`
+(committed, 1.2 MB).
+
+The LightGBM file is a gzip pickle of a list of 512 `lightgbm.Booster` objects; index *k* predicts
+target dimension *k*. `src.fit_lgbm.LgbmMap` loads it.
+
+## 3. Deliberately NOT stored anywhere
+
+| what | why |
+|---|---|
+| `data/pairs.parquet` (370 MB) | 6.67 M pairs, rebuilt in 5.4 min by `src.build_pairs`; the sha256 in the manifest proves identity |
+| `data/stats/00008_{train,val}.npz` (10 MB) | second moments; rebuilt in ~8 min of GPU |
+| `data/chosen.parquet` (30 MB) | materialised shard, rebuilt in ~1 min |
+| model weights | re-downloaded from HuggingFace (`google-t5/t5-small`, `nbdaaa/t5-small-vietnamese`) |
+
+Every one of them is deterministic given the manifest, so a checkout plus the commands in
+`README.md` reproduces every number in the paper.

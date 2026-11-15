@@ -1,0 +1,11 @@
+{
+  "side": "vi",
+  "pairs": 15000,
+  "steps": 469,
+  "wall_min": 2.2,
+  "batch": 32,
+  "lr": 0.001,
+  "lora_r": 16,
+  "targets": "decoder only",
+  "prompt": "none (identity)"
+}

@@ -1,0 +1,134 @@
+{
+  "mapped": {
+    "bleu": 2.844586091437542,
+    "chrf": 19.957982488068986,
+    "n": 3000,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "ref_vi_word_rate": 0.0016852868774853247,
+    "mean_nll": 3.1967690490881604,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.142,
+    "vi_word_rate": 1.906250595703311e-05,
+    "mean_hyp_words": 17.486333333333334,
+    "bleu_ci95": [
+      2.578876007395305,
+      3.07556969281862
+    ],
+    "bleu_boot_std": 0.12354872590414921,
+    "comet": 0.48156654585897923,
+    "comet_n": 1000
+  },
+  "lgbm": {
+    "bleu": 2.3237242772046236,
+    "chrf": 16.109952913203372,
+    "n": 3000,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "ref_vi_word_rate": 0.0016852868774853247,
+    "mean_nll": 3.3768332100311915,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.059,
+    "vi_word_rate": 0.0,
+    "mean_hyp_words": 12.835,
+    "bleu_ci95": [
+      1.9752523513404057,
+      2.911874495480503
+    ],
+    "bleu_boot_std": 0.23848861535084287,
+    "comet": 0.4590461198836565,
+    "comet_n": 1000
+  },
+  "native": {
+    "bleu": 4.1656415923557955,
+    "chrf": 15.352943574568883,
+    "n": 3000,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "ref_vi_word_rate": 0.0016852868774853247,
+    "mean_nll": 3.365454558065782,
+    "empty_rate": 0.0006666666666666666,
+    "degenerate_rate": 0.31566666666666665,
+    "vi_word_rate": 0.003038696874483215,
+    "mean_hyp_words": 16.136090727151434,
+    "bleu_ci95": [
+      3.6804877967634564,
+      4.660335734818094
+    ],
+    "bleu_boot_std": 0.2497742569571076,
+    "comet": 0.37871374885737896,
+    "comet_n": 1000
+  },
+  "identity": {
+    "bleu": 0.033211005309743434,
+    "chrf": 6.090625670432063,
+    "n": 3000,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "ref_vi_word_rate": 0.0016852868774853247,
+    "mean_nll": 4.621494968056679,
+    "empty_rate": 0.06233333333333333,
+    "degenerate_rate": 0.15566666666666668,
+    "vi_word_rate": 0.0014394406744807733,
+    "mean_hyp_words": 8.643796658371844,
+    "bleu_ci95": [
+      0.019226937702987376,
+      0.04436554726692712
+    ],
+    "bleu_boot_std": 0.006711236215802795,
+    "comet": 0.33601036259531974,
+    "comet_n": 1000
+  },
+  "copy": {
+    "bleu": 0.371282102902717,
+    "chrf": 1.4975316799808351,
+    "n": 3000,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "ref_vi_word_rate": 0.0016852868774853247,
+    "mean_nll": 10.51966351000468,
+    "empty_rate": 0.02266666666666667,
+    "degenerate_rate": 0.951,
+    "vi_word_rate": 0.0,
+    "mean_hyp_words": 24.004774897680765,
+    "bleu_ci95": [
+      0.1461229133049844,
+      0.6028184678687242
+    ],
+    "bleu_boot_std": 0.12499513234771496,
+    "comet": 0.27553236317634583,
+    "comet_n": 1000
+  },
+  "paired_lgbm_minus_mapped": {
+    "mean": -0.5117789310674358,
+    "ci95": [
+      -0.9095613680506588,
+      0.09725478142168545
+    ],
+    "p_other_le_mapped": 0.96,
+    "n_boot": 300
+  },
+  "paired_native_minus_mapped": {
+    "mean": 1.3369106296158932,
+    "ci95": [
+      0.7950775877662448,
+      1.9125122758277335
+    ],
+    "p_other_le_mapped": 0.0,
+    "n_boot": 300
+  },
+  "paired_identity_minus_mapped": {
+    "mean": -2.799588441599833,
+    "ci95": [
+      -3.051984565356044,
+      -2.5385214465424655
+    ],
+    "p_other_le_mapped": 1.0,
+    "n_boot": 300
+  },
+  "paired_copy_minus_mapped": {
+    "mean": -2.48955433895352,
+    "ci95": [
+      -2.8164093002820434,
+      -2.164946219182081
+    ],
+    "p_other_le_mapped": 1.0,
+    "n_boot": 300
+  },
+  "comet_checkpoint": "Unbabel/wmt22-comet-da (local checkpoint)"
+}
