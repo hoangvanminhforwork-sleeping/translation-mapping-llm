@@ -71,41 +71,44 @@ Scholar links as verified locations of the PDF.
 
 ## Mission 5 — the finding to carry forward
 
-Mapped vectors are **not outliers**; they are **over-dispersed and directionless**.
+Mapped vectors are **not anomalous — they are collapsed toward the target mean**.
 
-| Detector | held-out normal | mapped |
-|---|---|---|
-| Isolation Forest | 0.099 | **0.000** |
-| GMM (8 comp) | 0.103 | **0.366** |
-| Autoencoder | 0.102 | **0.737** |
+| Detector | held-out normal | mapped | identity |
+|---|---|---|---|
+| Isolation Forest | 0.099 | **0.000** | 0.846 |
+| GMM (8 comp) | 0.103 | **0.000** | 1.000 |
+| Autoencoder | 0.102 | **0.000** | 1.000 |
 
-`cosine(M − μ, Y − μ) = 0.020` on 145,298 held-out token pairs. Variance along the
-target's principal axes is 0.296× target while total variance is 1.276× target.
+Median z-distance from the target mean: **6.31** for mapped vs **22.77** for
+genuine vectors (p05/p95: 0.99/9.85 vs 16.65/27.46). A constant vector already
+reproduces **80 %** of the reported token cosine. Mission 5's hypothesis was
+falsified in its literal form: the decoder receives a vector from the *most*
+familiar part of its space, not an unfamiliar one — which predicts exactly the
+31.6 % token loops ver02 measured.
 
-Consequence: the decoder does not see "a weird vector", it sees a vector whose
-displacement is orthogonal to the correct one — which predicts fluent, content-free
-degeneration, i.e. exactly the 95 % degenerate copy-readout already observed in
-ver02. Full argument and caveats in `results/ANOMALY.md`.
+Full argument and caveats in `results/ANOMALY.md`.
 
-## Mission 4 — what to do next, concretely
+> **Correction.** The first run used `X @ W.T + b`; ver02 uses `X @ W + b`
+> (`eval_geometry.py:75`). The transposed run gave the opposite conclusion. The
+> tell was a constant vector beating the map on cosine. Always sanity-check an
+> unfamiliar matrix convention against the original caller.
 
-The insight above converts "reduce the ambiguity" from a vague goal into one
-measurable defect: **the map's anisotropy**.
+## Mission 4 — done (diagnostics + repairs), generation not run
 
-Suggested first experiment, cheap because the embeddings are cached
-(`data/anomaly_vectors.npz`, 145 k held-out token pairs, no GPU needed):
+`results/MAP_REPAIRS.md` and `results/recolor_sweep.json`. Headline: **the metric
+ver02 reports is gameable** — a constant vector scores `cos_abs` 0.3541 against
+Procrustes' 0.2279, even though Procrustes has 22 % better retrieval. Report
+`cos_centre` and `const_cos` beside every cosine from now on.
 
-1. Compare the current ridge map against a **whitening-constrained** map:
-   fit `M` so that `cov(M) ≈ cov(Y)` on the target's principal axes, e.g.
-   Procrustes / CCA / a ridge fit followed by `Σ_Y^{1/2} Σ_M^{-1/2}`.
-2. Report, on the same held-out pairs: variance ratio on target axes (target:
-   1.000), `cosine(M−μ, Y−μ)` (baseline: 0.020), token-level retrieval@1
-   (baseline from ver02: 0.0884), and the three detectors' flag rates.
-3. Only if direction improves should anyone spend GPU time on generation. The
-   ver02 lesson is that a better scalar metric does not imply better text.
+Best two configurations to test on generation:
+`procrustes + recolor(t=0.3)` → ret@1 **0.0955**; `ridge + recolor(t=0.1)` →
+ret@1 **0.0915** with `cos_centre` 0.2132. Both far above the 0.00025 chance floor.
 
-Do not re-run the anomaly experiment to "confirm" 0.737 — the number is not the
-contribution; the **disagreement between the three detectors** is.
+Correction to the earlier plan: **matching the marginal distance distribution is
+not the fix.** The sweep that lands `zdist_med` on the genuine 22.8 (t≈0.3) has
+worse retrieval than the uncorrected map. The collapse is a symptom, not the
+cause.
+
 
 ## Frozen — do not regenerate casually
 

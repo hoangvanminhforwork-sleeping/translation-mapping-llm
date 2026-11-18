@@ -1,0 +1,80 @@
+{
+  "protocol": {
+    "fit_on": "train tokens (6000 sentences, subsampled)",
+    "eval_on": "held-out val tokens (6000 sentences, subsampled)",
+    "n_fit_tokens": 30000,
+    "n_eval_tokens": 30000,
+    "direction": "vi->en",
+    "seed": 7,
+    "note": "cos_abs is the metric ver02 reports. const_cos is what a constant vector scores on the same metric."
+  },
+  "results": [
+    {
+      "map": "constant (mu_Y)",
+      "cos_abs": 0.3541,
+      "cos_centre": 0.0001,
+      "const_cos": 0.3541,
+      "zdist_med": 0.0,
+      "zdist_p05": 0.0,
+      "zdist_p95": 0.0,
+      "genuine_zdist_med": 22.769,
+      "ret_at_1": 0.0003
+    },
+    {
+      "map": "identity (no map)",
+      "cos_abs": 0.0903,
+      "cos_centre": 0.0412,
+      "const_cos": 0.168,
+      "zdist_med": 37.889,
+      "zdist_p05": 33.456,
+      "zdist_p95": 45.899,
+      "genuine_zdist_med": 22.769,
+      "ret_at_1": 0.0063
+    },
+    {
+      "map": "ridge  [ver02]",
+      "cos_abs": 0.4433,
+      "cos_centre": 0.2703,
+      "const_cos": 0.3542,
+      "zdist_med": 6.312,
+      "zdist_p05": 0.987,
+      "zdist_p95": 9.851,
+      "genuine_zdist_med": 22.769,
+      "ret_at_1": 0.077
+    },
+    {
+      "map": "ridge + recolor",
+      "cos_abs": 0.1423,
+      "cos_centre": 0.0706,
+      "const_cos": 0.3529,
+      "zdist_med": 61.585,
+      "zdist_p05": 9.594,
+      "zdist_p95": 95.683,
+      "genuine_zdist_med": 22.769,
+      "ret_at_1": 0.0475
+    },
+    {
+      "map": "procrustes",
+      "cos_abs": 0.2279,
+      "cos_centre": 0.1465,
+      "const_cos": 0.354,
+      "zdist_med": 34.879,
+      "zdist_p05": 16.067,
+      "zdist_p95": 41.772,
+      "genuine_zdist_med": 22.769,
+      "ret_at_1": 0.0938
+    },
+    {
+      "map": "procrustes + recolor",
+      "cos_abs": 0.2268,
+      "cos_centre": 0.129,
+      "const_cos": 0.354,
+      "zdist_med": 31.959,
+      "zdist_p05": 11.763,
+      "zdist_p95": 39.896,
+      "genuine_zdist_med": 22.769,
+      "ret_at_1": 0.0845
+    }
+  ],
+  "elapsed_s": 515.3
+}

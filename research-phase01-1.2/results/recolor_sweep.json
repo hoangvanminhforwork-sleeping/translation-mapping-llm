@@ -1,0 +1,224 @@
+{
+  "genuine_zdist_med": 22.769,
+  "sweep": [
+    {
+      "map": "ridge",
+      "t": 0.0,
+      "cos_centre": 0.2703,
+      "zdist_med": 6.312,
+      "zdist_p05": 0.987,
+      "zdist_p95": 9.851,
+      "ret_at_1": 0.077
+    },
+    {
+      "map": "ridge",
+      "t": 0.1,
+      "cos_centre": 0.2132,
+      "zdist_med": 9.346,
+      "zdist_p05": 1.406,
+      "zdist_p95": 14.087,
+      "ret_at_1": 0.0915
+    },
+    {
+      "map": "ridge",
+      "t": 0.2,
+      "cos_centre": 0.1581,
+      "zdist_med": 14.408,
+      "zdist_p05": 2.185,
+      "zdist_p95": 21.892,
+      "ret_at_1": 0.087
+    },
+    {
+      "map": "ridge",
+      "t": 0.3,
+      "cos_centre": 0.1273,
+      "zdist_med": 20.014,
+      "zdist_p05": 3.062,
+      "zdist_p95": 30.679,
+      "ret_at_1": 0.081
+    },
+    {
+      "map": "ridge",
+      "t": 0.4,
+      "cos_centre": 0.1088,
+      "zdist_med": 25.807,
+      "zdist_p05": 3.972,
+      "zdist_p95": 39.731,
+      "ret_at_1": 0.076
+    },
+    {
+      "map": "ridge",
+      "t": 0.5,
+      "cos_centre": 0.0967,
+      "zdist_med": 31.7,
+      "zdist_p05": 4.897,
+      "zdist_p95": 48.951,
+      "ret_at_1": 0.0685
+    },
+    {
+      "map": "ridge",
+      "t": 0.6,
+      "cos_centre": 0.0883,
+      "zdist_med": 37.636,
+      "zdist_p05": 5.83,
+      "zdist_p95": 58.246,
+      "ret_at_1": 0.0617
+    },
+    {
+      "map": "ridge",
+      "t": 0.7,
+      "cos_centre": 0.0821,
+      "zdist_med": 43.6,
+      "zdist_p05": 6.767,
+      "zdist_p95": 67.561,
+      "ret_at_1": 0.058
+    },
+    {
+      "map": "ridge",
+      "t": 0.8,
+      "cos_centre": 0.0774,
+      "zdist_med": 49.585,
+      "zdist_p05": 7.709,
+      "zdist_p95": 76.902,
+      "ret_at_1": 0.0545
+    },
+    {
+      "map": "ridge",
+      "t": 0.9,
+      "cos_centre": 0.0736,
+      "zdist_med": 55.583,
+      "zdist_p05": 8.651,
+      "zdist_p95": 86.286,
+      "ret_at_1": 0.0503
+    },
+    {
+      "map": "ridge",
+      "t": 1.0,
+      "cos_centre": 0.0706,
+      "zdist_med": 61.585,
+      "zdist_p05": 9.594,
+      "zdist_p95": 95.683,
+      "ret_at_1": 0.0475
+    },
+    {
+      "map": "procrustes",
+      "t": 0.0,
+      "cos_centre": 0.1465,
+      "zdist_med": 34.879,
+      "zdist_p05": 16.067,
+      "zdist_p95": 41.772,
+      "ret_at_1": 0.0938
+    },
+    {
+      "map": "procrustes",
+      "t": 0.1,
+      "cos_centre": 0.1489,
+      "zdist_med": 33.388,
+      "zdist_p05": 14.833,
+      "zdist_p95": 39.97,
+      "ret_at_1": 0.0943
+    },
+    {
+      "map": "procrustes",
+      "t": 0.2,
+      "cos_centre": 0.1508,
+      "zdist_med": 32.111,
+      "zdist_p05": 13.702,
+      "zdist_p95": 38.461,
+      "ret_at_1": 0.095
+    },
+    {
+      "map": "procrustes",
+      "t": 0.3,
+      "cos_centre": 0.152,
+      "zdist_med": 31.095,
+      "zdist_p05": 12.7,
+      "zdist_p95": 37.25,
+      "ret_at_1": 0.0955
+    },
+    {
+      "map": "procrustes",
+      "t": 0.4,
+      "cos_centre": 0.1522,
+      "zdist_med": 30.352,
+      "zdist_p05": 11.862,
+      "zdist_p95": 36.411,
+      "ret_at_1": 0.094
+    },
+    {
+      "map": "procrustes",
+      "t": 0.5,
+      "cos_centre": 0.1513,
+      "zdist_med": 29.892,
+      "zdist_p05": 11.221,
+      "zdist_p95": 35.935,
+      "ret_at_1": 0.093
+    },
+    {
+      "map": "procrustes",
+      "t": 0.6,
+      "cos_centre": 0.1492,
+      "zdist_med": 29.721,
+      "zdist_p05": 10.809,
+      "zdist_p95": 35.851,
+      "ret_at_1": 0.0907
+    },
+    {
+      "map": "procrustes",
+      "t": 0.7,
+      "cos_centre": 0.1458,
+      "zdist_med": 29.852,
+      "zdist_p05": 10.653,
+      "zdist_p95": 36.26,
+      "ret_at_1": 0.09
+    },
+    {
+      "map": "procrustes",
+      "t": 0.8,
+      "cos_centre": 0.1412,
+      "zdist_med": 30.27,
+      "zdist_p05": 10.768,
+      "zdist_p95": 37.077,
+      "ret_at_1": 0.0885
+    },
+    {
+      "map": "procrustes",
+      "t": 0.9,
+      "cos_centre": 0.1355,
+      "zdist_med": 30.984,
+      "zdist_p05": 11.147,
+      "zdist_p95": 38.306,
+      "ret_at_1": 0.0872
+    },
+    {
+      "map": "procrustes",
+      "t": 1.0,
+      "cos_centre": 0.129,
+      "zdist_med": 31.959,
+      "zdist_p05": 11.763,
+      "zdist_p95": 39.896,
+      "ret_at_1": 0.0845
+    }
+  ],
+  "best": {
+    "ridge": {
+      "map": "ridge",
+      "t": 0.3,
+      "cos_centre": 0.1273,
+      "zdist_med": 20.014,
+      "zdist_p05": 3.062,
+      "zdist_p95": 30.679,
+      "ret_at_1": 0.081
+    },
+    "procrustes": {
+      "map": "procrustes",
+      "t": 0.6,
+      "cos_centre": 0.1492,
+      "zdist_med": 29.721,
+      "zdist_p05": 10.809,
+      "zdist_p95": 35.851,
+      "ret_at_1": 0.0907
+    }
+  },
+  "elapsed_s": 65.7
+}

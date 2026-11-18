@@ -17,16 +17,16 @@
     },
     "gmm": {
       "normal_holdout": 0.10268410185822437,
-      "mapped": 0.3661509449545073,
+      "mapped": 0.0,
       "identity_src": 1.0,
       "mean_baseline": 0.0
     },
     "autoencoder": {
       "normal_holdout": 0.10220233998623537,
-      "mapped": 0.7368580434692839,
+      "mapped": 0.0,
       "identity_src": 1.0,
       "mean_baseline": 0.0
     }
   },
-  "elapsed_s": 874.2
+  "elapsed_s": 541.8
 }

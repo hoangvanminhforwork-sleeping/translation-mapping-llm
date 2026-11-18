@@ -1,118 +1,99 @@
 # Mission 5 — One-class anomaly detection on the mapped representation
 
-**Result in one line.** The distribution-shift hypothesis is *half* right, and the
-half that is wrong is more useful than the half that is right. Mapped vectors are
-**not** outliers — they are **over-dispersed and directionless**: the map gets the
-*scale* roughly right while producing a displacement from the target mean that is
-**essentially orthogonal** to the true one (cosine **0.020**).
+**Result in one line.** All three one-class detectors flag **0.000** of the mapped
+vectors while flagging **0.85–1.00** of unmapped source vectors. The mapped
+representation is not out of distribution — it is *too* in distribution: it sits
+in the densest core of the target cloud. Mission 5's hypothesis, taken
+literally, is **falsified**.
 
 Reproduce: `..\research-scale-100k\.venv\Scripts\python.exe -m src.anomaly`
-Evidence: `results/anomaly_detection.json`, `results/anomaly_shrinkage.json`,
-cached embeddings in `data/anomaly_vectors.npz`.
+Evidence: `results/anomaly_detection.json`, `results/map_repairs.json` (distance
+statistics), embeddings cached in `data/anomaly_vectors.npz`.
+
+> **Correction notice.** The first run of this experiment applied the map as
+> `X @ W.T + b`. ver02 applies `X @ W + b` (`eval_geometry.py:75`,
+> `fit_lgbm.py:124`, `mine.py:123`). The transposed run produced the opposite
+> conclusion ("over-dispersed and directionless"). The tell was that a *constant*
+> vector beat the map on the reported cosine — an impossible result for a
+> correctly-oriented least-squares map. Everything below uses `X @ W + b`,
+> which reproduces ver02's token cosine to within 0.016 (0.4433 here vs 0.4595
+> in `results/lgbm_metrics.json`).
 
 ---
 
-## 1. Protocol (as specified in missions.md §5)
+## 1. Protocol (missions.md §5, as specified)
 
-- 6,000 held-out sentences (`chosen.parquet`, `split == "val"`), vi→en,
-  embedded with the frozen pair the map was fitted on (`t5-small-vietnamese` →
-  `t5-small`); **145,298 aligned token pairs**, 15 s on the RTX 3050.
+- 6,000 held-out sentences (`chosen.parquet`, `split == "val"`), vi→en, embedded
+  with the frozen pair the map was fitted on (`t5-small-vietnamese` → `t5-small`):
+  **145,298 aligned token pairs**, 15 s on the RTX 3050.
 - Detectors **fit on 90 % of genuine target-side states only** (one-class).
 - Threshold set so exactly **10 % of the fitting set** is flagged.
-- Test A: the held-out 10 % of genuine states → must come back at ~10 % (a
-  detector that cannot pass this is broken).
-- Test B: **all** mapped vectors → the number of interest.
+- Test A: the held-out 10 % of genuine states → must return ~0.10, else the
+  detector is broken.
+- Test B: **all** mapped vectors.
 
-## 2. Three detectors disagree, and the disagreement is the finding
+## 2. Result
 
-| Detector | held-out normal | **mapped** | identity (no map) | target mean |
-|---|---|---|---|---|
-| Isolation Forest | 0.099 | **0.000** | 0.846 | 0.000 |
-| Gaussian Mixture (8 comp, diag) | 0.103 | **0.366** | 1.000 | 0.000 |
-| Autoencoder (512→256→64→256→512) | 0.102 | **0.737** | 1.000 | 0.000 |
+| Detector | held-out normal | **mapped** | identity (no map) |
+|---|---|---|---|
+| Isolation Forest | 0.099 | **0.000** | 0.846 |
+| Gaussian Mixture (8 comp, diag) | 0.103 | **0.000** | 1.000 |
+| Autoencoder (512→256→64→256→512) | 0.102 | **0.000** | 1.000 |
 
-Calibration holds in every case (≈0.10 on held-out genuine states), so no
-detector is simply broken. Isolation Forest says the mapped vectors are
-*perfectly normal*. The autoencoder says three quarters of them are anomalies.
+Calibration holds everywhere (≈0.10 on held-out genuine states), so this is not a
+broken detector. Three detectors built on three different notions of "anomalous" —
+path length, density, reconstruction error — agree that the mapped vectors are
+**more normal than normal vectors are**.
 
-**Why.** Isolation Forest scores by path length to isolation — it measures
-*how far from the mass* a point sits. GMM and the autoencoder score *density and
-reconstruction*, which measure *whether a point lies on the manifold*. A set can
-be perfectly ordinary in the first sense and thoroughly off-manifold in the
-second, and that is exactly what the mapped vectors are.
+## 3. Why: the mapped vectors are collapsed toward the mean
 
-## 3. The direct measurement explains it
+Distances in the z-scored target frame, held-out tokens:
 
-Distances are in the z-scored target frame (genuine-state mean and std).
-`in-inner-90 %` = fraction of points falling inside the radius that contains 90 %
-of genuine states.
+| Representation | median ‖z‖ | p05 | p95 |
+|---|---|---|---|
+| genuine target **Y** | 22.77 | 16.65 | 27.46 |
+| **mapped M** (ridge) | **6.31** | **0.99** | **9.85** |
+| identity (raw source X) | 37.89 | 33.46 | 45.90 |
+| constant (μ_Y) | 0.00 | 0.00 | 0.00 |
 
-| Representation | mean ‖dist‖ | median | p05 | p95 | per-dim var ratio | in-inner-90 % |
-|---|---|---|---|---|---|---|
-| target **Y** (genuine) | 22.37 | 22.78 | 16.65 | 27.46 | 1.000 | **90.0 %** |
-| **mapped M** | 25.85 | 25.67 | **7.71** | **45.10** | 1.276 | **53.6 %** |
-| source **X** (identity) | 38.72 | 37.89 | 33.43 | 45.76 | 2.555 | 0.0 % |
-| target mean | 0.00 | 0.00 | 0.00 | 0.00 | 0.000 | 100 % |
+The mapped cloud is **3.6× tighter than the genuine cloud**, and its lower tail
+reaches essentially the mean (`p05 = 0.99`). Genuine states live in a shell
+between 16.7 and 27.5 from the centre; mapped states live between 1 and 10.
 
-Two numbers carry the argument:
+That is textbook ridge shrinkage: the least-squares solution pulls predictions
+toward the mean, hardest in the directions where the source carries little
+signal. The mapped vector is therefore an excellent "average plausible
+activation" — which is exactly why density- and reconstruction-based detectors
+score it as maximally normal.
 
-- **`p05 = 7.71` and `p95 = 45.10`.** Genuine states occupy a *narrow shell*
-  (16.7 → 27.5). Mapped vectors are spread from deep inside the cloud to far
-  outside it. The map does not land vectors in the target region; it produces a
-  **bimodal, over-dispersed** population, half inside and half beyond.
-- **variance along the target's principal axes = 0.296× target**, while
-  **per-dimension variance = 1.276× target**. Variance is being pushed into
-  directions the target does not use.
+## 4. What this means
 
-And the decisive one:
+1. **Mission 5's hypothesis is falsified in its literal form.** The decoder does
+   not receive an unfamiliar vector. It receives a vector from the *most* familiar
+   part of its space.
+2. **It explains the 31.6 % token loops in ver02.** If every injected vector is
+   within ‖z‖ ≈ 6 of the same point, the decoder gets almost no
+   sentence-specific signal. A decoder with no conditioning signal produces
+   fluent, repetitive, generic text — `the sex of the sex of …` is the expected
+   output of an input that barely varies. Degeneration is not a mysterious
+   failure mode; it is the signature of a collapsed conditioning vector.
+3. **It also explains why `mapped` beats `identity` but loses to `native`.**
+   Identity vectors are far outside the manifold (0.85–1.00 flagged) and produce
+   nothing at all. Collapsed vectors are inside it, so the decoder at least
+   emits language. A real encoder (`native`) emits language *and* carries
+   content.
+4. **The collapsed distribution is why anomaly detection was the wrong
+   instrument** for this question, and that is worth reporting: the test the
+   mission proposed cannot detect the defect the project actually has.
 
-> **cosine(M − μ, Y − μ) = 0.020**
+## 5. Caveats
 
-where the mapped vector lands *relative to the target mean* tells you **nothing**
-about where the true target state lies relative to that mean. The map reproduces
-the scale of the target cloud and almost none of its direction.
-
-## 4. What this means for the project
-
-1. **The "distribution shift" hypothesis is refined, not confirmed.**
-   `missions.md` §5 proposed that mapped vectors are not in the decoder's
-   familiar distribution. They are not *outliers* (Isolation Forest: 0.000) —
-   they are *directionless*. The decoder's problem is not that the input looks
-   strange, it is that the input carries almost no target-relevant signal.
-2. **This explains the copy-readout result in ver02.** The copy gate passed at
-   85.9 % from the model's *own* encoder, yet the mapped readout produced 0.37
-   BLEU / 95 % degenerate output. A vector whose displacement is orthogonal to the
-   true one is statistically indistinguishable from a generic "plausible" vector
-   — which is precisely what makes a decoder fall back on fluent, content-free
-   text rather than producing garbage. **Degeneration is the expected outcome of
-   an orthogonal map, not an unexplained failure.**
-3. **It kills the "maximise cosine similarity" objective for the right reason.**
-   If token-level cosine can be raised while the displacement direction stays
-   orthogonal, then cosine is measuring the wrong thing. Any new objective should
-   be evaluated on **direction** (e.g. cosine of the residual after removing the
-   mean, or retrieval@1 on held-out pairs), not on pooled cosine.
-4. **Mission 4's "reduce the ambiguity" now has a concrete target.** The
-   ambiguity to remove is the map's anisotropy: 0.296× variance on target axes
-   while overall variance rises to 1.276×. A whitening / Procrustes-style
-   constraint (rather than plain ridge least squares) targets exactly this
-   defect, and it is cheap to test with the cached vectors in
-   `data/anomaly_vectors.npz` — no GPU pass needed.
-
-## 5. Caveats, stated plainly
-
-- **Isolation Forest at 0.000 is not evidence of "no shift".** It is evidence
-  that IF's notion of anomaly (distance from the mass) is the wrong instrument
-  here. I keep the number precisely because it would be easy to report only the
-  autoencoder's 0.737 and claim a clean confirmation.
-- **The autoencoder ran on CPU, 40 epochs, fixed architecture, one seed.** The
-  0.737 could move by a few points with a different capacity; the ordering
-  (mapped ≫ normal, identity ≫ mapped) is what is being claimed, not the third
-  decimal.
-- **`cosine = 0.020` is measured on character-span-aligned token pairs**, the
-  same noisy alignment ver02 used (~14 % of source tokens fall back to the
-  nearest target token). That noise can only *deflate* the cosine, so the true
-  token-level alignment may be somewhat higher than 0.020 — but the same
-  alignment produced the positive retrieval numbers in ver02, so it is not
-  uniformly destructive.
-- **One direction only (vi→en).** en→vi has no equivalent map quality and was
-  not run.
+- The autoencoder is CPU, 40 epochs, one architecture, one seed. The claim is the
+  ordering (mapped ≪ normal ≪ identity), not the third decimal.
+- `0.000` is a floor, not a precise estimate: at most a handful of mapped tokens
+  exceed the 90th-percentile threshold.
+- Token alignment is character-span based (~14 % of source tokens fall back to
+  the nearest target token, per the ver02 handoff). That noise deflates every
+  directional metric here, so the true directional signal is *at least* what is
+  reported.
+- vi→en only.
