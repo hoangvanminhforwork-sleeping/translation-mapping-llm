@@ -93,21 +93,37 @@ Full argument and caveats in `results/ANOMALY.md`.
 > tell was a constant vector beating the map on cosine. Always sanity-check an
 > unfamiliar matrix convention against the original caller.
 
-## Mission 4 — done (diagnostics + repairs), generation not run
+## Mission 4 — done, and the generation run overturned the diagnostic
 
-`results/MAP_REPAIRS.md` and `results/recolor_sweep.json`. Headline: **the metric
-ver02 reports is gameable** — a constant vector scores `cos_abs` 0.3541 against
-Procrustes' 0.2279, even though Procrustes has 22 % better retrieval. Report
-`cos_centre` and `const_cos` beside every cosine from now on.
+`results/MAP_REPAIRS.md` (diagnostics) and `results/GEN_VARIANTS.md` (generation).
+1,000 held-out pairs, ver02's adapter and metrics:
 
-Best two configurations to test on generation:
-`procrustes + recolor(t=0.3)` → ret@1 **0.0955**; `ridge + recolor(t=0.1)` →
-ret@1 **0.0915** with `cos_centre` 0.2132. Both far above the 0.00025 chance floor.
+| channel | BLEU | chrF | NLL | degen |
+|---|---|---|---|---|
+| native | 4.20 | 14.82 | 3.413 | 0.325 |
+| identity | 0.04 | 6.04 | 4.615 | 0.156 |
+| ridge [ver02] | 2.73 | 19.73 | **3.228** | **0.149** |
+| **ridge + recolor(t=0.1)** | **3.17** | **20.28** | 3.290 | 0.162 |
+| procrustes | 0.48 | 8.88 | 5.168 | 0.695 |
+| procrustes + recolor(t=0.3) | 0.70 | 10.65 | 4.844 | 0.596 |
 
-Correction to the earlier plan: **matching the marginal distance distribution is
-not the fix.** The sweep that lands `zdist_med` on the genuine 22.8 (t≈0.3) has
-worse retrieval than the uncorrected map. The collapse is a symptom, not the
-cause.
+Two results:
+
+1. **A free +16 % BLEU** over ver02's best channel from a 512×512 recolor matrix
+   fitted in seconds, no retraining. Beats `native` on chrF, NLL and degeneration;
+   loses only on BLEU, which rewards native's 32.5 % loops.
+2. **Every token-level diagnostic ranked Procrustes first and it fails at
+   generation** (BLEU 0.48, degen 0.695) despite 22 % better retrieval@1. An
+   orthogonal map preserves source norms, which are ~2.5× the target's, so the
+   decoder degenerates. **retrieval@1 is not a proxy for translation quality.**
+
+Metric hierarchy established by this experiment: generation metrics > `zdist_med`
+vs genuine 22.8 > `cos_centre` > retrieval@1 (actively misleading).
+
+**Still open:** the +0.44 BLEU needs a paired bootstrap on ≥3,000 pairs before it
+goes in a table; `t = 0.1` was chosen on diagnostics, not on generation, so a
+generation-side sweep over `t` may do better.
+
 
 
 ## Frozen — do not regenerate casually
