@@ -17,3 +17,8 @@ __pycache__/
 
 # --- model weights (re-downloadable, GB-sized)
 research-prototype/models/
+
+# --- downloaded reference PDFs: inputs, not results. The PRISMA workbooks and
+# the .md/.csv results living next to them stay tracked.
+draft/**/*.pdf
+References/*.pdf
