@@ -12,7 +12,7 @@
 - Paper overview: 
 + Just imagine this architecture: Token in source language => Model of source language => Embedding of the source language => Linear mapping => Embedding of the target language => Model of target language => Token in target language
 + No need to read `paperOverview.md` or `paperOverview02.md` - the document is outdated, moreover, now we will follow linear mapping, not ANN
-+ Reasons: There are empirical tests that linear mapping wins more sophisticated method: D:\HANU_FIT\NCKH\Culinary_CSI_Translation_Though_Dynamic_Fact_Insertion\References\Concept alignment.pdf
++ Reasons: There are empirical tests that linear mapping wins more sophisticated method: D:\HANU_FIT\NCKH\Culinary_CSI_Translation_Though_Dynamic_Fact_Insertion\References\2024 - Concept Space Alignment in Multilingual LLMs.pdf
 
 # 1. Create database
 - You have to complete the mission M1

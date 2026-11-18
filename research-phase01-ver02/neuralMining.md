@@ -5,7 +5,7 @@
 ## 0. The question
 
 Empirical work on cross-model concept alignment keeps finding that a **linear** map matches or beats
-deeper alternatives (`References/Concept alignment.pdf`). Phase 01 saw the same thing from the other
+deeper alternatives (`References/2024 - Concept Space Alignment in Multilingual LLMs.pdf`). Phase 01 saw the same thing from the other
 side: a per-token linear map gave a token cosine of 0.45 and a sentence cosine of 0.75, which is an
 angle of ~41°, and a decoder should not tolerate that much error. Either
 

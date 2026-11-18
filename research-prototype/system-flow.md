@@ -16,7 +16,7 @@ English token <= Model Eng <= Embedding at layer X of English model <= ANN/Linea
 
 - Thứ được train duy nhất ở đây là mapping mà thôi
 
-- Và...somehow, linear đã được chứng minh thực nghiệm: "D:\HANU_FIT\NCKH\Culinary_CSI_Translation_Though_Dynamic_Fact_Insertion\References\Concept alignment.pdf"
+- Và...somehow, linear đã được chứng minh thực nghiệm: "D:\HANU_FIT\NCKH\Culinary_CSI_Translation_Though_Dynamic_Fact_Insertion\References\2024 - Concept Space Alignment in Multilingual LLMs.pdf"
 
 - Và...vì lý do "nhẹ máy", chúng ta cũng có thể lược bỏ qua nhiều layer:
 + Để dảm bảo là model hiểu đúng, thì ở model của original language, cần phải lấy vector đến tận cột cuối cùng (Intuition -- có thể xem xét làm theo hướng đi này, kiểm tra xem model hiểu thông tin văn bản đến layer nào...thì là semantic nhiều nhất chẳng hạn)

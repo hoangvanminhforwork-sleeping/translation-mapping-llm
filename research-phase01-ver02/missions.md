@@ -91,7 +91,7 @@ The codebase is yours actually, feel free to modify it if needed, but I still ha
 + I also have docker if you needed
 + prefer simplicity and isolation
 
-- Paper about dataset: "D:\HANU_FIT\NCKH\Culinary_CSI_Translation_Though_Dynamic_Fact_Insertion\References\mtetDataset.pdf"
+- Paper about dataset: "D:\HANU_FIT\NCKH\Culinary_CSI_Translation_Though_Dynamic_Fact_Insertion\References\2019 - MTet_ Multi-domain Translation for English and Vietnamese.pdf"
 - Github about dataset: https://github.com/vietai/mTet
 + Maybe useful for data exploratory
 
@@ -138,7 +138,7 @@ The codebase is yours actually, feel free to modify it if needed, but I still ha
 + I will do the rest
 
 # 6. Doing neural mining
-- I have a question...here, why linear mapping always win in many empirical test: D:\HANU_FIT\NCKH\Culinary_CSI_Translation_Though_Dynamic_Fact_Insertion\References\Concept alignment.pdf
+- I have a question...here, why linear mapping always win in many empirical test: D:\HANU_FIT\NCKH\Culinary_CSI_Translation_Though_Dynamic_Fact_Insertion\References\2024 - Concept Space Alignment in Multilingual LLMs.pdf
 - No specific objective here, just data exploratory or more exactly, model exploratory
 - The objective is to try to develop a framework to explore this phenomenon, that can be applied to other models to have insights
 - Models: Two models in this case
