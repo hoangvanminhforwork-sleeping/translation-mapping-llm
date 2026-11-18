@@ -1,0 +1,32 @@
+{
+  "protocol": {
+    "n_tokens": 145298,
+    "n_fit": 130768,
+    "n_holdout": 14530,
+    "detector_fit_on": "genuine target-side encoder states (vi->en)",
+    "threshold": "quantile of fit scores, calibrated to flag 10% of fit",
+    "standardisation": "z-scored with genuine-vector mean/std",
+    "map": "D:\\HANU_FIT\\NCKH\\Culinary_CSI_Translation_Though_Dynamic_Fact_Insertion\\research-phase01-ver02\\data\\map_vi_en.npz"
+  },
+  "flag_rates": {
+    "isolation_forest": {
+      "normal_holdout": 0.0986235375086029,
+      "mapped": 0.0,
+      "identity_src": 0.8461093752150752,
+      "mean_baseline": 0.0
+    },
+    "gmm": {
+      "normal_holdout": 0.10268410185822437,
+      "mapped": 0.3661509449545073,
+      "identity_src": 1.0,
+      "mean_baseline": 0.0
+    },
+    "autoencoder": {
+      "normal_holdout": 0.10220233998623537,
+      "mapped": 0.7368580434692839,
+      "identity_src": 1.0,
+      "mean_baseline": 0.0
+    }
+  },
+  "elapsed_s": 874.2
+}
