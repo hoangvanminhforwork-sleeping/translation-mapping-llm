@@ -1,0 +1,107 @@
+{
+  "A5_mbr_chrf": {
+    "bleu": 23.041443729813434,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 46.59008174621209,
+    "n": 10000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.0039,
+    "vi_word_rate": 0.0006847969130546111,
+    "mean_hyp_words": 16.7933,
+    "mean_ref_words": 17.5034,
+    "bleu_ci95": [
+      22.662568026823575,
+      23.44421160466723
+    ]
+  },
+  "A7_rt_lat": {
+    "bleu": 22.305462329240562,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 45.98461709537674,
+    "n": 10000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.0024,
+    "vi_word_rate": 0.0006694288143872917,
+    "mean_hyp_words": 16.5813,
+    "mean_ref_words": 17.5034,
+    "bleu_ci95": [
+      21.958826231657646,
+      22.688801103654995
+    ]
+  },
+  "A13_combo00": {
+    "bleu": 23.041443729813434,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 46.59008174621209,
+    "n": 10000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.0039,
+    "vi_word_rate": 0.0006847969130546111,
+    "mean_hyp_words": 16.7933,
+    "mean_ref_words": 17.5034,
+    "bleu_ci95": [
+      22.662568026823575,
+      23.44421160466723
+    ]
+  },
+  "A13_combo025": {
+    "bleu": 23.064957346232397,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 46.61282305498233,
+    "n": 10000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.0038,
+    "vi_word_rate": 0.0006902091452711749,
+    "mean_hyp_words": 16.8065,
+    "mean_ref_words": 17.5034,
+    "bleu_ci95": [
+      22.668267015694124,
+      23.473667498812556
+    ]
+  },
+  "A13_combo05": {
+    "bleu": 22.86520430353608,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 46.52222437554594,
+    "n": 10000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.0037,
+    "vi_word_rate": 0.0006737700714911784,
+    "mean_hyp_words": 16.7713,
+    "mean_ref_words": 17.5034,
+    "bleu_ci95": [
+      22.464029611592945,
+      23.259842347733656
+    ]
+  },
+  "A13_combo075": {
+    "bleu": 22.52575929823655,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 46.24910886901764,
+    "n": 10000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.0026,
+    "vi_word_rate": 0.0006775839634464439,
+    "mean_hyp_words": 16.6769,
+    "mean_ref_words": 17.5034,
+    "bleu_ci95": [
+      22.14812472768364,
+      22.911908894028933
+    ]
+  },
+  "A13_combo10": {
+    "bleu": 22.305462329240562,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 45.98461709537674,
+    "n": 10000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.0024,
+    "vi_word_rate": 0.0006694288143872917,
+    "mean_hyp_words": 16.5813,
+    "mean_ref_words": 17.5034,
+    "bleu_ci95": [
+      21.958826231657646,
+      22.688801103654995
+    ]
+  }
+}

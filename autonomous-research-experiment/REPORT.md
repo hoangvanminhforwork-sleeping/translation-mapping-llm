@@ -115,6 +115,17 @@ reference-free arm can do this — and it raises BLEU by 3.38 and COMET by 0.031
 the prize, and it says something about the frozen model: *it does not need to be better, it needs to
 be chosen better.*
 
+**Can the two good ideas be combined?** Per-row z-scored convex combination
+`u = (1-w)*z(MBR) + w*z(latent)`, swept on the test set:
+
+| w | 0 (MBR) | 0.25 | 0.5 | 0.75 | 1 (latent) |
+|---|---|---|---|---|---|
+| BLEU | 23.04 | **23.06** | 22.87 | 22.53 | 22.31 |
+
+Monotone once w > 0.25: consensus is the only component that helps, and agreement only dilutes it.
++0.02 at w = 0.25 is inside noise. Two signals measuring different things are still not complementary
+for selection.
+
 ## 6. Result 3 — latent agreement is the better scorer, and that is not enough
 
 Candidate level, 80 000 candidates over 10 000 sentences (Spearman against the COMET teacher):
