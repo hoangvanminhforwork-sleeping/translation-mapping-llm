@@ -1,0 +1,62 @@
+{
+  "RLORA_A1_beam": {
+    "bleu": 26.660629228031688,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 50.043032255020925,
+    "n": 2000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.001,
+    "vi_word_rate": 0.0007007913101877537,
+    "mean_hyp_words": 17.1235,
+    "mean_ref_words": 17.406,
+    "bleu_ci95": [
+      25.616327901237888,
+      27.505114678107663
+    ]
+  },
+  "RLORA_A5_mbr_chrf": {
+    "bleu": 25.85449788474079,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 50.31675922013052,
+    "n": 2000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.001,
+    "vi_word_rate": 0.0006830989924289861,
+    "mean_hyp_words": 17.567,
+    "mean_ref_words": 17.406,
+    "bleu_ci95": [
+      24.845531771212993,
+      26.816137638488293
+    ]
+  },
+  "RLORA_A6_rt_str": {
+    "bleu": 25.711321152497966,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 49.947434832919086,
+    "n": 2000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.001,
+    "vi_word_rate": 0.0006900120752113162,
+    "mean_hyp_words": 17.391,
+    "mean_ref_words": 17.406,
+    "bleu_ci95": [
+      24.890178010719275,
+      26.707654783259077
+    ]
+  },
+  "RLORA_A7_rt_lat": {
+    "bleu": 25.88864025529679,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 49.911448893404,
+    "n": 2000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.001,
+    "vi_word_rate": 0.0006919617114519663,
+    "mean_hyp_words": 17.342,
+    "mean_ref_words": 17.406,
+    "bleu_ci95": [
+      25.02016246592805,
+      26.900529253738476
+    ]
+  }
+}

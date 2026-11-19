@@ -83,7 +83,15 @@ print()
 print(arm_tbl.to_string(index=False))
 """),
     md("""
-## 4. The picture: latent agreement vs true quality, per candidate
+## 4. Replication on a second pool (the adapted model's, 2 k / 16 k candidates)
+
+If the latent−string gap were a quirk of one pool, it would vanish here. `results/replication.json`.
+"""),
+    code("""
+print(json.dumps(json.load(open(C.RESULTS / "replication.json", encoding="utf-8")), indent=2))
+"""),
+    md("""
+## 5. The picture: latent agreement vs true quality, per candidate
 
 One point per candidate hypothesis (sampled). If latent agreement were a clean quality signal, this
 cloud would be a tight increasing band. Its shape is the answer to the research question.

@@ -1,0 +1,16 @@
+{
+  "n_rows": 2000,
+  "n_cands": 16000,
+  "spearman": {
+    "chrF_bt": 0.28577077881509283,
+    "lat_match_f1": 0.36183579578559033,
+    "lat_match_f1_c": 0.3625762858288812,
+    "lat_match_pre": 0.343282509074228,
+    "lat_cos_mean": 0.2318625506600312
+  },
+  "delta_latent_minus_string": 0.0760650169704975,
+  "top1_acc": {
+    "chrF_bt": 0.3735,
+    "lat_match_f1": 0.3915
+  }
+}

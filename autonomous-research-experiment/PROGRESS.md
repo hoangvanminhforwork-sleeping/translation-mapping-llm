@@ -111,6 +111,8 @@ with references loses 0.70 BLEU to plain beam search.
 | 03:00 | **diverse-pool test** (2 k core, beam-8 + 8 samples = 16 candidates, 14.94 distinct/row): ceiling **26.40** vs 26.54 for beam-8; MBR 23.39 (vs 23.34); round-trip rules **−1.4 BLEU** | the ceiling is set by candidate *quality*, not count; more diversity actively hurts adequacy-style signals |
 | 03:05 | COMET-Kiwi arm attempted | **not run**: `Unbabel/wmt22-cometkiwi-da` is a gated repo, `GatedRepoError 401` (no HF credentials here). Logged as a gap, not quietly dropped |
 | 03:20 | notebook executed end-to-end (`NOTEBOOK_executed.ipynb`); 14 quoted numbers re-checked against the JSONs (0 mismatches) | |
+| 03:32 | **replication on a second pool** (the adapted model's, 2 k / 16 k candidates): string ρ +0.286, latent ρ +0.362, **Δ +0.076** (frozen pool: +0.083); top-1 0.374 → 0.392 | the gap is a property of the signal, not of one pool |
+| 03:35 | selection replicated too: on the adapted pool, latent 25.89 / MBR 25.85 / string 25.71, all below its own top-1 26.66 | same verdict; latent loses least |
 
 ## Final answer to the user's question, in one line
 
