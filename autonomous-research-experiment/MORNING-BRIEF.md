@@ -54,6 +54,8 @@ half minutes of LoRA beat the entire selection exercise by 19×.
 5. **"The latent signal is fooled by frequent tokens, so weight them down"**: idf weighting *lowered*
    ρ (0.458 vs 0.478) and changed nothing in selection (22.28 vs 22.31). The shallow part carries part
    of the signal.
+6. **"Consensus and agreement are complementary"**: the z-scored mixture is monotone — 23.04 (all MBR)
+   → 23.06 → 22.87 → 22.53 → 22.31 (all latent). Anything above w=0.25 dilutes.
 
 ## What you should check before believing me
 

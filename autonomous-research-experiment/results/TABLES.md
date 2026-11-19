@@ -14,11 +14,6 @@
 | A5_lora_e1_beam8 | 27.02 | 50.52 | 0.7861 | +123 % |
 | A5_lora_mbr | 25.81 | 50.39 | 0.7828 | +88 % |
 | A5_lora_greedy | 25.66 | 49.06 | 0.7742 | +83 % |
-| A13_combo00 | — | — | — |  |
-| A13_combo025 | — | — | — |  |
-| A13_combo05 | — | — | — |  |
-| A13_combo075 | — | — | — |  |
-| A13_combo10 | — | — | — |  |
 
 | utility | Spearman vs COMET | top-1 accuracy |
 |---|---|---|

@@ -53,7 +53,7 @@ def main() -> None:
     m = load_all()
     rows = []
     for arm in ARM_ORDER + [a for a in m if a not in ARM_ORDER]:
-        if arm not in m or arm.startswith(("MIX_", "RLORA_", "A10_", "A12_")):
+        if arm not in m or arm.startswith(("MIX_", "RLORA_", "A10_", "A12_", "A13_")):
             continue
         e = m[arm]
         rows.append((arm, pick(e, "bleu"), pick(e, "chrf"),
