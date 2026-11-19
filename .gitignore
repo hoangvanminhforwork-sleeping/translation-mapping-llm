@@ -18,6 +18,17 @@ __pycache__/
 # --- model weights (re-downloadable, GB-sized)
 research-prototype/models/
 
+# --- autonomous-research-experiment: inputs and weights are re-derivable, results are not.
+# `results/` (pools, features, COMET labels, selections, metrics) is TRACKED on purpose:
+# every table in REPORT.md must stay recomputable from committed files.
+autonomous-research-experiment/models/
+autonomous-research-experiment/data/
+autonomous-research-experiment/logs/
+autonomous-research-experiment/*.tmp
+autonomous-research-experiment/.env
+# back-translations are deterministic given the pool + frozen model (regenerable, 33 MB)
+autonomous-research-experiment/results/bt_*.json
+
 # --- downloaded reference PDFs: inputs, not results. The PRISMA workbooks and
 # the .md/.csv results living next to them stay tracked.
 draft/**/*.pdf

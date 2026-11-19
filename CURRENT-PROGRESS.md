@@ -303,6 +303,39 @@ run one-class anomaly detection, write two introductions. Budget $3 + $1.
   of a constrained map survive as parallel supervision shrinks?**
 - Budget: `paperExtraction` $0.34/$1, `coding` $0.
 
+### 2026-11-19/20 — `autonomous-research-experiment/` (E10): the frozen-model ceiling and where BLEU actually comes from
+
+Eight hours, no human in the loop, two frozen 77 M Marian models, one question the project had never
+asked directly: **is latent agreement a usable reference-free quality signal?**
+
+- **Calibration first:** greedy on the historical 2 k core reproduces **22.29 BLEU / 0.7522 COMET**
+  against the published **22.27 / 0.752** — the instrument is anchored.
+- **Test set enlarged** to 10 k (md5-ranked; the historical 2 k are its first 2 000), so ±0.3 BLEU is
+  resolvable; val 10 k; train 3.44 M.
+- **Beam-8 instead of greedy = +1.01 BLEU [+0.84, +1.17]** — every phase of this project used
+  `num_beams=1`, so its absolute numbers understate the models by about one BLEU.
+- **Oracle over the frozen model's own 8-best pool = 26.23 BLEU (+3.38)** and COMET 0.7923 (+0.031):
+  the answer is already in the pool; selection is the whole game.
+- **Nine reference-free selection rules** (chrF-MBR, string round-trip, latent round-trip, centred
+  latent, length-ratio, two tiny COMET-trained MLPs, …): best is chrF-MBR at **23.04 (+0.19)**, i.e.
+  **6 % of the oracle headroom**; every round-trip arm *loses* ~0.55 BLEU to plain beam.
+- **Latent vs string, the actual question:** latent token-level agreement in one frozen encoder space
+  is a **significantly better scorer** (ρ +0.478 vs +0.394; Δρ **+0.083 [+0.075, +0.092]**,
+  sentence-level bootstrap) and an **equally poor selector** (top-1 0.370 vs 0.356; BLEU 22.31 vs
+  22.29). Adding latent features lifts a 3 k-param ranker to ρ 0.557 and still loses 0.70 BLEU to beam.
+  This is "similarity ≠ usability" measured at hypothesis level, with the mechanism visible in
+  `results/EXAMPLES.md` (format/number matching inherited from the back-translator).
+- **Two hypotheses tested and rejected in minutes:** decode-time length penalty (lp 1.2/1.5:
+  +0.11/+0.06 BLEU, CI straddles 0) and "adaptation + MBR compose" (MBR on the adapted pool **−0.69**
+  BLEU).
+- **Labelled control, not a claim:** LoRA r=16 on q/k/v/out, **1 179 648 params (1.5 %)**, 60 k pairs,
+  **7.5 min** → **26.50 BLEU / 0.7839 COMET**, i.e. **+3.65 BLEU**, more than the entire
+  reference-based headroom and 19× the best reference-free rule.
+
+Artefacts: `autonomous-research-experiment/{REPORT,HYPOTHESES,PROGRESS,HANDOFF,LEARNING_NOTE}.md`,
+`results/{pool_*,sel_*,feat_*,comet_*,metrics_*,rank_diag.json,insights.json,EXAMPLES.md,TABLES.md}`,
+`NOTEBOOK.ipynb`. Budget: **$0.25 of $3.00** (`coding` key), local GPU only.
+
 ### 2026-11-19 — consolidation
 
 This file. Nothing else changed. Working tree at that moment: one uncommitted one-line fix in
@@ -323,6 +356,7 @@ This file. Nothing else changed. Working tree at that moment: one uncommitted on
 | E7 | `research-phase01` | 11-14 | ViT5-base → Flan-base (768) | 3.46 M pairs, **per-token** | 4 channels + metrics + M1 data | mapped 6.28 vs native 3.85 vs opus 22.27 |
 | E8 | `research-phase01-ver02` | 11-15 | t5-small-vi → t5-small (512) | 6.67 M pairs, 1 shard, 80/10/10 | 5 channels, LightGBM, coreset, copy gate | mapped best on 3/4 metrics; nonlinearity = noise |
 | E9 | `research-phase01-1.2` | 11-18 | same as E8 | same | anomaly, map repairs, generation variants | collapse diagnosed; +16 % BLEU for free |
+| E10 | `autonomous-research-experiment` | 11-19/20 | opus-mt-vi-en + opus-mt-en-vi (77 M each, **frozen**) | MTet, 10 k test / 10 k val / 3.44 M train | 9 reference-free selectors + tiny rankers + LoRA control | latent agreement is the better *scorer* (Δρ +0.083) and not a better *selector*; beam +1.01; oracle +3.38; LoRA +3.65 |
 
 ```mermaid
 flowchart TD

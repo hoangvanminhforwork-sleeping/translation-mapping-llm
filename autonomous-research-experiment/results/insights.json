@@ -1,0 +1,46 @@
+{
+  "n_rows": 10000,
+  "pool_unique_mean": 7.9605,
+  "pool_unique_min": 4,
+  "pool_pairwise_chrf_mean": 78.09070774602782,
+  "comet_best_mean": 0.7929332708254456,
+  "comet_top1_mean": 0.7609595252171159,
+  "comet_gap_top1_to_best": 0.03197374560832977,
+  "share_best_comet_lt": {
+    "0.3": 0.0011,
+    "0.4": 0.0072,
+    "0.5": 0.0291,
+    "0.6": 0.0867
+  },
+  "bleu_top1": 22.851687109011376,
+  "bleu_oracle": 26.230717828430375,
+  "chrf_top1": 45.88709603061044,
+  "chrf_oracle": 48.75588129994918,
+  "headroom_bleu": 3.3790307194189992,
+  "headroom_chrf": 2.868785269338744,
+  "beam_effect": {
+    "n": 10000,
+    "identical_rate": 0.3194,
+    "mean_sentence_chrf_delta": 1.0649223351626744,
+    "share_improved": 0.387,
+    "share_worsened": 0.2905,
+    "by_len": {
+      "1-10": {
+        "n": 2004,
+        "delta": 1.4135170795898746
+      },
+      "11-20": {
+        "n": 3338,
+        "delta": 0.97849329664876
+      },
+      "21-30": {
+        "n": 2158,
+        "delta": 1.2304896234606206
+      },
+      "31-100": {
+        "n": 2500,
+        "delta": 0.7579711569948223
+      }
+    }
+  }
+}

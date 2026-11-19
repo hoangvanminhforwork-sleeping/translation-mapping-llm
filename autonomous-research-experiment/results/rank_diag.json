@@ -1,0 +1,109 @@
+{
+  "n_test_rows": 10000,
+  "n_test_cands": 80000,
+  "n_train_rows": 5000,
+  "n_train_cands": 40000,
+  "utilities": {
+    "chrF_bt": {
+      "spearman": 0.39445475262789065,
+      "top1_acc": 0.3559
+    },
+    "char3_bt": {
+      "spearman": 0.3910552397782664,
+      "top1_acc": 0.3562
+    },
+    "lat_cos_mean": {
+      "spearman": 0.24972935854975875,
+      "top1_acc": 0.333
+    },
+    "lat_match_f1": {
+      "spearman": 0.47782178092208616,
+      "top1_acc": 0.3696
+    },
+    "lat_match_pre": {
+      "spearman": 0.46541215598626096,
+      "top1_acc": 0.366
+    },
+    "lat_match_rec": {
+      "spearman": 0.44907589885906934,
+      "top1_acc": 0.3541
+    },
+    "lat_cos_mean_c": {
+      "spearman": 0.2932829428076519,
+      "top1_acc": 0.3381
+    },
+    "lat_match_f1_c": {
+      "spearman": 0.4797097006175314,
+      "top1_acc": 0.3689
+    },
+    "lat_match_pre_c": {
+      "spearman": 0.466948073719798,
+      "top1_acc": 0.3655
+    },
+    "lat_match_rec_c": {
+      "spearman": 0.45173229289851874,
+      "top1_acc": 0.3549
+    }
+  },
+  "h1_bootstrap": {
+    "delta_spearman_latent_minus_string": {
+      "mean": 0.08299762974386966,
+      "ci95": [
+        0.07456293594583076,
+        0.09151803674925349
+      ]
+    },
+    "delta_spearman_centred_minus_string": {
+      "mean": 0.08487522014352926,
+      "ci95": [
+        0.07650669552926152,
+        0.0934362847867557
+      ]
+    },
+    "n_boot": 300,
+    "resampling_unit": "sentence"
+  },
+  "length_bands": {
+    "chrF_bt": {
+      "overall": 0.39445475262789065,
+      "by_band": [
+        0.4199518485628034,
+        0.3704087406626045,
+        0.42521023744313136,
+        0.518714246921676
+      ]
+    },
+    "lat_match_f1": {
+      "overall": 0.47782178092208616,
+      "by_band": [
+        0.4802392654573098,
+        0.4373221997274778,
+        0.4528752142923902,
+        0.5518095477842376
+      ]
+    },
+    "lat_match_f1_c": {
+      "overall": 0.4797097006175314,
+      "by_band": [
+        0.4826728141505443,
+        0.44018685168857546,
+        0.45648270339975217,
+        0.5556054341789842
+      ]
+    }
+  },
+  "learned_string": {
+    "spearman_mean": 0.4955028746779213,
+    "spearman_sd": 0.0012424640110727005,
+    "spearman_pooled": 0.49611114724886435,
+    "top1_acc": 0.3529,
+    "n_params": 2433
+  },
+  "learned_latent": {
+    "spearman_mean": 0.5566866593384056,
+    "spearman_sd": 0.0008694418110318112,
+    "spearman_pooled": 0.5588067793862023,
+    "top1_acc": 0.3547,
+    "n_params": 3137
+  }
+}

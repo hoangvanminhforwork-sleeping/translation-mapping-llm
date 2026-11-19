@@ -1,0 +1,40 @@
+{
+  "A0_greedy": {
+    "bleu": 22.2909188617695,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 45.40908391814928,
+    "n": 2000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.0005,
+    "vi_word_rate": 0.0006605019815059445,
+    "mean_hyp_words": 15.897,
+    "mean_ref_words": 17.406,
+    "bleu_ci95": [
+      21.434659457185038,
+      23.12509162035345
+    ],
+    "paired_vs_A1_beam": {
+      "mean": -1.013596913351287,
+      "ci95": [
+        -1.3698726931217315,
+        -0.6788112735933849
+      ],
+      "p_le_0": 1.0
+    }
+  },
+  "A1_beam": {
+    "bleu": 23.316932261326322,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 46.356220410421315,
+    "n": 2000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.005,
+    "vi_word_rate": 0.0006796206481109635,
+    "mean_hyp_words": 16.1855,
+    "mean_ref_words": 17.406,
+    "bleu_ci95": [
+      22.333437881544707,
+      24.123802989902526
+    ]
+  }
+}
