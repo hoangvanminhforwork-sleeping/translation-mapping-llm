@@ -169,14 +169,31 @@ length penalty the way the mechanism above suggests — the rerankers recover le
 choices, not by telling the decoder to write more. A hypothesis I liked, killed in five minutes, is
 worth more than one I never tested.
 
-## 8. BLEU and COMET disagree about the best selector (a warning for the paper)
+## 8. A diverse pool does not help — and it hurts the round-trip rules badly
+
+Doubling the candidate count with 8 sampled hypotheses (temperature 0.95, top-p 0.95) on the same
+2 k core:
+
+| pool | cands/row | unique/row | top-1 BLEU | oracle BLEU | chrF-MBR | string RT | latent RT |
+|---|---|---|---|---|---|---|---|
+| beam-8 | 8 | 7.96 | 23.32 | **26.54** | 23.34 | 22.74 | 22.64 |
+| beam-8 + sample-8 | 16 | 14.94 | 23.32 | 26.40 | **23.39** | 21.25 | 21.37 |
+
+Sampling adds 7 more distinct candidates per row and **lowers** the BLEU ceiling (26.54 → 26.40): the
+beam already contains the best candidates, and the samples are diverse in the wrong direction. MBR is
+indifferent (+0.05), but both round-trip rules **lose ~1.4 BLEU** — they chase the fluency of sampled
+outputs and their back-translations match the source only loosely. So the ceiling is set by *candidate
+quality*, not by candidate count, and adequacy-style signals degrade as the pool gets noisier. This
+also kills the "our pool was too redundant" excuse for the small selection gains.
+
+## 9. BLEU and COMET disagree about the best selector (a warning for the paper)
 
 chrF-MBR is best on BLEU (23.04) and chrF (46.59) but **not** on COMET (0.7609 vs beam's 0.7617).
 The latent arm is the mirror image: worst-but-one on BLEU, best-but-one on COMET (0.7614). A paper
 that reports one metric would tell a different story about which signal is "good". Both are inside
 0.001–0.002 of each other, i.e. the *ranking of selectors* is metric-dependent and small.
 
-## 9. The learned-ranker paradox
+## 10. The learned-ranker paradox
 
 A 3 k-parameter MLP trained **with reference labels** (COMET) reaches ρ = 0.557, the best scorer in
 the table — and yet its selections lose 0.70 BLEU to plain beam search. Two causes, both checkable:
@@ -185,7 +202,7 @@ is hit only 35 % of the time, so a better ρ does not translate into better pick
 strongest evidence in the night for the project's methodological claim: **a better similarity number
 is not a better system, and the mapping from one to the other is not automatic.**
 
-## 10. The labelled control: what fine-tuning buys (not part of the claim)
+## 11. The labelled control: what fine-tuning buys (not part of the claim)
 
 One pre-registered configuration: LoRA r = 16 on q/k/v/out of both the 6-layer encoder and the
 6-layer decoder, **1 179 648 trainable parameters (1.5 % of the model)**, 2 500 steps × 24 = 60 000
@@ -216,7 +233,7 @@ Three readings, in increasing order of discomfort:
 Caveat kept: one configuration, 0.4 epoch, no hyperparameter search, and no test-time leakage (the
 adapter saw only `split == train`). It is a *lower* bound on what fine-tuning can do here.
 
-## 11. Threats to validity
+## 12. Threats to validity
 
 1. **COMET is teacher and judge.** The oracle, the ranker's labels and the reported COMET are the same
    checkpoint. The +3.38 BLEU headroom is therefore "what COMET would choose", not "what is right".
@@ -224,28 +241,34 @@ adapter saw only `split == train`). It is a *lower* bound on what fine-tuning ca
    minority of rows cannot be scored well by anyone; absolute BLEU is depressed for every arm, only
    gaps are interpretable.
 3. **Pool redundancy.** 7.96/8 distinct candidates and mean pairwise chrF 78.1 bound the reranker's
-   ceiling; a more diverse pool (beam + sampling) would raise it and is untested tonight.
+   ceiling. **Tested** (§8): adding 8 sampled candidates per row (14.94/16 distinct) did *not* raise the
+   BLEU ceiling (26.54 → 26.40) and cost the round-trip rules ~1.4 BLEU, so redundancy is not the
+   binding constraint.
 4. **Sentence-level only.** No span-level or food-specific analysis; the culinary domain is untouched.
 5. **Back-translation is itself a model output** with its own domain shift — a property of the signal,
    not a bug, but it caps what round-trip agreement can see.
 6. **One domain, one direction, one seed.** vi→en, MTet, seed 20261119; the tiny ranker uses 3 seeds,
    everything else is deterministic.
 
-## 12. What I would do next, in order of value per hour
+## 13. What I would do next, in order of value per hour
 
 1. **A selection rule's value is a property of the pool.** MBR earned +0.19 BLEU on the frozen pool
-   and lost 0.69 on the adapted pool (measured tonight, §10). Any paper that reports "MBR gives +X"
-   must report the pool it was measured on, or the number does not travel.
-2. **Diverse pool** (20 min, `gen.py --mode mixed`): the 3.38-BLEU headroom was measured on a
-   redundant pool (7.96/8 distinct, pairwise chrF 78.1); sampling adds candidates that beam cannot.
-3. **COMET-Kiwi (reference-free QE) as a utility** (download + 30 min): breaks the teacher/judge
-   circularity and gives a fair upper bound on what a *learned* reference-free signal can do.
-4. **Span-level agreement**, then fact insertion — the project's title layer, still unmeasured inside
+   and lost 0.69 on the adapted pool (measured tonight, §11); round-trip rules lost 1.4 BLEU when the
+   pool was made more diverse (§8). Any paper that reports "rule X gives +Y" must report the pool it
+   was measured on, or the number does not travel.
+2. **COMET-Kiwi (reference-free QE) as a utility** — the clean upper bound for a *learned*
+   reference-free signal. **Not run tonight**: `Unbabel/wmt22-cometkiwi-da` is a gated repo and this
+   machine has no HF credentials (`GatedRepoError 401`). First thing to run when someone accepts the
+   licence.
+3. **Span-level agreement**, then fact insertion — the project's title layer, still unmeasured inside
    the pipeline.
-5. **Beam across the project** (cheap, uncomfortable): every absolute number in the paper was produced
+4. **Beam across the project** (cheap, uncomfortable): every absolute number in the paper was produced
    greedily; the +1 BLEU is bigger than most of the effects the paper argues about.
+5. **Train the readout on the injected channel** (the E7/E8 lesson) is still uncombined with tonight:
+   a pretrained decoder reading mapped states was never tried, and the oracle headroom suggests
+   candidate quality — not channel capacity — is what limits generation.
 
-## 13. Cost ledger (this laptop)
+## 14. Cost ledger (this laptop)
 
 | stage | measured |
 |---|---|
@@ -257,7 +280,7 @@ adapter saw only `split == train`). It is a *lower* bound on what fine-tuning ca
 | LoRA control, 60 k pairs | **7.5 min** (134 pairs/s) |
 | API spend (`coding` key) | **$0.25 of $3.00** |
 
-## 14. Reproduce
+## 15. Reproduce
 
 `README.md` §Reproduce. Every table above is regenerated by `python -m src.tables` from
 `results/*.json`; every hypothesis is in `HYPOTHESES.md`; every mistake is in `PROGRESS.md`.

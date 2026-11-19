@@ -108,6 +108,9 @@ with references loses 0.70 BLEU to plain beam search.
 | 02:42 | **length-penalty hypothesis tested and rejected**: lp 1.2 → +0.11 [−0.09, +0.34], lp 1.5 → +0.06 [−0.20, +0.33] on the 2 k core | under-length is real but is not caused by lp; the mechanism story in REPORT §7 was too simple |
 | 02:50 | **complementarity hypothesis tested and rejected**: chrF-MBR on the *adapted* pool | 25.81 BLEU (−0.69 vs 26.50), COMET 0.7828 — MBR's +0.19 did not transfer |
 | 02:52 | final tables regenerated; report, learning note, handoff written | commit follows |
+| 03:00 | **diverse-pool test** (2 k core, beam-8 + 8 samples = 16 candidates, 14.94 distinct/row): ceiling **26.40** vs 26.54 for beam-8; MBR 23.39 (vs 23.34); round-trip rules **−1.4 BLEU** | the ceiling is set by candidate *quality*, not count; more diversity actively hurts adequacy-style signals |
+| 03:05 | COMET-Kiwi arm attempted | **not run**: `Unbabel/wmt22-cometkiwi-da` is a gated repo, `GatedRepoError 401` (no HF credentials here). Logged as a gap, not quietly dropped |
+| 03:20 | notebook executed end-to-end (`NOTEBOOK_executed.ipynb`); 14 quoted numbers re-checked against the JSONs (0 mismatches) | |
 
 ## Final answer to the user's question, in one line
 

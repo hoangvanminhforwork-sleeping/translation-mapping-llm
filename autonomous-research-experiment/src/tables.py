@@ -11,7 +11,10 @@ import sys
 
 from . import config as C
 
-sys.stdout.reconfigure(encoding="utf-8")
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:      # inside a notebook kernel stdout is an OutStream without reconfigure
+    pass
 
 ARM_ORDER = ["A0_greedy", "A1_beam", "A3_lenratio", "A5_mbr_chrf", "A6_rt_str", "A7_rt_lat",
              "A7c_rt_lat_centred", "A8_learned_string", "A8_learned_latent", "A9_oracle",
@@ -50,7 +53,7 @@ def main() -> None:
     m = load_all()
     rows = []
     for arm in ARM_ORDER + [a for a in m if a not in ARM_ORDER]:
-        if arm not in m:
+        if arm not in m or arm.startswith("MIX_"):
             continue
         e = m[arm]
         rows.append((arm, pick(e, "bleu"), pick(e, "chrf"),

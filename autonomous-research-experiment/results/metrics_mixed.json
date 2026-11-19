@@ -1,0 +1,77 @@
+{
+  "MIX_A1_beam": {
+    "bleu": 23.316932261326322,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 46.356220410421315,
+    "n": 2000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.005,
+    "vi_word_rate": 0.0006796206481109635,
+    "mean_hyp_words": 16.1855,
+    "mean_ref_words": 17.406,
+    "bleu_ci95": [
+      22.380865335114674,
+      24.160078751686754
+    ]
+  },
+  "MIX_A5_mbr_chrf": {
+    "bleu": 23.39281086434602,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 46.95910133742889,
+    "n": 2000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.0045,
+    "vi_word_rate": 0.0007430082919725385,
+    "mean_hyp_words": 16.8235,
+    "mean_ref_words": 17.406,
+    "bleu_ci95": [
+      22.375459295534547,
+      24.255950301603797
+    ]
+  },
+  "MIX_A6_rt_str": {
+    "bleu": 21.251899737500935,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 45.3831835180424,
+    "n": 2000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.0015,
+    "vi_word_rate": 0.0007098701529178621,
+    "mean_hyp_words": 16.9045,
+    "mean_ref_words": 17.406,
+    "bleu_ci95": [
+      20.309375598494196,
+      22.06498427077219
+    ]
+  },
+  "MIX_A7_rt_lat": {
+    "bleu": 21.37208538750413,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 45.39817107486207,
+    "n": 2000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.0005,
+    "vi_word_rate": 0.0007173172335465359,
+    "mean_hyp_words": 16.729,
+    "mean_ref_words": 17.406,
+    "bleu_ci95": [
+      20.4820207775802,
+      22.25331153829248
+    ]
+  },
+  "MIX_A7c_rt_lat_centred": {
+    "bleu": 21.37133843520494,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 45.37724463779233,
+    "n": 2000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.0005,
+    "vi_word_rate": 0.0007176818875033642,
+    "mean_hyp_words": 16.7205,
+    "mean_ref_words": 17.406,
+    "bleu_ci95": [
+      20.50889503208295,
+      22.262723681392135
+    ]
+  }
+}

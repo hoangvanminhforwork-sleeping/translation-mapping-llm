@@ -42,15 +42,13 @@ Every row is a *selection from the same candidate pool* (except A0, which is gre
 from `results/metrics_*.json` — this cell does not compute anything, it only formats.
 """),
     code("""
-from src.tables import load_all
+from src.tables import load_all, pick
 m = load_all()
-rows = []
-for arm, e in m.items():
-    rows.append({"arm": arm,
-                 "BLEU": e.get("bleu@10k", e.get("bleu@core")),
-                 "chrF": e.get("chrf@10k", e.get("chrf@core")),
-                 "COMET": e.get("comet@core")})
-pd.DataFrame(rows).sort_values("BLEU", ascending=False).round(3)
+rows = [{"arm": a, "BLEU": pick(e, "bleu"), "chrF": pick(e, "chrf"),
+         "COMET": pick(e, "comet", ("lora_core", "core", "all", "10k", "lora"))}
+        for a, e in m.items()]
+df = pd.DataFrame(rows).dropna(subset=["BLEU"]).sort_values("BLEU", ascending=False).round(3)
+df
 """),
     md("""
 ## 2. Is the signal *usable*? Spearman vs COMET, top-1 accuracy, and headroom captured
@@ -67,7 +65,25 @@ for k in ("learned_string", "learned_latent"):
 ut
 """),
     md("""
-## 3. The picture: latent agreement vs true quality, per candidate
+## 3. Does a bigger pool help? (beam-8 vs beam-8 + 8 samples, 2 k core)
+
+`results/mixed_pool.json` and `results/metrics_mixed.json`. If the ceiling rises with candidate count,
+selection was pool-limited; if it does not, selection is selector-limited.
+"""),
+    code("""
+mixed = json.load(open(C.RESULTS / "mixed_pool.json", encoding="utf-8"))
+mx = json.load(open(C.RESULTS / "metrics_mixed.json", encoding="utf-8"))
+pool_tbl = pd.DataFrame([{"pool": v["pool"], "cands/row": v["cands_per_row"],
+                          "unique/row": v["unique_per_row"], "top-1 BLEU": v["bleu_top1"],
+                          "oracle BLEU": v["bleu_oracle"]} for v in mixed.values()])
+arm_tbl = pd.DataFrame([{"arm": k, "BLEU": round(v["bleu"], 2), "chrF": round(v["chrf"], 2)}
+                        for k, v in mx.items() if isinstance(v, dict) and "bleu" in v])
+print(pool_tbl.to_string(index=False))
+print()
+print(arm_tbl.to_string(index=False))
+"""),
+    md("""
+## 4. The picture: latent agreement vs true quality, per candidate
 
 One point per candidate hypothesis (sampled). If latent agreement were a clean quality signal, this
 cloud would be a tight increasing band. Its shape is the answer to the research question.

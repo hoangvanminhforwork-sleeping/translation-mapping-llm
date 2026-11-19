@@ -88,11 +88,11 @@ def main(argv: list[str] | None = None) -> None:
     elif a.mode == "beam":
         plans = [dict(num_beams=a.k, num_return_sequences=a.k, length_penalty=a.lp, tag=f"beam{a.k}")]
     elif a.mode == "sample":
-        plans = [dict(do_sample=True, temperature=a.temp, top_p=0.95, num_return_sequences=a.k,
+        plans = [dict(num_beams=1, do_sample=True, temperature=a.temp, top_p=0.95, num_return_sequences=a.k,
                       tag=f"sample{a.k}")]
     else:
         plans = [dict(num_beams=a.k, num_return_sequences=a.k, length_penalty=a.lp, tag=f"beam{a.k}"),
-                 dict(do_sample=True, temperature=a.temp, top_p=0.95, num_return_sequences=a.k,
+                 dict(num_beams=1, do_sample=True, temperature=a.temp, top_p=0.95, num_return_sequences=a.k,
                       tag=f"sample{a.k}")]
 
     t0 = time.time()

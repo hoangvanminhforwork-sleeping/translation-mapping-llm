@@ -36,8 +36,8 @@ def load_pool(path) -> list[dict]:
         return [json.loads(line) for line in f]
 
 
-def write_sel(rows: list[dict], picks: list[int], name: str) -> None:
-    path = C.RESULTS / f"sel_{name}.jsonl"
+def write_sel(rows: list[dict], picks: list[int], name: str, prefix: str = "") -> None:
+    path = C.RESULTS / f"sel_{prefix}{name}.jsonl"
     tmp = path.with_suffix(".jsonl.tmp")
     with tmp.open("w", encoding="utf-8") as f:
         for r, j in zip(rows, picks):
@@ -67,6 +67,7 @@ def main(argv=None) -> None:
     ap.add_argument("--feat", required=True)
     ap.add_argument("--greedy", default="pool_test_greedy.jsonl")
     ap.add_argument("--arms", default="all")
+    ap.add_argument("--prefix", default="")
     a = ap.parse_args(argv)
 
     rows = load_pool(C.RESULTS / a.pool)
@@ -81,9 +82,9 @@ def main(argv=None) -> None:
         ["beam", "lenratio", "rt_str", "rt_lat", "rt_lat_c", "mbr_chrf"]
 
     print(f"{len(rows)} rows, arms={arms}")
-    write_sel(rows, [0] * len(rows), "A1_beam")
+    write_sel(rows, [0] * len(rows), "A1_beam", a.prefix)
 
-    if "A0_greedy" in arms or a.greedy:
+    if not a.prefix and ("A0_greedy" in arms or a.greedy):
         g = load_pool(C.RESULTS / a.greedy) if (C.RESULTS / a.greedy).exists() else None
         if g:
             path = C.RESULTS / "sel_A0_greedy.jsonl"
@@ -96,7 +97,7 @@ def main(argv=None) -> None:
 
     def pick_by(fn, name):
         picks = [fn(by_id[r["id"]]) for r in rows]
-        write_sel(rows, picks, name)
+        write_sel(rows, picks, name, a.prefix)
 
     if "mbr_chrf" in arms:
         print("mbr_chrf ...", flush=True)
@@ -105,7 +106,7 @@ def main(argv=None) -> None:
             picks.append(mbr_pick(r["cands"]))
             if k % 2000 == 0:
                 print(f"  {k}/{len(rows)}", flush=True)
-        write_sel(rows, picks, "A5_mbr_chrf")
+        write_sel(rows, picks, "A5_mbr_chrf", a.prefix)
 
     if "lenratio" in arms:
         pick_by(lambda v: int(np.argmin([abs(x["len_ratio"] - 1.0) for x in v])), "A3_lenratio")
