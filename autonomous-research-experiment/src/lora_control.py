@@ -78,11 +78,13 @@ def collate(tok):
     return fn
 
 
-def train(epochs: float = 1.0, batch: int = 24, lr: float = 3e-4, max_steps: int = 0) -> None:
+def train(epochs: float = 1.0, batch: int = 24, lr: float = 3e-4, max_steps: int = 0,
+          out_dir: str = "") -> None:
+    out_adapter = C.MODELS / out_dir if out_dir else OUT_ADAPTER
     from peft import LoraConfig, get_peft_model
 
-    if (OUT_ADAPTER / "adapter_config.json").exists():
-        print(f"{OUT_ADAPTER} exists")
+    if (out_adapter / "adapter_config.json").exists():
+        print(f"{out_adapter} exists")
         return
     tok = AutoTokenizer.from_pretrained(C.A_ID)
     model = AutoModelForSeq2SeqLM.from_pretrained(C.A_ID, dtype=torch.float32,
@@ -120,14 +122,14 @@ def train(epochs: float = 1.0, batch: int = 24, lr: float = 3e-4, max_steps: int
                       flush=True)
             if step >= steps:
                 break
-    OUT_ADAPTER.mkdir(parents=True, exist_ok=True)
-    model.save_pretrained(str(OUT_ADAPTER))
+    out_adapter.mkdir(parents=True, exist_ok=True)
+    model.save_pretrained(str(out_adapter))
     n = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    (C.RESULTS / "lora_control.json").write_text(json.dumps(
-        {"adapter": str(OUT_ADAPTER), "trainable_params": int(n), "pairs": int(N_TRAIN),
+    (C.RESULTS / (f"lora_control_{out_dir}.json" if out_dir else "lora_control.json")).write_text(json.dumps(
+        {"adapter": str(out_adapter), "trainable_params": int(n), "pairs": int(N_TRAIN),
          "epochs": epochs, "batch": batch, "lr": lr, "steps": steps,
          "minutes": (time.time() - t0) / 60}, indent=2), encoding="utf-8")
-    print(f"saved {OUT_ADAPTER} ({n} trainable params) in {(time.time() - t0) / 60:.1f} min")
+    print(f"saved {out_adapter} ({n} trainable params) in {(time.time() - t0) / 60:.1f} min")
 
 
 if __name__ == "__main__":
@@ -138,8 +140,9 @@ if __name__ == "__main__":
     ap.add_argument("--batch", type=int, default=24)
     ap.add_argument("--lr", type=float, default=3e-4)
     ap.add_argument("--max-steps", type=int, default=0)
+    ap.add_argument("--out-dir", default="")
     a = ap.parse_args()
     if a.build_data:
         build_data()
     if a.train:
-        train(a.epochs, a.batch, a.lr, a.max_steps)
+        train(a.epochs, a.batch, a.lr, a.max_steps, a.out_dir)

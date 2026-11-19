@@ -18,7 +18,7 @@ except Exception:      # inside a notebook kernel stdout is an OutStream without
 
 ARM_ORDER = ["A0_greedy", "A1_beam", "A3_lenratio", "A5_mbr_chrf", "A6_rt_str", "A7_rt_lat",
              "A7c_rt_lat_centred", "A8_learned_string", "A8_learned_latent", "A9_oracle",
-             "A5_lora"]
+             "A5_lora_beam8", "A5_lora_e1_beam8", "A5_lora_mbr", "A5_lora_greedy"]
 
 
 def load_all() -> dict:
@@ -42,7 +42,7 @@ def load_all() -> dict:
     return merged
 
 
-def pick(e: dict, field: str, order=("10k", "lora", "all", "core", "lp", "lora_core")):
+def pick(e: dict, field: str, order=("10k", "lora", "lora_e1", "all", "core", "lp", "lora_core")):
     for tag in order:
         if f"{field}@{tag}" in e:
             return e[f"{field}@{tag}"]
@@ -57,7 +57,7 @@ def main() -> None:
             continue
         e = m[arm]
         rows.append((arm, pick(e, "bleu"), pick(e, "chrf"),
-                     pick(e, "comet", ("lora_core", "core", "all", "10k", "lora"))))
+                     pick(e, "comet", ("lora_e1_core", "lora_core", "core", "all", "10k", "lora"))))
 
     lines = ["| arm | BLEU | chrF | COMET | % of frozen-oracle headroom |", "|---|---|---|---|---|"]
     base = pick(m.get("A1_beam", {}), "bleu")

@@ -21,6 +21,7 @@ agreement a usable reference-free quality signal?*
 | **latent agreement vs string agreement** | ρ **+0.478** vs +0.394, Δ **+0.083** [+0.075, +0.092] — better *scorer* |
 | …as a selector | 22.31 vs 22.29 BLEU — **no better**, both 0.55 below plain beam |
 | control: 1.2 M-param LoRA, 7.5 min | **26.50 BLEU** (+3.65), COMET 0.7839 |
+| control at 1 epoch (19 min) | **27.02 BLEU** (+4.17), COMET 0.7861 — still rising |
 
 **The one-sentence answer:** latent agreement is a significantly better *predictor* of quality than
 string agreement and an equally poor *selector* — and the frozen model already contains a 26.2-BLEU

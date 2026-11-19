@@ -248,8 +248,19 @@ train-split pairs (0.4 epoch of the prepared file), lr 3e-4, fp16, **7.5 minutes
 | frozen, chrF-MBR | 23.04 | — | 46.59 | 0.7609 |
 | frozen, oracle over its own pool | 26.23 | 26.54 | 48.76 | 0.7923 |
 | **LoRA, greedy** | 25.66 | 25.66 | 49.06 | 0.7742 |
-| **LoRA, beam-8 top-1** | **26.50** | **26.66** | **50.08** | **0.7839** |
-| LoRA, chrF-MBR | 25.81 | 25.85 | 50.39 | 0.7828 |
+| **LoRA, beam-8 top-1 (60 k pairs, 7.5 min)** | **26.50** | 26.66 | 50.08 | 0.7839 |
+| **LoRA, beam-8 top-1 (150 k pairs, 19.3 min)** | **27.02** | 26.96 | **50.52** | **0.7861** |
+| LoRA, chrF-MBR (60 k pairs) | 25.81 | 25.85 | 50.39 | 0.7828 |
+
+**Returns to the adaptation budget** (same 1.18 M parameters, only pairs seen changes):
+
+| pairs seen | wall clock | BLEU | Δ vs frozen beam |
+|---|---|---|---|
+| 0 | — | 22.85 | — |
+| 60 000 | 7.5 min | 26.50 | +3.65 |
+| 150 000 (1 epoch) | 19.3 min | **27.02** | **+4.17** |
+
+Still rising, so +3.65 is a lower bound; it does not saturate at 0.4 epoch.
 
 Three readings, in increasing order of discomfort:
 

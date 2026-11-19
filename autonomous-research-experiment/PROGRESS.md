@@ -114,6 +114,7 @@ with references loses 0.70 BLEU to plain beam search.
 | 03:32 | **replication on a second pool** (the adapted model's, 2 k / 16 k candidates): string ρ +0.286, latent ρ +0.362, **Δ +0.076** (frozen pool: +0.083); top-1 0.374 → 0.392 | the gap is a property of the signal, not of one pool |
 | 03:35 | selection replicated too: on the adapted pool, latent 25.89 / MBR 25.85 / string 25.71, all below its own top-1 26.66 | same verdict; latent loses least |
 | 03:36 | **idf ablation**: weighting the token-level agreement by inverse document frequency **lowers** ρ (+0.458 vs +0.478) and leaves BLEU unchanged (22.28 vs 22.31) | the "shallow" format part is not noise; part of the signal lives there |
+| 04:26 | **control at a fairer budget** (LoRA, 150 k pairs = 1 epoch, 19.3 min): **27.02 BLEU / 0.7861 COMET**, +0.52 over the 60 k-pair run | returns diminish but do not saturate; +3.65 was a lower bound |
 
 ## Final answer to the user's question, in one line
 

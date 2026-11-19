@@ -1,0 +1,32 @@
+{
+  "A5_lora_beam8": {
+    "bleu": 26.49680928420256,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 50.079496811540636,
+    "n": 10000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.0007,
+    "vi_word_rate": 0.0006190768233837466,
+    "mean_hyp_words": 17.2838,
+    "mean_ref_words": 17.5034,
+    "bleu_ci95": [
+      26.10000053806019,
+      26.9670097878768
+    ]
+  },
+  "A5_lora_e1_beam8": {
+    "bleu": 27.01634908446801,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.5.1",
+    "chrf": 50.52353280904662,
+    "n": 10000,
+    "empty_rate": 0.0,
+    "degenerate_rate": 0.0016,
+    "vi_word_rate": 0.0006111793433023475,
+    "mean_hyp_words": 17.1799,
+    "mean_ref_words": 17.5034,
+    "bleu_ci95": [
+      26.55831628850765,
+      27.474072304598945
+    ]
+  }
+}

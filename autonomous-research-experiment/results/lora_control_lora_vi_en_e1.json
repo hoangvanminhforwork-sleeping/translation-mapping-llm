@@ -1,0 +1,10 @@
+{
+  "adapter": "D:\\HANU_FIT\\NCKH\\Culinary_CSI_Translation_Though_Dynamic_Fact_Insertion\\autonomous-research-experiment\\models\\lora_vi_en_e1",
+  "trainable_params": 1179648,
+  "pairs": 150000,
+  "epochs": 1.0,
+  "batch": 24,
+  "lr": 0.0003,
+  "steps": 6250,
+  "minutes": 19.315466499328615
+}
