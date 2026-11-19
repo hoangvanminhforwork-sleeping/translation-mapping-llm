@@ -12,7 +12,7 @@ comparisons are paired by construction. Hypotheses and threats were pre-register
 
 ---
 
-## TL;DR — five numbers and one sentence
+## TL;DR - seven numbers and one sentence
 
 | # | finding | number |
 |---|---|---|
@@ -22,18 +22,20 @@ comparisons are paired by construction. Hypotheses and threats were pre-register
 | 4 | latent agreement ranks candidates **better** than string agreement | ρ **+0.478** vs **+0.394**, Δρ **+0.083 [+0.075, +0.092]** |
 | 5 | …but that advantage does **not** make it a usable selector | BLEU **22.31** vs **22.29** (Δ +0.02, inside noise); best reference-free arm = chrF-MBR **23.04 (+0.19)** |
 | 6 | **1.5 % of the parameters and 7.5 minutes beat every selection rule** | LoRA control **26.50 BLEU** (**+3.65**), COMET **0.7839** |
+| 7 | …and it is still rising at a fair budget | 150 k pairs (19 min) → **27.02 BLEU** (**+4.17**), COMET **0.7861** |
 
 > **The frozen 77 M model already produces a 26.2-BLEU answer among its eight candidates, and no
 > reference-free signal we could build converts more than 6 % of that gap. Latent agreement is a
 > better *scorer* and not a better *selector* — the project's "similarity ≠ usability" thesis, now
-> measured at the level of hypotheses instead of mappers. And the cheapest 3.65 BLEU of the night came
-> from weights (1.2 M LoRA parameters, 7.5 min), not from any clever choice of output.**
+> measured at the level of hypotheses instead of mappers. And the cheapest 3.65–4.17 BLEU of the night
+> came from weights (1.2 M LoRA parameters, 19 min), not from any clever choice of output.**
 
 **The ordering of levers, which is the real result:**
 
 | lever | available at test time? | BLEU |
 |---|---|---|
-| domain adaptation (1.2 M LoRA params, 7.5 min) | no (needs train data) | **26.50 (+3.65)** |
+| domain adaptation (1.2 M LoRA params, 19 min) | no (needs train data) | **27.02 (+4.17)** |
+| domain adaptation (same params, 7.5 min) | no | **26.50 (+3.65)** |
 | reference-based selection (oracle over 8 candidates) | no (needs references) | **26.23 (+3.38)** |
 | reference-free selection (best of 9 rules) | **yes** | **23.04 (+0.19)** |
 
@@ -264,8 +266,8 @@ Still rising, so +3.65 is a lower bound; it does not saturate at 0.4 epoch.
 
 Three readings, in increasing order of discomfort:
 
-1. **+3.65 BLEU for 1.5 % of the parameters and 7.5 minutes.** Nothing reference-free came close
-   (+0.19 was the ceiling of nine rules).
+1. **+3.65 BLEU for 1.5 % of the parameters and 7.5 minutes** (and +4.17 at one epoch, 19 min).
+   Nothing reference-free came close (+0.19 was the ceiling of nine rules).
 2. **The control beats the frozen model's *oracle*** on BLEU (26.50 vs 26.23) — the domain-adapted
    model's first candidate is better than the frozen model's best-of-eight.
 3. It does **not** beat the oracle on COMET (0.7839 vs 0.7923), so a well-chosen frozen candidate can
