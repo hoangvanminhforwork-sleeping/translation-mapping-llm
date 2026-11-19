@@ -146,6 +146,12 @@ while getting the word wrong (*"thanh toán"* vs *"kiểm toán"*). It inherits 
 behaviour. The string signal has the same weakness but less sharply, and neither can tell that one
 fluent candidate is semantically right and the other is not.
 
+**The obvious fix was tested and made it worse.** If the signal is fooled by frequent tokens, an
+idf-weighted nearest-neighbour agreement should help. Down-weighting frequent tokens *lowers* the
+correlation (ρ +0.458 vs +0.478) and leaves the selection unchanged (BLEU 22.28 vs 22.31, −0.57 vs
+beam) — so the "shallow" part is not noise to be removed, it is where part of the signal lives. The
+signal is genuinely measuring shape, and shape is informative but not sufficient.
+
 ## 7. Replication: the gap is a property of the signal, not of one pool
 
 The whole comparison above used the frozen model's pool. Re-running both utilities on the

@@ -50,6 +50,9 @@ half minutes of LoRA beat the entire selection exercise by 19×.
    26.54 → 26.40 and cost the round-trip rules ~1.4 BLEU.
 4. **COMET-Kiwi as a learned QE baseline**: not run — `Unbabel/wmt22-cometkiwi-da` is a gated repo
    (`GatedRepoError 401`, no HF credentials here). Accept the licence and `python -m src.kiwi` runs.
+5. **"The latent signal is fooled by frequent tokens, so weight them down"**: idf weighting *lowered*
+   ρ (0.458 vs 0.478) and changed nothing in selection (22.28 vs 22.31). The shallow part carries part
+   of the signal.
 
 ## What you should check before believing me
 
