@@ -279,8 +279,10 @@ Three readings, in increasing order of discomfort:
 
 1. **+3.65 BLEU for 1.5 % of the parameters and 7.5 minutes** (and +4.17 at one epoch, 19 min).
    Nothing reference-free came close (+0.19 was the ceiling of nine rules).
-2. **The control beats the frozen model's *oracle*** on BLEU (26.50 vs 26.23) — the domain-adapted
-   model's first candidate is better than the frozen model's best-of-eight.
+2. **The control edges the frozen model's *oracle*** on BLEU at the small budget (26.50 vs 26.23) but the
+   difference is not significant (**+0.27 [−0.16, +0.68]**, paired bootstrap); at one epoch it is
+   (**+0.79 [+0.34, +1.24]**, P = 0.001). In other words the domain-adapted model's *first* candidate
+   reaches the level of the frozen model's *best of eight* only after a fair budget.
 3. It does **not** beat the oracle on COMET (0.7839 vs 0.7923), so a well-chosen frozen candidate can
    still carry information the adapted model lost.
 4. **And the complementarity hypothesis was tested and rejected**: running chrF-MBR on the adapted

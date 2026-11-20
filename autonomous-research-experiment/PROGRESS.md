@@ -116,6 +116,7 @@ with references loses 0.70 BLEU to plain beam search.
 | 03:36 | **idf ablation**: weighting the token-level agreement by inverse document frequency **lowers** ρ (+0.458 vs +0.478) and leaves BLEU unchanged (22.28 vs 22.31) | the "shallow" format part is not noise; part of the signal lives there |
 | 04:26 | **control at a fairer budget** (LoRA, 150 k pairs = 1 epoch, 19.3 min): **27.02 BLEU / 0.7861 COMET**, +0.52 over the 60 k-pair run | returns diminish but do not saturate; +3.65 was a lower bound |
 | 04:31 | **combination sweep** `u = (1−w)·z(MBR) + w·z(latent)`: 23.04 → 23.06 → 22.87 → 22.53 → 22.31 for w = 0, 0.25, 0.5, 0.75, 1 | monotone at the ends: consensus helps, agreement only dilutes; +0.02 at w=0.25 is noise |
+| 04:42 | **correction after a paired test**: "the LoRA control beats the frozen oracle" was an over-claim. Paired Δ = **+0.27 [−0.16, +0.68]** at 60 k pairs (not significant) and **+0.79 [+0.34, +1.24]** at 150 k (significant) | REPORT §12 corrected; the point estimates were right, the significance was assumed. Added `src/paired.py` so future contrasts of two *non-beam* arms can be tested directly |
 
 ## Final answer to the user's question, in one line
 
