@@ -1,0 +1,28 @@
+{
+  "ridge_sub_max48": {
+    "bleu": 2.667,
+    "chrf": 19.617,
+    "len_mean": 17.9,
+    "sec": 52.2
+  },
+  "ridge_sub_max64": {
+    "bleu": 2.474,
+    "chrf": 19.682,
+    "len_mean": 19.2,
+    "sec": 65.8
+  },
+  "ridge_recolor10_max48": {
+    "bleu": 3.431,
+    "chrf": 20.649,
+    "len_mean": 17.4,
+    "sec": 48.9
+  },
+  "ridge_recolor10_max64": {
+    "bleu": 3.085,
+    "chrf": 20.7,
+    "len_mean": 18.7,
+    "sec": 66.8
+  },
+  "delta_max48": 0.764,
+  "delta_max64": 0.611
+}

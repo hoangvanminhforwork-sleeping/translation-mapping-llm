@@ -20,7 +20,7 @@ open. It is a *progress* document, not a paper draft (drafts: `research-phase01-
 | Is it a translation system? | **No.** A 77 M `opus-mt-vi-en` gets 22.27 BLEU / 0.752 COMET on the same data (phase01). The decoder (60 M, 1 epoch, 60–100 k pairs) is the binding constraint. | phase01 §5 |
 | Is the ANN/MLP needed? | **No — repeatedly falsified** (ridge ≥ MLP at 9 k, 100 k, 9.28 M token pairs; 512 LightGBM wins in-sample, loses held-out). | small-experiment §3, ver02 §3.4 |
 | What is the map's real defect? | **Collapse toward the target mean**, not "strangeness". 0.000 anomaly rate, ‖z‖ 6.31 vs 22.77 for genuine states. | 1.2 `ANOMALY.md` |
-| Best cheap improvement found | **ridge + partial recolor (t=0.1)**: +16 % BLEU, +2.8 % chrF, zero training cost, one 512×512 matrix. | 1.2 `GEN_VARIANTS.md` |
+| Best cheap improvement found | **fit the map on the decoder's CE, not MSE**: 2.47 → 7.04 BLEU with the same 263 k parameters (E11). The earlier answer, ridge + partial recolor (t=0.1), replicates (+0.59 BLEU) but is not significant at n=1 000. | E11 `REPORT.md`, 1.2 `GEN_VARIANTS.md` |
 | Does the project's *title* layer (dynamic fact insertion) exist in the pipeline? | **No.** Only a 15-sentence Ollama pilot (2026-10-31) + a fact database. No RAG-over-mapped-translation run yet. | §11 |
 | Paper status | Two drafts exist as md: translation (ver02 `paper.md` + 1.2 intro) and neural-mining (`neuralMining.md` + 1.2 intro). PRISMA workbooks complete. | §12 |
 
@@ -336,6 +336,41 @@ Artefacts: `autonomous-research-experiment/{REPORT,HYPOTHESES,PROGRESS,HANDOFF,L
 `results/{pool_*,sel_*,feat_*,comet_*,metrics_*,rank_diag.json,insights.json,EXAMPLES.md,TABLES.md}`,
 `NOTEBOOK.ipynb`. Budget: **$0.25 of $3.00** (`coding` key), local GPU only.
 
+### 2026-11-26 — `coincidence-solution/` (E11): fit the bridge on behaviour, not on vector error
+
+Mission: test the "coincidence" idea — does there exist `H' ≠ H` with `d(H') ≈ d(H)`, and can a map
+be fitted to the decoder's behaviour instead of to vector error? Local GPU only, $0 API.
+
+- **Calibration first.** The reimplementation reproduces E9 exactly on the precision-insensitive
+  quantity (ridge CE 3.228, native CE 3.413); BLEU drifts 0.2–0.35 because `max_new` differs
+  (E9 used 48, this run 64) — re-scored at 48, ridge is 2.71 vs E9's 2.73.
+- **A ceiling memory was found**: the decoder reading the target encoder's states of the *English
+  reference* produces **74.2 BLEU / CE 0.302**. So a readable memory exists; the mapped channel's
+  CE 3.228 is 10× worse, and "decoder-bound" vs "map-bound" becomes separable.
+- **The level set is thin and anisotropic.** At a 5 % random displacement of the oracle memory, 22 %
+  of outputs already change; the map's own error direction at ε = 1 reproduces the ridge channel
+  (BLEU 2.4 / CE 3.32), i.e. **the least-squares bridge sits ~5× outside the tolerance radius**.
+  At the same 5 % displacement the steepest direction multiplies CE by 2.1 (3.40 → 7.16) while a
+  random direction is invisible → decoder anisotropy ≥ 100×.
+- **The map's error is isotropic** (1.3–1.4× chance in the decoder's sensitive subspace): there is a
+  null space, but least squares does not seek it. The "the error is harmless because it lies in the
+  null space" hypothesis is falsified.
+- **The intervention**: the same 263 200-parameter map fitted on the decoder's cross-entropy, 20 k
+  pairs, 6 epochs, decoder frozen → **2.47 → 7.04 BLEU** (max_new 64) / **2.67 → 7.59** (48),
+  CE 3.232 → 2.761, degeneration 16.7 % → 9.0 %. Paired bootstrap **+4.55 [+3.78, +5.26]**.
+- **Controls separate the causes**: ridge refitted on the same 20 k pairs is unchanged (−0.03);
+  pure isotropic rescaling to the same ‖H‖ buys +0.39; E9's recolour buys +0.59 (not significant at
+  n = 1 000, confirming E9's own caveat); CE from an identity initialisation does not beat ridge
+  (−0.26) and lands in a worse basin (val CE 3.364, ‖H‖ 24.4 vs genuine 22.9).
+- **Interpretation**: MSE was never a model of the task, it was a good *initialiser* for one. The
+  linear class was never the limitation; the estimator was. `ce_ridge` is still linear, still
+  263 k parameters, and 2.85× better.
+- Artefacts: `coincidence-solution/{REPORT,LEARNING_NOTE,HANDOFF}.md`, `NOTEBOOK.ipynb`,
+  `results/*.json` (calibration, coincidence, behaviour_maps, maxnew48, basis_analysis, bootstrap,
+  diag_*), `agent-work/maps/*.npz` (committed), 10 modules in `src/`. Budget $0.00.
+- Not done: `distill` (KL to the oracle) is implemented but unrun; convergence (val CE still falling
+  at epoch 6); COMET; en→vi.
+
 ### 2026-11-19 — consolidation
 
 This file. Nothing else changed. Working tree at that moment: one uncommitted one-line fix in
@@ -357,6 +392,7 @@ This file. Nothing else changed. Working tree at that moment: one uncommitted on
 | E8 | `research-phase01-ver02` | 11-15 | t5-small-vi → t5-small (512) | 6.67 M pairs, 1 shard, 80/10/10 | 5 channels, LightGBM, coreset, copy gate | mapped best on 3/4 metrics; nonlinearity = noise |
 | E9 | `research-phase01-1.2` | 11-18 | same as E8 | same | anomaly, map repairs, generation variants | collapse diagnosed; +16 % BLEU for free |
 | E10 | `autonomous-research-experiment` | 11-19/20 | opus-mt-vi-en + opus-mt-en-vi (77 M each, **frozen**) | MTet, 10 k test / 10 k val / 3.44 M train | 9 reference-free selectors + tiny rankers + LoRA control | latent agreement is the better *scorer* (Δρ +0.083) and not a better *selector*; beam +1.01; oracle +3.38; LoRA +3.65 |
+| E11 | `coincidence-solution` | 11-26 | t5-small-vi → t5-small (512), **map only** | chosen shard, 20 k fit / 1 k test | objective of the bridge: MSE vs decoder CE; level-set + anisotropy probes | **CE-fitted map 2.47 → 7.04 BLEU** (+4.55 [+3.78,+5.26]), CE 3.232 → 2.761, degen 16.7 → 9.0 %; controls: data 0 %, scale +0.39, recolour +0.59; least-squares error is isotropic (1.3× chance) and 5× outside the behavioural tolerance |
 
 ```mermaid
 flowchart TD
@@ -613,8 +649,12 @@ attributable to the map).
 
 ## 11. Open questions, ranked by value per hour
 
-1. **Bootstrap the +16 % (E9) on ≥3,000 pairs, then sweep `t` on *generation*** — currently `t=0.1`
-   was chosen on diagnostics. Cheapest path to a publishable table. (~1 h GPU + scoring)
+1. ~~**Bootstrap the +16 % (E9) on ≥3,000 pairs, then sweep `t` on *generation***~~ — **done in
+   E11**: the recolour gain is +0.59 BLEU [−0.08, +1.42] at n=1 000 (p = 0.93) and +0.76 at
+   `max_new=48`; real but small, and not individually significant at 1 k. Superseded by fitting the
+   map on the decoder's CE (+4.55 [+3.78, +5.26], E11), which is the new best result on this
+   pipeline. What remains from this item: COMET on the E11 arms, and training the CE map to
+   convergence (val CE was still falling at epoch 6).
 2. **Word/OT-level alignment** instead of character-span overlap (13.7 % of source tokens are
    guesses). The corpus already contains the candidate method
    (`2026 - Cross-Lingual Representation Alignment by Token-Level Optimal Transport`). This attacks

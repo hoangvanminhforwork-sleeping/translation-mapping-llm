@@ -1,0 +1,48 @@
+{
+  "max_new": 48,
+  "n": 1000,
+  "arms": {
+    "ridge_full": {
+      "bleu": 2.711,
+      "chrf": 19.669,
+      "ce": 3.2277,
+      "degen": 0.149
+    },
+    "ridge_sub": {
+      "bleu": 2.667,
+      "chrf": 19.617,
+      "ce": 3.2318,
+      "degen": 0.157
+    },
+    "ridge_recolor10": {
+      "bleu": 3.431,
+      "chrf": 20.649,
+      "ce": 3.2619,
+      "degen": 0.131
+    },
+    "ridge_scale122": {
+      "bleu": 3.212,
+      "chrf": 20.934,
+      "ce": 3.2479,
+      "degen": 0.176
+    },
+    "ce_ridge": {
+      "bleu": 5.725,
+      "chrf": 24.829,
+      "ce": 2.8572,
+      "degen": 0.105
+    },
+    "ce_ridge_e6": {
+      "bleu": 7.593,
+      "chrf": 27.118,
+      "ce": 2.7606,
+      "degen": 0.077
+    },
+    "ce_scratch": {
+      "bleu": 2.433,
+      "chrf": 17.271,
+      "ce": 3.3138,
+      "degen": 0.235
+    }
+  }
+}

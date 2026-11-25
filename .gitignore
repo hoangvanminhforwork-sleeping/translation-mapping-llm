@@ -11,6 +11,16 @@ agent-work/
 __pycache__/
 *.pyc
 
+# --- coincidence-solution: 4.1 GB of cached encoder states are re-derivable in 150 s, but the
+# fitted maps and the generated hypotheses ARE results and must stay traceable (git-62:
+# hide inputs, publish results). Re-include the directory, then re-ignore the bulk.
+!coincidence-solution/agent-work/
+coincidence-solution/agent-work/cache/
+coincidence-solution/agent-work/logs/
+coincidence-solution/agent-work/*.py
+coincidence-solution/agent-work/*.txt
+coincidence-solution/.env
+
 # --- large input corpus. ANCHORED on purpose: `data/` would also hide
 # research-prototype/data/culinary_100_pairs.jsonl, which is authored source data.
 /data/
