@@ -1,0 +1,43 @@
+{
+ "channel": "identity (no bridge)",
+ "n": 1000,
+ "bleu": 0.047,
+ "chrf": 6.114,
+ "ce": 4.6078,
+ "degen": 0.228,
+ "empty": 0.071,
+ "len_words": 8.64,
+ "ref_words": 17.87,
+ "examples": [
+  {
+   "vi": "Tìm thêm các thông điệp dí dỏm (nhưng trong sạch) của tôi tại @ ABCPress. \"",
+   "ref": "Find more of my witty (but clean) tweets @ ABCPress. â€ Now that you have your basic information, edit it so it has some personality.",
+   "hyp": "-"
+  },
+  {
+   "vi": "Điều này không có nghĩa là bạn không thể bàn về các vấn đề rắc rối, mà là bạn nên cố gắng giữ cho ngôn ngữ cũng như cách bạn trò chuyện mang tính tích cực.",
+   "ref": "That doesn't mean you can't discuss problems.",
+   "hyp": "there was a definite impact on the stand. '"
+  },
+  {
+   "vi": "\" Làm thế nào bạn có thể học những bài học ở đây?",
+   "ref": "'How can you learn lessons in here?",
+   "hyp": "“It's a good thing. I'll have to say that I'll be able to help you."
+  },
+  {
+   "vi": "Năm 1999, Metzen đã viết một truyện ngắn lấy bối cảnh trong thế giới StarCraft với đồng nghiệp Sam Moore là nhân viên của Blizzard Entertainment.",
+   "ref": "In 1999, Metzen wrote a short story set in the StarCraft universe with fellow Blizzard Entertainment employee Sam Moore.",
+   "hyp": "acap12. is a classic classic."
+  },
+  {
+   "vi": "4. Thực hiện chế độ báo cáo thống kê, kế toán, báo cáo định kỳ theo quy định của Nhà nước, chịu trách nhiệm về tính chính xác các báo cáo đó;",
+   "ref": "4. To observe the regime of statistical and accounting reporting, periodical report, as provided for by the State and be responsible for the accuracy of such reports;",
+   "hyp": "a bit of a certain type of a stipulation"
+  },
+  {
+   "vi": "( 39: 10) Nó khinh chê tiếng ồn ào của thị thành, Không nghe tiếng của kẻ coi dắt.",
+   "ref": "He scorns the tumult of the city, neither does he hear the shouting of the driver.",
+   "hyp": "\"so a mold-free given of space take."
+  }
+ ]
+}
