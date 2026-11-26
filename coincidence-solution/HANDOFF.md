@@ -1,8 +1,8 @@
 # Handoff — coincidence-solution — 2026-11-26 06:30 (UTC+7)
 
 State: **complete for the session's clock.** All scripts run end-to-end, all numbers in `REPORT.md`
-are traceable to a file in `results/`, the working tree is committed. One arm (`distill`) is
-specified and unrun; one run (`ce_ridge_e12`) was killed by a server restart at epoch 2 of 6.
+are traceable to a file in `results/`, the working tree is committed. The `distill` arm is done
+(and negative, see below); `ce_ridge_e12` was killed by a server restart at epoch 2 of 6.
 
 ## The one-paragraph state
 
@@ -36,22 +36,24 @@ respect to the decoder's sensitive subspace (1.3–1.4× chance), so no null-spa
 
 ## What is NOT done (in priority order)
 
-1. **`distill` arm** — KL(student ‖ oracle) added to CE, teacher = the decoder reading `E_ref`.
-   Fully implemented in `src/fit_behaviour.py`; the cached teacher states for the fit split are
-   already on disk (`agent-work/cache/fit/{E_ref,m_ref}.npy`). Run:
-   `python -m src.fit_behaviour --arms distill --init-map ce_ridge_e6 --epochs 4`
-   Hypothesis: soft targets beat hard labels because the oracle's distribution carries *which*
-   alternatives are acceptable.
-2. **Convergence** — `val CE` was still falling at epoch 6 (3.013 → 2.929 → 2.889 → 2.856 → 2.838 →
-   2.825). A cosine schedule over 20 epochs is the cheapest open number.
-3. **COMET** on the seven arms (installed, ~7 sent/s → 2.5 min/arm). BLEU and CE agree, but COMET
-   closes the "fluent but unfaithful" question that the Oct-31 pilot raised.
-4. **en→vi** — the `trans-t5-small-en-vi` adapter exists; `cc.py` is direction-agnostic except for
-   `MAP`/`ADAPTER` constants.
-5. **Two adapters instead of one mixed adapter** (open since E7/E8). This is no longer cosmetic: the
+1. **Train to convergence** — `val CE` was still falling at epoch 6 (3.013 → 2.929 → 2.889 → 2.856 →
+   2.838 → 2.825) and at epoch 8 (2.809). A cosine schedule over 20 epochs is the cheapest open
+   number, and the ceiling of this method is unknown.
+2. **Two adapters instead of one mixed adapter** (open since E7/E8). This is no longer cosmetic: the
    CE objective is fitted *against* the adapter, so a mixed adapter confounds the channel difference.
-6. **Test-time refinement** — gradient steps on `δ` at inference to measure how much of the remaining
+3. **en→vi** — the `trans-t5-small-en-vi` adapter exists; `cc.py` is direction-agnostic except for
+   the `MAP`/`ADAPTER` constants.
+4. **Test-time refinement** — gradient steps on `δ` at inference to measure how much of the remaining
    CE gap is reachable at all (uses the reference; diagnostic only).
+
+### Distillation: done, and negative
+
+`distill` (CE + KL to the oracle memory, warm-started from `ce_ridge_e6`, 2 epochs) reaches
+**7.25 BLEU / COMET 0.5678 / CE 2.741** — the best raw numbers of the session — but the KL term adds
+nothing: after the same 2 extra epochs, CE-only gives val CE **2.8089** and distill gives **2.8090**.
+The +0.21 BLEU is the extra epochs. `results/train_ce_ridge_e12.csv` holds that killed run's
+trajectory; its BLEU was never generated. Do not re-run distill expecting a gain at this capacity —
+the student memory cannot represent a distribution whose CE is 0.30.
 
 ## Invalid / do-not-quote artefacts
 

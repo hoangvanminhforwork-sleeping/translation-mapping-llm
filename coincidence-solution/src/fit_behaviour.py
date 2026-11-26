@@ -134,7 +134,8 @@ def ce_kl(model, h, am, lab, teacher=None):
         return ce, ce.detach(), None
     with torch.no_grad():
         ht, amt = teacher
-        ot = model(encoder_outputs=BaseModelOutput(last_hidden_state=ht), attention_mask=amt)
+        ot = model(encoder_outputs=BaseModelOutput(last_hidden_state=ht), attention_mask=amt,
+                   labels=lab)          # labels only to obtain teacher-forced logits
         lt = torch.log_softmax(ot.logits.float(), -1)
     kl = F.kl_div(lp, lt, log_target=True, reduction="none").sum(-1)
     kl = (kl * m).sum() / m.sum().clamp(min=1)

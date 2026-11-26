@@ -16,6 +16,7 @@ find it from another encoder's states?
 | 3 | It is **not** extra data: ridge refitted on the *same* 20 k pairs | 2.47 vs 2.50, ΔBLEU −0.03 [−0.25, +0.17] | `bootstrap.json` |
 | 4 | The decoder's level set is **thin and anisotropic**: a 5 % random displacement of the oracle memory changes 22 % of outputs; the steepest direction at the same norm raises CE 2.1× and halves BLEU | anisotropy ≥ 100× | `coincidence.json` |
 | 5 | E9's "recolour = +16 % BLEU for free" **replicates in magnitude** (+28 % at its own decoding setting) but is not significant on 1 000 sentences — and is 5× smaller than behaviour fitting | 2.67 → 3.43 BLEU | `maxnew48.json` |
+| 6 | An independent learned metric agrees: **COMET is monotone in BLEU across all seven arms** | 0.4797 → **0.5641** | `comet.json` |
 
 **One sentence:** a linear bridge between two frozen monolingual models should be fitted on the
 quantity it is judged by — the target decoder's likelihood — and when it is, the same 0.26 M
@@ -144,6 +145,7 @@ All rows n = 1 000 held-out test sentences; BLEU/chrF/CE/degen at `max_new=64` (
 | `ridge_scale122` | pure isotropic ×1.22 (matches CE arm's ‖H‖) | 2.89 [3.21] | 20.88 | 3.248 | 0.190 | 9.3 | 7.9 | 3.325 |
 | **`ce_ridge`** | **CE objective, 2 epochs** | **5.33 [5.72]** | **25.00** | **2.857** | **0.118** | 9.3 | 10.6 | 2.929 |
 | **`ce_ridge_e6`** | **CE objective, 6 epochs** | **7.04 [7.59]** | **27.24** | **2.761** | **0.090** | 11.3 | 14.3 | 2.825 |
+| `distill` | CE + KL to the oracle, 2 more epochs | 7.25 [7.77] | 27.57 | 2.741 | 0.104 | 11.9 | 15.4 | 2.809 |
 | `ce_scratch` | CE objective from `W = I`, 2 epochs | 2.25 [2.43] | 17.28 | 3.314 | 0.265 | 24.4 | 33.7 | 3.364 |
 
 Paired bootstrap over sentences, 200 resamples, vs `ridge_full` (`results/bootstrap.json`):
@@ -156,6 +158,7 @@ Paired bootstrap over sentences, 200 resamples, vs `ridge_full` (`results/bootst
 | `ce_scratch` | −0.26 [−0.77, +0.33] | 0.21 |
 | **`ce_ridge`** | **+2.83 [+2.29, +3.47]** | **1.00** |
 | **`ce_ridge_e6`** | **+4.55 [+3.78, +5.26]** | **1.00** |
+| **`distill`** | **+4.76 [+3.92, +5.57]** | **1.00** |
 
 The two cheap fixes sit at p ≈ 0.8–0.9 on 1 000 sentences: positive, consistent with E9's direction,
 **not individually significant at this sample size** (E9 itself asked for ≥ 3 000 pairs before
@@ -181,13 +184,53 @@ worse basin** (val CE 3.364 vs ridge's 3.307, ‖H‖ 24.4 — it blows the memo
 two objectives are not interchangeable: the least-squares solution is a poor *answer* but an
 excellent *initialisation*. In this setup MSE is doing warm-starting, not modelling.
 
-### 5.2 Not converged
+### 5.2 COMET agrees — it is not a fluency artefact
+
+n = 400 test sentences, `Unbabel/wmt22-comet-da` (`results/comet.json`). BLEU can reward fluent but
+unfaithful output — the Oct-31 pilot's failure mode — so an independent learned metric was run on
+every arm:
+
+| arm | BLEU (max64) | **COMET** |
+|---|---|---|
+| `ce_scratch` | 2.25 | 0.4363 |
+| `ridge_sub` | 2.47 | 0.4751 |
+| `ridge_full` | 2.50 | 0.4797 |
+| `ridge_scale122` | 2.89 | 0.4898 |
+| `ridge_recolor10` | 3.08 | 0.4966 |
+| `ce_ridge` | 5.33 | 0.5331 |
+| **`ce_ridge_e6`** | **7.04** | **0.5641** |
+| **`distill`** | **7.25** | **0.5678** |
+
+**COMET is monotone in BLEU across all seven arms** — every ranking survives a metric that is
+neither n-gram nor likelihood based. For scale: E7's mapped channel (250 M + 220 M models, 768-d,
+3.46 M pairs) reached COMET 0.600 and `opus-mt-vi-en` 0.752, so the 6-epoch map at 0.564 is closing
+on a much bigger pipeline with 60 M models.
+
+### 5.3 Distillation from the oracle memory adds nothing measurable
+
+`distill` = CE + KL(student ‖ teacher) where the teacher is the decoder reading `H_ref` ("the
+answer"), warm-started from `ce_ridge_e6` for 2 more epochs. It reaches the best raw numbers of the
+night (7.25 BLEU, COMET 0.5678, CE 2.741) — but the KL term is not what did it:
+
+| run | val CE after 2 extra epochs |
+|---|---|
+| `ce_ridge_e12` (CE only, killed before eval — log survives) | **2.8089** |
+| `distill` (CE + KL) | **2.8090** |
+
+Identical to four decimals. So the +0.21 BLEU over `ce_ridge_e6` is the two extra epochs, **not** the
+soft targets. This is the mission's most literal question — "can we transport the oracle's
+behaviour into the map?" — answered negatively at this capacity: the student's memory cannot
+represent a distribution whose CE is 0.30, and forcing it to try adds nothing to the hard label.
+The `ce_ridge_e12` arm was killed by a server restart before generation, so its BLEU is unavailable;
+only its val-CE trajectory (2.8190 → 2.8089) survives.
+
+### 5.4 Not converged
 
 `val CE` by epoch for `ce_ridge_e6` (total 6): 3.013 → 2.929 (2) → 2.889 → 2.856 → 2.838 → 2.825 (6).
 Monotone and flattening slowly; BLEU at 2 epochs 5.33, at 6 epochs 7.04. **The 7.04 is a lower
 bound under this budget**, and the run was stopped by the session's clock, not by convergence.
 
-### 5.3 What the improvement looks like (verified by eye, not only by BLEU)
+### 5.5 What the improvement looks like (verified by eye, not only by BLEU)
 
 From `NOTEBOOK.ipynb` §5, same test rows:
 
@@ -246,7 +289,7 @@ larger.
 6. **`cos_sent` in `coincidence.json` is invalid** (norms and inner products were taken under
    different masks, giving values outside [−1, 1]). Do not quote it; the curve is the evidence.
 7. n = 1 000 for generation (BLEU resolution ≈ ±0.3; the effects reported are 4.5+), n = 300 for the
-   perturbation curves, one seed each. No COMET, no human evaluation.
+   perturbation curves, n = 400 for COMET, one seed each. No human evaluation.
 
 ## 8. What this means for the paper
 
@@ -265,18 +308,15 @@ parameters, and now three times better.
 
 ## 9. Next steps, ranked by value per hour
 
-1. **COMET** on the seven arms (installed; ~7 sent/s → 2.5 min/arm). BLEU and CE both favour the CE
-   arms; COMET would close the "is it just longer outputs?" question. (`max_new` is controlled, but
-   not length *within* a run.)
-2. **Train to convergence** with a schedule (cosine, 20 epochs). val CE is still falling; the
+1. **Train to convergence** with a schedule (cosine, 20 epochs). val CE is still falling; the
    ceiling of this method is unknown and it is the cheapest open number.
-3. **Distillation arm** (KL to the decoder's distribution over the oracle memory) — specified in
-   `src/fit_behaviour.py` (`--arms distill`), never run. Should beat CE if the soft targets carry
-   the useful information.
-4. **Two adapters instead of one mixed adapter** (open since E7/E8) — the CE objective now depends
+2. **Distillation arm** (KL to the decoder's distribution over the oracle memory) — implemented in
+   `src/fit_behaviour.py` (`--arms distill --init-map ce_ridge_e6`). If soft targets beat hard labels,
+   this is the literal form of the mission's "transport the oracle's behaviour" idea.
+3. **Two adapters instead of one mixed adapter** (open since E7/E8) — the CE objective now depends
    on the adapter, so this is no longer cosmetic.
-5. **en→vi** with the same recipe: the `trans-t5-small-en-vi` adapter exists.
-6. **Test-time refinement**: gradient steps on `δ` at inference to measure how much of the remaining
+4. **en→vi** with the same recipe: the `trans-t5-small-en-vi` adapter exists.
+5. **Test-time refinement**: gradient steps on `δ` at inference to measure how much of the remaining
    CE gap is reachable at all (uses the reference — a diagnostic, not a method).
 
 ## 10. Reproduce
@@ -295,6 +335,7 @@ $py = "..\research-scale-100k\.venv\Scripts\python.exe"
 & $py -m src.bootstrap_all         # CIs                      -> results/bootstrap.json
 & $py -m src.diag_recolor          # fold == literal check     -> results/diag_recolor.json
 & $py -m src.diag_maxnew           # decoding confound         -> results/diag_maxnew.json
+& $py -m src.eval_comet --n 400   # independent metric        -> results/comet.json
 ```
 
 Every script is idempotent: caches and `.npz` maps are skipped if present, `--force` rebuilds.
@@ -310,6 +351,7 @@ Total GPU time for the whole night ≈ 75 min on an RTX 3050 4 GB.
 | `results/maxnew48.json` | the same arms at E9's decoding setting |
 | `results/basis_analysis.json` | oracle overlap, gradient spectrum, per-arm subspace energy |
 | `results/bootstrap.json` | paired CIs vs `ridge_full` |
+| `results/comet.json` | COMET per arm (n=400) |
 | `results/diag_recolor.json`, `results/diag_maxnew.json` | the two validity checks |
 | `results/train_*.csv` | per-25-step training logs |
 | `agent-work/maps/*.npz` | fitted (W, b) per arm — **committed**, 1 MB each |

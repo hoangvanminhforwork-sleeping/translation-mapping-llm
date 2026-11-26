@@ -362,6 +362,12 @@ be fitted to the decoder's behaviour instead of to vector error? Local GPU only,
   pure isotropic rescaling to the same ‖H‖ buys +0.39; E9's recolour buys +0.59 (not significant at
   n = 1 000, confirming E9's own caveat); CE from an identity initialisation does not beat ridge
   (−0.26) and lands in a worse basin (val CE 3.364, ‖H‖ 24.4 vs genuine 22.9).
+- **COMET agrees**: `wmt22-comet-da` is monotone in BLEU across all eight arms (0.4363 → 0.5678), so
+  the gain is not a fluency artefact.
+- **Distillation is negative**: CE + KL to the decoder's distribution over the oracle memory reaches
+  7.25 BLEU, but after the same 2 extra epochs CE-only gives val CE 2.8089 and CE+KL 2.8090 — the
+  soft targets add nothing at this capacity. "Transport the oracle's behaviour into the map" is
+  answered negatively; the student memory cannot represent a CE-0.30 distribution.
 - **Interpretation**: MSE was never a model of the task, it was a good *initialiser* for one. The
   linear class was never the limitation; the estimator was. `ce_ridge` is still linear, still
   263 k parameters, and 2.85× better.

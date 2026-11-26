@@ -19,7 +19,7 @@ import torch
 from . import cc
 
 sys.stdout.reconfigure(encoding="utf-8")
-ARMS = ("ridge_full", "ridge_sub", "ridge_recolor10", "ridge_scale122", "ce_ridge",
+ARMS = ("distill", "ridge_full", "ridge_sub", "ridge_recolor10", "ridge_scale122", "ce_ridge",
         "ce_ridge_e6", "ce_scratch")
 MAX_NEW = 48
 
@@ -34,7 +34,8 @@ def main():
     lab = torch.from_numpy(np.asarray(np.load(t / "lab.npy", mmap_mode="r")).astype(np.int64)).cuda()
     H_E = torch.from_numpy(E).cuda()
     am = torch.from_numpy(m).cuda()
-    out = {"max_new": MAX_NEW, "n": len(refs), "arms": {}}
+    out_p = cc.RESULTS / "maxnew48.json"
+    out = json.loads(out_p.read_text(encoding="utf-8")) if out_p.exists() else {"max_new": MAX_NEW, "n": len(refs), "arms": {}}
     for arm in ARMS:
         p = cc.WORK / "maps" / f"{arm}.npz"
         if not p.exists():
@@ -48,6 +49,7 @@ def main():
                             "chrf": round(float(cc.chrf(hyps, refs)), 3),
                             "ce": round(float(ce.mean()), 4),
                             "degen": round(float(cc.degen_rate(hyps)), 3)}
+        out_p.write_text(json.dumps(out, indent=2), encoding="utf-8")
         (cc.WORK / "hyps48").mkdir(parents=True, exist_ok=True)
         (cc.WORK / "hyps48" / f"{arm}.json").write_text(json.dumps(hyps, ensure_ascii=False),
                                                         encoding="utf-8")
@@ -55,7 +57,6 @@ def main():
               f"ce {out['arms'][arm]['ce']:.3f}  degen {out['arms'][arm]['degen']:.3f} "
               f"({time.time() - t0:.0f}s)", flush=True)
         torch.cuda.empty_cache()
-    (cc.RESULTS / "maxnew48.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
     print("wrote results/maxnew48.json")
 
 

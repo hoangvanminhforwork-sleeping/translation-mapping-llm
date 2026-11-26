@@ -109,6 +109,9 @@ winning because the relation is linear, it was winning because it lands in the r
 | SVD of a 1000×32768 gradient matrix inside the training script | killed the run after the arms were written | `randomized_svd(n_components=256)` in a separate `analyse_basis.py` |
 | np.savez of a json string + `str()` round-trip | 5 min | fine, but `json.loads(str(z["hist"]))` — check it, don't assume |
 | percent-encoded arm names | **the §4 mistake** | never encode a float as an integer without a printed checksum |
+| COMET: `download_model("Unbabel/w08-2020-comet")` | 5 min | comet 2.2.7 raises `KeyError: Model ... not supported`; the cached checkpoint is `Unbabel/wmt22-comet-da` |
+| COMET: `download_model(..., saving_directory=...)` | 3 min + 1.4 GB | it **ignores** the populated HF cache and re-downloads; call it without `saving_directory` |
+| `model(encoder_outputs=..., attention_mask=...)` with no `labels`/`decoder_input_ids` | 5 min | T5 raises "You have to specify either…"; pass `labels=lab` to get teacher-forced logits |
 
 ## 8. What I would do differently
 
