@@ -32,6 +32,10 @@
     "distill": {
       "comet": 0.5678,
       "sec": 26.3
+    },
+    "ce_ridge_e16": {
+      "comet": 0.583,
+      "sec": 24.2
     }
   }
 }

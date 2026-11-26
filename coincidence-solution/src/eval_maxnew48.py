@@ -19,7 +19,7 @@ import torch
 from . import cc
 
 sys.stdout.reconfigure(encoding="utf-8")
-ARMS = ("distill", "ridge_full", "ridge_sub", "ridge_recolor10", "ridge_scale122", "ce_ridge",
+ARMS = ("ce_ridge_e16", "distill", "ridge_full", "ridge_sub", "ridge_recolor10", "ridge_scale122", "ce_ridge",
         "ce_ridge_e6", "ce_scratch")
 MAX_NEW = 48
 

@@ -7,13 +7,14 @@ are traceable to a file in `results/`, the working tree is committed. The `disti
 ## The one-paragraph state
 
 Fitting the 263 200-parameter bridge on the frozen decoder's **cross-entropy** instead of
-least-squares gives **2.47 → 7.04 BLEU** (max_new 64) / **2.67 → 7.59** (max_new 48) on the same
-1 000 held-out sentences, with CE 3.232 → 2.761 and degeneration 16.7 % → 9.0 %. Controls separate
-the causes: the data is identical (`ridge_sub` = 2.47), pure scale correction buys +0.42, E9's
-recolour buys +0.61, and CE from an identity initialisation fails (2.25) — so the MSE solution is a
-good *initialiser* and a bad *objective*. The mechanism is measured: the decoder's behavioural
-tolerance is ~5× smaller than the least-squares bridge's error, and that error is isotropic with
-respect to the decoder's sensitive subspace (1.3–1.4× chance), so no null-space argument rescues it.
+least-squares gives **2.47 → 7.90 BLEU** at 16 epochs (**2.67 → 8.46** at E9's `max_new=48`) on the
+same 1 000 held-out sentences, with CE 3.232 → 2.738, degeneration 16.7 % → 6.7 % and COMET
+0.4797 → 0.5830. Controls separate the causes: the data is identical (`ridge_sub` = 2.47), pure
+scale correction buys +0.39, E9's recolour buys +0.59, and CE from an identity initialisation does
+not beat ridge — so the MSE solution is a good *initialiser* and a bad *objective*. The mechanism is
+measured: the decoder's behavioural tolerance is ~5× smaller than the least-squares bridge's error,
+and that error is isotropic with respect to the decoder's sensitive subspace (1.3–1.4× chance), so no
+null-space argument rescues it. Distillation from the oracle memory adds nothing over CE.
 
 ## Numbers to trust, and where they come from
 

@@ -356,14 +356,18 @@ be fitted to the decoder's behaviour instead of to vector error? Local GPU only,
   null space, but least squares does not seek it. The "the error is harmless because it lies in the
   null space" hypothesis is falsified.
 - **The intervention**: the same 263 200-parameter map fitted on the decoder's cross-entropy, 20 k
-  pairs, 6 epochs, decoder frozen → **2.47 → 7.04 BLEU** (max_new 64) / **2.67 → 7.59** (48),
-  CE 3.232 → 2.761, degeneration 16.7 % → 9.0 %. Paired bootstrap **+4.55 [+3.78, +5.26]**.
+  pairs, decoder frozen → **2.47 → 5.33 BLEU** after 2 epochs, **7.04** after 6, **7.90** after 16
+  (max_new 64) / **2.67 → 5.72 / 7.59 / 8.46** (48), CE 3.232 → 2.738, degeneration 16.7 % → 6.7 %.
+  Paired bootstrap at 16 epochs **+5.40 [+4.50, +6.27]**.
 - **Controls separate the causes**: ridge refitted on the same 20 k pairs is unchanged (−0.03);
   pure isotropic rescaling to the same ‖H‖ buys +0.39; E9's recolour buys +0.59 (not significant at
   n = 1 000, confirming E9's own caveat); CE from an identity initialisation does not beat ridge
   (−0.26) and lands in a worse basin (val CE 3.364, ‖H‖ 24.4 vs genuine 22.9).
-- **COMET agrees**: `wmt22-comet-da` is monotone in BLEU across all eight arms (0.4363 → 0.5678), so
+- **COMET agrees**: `wmt22-comet-da` is monotone in BLEU across all nine arms (0.4363 → 0.5830), so
   the gain is not a fluency artefact.
+- **CE plateaus before BLEU does**: val CE converges to ≈2.795 by epoch ~10 of 16 while BLEU keeps
+  moving (7.04 → 7.90) — a small second-order instance of the project's own "metric ≠ usability"
+  theme. 2 epochs already capture +2.83 of the +5.40.
 - **Distillation is negative**: CE + KL to the decoder's distribution over the oracle memory reaches
   7.25 BLEU, but after the same 2 extra epochs CE-only gives val CE 2.8089 and CE+KL 2.8090 — the
   soft targets add nothing at this capacity. "Transport the oracle's behaviour into the map" is

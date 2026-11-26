@@ -182,6 +182,9 @@ def train_arm(model, arm, E_vi, m_vi, lab, W0, b0, epochs, batch, lr, val, teach
                 run = []
         vce = eval_ce(model, val, W, bb)
         hist.append({"epoch": ep, "val_ce": vce, "sec": round(time.time() - t0, 1)})
+        # checkpoint after every epoch: a killed process must not lose the whole arm
+        np.savez(MAPS / f"{arm}.npz", W=W.detach().cpu().numpy(),
+                 b=bb.detach().cpu().numpy(), hist=json.dumps(hist))
         print(f"  [{arm}] epoch {ep} val CE {vce:.4f}  ({time.time() - t0:.0f}s)", flush=True)
     return W.detach().cpu().numpy(), bb.detach().cpu().numpy(), hist
 

@@ -11,7 +11,7 @@ find it from another encoder's states?
 
 | # | finding | number | file |
 |---|---|---|---|
-| 1 | Fitting the **same** 263 200-parameter map on the decoder's cross-entropy instead of MSE | **2.47 → 7.04 BLEU** (max_new 64) · **2.67 → 7.59** (max_new 48) · CE 3.232 → 2.761 · degenerate 16.7 % → 9.0 % | `behaviour_maps.json`, `maxnew48.json` |
+| 1 | Fitting the **same** 263 200-parameter map on the decoder's cross-entropy instead of MSE | **2.47 -> 7.90 BLEU** at 16 epochs (2.67 -> **8.46** at max_new 48) - CE 3.232 -> 2.738 - degenerate 16.7 % -> 6.7 % - COMET 0.4797 -> 0.5830 | `behaviour_maps.json`, `maxnew48.json`, `comet.json` |
 | 2 | The gain is **not** scale correction: pure isotropic rescaling to the same ‖H‖ | +0.42 BLEU (17 % of the 2-epoch gain) | `behaviour_maps.json` |
 | 3 | It is **not** extra data: ridge refitted on the *same* 20 k pairs | 2.47 vs 2.50, ΔBLEU −0.03 [−0.25, +0.17] | `bootstrap.json` |
 | 4 | The decoder's level set is **thin and anisotropic**: a 5 % random displacement of the oracle memory changes 22 % of outputs; the steepest direction at the same norm raises CE 2.1× and halves BLEU | anisotropy ≥ 100× | `coincidence.json` |
@@ -146,6 +146,7 @@ All rows n = 1 000 held-out test sentences; BLEU/chrF/CE/degen at `max_new=64` (
 | **`ce_ridge`** | **CE objective, 2 epochs** | **5.33 [5.72]** | **25.00** | **2.857** | **0.118** | 9.3 | 10.6 | 2.929 |
 | **`ce_ridge_e6`** | **CE objective, 6 epochs** | **7.04 [7.59]** | **27.24** | **2.761** | **0.090** | 11.3 | 14.3 | 2.825 |
 | `distill` | CE + KL to the oracle, 2 more epochs | 7.25 [7.77] | 27.57 | 2.741 | 0.104 | 11.9 | 15.4 | 2.809 |
+| **`ce_ridge_e16`** | **CE objective, 16 epochs** | **7.90 [8.46]** | **29.36** | **2.738** | **0.067** | 13.8 | 18.8 | 2.797 |
 | `ce_scratch` | CE objective from `W = I`, 2 epochs | 2.25 [2.43] | 17.28 | 3.314 | 0.265 | 24.4 | 33.7 | 3.364 |
 
 Paired bootstrap over sentences, 200 resamples, vs `ridge_full` (`results/bootstrap.json`):
@@ -159,6 +160,7 @@ Paired bootstrap over sentences, 200 resamples, vs `ridge_full` (`results/bootst
 | **`ce_ridge`** | **+2.83 [+2.29, +3.47]** | **1.00** |
 | **`ce_ridge_e6`** | **+4.55 [+3.78, +5.26]** | **1.00** |
 | **`distill`** | **+4.76 [+3.92, +5.57]** | **1.00** |
+| **`ce_ridge_e16`** | **+5.40 [+4.50, +6.27]** | **1.00** |
 
 The two cheap fixes sit at p ≈ 0.8–0.9 on 1 000 sentences: positive, consistent with E9's direction,
 **not individually significant at this sample size** (E9 itself asked for ≥ 3 000 pairs before
@@ -200,6 +202,7 @@ every arm:
 | `ce_ridge` | 5.33 | 0.5331 |
 | **`ce_ridge_e6`** | **7.04** | **0.5641** |
 | **`distill`** | **7.25** | **0.5678** |
+| **`ce_ridge_e16`** | **7.90** | **0.5830** |
 
 **COMET is monotone in BLEU across all seven arms** — every ranking survives a metric that is
 neither n-gram nor likelihood based. For scale: E7's mapped channel (250 M + 220 M models, 768-d,
@@ -207,7 +210,6 @@ neither n-gram nor likelihood based. For scale: E7's mapped channel (250 M + 220
 on a much bigger pipeline with 60 M models.
 
 ### 5.3 Distillation from the oracle memory adds nothing measurable
-
 `distill` = CE + KL(student ‖ teacher) where the teacher is the decoder reading `H_ref` ("the
 answer"), warm-started from `ce_ridge_e6` for 2 more epochs. It reaches the best raw numbers of the
 night (7.25 BLEU, COMET 0.5678, CE 2.741) — but the KL term is not what did it:
@@ -224,11 +226,23 @@ represent a distribution whose CE is 0.30, and forcing it to try adds nothing to
 The `ce_ridge_e12` arm was killed by a server restart before generation, so its BLEU is unavailable;
 only its val-CE trajectory (2.8190 → 2.8089) survives.
 
-### 5.4 Not converged
+### 5.4 Convergence: CE plateaus, BLEU keeps rising
 
-`val CE` by epoch for `ce_ridge_e6` (total 6): 3.013 → 2.929 (2) → 2.889 → 2.856 → 2.838 → 2.825 (6).
-Monotone and flattening slowly; BLEU at 2 epochs 5.33, at 6 epochs 7.04. **The 7.04 is a lower
-bound under this budget**, and the run was stopped by the session's clock, not by convergence.
+`val CE` per epoch, 16 epochs total (`ce_ridge_e16`, warm-started from `ce_ridge_e6`):
+
+```
+2.819  2.809  2.806  2.800  2.807  2.802  2.794  2.799  2.795  2.797
+```
+
+It plateaus at **≈2.795 by epoch 4** and then oscillates by ±0.005 — the CE landscape is flat there.
+BLEU over the same span: **7.04 (6 epochs) → 7.90 (16 epochs)**, chrF 27.24 → 29.36, degeneration
+9.0 % → 6.7 %, COMET 0.5641 → 0.5830. So inside the CE plateau there is still a third of a BLEU of
+movement, and CE and BLEU are **not** monotone at the margin — a small second-order version of the
+project's own "representation metric ≠ usability" theme.
+
+Practical reading: 2 epochs of CE already captures most of the effect (+2.83 of +5.40); 16 epochs
+buys the rest for 20 minutes of GPU. A cosine schedule would probably reach the same place faster,
+and the method's ceiling is still unmeasured — CE has converged, BLEU has not stopped moving.
 
 ### 5.5 What the improvement looks like (verified by eye, not only by BLEU)
 
