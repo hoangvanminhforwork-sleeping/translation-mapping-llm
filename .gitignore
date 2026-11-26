@@ -43,3 +43,26 @@ autonomous-research-experiment/results/bt_*.json
 # the .md/.csv results living next to them stay tracked.
 draft/**/*.pdf
 References/*.pdf
+
+# --- secrets. Local is the source of truth, but keys must not leave the machine.
+# research-phase01/.env and research-prototype/.env were committed in early history
+# and untracked on 2026-11-26; the old keys remain in history, so rotate if the repo
+# ever needs to be private again.
+.env
+*.env
+
+# --- research-phase01-1.2: 526 MB of encoder states are re-derivable in minutes,
+# mission notes are internal working material (agents.md 5/6).
+research-phase01-1.2/data/
+research-phase01-1.2/missions.md
+research-phase01-1.2/model.txt
+research-phase01-1.2/communnication.txt
+
+# --- raw agent conversation transcripts: internal working material, not evidence.
+conversation/
+
+# --- personal photos and seminar material: not paper evidence.
+present-Saturday-24th Oct/
+
+# --- scratch
+coincidence-solution/scientific-communication/temp.docx

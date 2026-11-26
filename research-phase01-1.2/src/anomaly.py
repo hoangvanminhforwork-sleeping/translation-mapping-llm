@@ -182,7 +182,7 @@ def main():
 
     mp = np.load(VER02 / "data" / "map_vi_en.npz")
     W, b = mp["W"].astype(np.float32), mp["b"].astype(np.float32)
-    M = X @ W.T + b                        # the mapped representation
+    M = X @ W + b                        # the mapped representation
     ident = X                              # control: no map at all
     meanv = np.broadcast_to(Y.mean(0, keepdims=True), X.shape).astype(np.float32)
 
@@ -230,4 +230,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

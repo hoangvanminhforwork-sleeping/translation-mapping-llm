@@ -1,0 +1,48 @@
+﻿
+--- agent status, 2026-11-13 10:43 — STOPPED AT YOUR REQUEST ---
+Everything is stopped: no python process is running, GPU at 0 MiB. Nothing is half-written except
+one stage described below.
+
+DONE and committed:
+  * finetune-and-lora: flan-t5-base LoRA 2.9% -> 99.8% exact copies (full 2,000, 0 broken).
+  * research-scale-100k: 99,743 pairs, maps both directions (cosine 0.853/0.858, retrieval@1
+    0.514/0.506 vs identity 0.008/0.001), executed notebook, reports.
+  * BLEU vi->en 0.141, plus diagnostics showing none of the 3 runs translates (mapped 71.6%
+    degenerate loops; control echoes Vietnamese; zero-shot vit5 loops on its prompt).
+
+INTERRUPTED (not committed, reproducible in ~8 min):
+  * adapter-free decoder control: the map into plain flan-t5-base was fitted and saved
+    (cosine 0.804, retrieval@1 0.584); its generations were lost. The two .npy and the .npz
+    are on disk, so nothing has to be recomputed except the generation.
+    Next: cd research-scale-100k; .\.venv\Scripts\python.exe -m src.control_basedecoder
+          then .\.venv\Scripts\python.exe tools\score_base.py
+
+DROPPED by your decision: M1 (dishes + culture facts). ExtractionKey untouched ($1.00), expires
+2026-11-14 08:37 VN.
+NOT DONE: en->vi BLEU.
+Read: agent-work/SESSION_REPORT.md, then research-scale-100k/REPORT.md (see 3.4 for the partial run).
+
+--- agent status, 2026-11-14 19:37 - mission 14Nov COMPLETE (phase 1) ---
+All stages finished, nothing half-written, GPU idle, no process running.
+
+DELIVERED (research-phase01/):
+  * mapping on 3,456,741 unique pairs (the corpus has 8.33M ROWS but only 3.62M distinct sentences;
+    dedup was mandatory or the test split leaks). 85,089,885 aligned token pairs, lambda=0 (sweep flat).
+  * geometry vi->en: sentence cos 0.751, retrieval@1 48.75% vs identity 0.10% / mean 0.05%.
+    en->vi: 0.814 / 44.0% (free, from the same statistics).
+  * generation, 2,000 test pairs, one decoder, 4 channels:
+      mapped   6.28 BLEU [5.86,6.73] / chrF 28.15 / COMET 0.600
+      native   3.85 BLEU [3.43,4.34] / 18.72 / 0.443   (flan's own encoder reading Vietnamese)
+      identity 0.01 BLEU              / 10.99 / 0.288   (no map: word salad)
+      opus-mt  22.27 BLEU [21.39,23.25] / 45.31 / 0.752 (77M dedicated NMT, for calibration)
+    paired bootstrap: native-mapped = -2.44 [-3.03,-1.82], P=1.000.
+  * M1: 1,402 recipes (RecipeNLG schema), 1,544 atomic facts (100% quote-verified), facts.db.
+    DataWorker spend: 0.277 of 1.00 USD.
+  * COMET feasible; executed notebook; REPORT.md, LEARNING_NOTE.md, AGENT_HANDOFF.md.
+
+TWO NEGATIVE RESULTS, deliberately not hidden:
+  * the logistic probe is a DOMAIN classifier (AUC ~1.0 because recipes vs news prose is trivial).
+  * probe vs decision model on MTET: 98.5% agreement but kappa = 0.00 (they agree only by saying "no").
+
+NOT DONE: en->vi BLEU (geometry only), longer decoder training, word-level alignment.
+Read: research-phase01/AGENT_HANDOFF.md then REPORT.md.

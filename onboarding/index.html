@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Culinary CSI — Onboarding nghiên cứu</title>
+<meta name="description" content="Trang onboarding cho dự án Culinary CSI: representation ẩm thực ICOCO, ánh xạ biểu diễn giữa hai model đơn ngữ, bằng chứng từ hai thí nghiệm nhỏ và đường tái lập.">
+<style>
+/* ============================================================
+   Culinary CSI — Onboarding
+   Self-contained: no webfonts, no CDN, no external assets.
+   ============================================================ */
+:root{
+  --bg:#f6f2ea;
+  --surface:#fffdf8;
+  --surface-2:#fbf7ef;
+  --ink:#20241f;
+  --ink-soft:#3b433c;
+  --muted:#657067;
+  --line:#e4dccf;
+  --line-strong:#d5c9b8;
+  --accent:#b2452c;
+  --accent-deep:#8f3220;
+  --accent-soft:#f7e6df;
+  --green:#2f6b55;
+  --green-soft:#e3efe9;
+  --gold:#a9761f;
+  --gold-soft:#f7edda;
+  --blue:#2d5f73;
+  --blue-soft:#e4eef2;
+  --danger:#9b2c2c;
+  --danger-soft:#f8e5e3;
+  --shadow:0 1px 2px rgba(32,36,31,.04),0 8px 24px rgba(32,36,31,.055);
+  --radius:16px;
+  --radius-sm:11px;
+  --font-body:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --font-display:"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;
+  --font-mono:"Cascadia Code","Consolas","SFMono-Regular",Menlo,monospace;
+  --max:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:
+    radial-gradient(900px 500px at 88% -8%,rgba(178,69,44,.07),transparent 60%),
+    radial-gradient(800px 600px at -10% 12%,rgba(47,107,85,.06),transparent 55%),
+    var(--bg);
+  font-size:16.5px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--accent-soft);color:var(--accent-deep)}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.14;margin:0 0 .5em;color:var(--ink)}
+p{margin:0 0 1em}
+ul,ol{margin:.4em 0 1em;padding-left:1.25em}
+li{margin:.28em 0}
+strong{font-weight:650;color:var(--ink)}
+code,kbd,pre{font-family:var(--font-mono)}
+code{font-size:.88em;background:#efe9de;border:1px solid #e3dbcd;border-radius:5px;padding:.08em .35em;color:#433a2e}
+pre{margin:0;background:#242a24;color:#f4efe4;border-radius:12px;padding:16px 18px;overflow:auto;font-size:13.5px;line-height:1.55}
+pre code{background:none;border:0;padding:0;color:inherit;font-size:inherit}
+hr{border:0;border-top:1px solid var(--line);margin:2.2em 0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 26px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ---------- header / progress ---------- */
+.progress-track{position:fixed;top:0;left:0;right:0;height:3px;background:rgba(32,36,31,.06);z-index:120}
+.progress-fill{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--gold));transition:width .12s linear}
+.site-header{position:fixed;top:3px;left:0;right:0;z-index:110;background:rgba(246,242,234,.86);backdrop-filter:blur(14px);border-bottom:1px solid rgba(213,201,184,.7)}
+.nav-wrap{max-width:var(--max);margin:0 auto;padding:0 26px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;flex:0 0 auto}
+.brand:hover{text-decoration:none}
+.brand-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(145deg,var(--accent),#7f2c1b);color:#fff;display:grid;place-items:center;font-family:var(--font-display);font-size:15px;letter-spacing:.02em;box-shadow:0 4px 12px rgba(143,50,32,.25)}
+.brand strong{display:block;font-size:14.5px;letter-spacing:.02em;line-height:1.2}
+.brand small{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);line-height:1.4}
+.site-nav{display:flex;align-items:center;gap:2px;flex-wrap:wrap;justify-content:flex-end}
+.site-nav a{font-size:12.5px;font-weight:600;color:var(--muted);padding:8px 9px;border-radius:8px;letter-spacing:.01em}
+.site-nav a:hover{color:var(--ink);background:rgba(32,36,31,.05);text-decoration:none}
+.site-nav a.active{color:var(--accent-deep);background:var(--accent-soft)}
+.site-nav .nav-cta{background:var(--ink);color:#fff;margin-left:6px;padding:9px 14px}
+.site-nav .nav-cta:hover{background:#000;color:#fff}
+.nav-toggle{display:none;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);border-radius:9px;padding:8px 11px;font:inherit;font-size:12.5px;font-weight:600;cursor:pointer}
+.top-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{border:1px solid var(--line-strong);background:var(--surface);color:var(--ink-soft);border-radius:9px;width:36px;height:36px;display:grid;place-items:center;cursor:pointer}
+.icon-btn:hover{background:#fff;border-color:var(--accent);color:var(--accent)}
+
+/* ---------- hero ---------- */
+main{padding-top:69px}
+.hero{padding-top:62px;padding-bottom:30px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:38px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);margin:0 0 18px}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(178,69,44,.12)}
+h1{font-size:clamp(38px,5.2vw,61px);letter-spacing:-.025em;margin-bottom:18px}
+h1 em{font-style:italic;color:var(--accent);font-weight:500}
+.lede{font-size:19px;line-height:1.55;color:var(--ink-soft);max-width:58ch;margin-bottom:24px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid transparent;border-radius:10px;padding:11px 17px;font:inherit;font-size:13.5px;font-weight:650;line-height:1;cursor:pointer;text-decoration:none;transition:transform .15s ease,background .15s ease,border-color .15s ease}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 16px rgba(178,69,44,.22)}
+.btn-primary:hover{background:var(--accent-deep);color:#fff}
+.btn-ghost{background:var(--surface);border-color:var(--line-strong);color:var(--ink-soft)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent-deep);background:#fff}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#000;color:#fff}
+.hero-meta{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--muted);font-size:12.5px}
+.hero-meta span{display:inline-flex;align-items:center;gap:6px}
+.hero-art{position:relative}
+.hero-art svg{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 32px rgba(32,36,31,.10))}
+.hero-strip{margin-top:32px;border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);display:grid;grid-template-columns:repeat(3,1fr)}
+.hero-strip div{padding:15px 18px 15px 0;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.hero-strip div:last-child{border-right:0;padding-right:0}
+.hero-strip div:not(:first-child){padding-left:18px}
+.hero-strip b{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--accent-deep)}
+.hero-strip span{font-size:13px;color:var(--ink-soft)}
+
+/* ---------- sections ---------- */
+.section{padding-top:64px;padding-bottom:64px;border-top:1px solid var(--line)}
+.section:first-of-type{border-top:0}
+.section-head{display:grid;grid-template-columns:74px 1fr;gap:20px;align-items:start;margin-bottom:30px}
+.section-num{font-family:var(--font-display);font-size:52px;line-height:.95;color:rgba(178,69,44,.28);letter-spacing:-.04em;padding-top:4px}
+.kicker{font-size:11px;font-weight:750;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-deep);margin:0 0 8px}
+.section-head h2{font-size:clamp(28px,3.4vw,38px);letter-spacing:-.015em;margin-bottom:8px}
+.section-head .sub{color:var(--muted);max-width:72ch;margin:0;font-size:15.5px}
+.lead{font-size:17.5px;color:var(--ink-soft);max-width:76ch}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p:last-child{margin-bottom:0}
+.card.flat{box-shadow:none}
+.card.accent-top{border-top:3px solid var(--accent)}
+.card.green-top{border-top:3px solid var(--green)}
+.card.gold-top{border-top:3px solid var(--gold)}
+.card.blue-top{border-top:3px solid var(--blue)}
+.stat{padding:18px 18px 16px}
+.stat .num{font-family:var(--font-display);font-size:clamp(27px,3vw,36px);line-height:1;letter-spacing:-.02em;color:var(--accent-deep);margin-bottom:7px}
+.stat .num small{font-family:var(--font-body);font-size:13px;color:var(--muted);letter-spacing:0;font-weight:600}
+.stat .label{font-size:12.5px;color:var(--muted);line-height:1.4}
+.stat .src{display:block;margin-top:8px;font-size:10.5px;color:#8a938b;line-height:1.35}
+.chip{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:3px 9px;font-size:10.5px;font-weight:750;letter-spacing:.02em;line-height:1.5;white-space:nowrap;border:1px solid transparent}
+.chip-done{background:var(--green-soft);color:#24533f;border-color:#c8dfd3}
+.chip-open{background:var(--danger-soft);color:#7d2626;border-color:#eccdca}
+.chip-prop{background:var(--gold-soft);color:#765113;border-color:#ead7b2}
+.chip-warn{background:var(--blue-soft);color:#234e5d;border-color:#c9dee6}
+.chip-paper{background:#efeae1;color:#51483b;border-color:#ddd3c3}
+.callout{border-radius:14px;padding:18px 20px;border:1px solid var(--line);background:var(--surface-2);border-left:4px solid var(--accent);margin:18px 0}
+.callout.green{border-left-color:var(--green);background:#f1f7f3}
+.callout.gold{border-left-color:var(--gold);background:#fbf4e6}
+.callout.blue{border-left-color:var(--blue);background:#f0f6f8}
+.callout.danger{border-left-color:var(--danger);background:#fbf0ef}
+.callout h4{font-size:16px;margin:0 0 6px;display:flex;align-items:center;gap:8px}
+.callout p:last-child,.callout ul:last-child{margin-bottom:0}
+.callout .big{font-family:var(--font-display);font-size:25px;color:var(--accent-deep);line-height:1.15}
+.source-note{font-size:11.5px;color:#858e86;margin:14px 0 0;line-height:1.45}
+.source-note code{font-size:.92em;background:transparent;border:0;padding:0;color:#6f786f}
+.small{font-size:13px;color:var(--muted)}
+.mono{font-family:var(--font-mono);font-size:.9em}
+
+/* ---------- dim stack ---------- */
+.dim-stack{display:flex;height:44px;border-radius:10px;overflow:hidden;border:1px solid #d9cebd;margin:12px 0 8px;font-size:11px;font-weight:700;color:#fff}
+.dim-stack .seg{display:flex;align-items:center;justify-content:center;min-width:44px;white-space:nowrap;overflow:hidden}
+.seg-geo{flex:248;background:linear-gradient(135deg,#356b56,#2a5545)}
+.seg-ent{flex:28;background:linear-gradient(135deg,#b2452c,#8f3220)}
+.seg-odor{flex:28;background:linear-gradient(135deg,#a9761f,#815913)}
+.dim-legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12px;color:var(--muted)}
+.dim-legend span{display:inline-flex;align-items:center;gap:6px}
+.dim-legend i{width:9px;height:9px;border-radius:2px;display:inline-block}
+
+/* ---------- pipeline ---------- */
+.pipeline{display:flex;align-items:stretch;gap:0;margin:14px 0 4px}
+.node{flex:1 1 0;min-width:96px;background:var(--surface);border:1px solid var(--line-strong);border-radius:11px;padding:11px 9px;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:2px;position:relative}
+.node b{font-size:12px;line-height:1.25;color:var(--ink-soft)}
+.node small{font-size:10px;line-height:1.3;color:var(--muted);display:block}
+.node .node-icon{font-family:var(--font-display);font-size:15px;color:var(--accent);line-height:1.2}
+.node.mid{background:#fdf1eb;border:1px dashed var(--accent);box-shadow:inset 0 0 0 1px rgba(178,69,44,.05)}
+.node.mid b{color:var(--accent-deep)}
+.node.model{background:#f2f7f4;border-color:#c9ddd2}
+.node.token{background:#f7f3ea}
+.arrow{flex:0 0 18px;display:flex;align-items:center;justify-content:center;color:#a38f79;font-size:16px;font-weight:600}
+.pipeline-label{font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:750;margin:16px 0 0}
+.pipeline-label:first-child{margin-top:0}
+.arch-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.arch-toolbar{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:flex-end;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.segmented{display:inline-flex;background:#eee8dc;border:1px solid #e0d6c6;border-radius:10px;padding:3px;gap:2px}
+.segmented button{border:0;background:transparent;font:inherit;font-size:12px;font-weight:650;color:var(--muted);padding:7px 11px;border-radius:8px;cursor:pointer;white-space:nowrap}
+.segmented button.active{background:var(--surface);color:var(--accent-deep);box-shadow:0 1px 3px rgba(32,36,31,.12)}
+.select-label{display:flex;flex-direction:column;gap:4px;font-size:10.5px;font-weight:750;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.select-label select{font:inherit;font-size:12.5px;font-weight:600;color:var(--ink-soft);background:var(--surface);border:1px solid var(--line-strong);border-radius:8px;padding:7px 10px;min-width:220px;max-width:100%}
+.arch-note{font-size:12.5px;color:var(--muted);margin:14px 0 0;padding-top:14px;border-top:1px dashed var(--line)}
+.arch-status{display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.pipeline[hidden]{display:none !important}
+
+/* ---------- tables ---------- */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:520px}
+thead th{background:#f2ece1;color:#5e574b;font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;text-align:left;padding:10px 12px;border-bottom:1px solid var(--line-strong);vertical-align:bottom;font-weight:750}
+tbody td{padding:10px 12px;border-bottom:1px solid #eee6d9;vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:#fcf8f1}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.best td{background:#eef6f1}
+tr.best:hover td{background:#e8f2ec}
+.tbl-note{font-size:11.5px;color:var(--muted);margin-top:8px}
+.table-tools{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.filter-btn{border:1px solid var(--line-strong);background:var(--surface);color:var(--muted);font:inherit;font-size:11.5px;font-weight:650;padding:6px 10px;border-radius:999px;cursor:pointer}
+.filter-btn:hover{border-color:var(--accent);color:var(--accent-deep)}
+.filter-btn.active{background:var(--ink);border-color:var(--ink);color:#fff}
+tr.is-hidden{display:none}
+
+/* ---------- evidence / details ---------- */
+details{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:0;margin:16px 0}
+details summary{cursor:pointer;padding:14px 16px;font-size:14px;font-weight:650;color:var(--ink-soft);list-style:none;display:flex;align-items:center;gap:10px}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"+";width:20px;height:20px;border:1px solid var(--line-strong);border-radius:50%;display:grid;place-items:center;font-family:var(--font-mono);font-size:13px;color:var(--accent);flex:0 0 auto;background:#fff}
+details[open] summary::before{content:"−"}
+details[open] summary{border-bottom:1px solid var(--line)}
+.details-body{padding:16px}
+.details-body>:last-child{margin-bottom:0}
+
+/* ---------- timeline / experiments ---------- */
+.timeline{position:relative;margin:8px 0 0;padding-left:26px;border-left:2px solid #e5d8c7}
+.timeline-item{position:relative;padding:0 0 24px 18px}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item::before{content:"";position:absolute;left:-33px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--accent);box-shadow:0 0 0 4px var(--bg)}
+.timeline-item.done::before{background:var(--accent)}
+.timeline-item.prop::before{border-color:var(--gold);background:var(--gold-soft)}
+.timeline-item h4{font-size:18px;margin-bottom:4px}
+.timeline-item .when{font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:700;margin-bottom:6px}
+.timeline-item p{font-size:14px;color:var(--ink-soft)}
+
+/* ---------- reading path ---------- */
+.reading-list{display:flex;flex-direction:column;gap:9px;margin-top:6px}
+.reading-step{display:grid;grid-template-columns:28px 1fr auto;gap:13px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.reading-step:hover{border-color:var(--line-strong)}
+.reading-step input{width:18px;height:18px;accent-color:var(--accent);margin-top:3px;cursor:pointer}
+.reading-step label{cursor:pointer}
+.reading-step label b{display:block;font-size:14.5px;line-height:1.35;margin-bottom:2px}
+.reading-step label span{display:block;font-size:12.5px;color:var(--muted);line-height:1.45}
+.reading-step .time{font-size:10.5px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;padding-top:2px}
+.reading-step.done{background:#f2f7f3;border-color:#cfe1d6}
+.reading-step.done label b{text-decoration:line-through;text-decoration-color:#8ea99a;color:#526257}
+.reading-progress{display:flex;align-items:center;gap:12px;margin:18px 0 0;font-size:12px;color:var(--muted)}
+.reading-progress .track{flex:1;height:7px;border-radius:99px;background:#e9e0d2;overflow:hidden;max-width:300px}
+.reading-progress .fill{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),#63a083);transition:width .25s ease}
+
+/* ---------- glossary ---------- */
+.glossary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.term{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.term dt{font-weight:700;font-size:13.5px;color:var(--ink);margin-bottom:3px}
+.term dd{margin:0;font-size:12.5px;color:var(--muted);line-height:1.48}
+
+/* ---------- misc ---------- */
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13px;margin:0}
+.kv dt{color:var(--muted);font-weight:600}
+.kv dd{margin:0;color:var(--ink-soft)}
+.code-block{position:relative;margin:12px 0 0}
+.code-block .copy-btn{position:absolute;top:9px;right:9px;border:1px solid #4a544a;background:#313831;color:#dfe7dc;font:inherit;font-size:10.5px;font-weight:650;padding:4px 8px;border-radius:6px;cursor:pointer;opacity:.85}
+.code-block .copy-btn:hover{opacity:1;border-color:#8aa08a}
+.check-list{list-style:none;padding-left:0}
+.check-list li{position:relative;padding-left:25px;font-size:14px;margin:.4em 0}
+.check-list li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green);font-weight:800}
+.cross-list{list-style:none;padding-left:0}
+.cross-list li{position:relative;padding-left:25px;font-size:14px;margin:.4em 0}
+.cross-list li::before{content:"×";position:absolute;left:2px;top:-1px;color:var(--danger);font-weight:800;font-size:16px}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.mini{font-size:11.5px;color:var(--muted);line-height:1.45}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.panel{border-radius:var(--radius);padding:22px;border:1px solid var(--line);background:var(--surface)}
+.panel h3{display:flex;align-items:center;gap:8px;font-size:20px}
+.panel-fixed{border-top:4px solid var(--green);background:linear-gradient(180deg,#f4faf6,#fffdf8 40%)}
+.panel-var{border-top:4px solid var(--gold);background:linear-gradient(180deg,#fdf8ed,#fffdf8 40%)}
+.panel ul{margin-bottom:0}
+.panel li{font-size:14px;color:var(--ink-soft)}
+.quote{border-left:3px solid var(--accent);padding:2px 0 2px 18px;margin:18px 0;font-family:var(--font-display);font-size:22px;line-height:1.4;color:var(--accent-deep);font-style:italic}
+.footer{border-top:1px solid var(--line-strong);padding:34px 0 50px;color:var(--muted);font-size:12.5px}
+.footer .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:30px}
+.footer h4{font-family:var(--font-body);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+.footer ul{list-style:none;padding:0;margin:0}
+.footer li{margin:.25em 0;font-family:var(--font-mono);font-size:11px;line-height:1.5;overflow-wrap:anywhere}
+.footer p{margin-bottom:8px}
+.to-top{position:fixed;right:22px;bottom:22px;z-index:90;width:42px;height:42px;border-radius:50%;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink-soft);display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease}
+.to-top.show{opacity:1;pointer-events:auto}
+.to-top:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1060px){
+  .site-nav a{padding:7px 7px;font-size:11.5px}
+  .brand small{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:20px}
+  .hero-art{max-width:540px;margin:0 auto}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .glossary{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:820px){
+  body{font-size:16px}
+  .wrap{padding:0 18px}
+  .nav-wrap{padding:0 18px;height:62px}
+  .nav-toggle{display:inline-flex}
+  .site-nav{display:none;position:absolute;top:65px;left:12px;right:12px;background:var(--surface);border:1px solid var(--line-strong);border-radius:14px;padding:10px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:2px;max-height:70vh;overflow:auto}
+  .site-nav.open{display:flex}
+  .site-nav a{padding:10px 12px;font-size:13px}
+  .site-nav .nav-cta{margin-left:0;text-align:center;margin-top:4px}
+  .hero{padding-top:40px}
+  .hero-strip{grid-template-columns:1fr}
+  .hero-strip div{border-right:0;border-bottom:1px solid var(--line);padding:12px 0}
+  .hero-strip div:not(:first-child){padding-left:0}
+  .hero-strip div:last-child{border-bottom:0}
+  .section{padding-top:48px;padding-bottom:48px}
+  .section-head{grid-template-columns:1fr;gap:2px}
+  .section-num{font-size:34px;padding-top:0}
+  .grid-2,.grid-3,.two-col{grid-template-columns:1fr}
+  .arch-toolbar{align-items:stretch}
+  .select-label select{min-width:0;width:100%}
+  .pipeline{flex-direction:column}
+  .arrow{height:16px;flex:0 0 16px;transform:rotate(90deg)}
+  .node{min-width:0;width:100%;padding:10px 12px}
+  .footer .wrap{grid-template-columns:1fr}
+  .reading-step{grid-template-columns:24px 1fr;gap:10px}
+  .reading-step .time{grid-column:2;padding-top:0}
+}
+@media (max-width:560px){
+  .grid-4{grid-template-columns:1fr}
+  .glossary{grid-template-columns:1fr}
+  h1{font-size:38px}
+  .lede{font-size:17px}
+  .hero-actions .btn{flex:1 1 auto;justify-content:center}
+  table{font-size:12.5px}
+  thead th,tbody td{padding:8px 9px}
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{size:A4;margin:14mm 13mm}
+  html,body{background:#fff !important;font-size:10.2pt;line-height:1.45}
+  body{color:#000}
+  .site-header,.progress-track,.hero-actions,.to-top,.nav-toggle,.arch-toolbar,.table-tools,.copy-btn,.print-hide,.reading-progress{display:none !important}
+  main{padding-top:0}
+  .wrap{max-width:none;padding:0}
+  .hero{padding:0 0 10mm}
+  .hero-grid{grid-template-columns:1.1fr .9fr;gap:8mm}
+  .hero-art svg{filter:none}
+  h1{font-size:30pt}
+  h2{font-size:19pt}
+  h3{font-size:13pt}
+  .section{padding-top:7mm;padding-bottom:7mm;border-top:1px solid #ccc;break-inside:auto}
+  .section-head{margin-bottom:4mm}
+  .section-num{font-size:28pt;color:#999}
+  .card,.panel,.callout,.arch-card,.timeline-item,.reading-step,.term,details,table,.pipeline,.dim-stack{break-inside:avoid;page-break-inside:avoid}
+  .card,.panel,.arch-card,details{box-shadow:none}
+  .grid-2,.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}
+  a{color:#000;text-decoration:none}
+  .chip{border:1px solid #777;background:#fff !important;color:#000 !important}
+  .hero-strip{grid-template-columns:repeat(3,1fr)}
+  .hero-strip div{padding:3mm 3mm 3mm 0}
+  .pipeline{flex-direction:row}
+  .arrow{transform:none;height:auto}
+  .node{min-width:0}
+  pre{background:#f2f2f2 !important;color:#000 !important;border:1px solid #bbb;white-space:pre-wrap;font-size:8.5pt}
+  pre code{color:#000}
+  details{border:1px solid #bbb}
+  details:not([open]) .details-body{display:block}
+  .to-top{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
+}
+</style>
+</head>
+<body id="top">
+<div class="progress-track" aria-hidden="true"><span class="progress-fill" id="progressFill"></span></div>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="#top" aria-label="Về đầu trang">
+      <span class="brand-mark">CS</span>
+      <span><strong>Culinary CSI</strong><small>Onboarding nghiên cứu</small></span>
+    </a>
+    <nav class="site-nav" id="siteNav" aria-label="Mục lục">
+      <a href="#overview">Tổng quan</a>
+      <a href="#paper1">Paper 1</a>
+      <a href="#paper2">Paper 2</a>
+      <a href="#architecture">Kiến trúc</a>
+      <a href="#evidence">Bằng chứng</a>
+      <a href="#reproduce">Tái lập</a>
+      <a href="#reading">Lộ trình</a>
+      <a href="#glossary">Glossary</a>
+      <a class="nav-cta" href="#reading">Bắt đầu đọc</a>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-btn" id="printBtn" type="button" title="In hoặc lưu PDF" aria-label="In hoặc lưu PDF" style="width:auto;padding:0 9px;font-size:10.5px;font-weight:750;letter-spacing:.04em">PDF</button>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav">Mục lục</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============================================================ HERO -->
+<section class="hero wrap" aria-labelledby="heroTitle">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow"><span class="dot"></span> NCKH · Dịch ẩm thực · 2026</p>
+      <h1 id="heroTitle">Hiểu dự án này<br><em>trong một buổi đọc.</em></h1>
+      <p class="lede">Từ representation ẩm thực của ICOCO đến ý tưởng nối hai model đơn ngữ bằng một lớp ánh xạ — kèm bằng chứng, giới hạn và đường tái lập. Không cần đọc hết repo trước.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#overview">Bắt đầu 60 giây <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="#architecture">Xem kiến trúc</a>
+      </div>
+      <div class="hero-meta">
+        <span>◷ ~25 phút đọc</span>
+        <span>▤ 8 phần</span>
+        <span>⤓ Chạy offline, không CDN</span>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 540 430" role="img">
+        <defs>
+          <linearGradient id="plateGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#fffdf8"/><stop offset="1" stop-color="#f1e7d8"/>
+          </linearGradient>
+          <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#c1573c"/><stop offset="1" stop-color="#8f3220"/>
+          </linearGradient>
+          <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#4e8a70"/><stop offset="1" stop-color="#2f6b55"/>
+          </linearGradient>
+        </defs>
+        <rect x="18" y="18" width="504" height="394" rx="26" fill="#fffdf8" stroke="#e4dccf"/>
+        <!-- panel 1: food -->
+        <text x="52" y="58" font-family="Segoe UI, sans-serif" font-size="10.5" letter-spacing="2" fill="#8a938b" font-weight="700">MÓN ĂN</text>
+        <circle cx="122" cy="168" r="86" fill="url(#plateGrad)" stroke="#dfd3c1" stroke-width="1.5"/>
+        <circle cx="122" cy="168" r="63" fill="none" stroke="#eadfd0" stroke-width="1.2"/>
+        <circle cx="100" cy="140" r="12" fill="url(#accentGrad)" opacity=".92"/>
+        <circle cx="139" cy="134" r="9" fill="#c98a2e" opacity=".95"/>
+        <circle cx="148" cy="164" r="13" fill="url(#greenGrad)" opacity=".92"/>
+        <circle cx="118" cy="177" r="10" fill="#d9a441" opacity=".95"/>
+        <circle cx="92" cy="183" r="8" fill="#7d9b62" opacity=".95"/>
+        <circle cx="132" cy="198" r="7" fill="#b2452c" opacity=".8"/>
+        <path d="M92 214 q30 18 62 0" stroke="#d4c4ae" stroke-width="1.2" fill="none"/>
+        <text x="122" y="286" text-anchor="middle" font-family="Palatino Linotype, Georgia, serif" font-size="13" fill="#6b756c">nguyên liệu · mùi · vùng miền</text>
+
+        <!-- arrow -->
+        <path d="M224 166 H262" stroke="#b9a68e" stroke-width="1.6" stroke-dasharray="4 4" fill="none"/>
+        <path d="M258 161 l8 5 -8 5" fill="none" stroke="#b9a68e" stroke-width="1.6"/>
+
+        <!-- panel 2: vector -->
+        <text x="288" y="58" font-family="Segoe UI, sans-serif" font-size="10.5" letter-spacing="2" fill="#8a938b" font-weight="700">304-D</text>
+        <rect x="282" y="78" width="210" height="176" rx="16" fill="#fbf6ec" stroke="#e5d9c8"/>
+        <g fill="#c9b79f">
+          <rect x="302" y="101" width="16" height="16" rx="3"/><rect x="326" y="101" width="16" height="16" rx="3"/><rect x="350" y="101" width="16" height="16" rx="3"/><rect x="374" y="101" width="16" height="16" rx="3"/><rect x="398" y="101" width="16" height="16" rx="3"/><rect x="422" y="101" width="16" height="16" rx="3"/><rect x="446" y="101" width="16" height="16" rx="3"/>
+          <rect x="302" y="125" width="16" height="16" rx="3"/><rect x="326" y="125" width="16" height="16" rx="3"/><rect x="350" y="125" width="16" height="16" rx="3"/><rect x="374" y="125" width="16" height="16" rx="3"/><rect x="398" y="125" width="16" height="16" rx="3"/><rect x="422" y="125" width="16" height="16" rx="3"/><rect x="446" y="125" width="16" height="16" rx="3"/>
+          <rect x="302" y="149" width="16" height="16" rx="3"/><rect x="326" y="149" width="16" height="16" rx="3"/><rect x="350" y="149" width="16" height="16" rx="3"/><rect x="374" y="149" width="16" height="16" rx="3"/><rect x="398" y="149" width="16" height="16" rx="3"/><rect x="422" y="149" width="16" height="16" rx="3"/><rect x="446" y="149" width="16" height="16" rx="3"/>
+          <rect x="302" y="173" width="16" height="16" rx="3"/><rect x="326" y="173" width="16" height="16" rx="3"/><rect x="350" y="173" width="16" height="16" rx="3"/><rect x="374" y="173" width="16" height="16" rx="3"/><rect x="398" y="173" width="16" height="16" rx="3"/><rect x="422" y="173" width="16" height="16" rx="3"/><rect x="446" y="173" width="16" height="16" rx="3"/>
+        </g>
+        <g fill="#b2452c" opacity=".9">
+          <rect x="302" y="101" width="16" height="16" rx="3"/><rect x="374" y="101" width="16" height="16" rx="3"/><rect x="446" y="125" width="16" height="16" rx="3"/><rect x="326" y="149" width="16" height="16" rx="3"/><rect x="398" y="173" width="16" height="16" rx="3"/>
+        </g>
+        <g fill="#2f6b55" opacity=".85">
+          <rect x="398" y="101" width="16" height="16" rx="3"/><rect x="326" y="125" width="16" height="16" rx="3"/><rect x="446" y="149" width="16" height="16" rx="3"/><rect x="350" y="173" width="16" height="16" rx="3"/>
+        </g>
+        <g fill="#a9761f" opacity=".9">
+          <rect x="422" y="101" width="16" height="16" rx="3"/><rect x="302" y="125" width="16" height="16" rx="3"/><rect x="422" y="149" width="16" height="16" rx="3"/><rect x="374" y="173" width="16" height="16" rx="3"/>
+        </g>
+        <text x="387" y="218" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9.5" fill="#8a938b">248 geo · 28 entity · 28 odor</text>
+        <text x="387" y="238" text-anchor="middle" font-family="Palatino Linotype, Georgia, serif" font-size="12.5" fill="#6b756c">một vector món ăn</text>
+
+        <!-- panel 3: language bridge -->
+        <rect x="52" y="310" width="124" height="64" rx="12" fill="#f7f3ea" stroke="#dfd3c1"/>
+        <text x="114" y="337" text-anchor="middle" font-family="Palatino Linotype, Georgia, serif" font-size="16" fill="#3b433c">English</text>
+        <text x="114" y="356" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9.5" fill="#8a938b">token · model · vector</text>
+
+        <rect x="364" y="310" width="124" height="64" rx="12" fill="#f1f7f3" stroke="#c9ddd2"/>
+        <text x="426" y="337" text-anchor="middle" font-family="Palatino Linotype, Georgia, serif" font-size="16" fill="#3b433c">Tiếng Việt</text>
+        <text x="426" y="356" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="9.5" fill="#8a938b">token · model · vector</text>
+
+        <path d="M176 342 H246" stroke="#b9a68e" stroke-width="1.5" fill="none"/>
+        <path d="M242 337 l8 5 -8 5" fill="none" stroke="#b9a68e" stroke-width="1.5"/>
+        <path d="M294 342 H364" stroke="#b9a68e" stroke-width="1.5" fill="none"/>
+        <path d="M360 337 l8 5 -8 5" fill="none" stroke="#b9a68e" stroke-width="1.5"/>
+        <rect x="246" y="322" width="48" height="40" rx="8" fill="#fdf1eb" stroke="#b2452c" stroke-dasharray="3 3"/>
+        <text x="270" y="339" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8.5" font-weight="700" fill="#8f3220">LỚP</text>
+        <text x="270" y="350" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8.5" font-weight="700" fill="#8f3220">ÁNH XẠ</text>
+        <text x="270" y="310" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="8.5" fill="#8a938b">trainable</text>
+        <text x="270" y="392" text-anchor="middle" font-family="Palatino Linotype, Georgia, serif" font-size="12" fill="#6b756c">phần cố định: giao diện · phần thay được: model + lớp giữa</text>
+      </svg>
+    </div>
+  </div>
+  <div class="hero-strip">
+    <div><b>Paper 1 · ICOCO</b><span>304-D culinary representation + K-means “battle” + FoodBERT baseline</span></div>
+    <div><b>Paper 2 · hướng hiện tại</b><span>Representation mapping giữa hai model đơn ngữ, chưa phải bài báo đã công bố</span></div>
+    <div><b>Đã chạy</b><span>2 small experiment · 12k cặp câu · kết quả có file trong <code>results/</code></span></div>
+  </div>
+</section>
+
+<!-- ============================================================ 60s -->
+<section class="section wrap" id="overview" aria-labelledby="overviewTitle">
+  <div class="section-head">
+    <span class="section-num">00</span>
+    <div>
+      <p class="kicker">Đọc nhanh</p>
+      <h2 id="overviewTitle">60 giây để biết mình đang đọc gì</h2>
+      <p class="sub">Bốn câu trả lời: bài toán là gì, ý tưởng là gì, đã có bằng chứng gì, và cái gì vẫn chỉ là đề xuất.</p>
+    </div>
+  </div>
+
+  <div class="grid-4">
+    <article class="card accent-top">
+      <span class="chip chip-paper">Bài toán</span>
+      <h3 style="margin-top:12px">Dịch nội dung ẩm thực</h3>
+      <p class="small">Không chỉ đổi từ. “Bánh chưng” nên giữ nguyên, viết <em>Vietnamese sticky rice</em>, hay <em>Chung cake</em>? Văn hoá ẩm thực được giản lược thành <strong>tri thức mà người ngoài có thể chưa biết</strong>.</p>
+    </article>
+    <article class="card green-top">
+      <span class="chip chip-done">Ý tưởng</span>
+      <h3 style="margin-top:12px">Không train lại LLM</h3>
+      <p class="small">Dùng hai model đơn ngữ, đóng băng chúng, chỉ train một <strong>lớp ánh xạ representation</strong> từ không gian ngôn ngữ nguồn sang không gian ngôn ngữ đích.</p>
+    </article>
+    <article class="card gold-top">
+      <span class="chip chip-done">Đã có</span>
+      <h3 style="margin-top:12px">Hai experiment nhỏ</h3>
+      <p class="small">Map tuyến tính EN→VI đạt <strong>R@1 = 74,1%</strong>. Vector sau map còn đọc được nội dung câu: <strong>3,27 BLEU</strong> so với <strong>0,24</strong> ở nhánh shuffled. Nhưng readout là retrieval, không phải generation.</p>
+    </article>
+    <article class="card blue-top">
+      <span class="chip chip-open">Chưa có</span>
+      <h3 style="margin-top:12px">Decoder sinh câu</h3>
+      <p class="small">Chưa có model đích nào sinh token từ vector đã map. Chưa có corpus ẩm thực, chưa có RAG / dynamic fact insertion, chưa có thí nghiệm về văn hoá.</p>
+    </article>
+  </div>
+
+  <div class="callout blue" style="margin-top:22px">
+    <h4>Ba tầng của dự án — đừng trộn chúng với nhau</h4>
+    <div class="pipeline" style="margin-top:12px">
+      <div class="node"><span class="node-icon">01</span><b>Representation ẩm thực</b><small>ICOCO: món ăn → 304-D → cụm</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node mid"><span class="node-icon">02</span><b>Ánh xạ biểu diễn</b><small>EN vector → lớp giữa → VI vector</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node"><span class="node-icon">03</span><b>Dynamic fact insertion</b><small>Chèn tri thức ẩm thực vào bản dịch — đề xuất</small></div>
+    </div>
+    <p class="source-note">Tầng 01 đã có paper + repo tái lập. Tầng 02 mới có bằng chứng ở mức <em>embedding</em>, chưa có generation. Tầng 03 chưa chạy.</p>
+  </div>
+
+  <div class="callout" style="margin-top:16px">
+    <h4>Quy ước trạng thái dùng trong toàn trang</h4>
+    <div class="tag-row">
+      <span class="chip chip-done">✓ Đã chứng minh</span>
+      <span class="chip chip-warn">◐ Quan sát / có điều kiện</span>
+      <span class="chip chip-prop">◇ Đề xuất / chưa chạy</span>
+      <span class="chip chip-open">× Chưa chứng minh</span>
+    </div>
+    <p class="small" style="margin:10px 0 0">“Đã chứng minh” ở đây nghĩa là <strong>có file kết quả trong repo và đúng phạm vi thí nghiệm</strong>, không có nghĩa là đúng ngoài phạm vi đó. Mọi con số đều có đường dẫn nguồn ở cuối mỗi phần.</p>
+  </div>
+</section>
+
+<!-- ============================================================ PAPER 1 -->
+<section class="section wrap" id="paper1" aria-labelledby="paper1Title">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <div>
+      <p class="kicker">Paper 1 · ICOCO</p>
+      <h2 id="paper1Title">Món ăn được biến thành vector như thế nào?</h2>
+      <p class="sub">ICOCO xây một representation đa chiều cho món ăn, rồi dùng K-means để xem các cụm có khớp với nhãn địa lý / văn hoá hay không. Đây là nền tảng cho câu hỏi “representation có mang thông tin ẩm thực không?”.</p>
+    </div>
+  </div>
+
+  <div class="grid-4" style="margin-bottom:20px">
+    <div class="card stat"><div class="num">50.510</div><div class="label">công thức trong dataset</div><span class="src">paper_facts.md</span></div>
+    <div class="card stat"><div class="num">30.621</div><div class="label">công thức có nhãn địa lý</div><span class="src">paper_facts.md</span></div>
+    <div class="card stat"><div class="num">304<span style="font-size:15px">D</span></div><div class="label">vector: 248 geo + 28 entity + 28 odor</div><span class="src">huge_notebook_docs_note.md · paper_facts.md</span></div>
+    <div class="card stat"><div class="num">3.500</div><div class="label">nguyên liệu chuẩn hoá (canonical ingredients)</div><span class="src">paper_facts.md</span></div>
+  </div>
+
+  <div class="grid-2">
+    <article class="card">
+      <h3>304 chiều đến từ đâu?</h3>
+      <div class="dim-stack" role="img" aria-label="Biểu đồ 304 chiều: 248 geography, 28 entity, 28 odor">
+        <div class="seg seg-geo">248 geography</div>
+        <div class="seg seg-ent">28</div>
+        <div class="seg seg-odor">28</div>
+      </div>
+      <div class="dim-legend">
+        <span><i style="background:#356b56"></i>Geography · GBIF · 248D</span>
+        <span><i style="background:#b2452c"></i>Entity · USDA · 28D</span>
+        <span><i style="background:#a9761f"></i>Odor · USDA + FooDB · 28D</span>
+      </div>
+      <p class="small" style="margin-top:14px">Ý tưởng: thay vì để model học “món ăn trông như thế nào” từ ảnh, ICOCO mô tả món ăn bằng các thuộc tính <strong>đo được</strong> — nơi xuất xứ, thực thể sinh học, mùi. Đây là cách biến “văn hoá ẩm thực” thành proxy khoa học tự nhiên.</p>
+      <p class="source-note">Nguồn: <code>ICOCO_reproducible/final/huge_notebook_docs_note.md</code> §2.1; <code>final/presentation/paper_facts.md</code>.</p>
+    </article>
+
+    <article class="card">
+      <h3>Pipeline của ICOCO</h3>
+      <div class="pipeline" style="flex-direction:column">
+        <div class="node" style="width:100%"><b>50.510 recipe</b><small>Zenodo · 30.621 có nhãn địa lý · 116 raw cuisine tags</small></div>
+        <div class="arrow" style="height:14px;transform:rotate(90deg)">→</div>
+        <div class="node"><b>LLM canonicalization</b><small>T = 0,5 · 3 lần chạy · ingredient / scientific name / cuisine / odor</small></div>
+        <div class="arrow" style="height:14px;transform:rotate(90deg)">→</div>
+        <div class="node"><b>3 khối vector</b><small>248 geography + 28 entity + 28 odor = 304D</small></div>
+        <div class="arrow" style="height:14px;transform:rotate(90deg)">→</div>
+        <div class="node mid"><b>K-means “battle”</b><small>K ∈ {6, 31, 207} · 5 seeds · Hungarian matching</small></div>
+        <div class="arrow" style="height:14px;transform:rotate(90deg)">→</div>
+        <div class="node model"><b>So với FoodBERT</b><small>PA · Soft-MacroF1 · Silhouette / DB / CH</small></div>
+      </div>
+      <p class="source-note">Nguồn: <code>huge_notebook_docs_note.md</code> §2.1; <code>paper_audit.md</code> §1–2.</p>
+    </article>
+  </div>
+
+  <h3 style="margin-top:30px">K-means “battle” và baseline FoodBERT</h3>
+  <div class="grid-3">
+    <article class="card flat">
+      <span class="chip chip-warn">3 mức K</span>
+      <h3 style="margin-top:10px;font-size:18px">6 · 31 · 207</h3>
+      <p class="small">6 châu lục, 31 tiểu vùng, 207 quốc gia. K = số cụm, cũng là “số văn hoá” theo cách đặt vấn đề của paper. Chạy <strong>5 seeds</strong>; gán cụm → nhãn bằng <strong>Hungarian bipartite matching</strong>.</p>
+    </article>
+    <article class="card flat">
+      <span class="chip chip-warn">2 họ metric</span>
+      <h3 style="margin-top:10px;font-size:18px">PA + Soft-MacroF1</h3>
+      <p class="small">Bên ngoài: <strong>Partial-Match Accuracy</strong> và <strong>Soft-MacroF1</strong>. Bên trong: <strong>Silhouette</strong>, <strong>Davies–Bouldin</strong>, <strong>Calinski–Harabasz</strong>. Paper báo cáo silhouette tới <strong>0,908</strong>; DB khoảng <strong>1,71–2,02</strong>.</p>
+    </article>
+    <article class="card flat">
+      <span class="chip chip-warn">Baseline</span>
+      <h3 style="margin-top:10px;font-size:18px">FoodBERT</h3>
+      <p class="small">Baseline dùng embedding món ăn của FoodBERT, chạy cùng protocol K-means. Mục tiêu của paper: representation 304-D “vật lý” phải tốt hơn baseline học từ text/ảnh ở các mức phân giải văn hoá.</p>
+    </article>
+  </div>
+
+  <h3 style="margin-top:28px">Paper 1 tuyên bố gì?</h3>
+  <div class="grid-2">
+    <article class="card">
+      <ul class="check-list" style="margin-bottom:0">
+        <li><strong>Full model &gt; FoodBERT ở PA</strong> tại mọi mức granularity được đánh giá.</li>
+        <li><strong>FoodBERT có lợi thế ở SF1 tại K = 6</strong>; model đề xuất vượt lại ở <strong>K = 31</strong> và <strong>K = 207</strong>.</li>
+        <li><strong>Country-level SF1 xấp xỉ 2× FoodBERT</strong>.</li>
+        <li>Phát hiện bất ngờ: <strong>Geo-only có thể vượt Full Fusion</strong> → gợi ý concatenation thô có thể gây <em>dimensional interference</em>.</li>
+      </ul>
+      <p class="source-note">Nguồn: <code>ICOCO_reproducible/final/presentation/paper_facts.md</code>.</p>
+    </article>
+    <article class="card">
+      <h3 style="font-size:18px">Các con số canonicalization đáng nhớ</h3>
+      <div class="table-wrap" style="border:0">
+        <table style="min-width:0">
+          <thead><tr><th>Bước</th><th class="num">SC</th><th class="num">IC</th><th class="num">AC</th><th class="num">Match</th></tr></thead>
+          <tbody>
+            <tr><td>LLM canonicalization</td><td class="num">98,41%</td><td class="num">97,17%</td><td class="num">99,30%</td><td class="num">USDA 71,20%</td></tr>
+            <tr><td>Taxonomic extraction</td><td class="num">82,34%</td><td class="num">61,36%</td><td class="num">98,74%</td><td class="num">GBIF 93,29%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small" style="margin-top:10px">SC / IC / AC là các kiểm tra chất lượng canonicalization trong paper. Điểm yếu nhất là <strong>taxonomic IC = 61,36%</strong> — đáng nhớ khi dùng entity vector.</p>
+      <p class="source-note">Nguồn: <code>paper_facts.md</code>.</p>
+    </article>
+  </div>
+
+  <div class="callout gold" style="margin-top:20px">
+    <h4>Đọc kèm: audit nội bộ nói gì?</h4>
+    <p>Bản audit ngày <strong>2026-10-07</strong> tái lập trên legacy vectors + labels kết luận: <strong>các metric nội bộ tái lập được</strong>, nhưng <strong>các claim external không tái lập được bằng một metric nhất quán</strong>. Đây là ghi chú nội bộ, không phải kết luận chính thức thay cho paper.</p>
+    <div class="table-wrap" style="margin:12px 0;background:#fffdf8">
+      <table style="min-width:560px">
+        <thead><tr><th>Điểm</th><th>Paper / <code>labeled.csv</code></th><th>Audit tái lập</th></tr></thead>
+        <tbody>
+          <tr><td>Country-level SF1</td><td>0,0951 vs 0,0539 → <strong>×1,76</strong></td><td>0,0618 vs 0,0542 → <strong>×1,14</strong> dưới một metric nhất quán</td></tr>
+          <tr><td>“Mọi variant vượt FoodBERT ở PA”</td><td>được tuyên bố</td><td><strong>Sai</strong> tại K = 6: Entity 26,07 và No-Entropy 29,18 &lt; FoodBERT 30,07</td></tr>
+          <tr><td>Khoảng cách PA theo granularity</td><td>“lợi thế tăng khi nhãn phân mảnh”</td><td>Khoảng cách Full–FoodBERT <strong>giảm</strong>: +3,4 → +1,45 → +1,14</td></tr>
+          <tr><td>Metric nội bộ</td><td>Silhouette / DB / CH</td><td><strong>Tái lập trong seed noise</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-bottom:0">Bài học cho người mới: <strong>một con số PA chỉ có nghĩa khi biết luật gán cụm → nhãn</strong>. Đừng trích “2×” mà không nói metric. Chi tiết: <code>ICOCO_reproducible/final/paper_audit.md</code> §2.</p>
+  </div>
+
+  <div class="callout green" style="margin-top:16px">
+    <h4>Probing food / non-food — thí nghiệm của nhóm, không nằm trong bài ICOCO</h4>
+    <p>Đây là cầu nối sang Paper 2: nếu representation EN có một <strong>hướng ẩm thực tuyến tính</strong>, thì việc phát hiện “đây là món ăn” để chèn fact về sau là khả thi.</p>
+    <div class="grid-4" style="margin:12px 0">
+      <div class="stat" style="padding:12px;background:#fff"><div class="num" style="font-size:28px">99,27%</div><div class="label">accuracy · 5-fold CV</div></div>
+      <div class="stat" style="padding:12px;background:#fff"><div class="num" style="font-size:28px">99,26%</div><div class="label">F1</div></div>
+      <div class="stat" style="padding:12px;background:#fff"><div class="num" style="font-size:28px">0,9997</div><div class="label">ROC-AUC</div></div>
+      <div class="stat" style="padding:12px;background:#fff"><div class="num" style="font-size:28px">50%</div><div class="label">majority baseline</div></div>
+    </div>
+    <p class="small" style="margin-bottom:0"><strong>Thiết kế:</strong> 10k title RecipeNLG (positive) + 10k câu thường (negative), logistic regression trên mean-pooled EN vector. <strong>Confound:</strong> positive là cụm danh từ ngắn, negative là câu đầy đủ. Bản controlled (lowercase, negative 3–10 từ, n = 3.791) vẫn đạt <strong>99,33%</strong>, nên không chỉ là casing/length — nhưng vẫn có thể là <em>culinary vocabulary</em> chứ chưa chắc là ngữ nghĩa “món ăn”.</p>
+    <p class="source-note">Nguồn: <code>small-experiment/results/probe_food.json</code>; <code>small-experiment/results/summary.md</code> §4.</p>
+  </div>
+
+  <div class="callout" style="margin-top:16px">
+    <h4>Vì sao Paper 1 quan trọng với Paper 2?</h4>
+    <p style="margin-bottom:0">Nó chứng minh <strong>có thể xây representation ẩm thực có cấu trúc</strong> và <strong>thông tin ẩm thực đọc được tuyến tính</strong>. Nhưng Paper 1 làm <em>clustering</em>, không làm <em>translation</em>. Việc “cụm khớp nhãn địa lý” không tự động chứng minh “hệ dịch hiểu văn hoá”. Đừng nối hai claim đó mà không có thí nghiệm.</p>
+  </div>
+</section>
+
+<!-- ============================================================ PAPER 2 -->
+<section class="section wrap" id="paper2" aria-labelledby="paper2Title">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <div>
+      <p class="kicker">Paper 2 · hướng hiện tại</p>
+      <h2 id="paper2Title">Dịch bằng cách nối hai không gian biểu diễn</h2>
+      <p class="sub">Đây là hướng nghiên cứu đang làm, <strong>chưa phải bài báo đã công bố</strong>. Câu hỏi không phải “dịch có tốt không” mà là: <em>một vector có đủ làm kênh truyền ngôn ngữ hay không?</em></p>
+    </div>
+  </div>
+
+  <blockquote class="quote">“Không train lại LLM. Chỉ train mạng ánh xạ. Vì vậy câu hỏi nghiên cứu là: một vector 768 chiều có đủ làm kênh truyền ngôn ngữ hay không?”</blockquote>
+  <p class="source-note" style="margin-top:-8px">Nguồn: <code>PROJECT_WORKFLOW.md</code> §1.</p>
+
+  <div class="grid-3" style="margin-top:22px">
+    <article class="card accent-top">
+      <span class="chip chip-done">Đã xong · 2026-10-21</span>
+      <h3 style="margin-top:10px">Experiment 01</h3>
+      <p class="small"><strong>Mapping + probing.</strong> 12.000 cặp EN–VI (10k train / 2k test), seed 42, một shard. Hai bi-encoder frozen: <code>bge-base-en-v1.5</code> + <code>bkai-vietnamese-bi-encoder</code>, cùng 768-d. So ridge vs MLP vs identity trên 3 pooling. Kèm probe food/non-food.</p>
+      <p class="source-note">Nguồn: <code>small-experiment/results/summary.md</code>.</p>
+    </article>
+    <article class="card green-top">
+      <span class="chip chip-done">Đã xong · 2026-10-22</span>
+      <h3 style="margin-top:10px">Experiment 02</h3>
+      <p class="small"><strong>Vector → token.</strong> Kế thừa đúng 12k cặp (SHA-256 đóng băng), encode lại fp32, refit ridge α = 100 và MLP 768–2048–768. 5 nhánh: roundtrip, identity, ridge, ANN, shuffled. Readout bằng retrieval trên gallery 10k câu train.</p>
+      <p class="source-note">Nguồn: <code>small-experiment-02/results/summary.md</code>.</p>
+    </article>
+    <article class="card gold-top">
+      <span class="chip chip-prop">Chưa chạy</span>
+      <h3 style="margin-top:10px">Phần còn lại</h3>
+      <p class="small">Decoder sinh token (R2), neural metrics (COMET/BERTScore), corpus ẩm thực, RAG chèn fact, survey độ quen món ăn. Tất cả đều có spec hoặc đề xuất, <strong>chưa có kết quả</strong>.</p>
+      <p class="source-note">Nguồn: <code>PROJECT_WORKFLOW.md</code> §5, §8.</p>
+    </article>
+  </div>
+
+  <h3 style="margin-top:30px">Experiment 01 — map có hoạt động không?</h3>
+  <div class="grid-2">
+    <article class="card">
+      <h3 style="font-size:18px">Retrieval closed-set · 2.000 test</h3>
+      <div class="table-wrap" style="border:0">
+        <table style="min-width:0">
+          <thead><tr><th>Phương pháp</th><th class="num">R@1</th><th class="num">R@10</th></tr></thead>
+          <tbody>
+            <tr><td>identity (không map)</td><td class="num">0,1%</td><td class="num">0,85%</td></tr>
+            <tr class="best"><td><strong>ridge</strong></td><td class="num"><strong>74,1%</strong></td><td class="num"><strong>92,2%</strong></td></tr>
+            <tr><td>MLP / ANN</td><td class="num">66,0%</td><td class="num">90,5%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small" style="margin-top:8px">Chance@1 = 0,05%. Identity ở mức chance → hai không gian gần như <strong>trực giao</strong> (paired cosine = −0,0124). Map tuyến tính kéo lên 74,1%, nhưng cosine sau map chỉ ~0,49 — “đủ để retrieve”, không “hoàn hảo”.</p>
+      <p class="source-note">Nguồn: <code>mapping_metrics.csv</code>; <code>small-experiment/results/summary.md</code> §1–2.</p>
+    </article>
+    <article class="card">
+      <h3 style="font-size:18px">Đọc đúng bảng này</h3>
+      <ul class="check-list" style="margin-bottom:8px">
+        <li><strong>Đây là closed-set retrieval:</strong> gallery là 2.000 câu test. Không phải tìm trong 8 triệu câu.</li>
+        <li><strong>Ridge thắng MLP:</strong> 74,1 vs 66,0 R@1. Tinh chỉnh MLP lên 72,65 vẫn chưa bằng ridge.</li>
+        <li><strong>Chọn alpha theo MSE là sai metric:</strong> α = 100 cho R@1 = 76,0%, tốt hơn α = 1000 (74,1%) dù MSE kém hơn.</li>
+        <li><strong>9k cặp là ít:</strong> kết luận “ANN không cần” chỉ đúng ở quy mô này, chưa phải ở 100k+.</li>
+      </ul>
+      <p class="source-note">Nguồn: <code>small-experiment/results/summary.md</code> §3.</p>
+    </article>
+  </div>
+
+  <h3 style="margin-top:30px">Experiment 02 — vector có đọc ra chữ không?</h3>
+  <p class="lead" style="margin-bottom:14px">Đây là thí nghiệm quan trọng nhất để biết “map chỉ giữ topic” hay “map giữ nội dung câu”. Readout là <strong>nearest-neighbour retrieval</strong> trên 10.000 câu train, test 2.000 câu, mean pooling.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Nhánh</th><th class="num">EN→VI · BLEU</th><th class="num">EN→VI · chrF</th><th class="num">VI→EN · BLEU</th><th class="num">VI→EN · chrF</th><th>Ý nghĩa</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>roundtrip</strong> (trần trên)</td><td class="num">5,10</td><td class="num">19,91</td><td class="num">2,54</td><td class="num">22,73</td><td>Vector oracle, không qua map</td></tr>
+        <tr class="best"><td><strong>ridge</strong></td><td class="num"><strong>3,27</strong></td><td class="num">17,30</td><td class="num"><strong>1,35</strong></td><td class="num">20,82</td><td>Baseline mạnh nhất</td></tr>
+        <tr><td>ANN / MLP</td><td class="num">3,29</td><td class="num">17,56</td><td class="num">1,44</td><td class="num">20,81</td><td>Không vượt ridge</td></tr>
+        <tr><td>identity (không map)</td><td class="num">0,09</td><td class="num">10,25</td><td class="num">0,04</td><td class="num">14,00</td><td>Sụp về mức shuffled</td></tr>
+        <tr><td>shuffled (sai cặp)</td><td class="num">0,24</td><td class="num">10,27</td><td class="num">0,13</td><td class="num">14,07</td><td>Đối chứng “vector hợp lý nhưng sai”</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tbl-note">BLEU tuyệt đối thấp vì readout là <strong>retrieval</strong>, không phải generation; trần do gallery 10k quyết định. Chỉ nên so sánh <em>giữa các nhánh</em>, không so với BLEU trong literature MT.</p>
+  <p class="source-note">Nguồn: <code>small-experiment-02/results/summary.md</code> §2; <code>results/nn_metrics.csv</code>.</p>
+
+  <div class="grid-3" style="margin-top:20px">
+    <article class="card">
+      <div class="num" style="font-family:var(--font-display);font-size:32px;color:var(--accent-deep);line-height:1">13,7×</div>
+      <p class="small" style="margin-top:6px">ridge so với shuffled ở BLEU EN→VI (10,7× ở VI→EN). Vector sau map <strong>mang nội dung câu</strong>, không chỉ chủ đề.</p>
+    </article>
+    <article class="card">
+      <div class="num" style="font-family:var(--font-display);font-size:32px;color:var(--green);line-height:1">87–92%</div>
+      <p class="small" style="margin-top:6px">chrF của trần được giữ lại, nhưng chỉ <strong>53–64% BLEU</strong>. Dấu hiệu: giữ nghĩa, mờ cách chọn từ / trật tự từ.</p>
+    </article>
+    <article class="card">
+      <div class="num" style="font-family:var(--font-display);font-size:32px;color:var(--gold);line-height:1">5,10</div>
+      <p class="small" style="margin-top:6px">BLEU của <strong>oracle</strong> qua retrieval. Ngay cả vector hoàn hảo cũng chỉ đạt mức này → <strong>kênh 768-d là nút thắt</strong>, không phải lớp map.</p>
+    </article>
+  </div>
+
+  <div class="callout danger" style="margin-top:20px">
+    <h4>Kết quả âm tính: embedding inversion không phân biệt được các nhánh</h4>
+    <p>Thử đọc token trực tiếp từ vector bằng tối ưu token embedding qua encoder frozen (64 item × 100 step). Token-overlap với reference chỉ <strong>0,033–0,068</strong>; ở VI→EN, nhánh <strong>identity lại tốt nhất (0,068)</strong>. Inverter phát ra từ vựng theo topic (“thuế”, “điện_tử”, “khoáng”) bất kể vector nhận vào — nó bắt được <em>chủ đề</em>, không bắt được <em>câu</em>.</p>
+    <p style="margin-bottom:0"><strong>Chi phí đo được:</strong> 4,2 giây/item/(hướng, pooling) → khoảng <strong>18,7 giờ</strong> cho 2.000 item. Không khả thi trên laptop. Đã bỏ hướng này thay vì scale lên. Cũng đừng dùng chrF một mình: inversion cho chrF 24–26 nhưng BLEU 0,07–0,22.</p>
+    <p class="source-note">Nguồn: <code>small-experiment-02/results/summary.md</code> §3.</p>
+  </div>
+
+  <div class="two-col" style="margin-top:20px">
+    <article class="panel panel-fixed">
+      <h3>✓ Đã chứng minh (trong phạm vi)</h3>
+      <ul class="check-list">
+        <li>Hai không gian embedding EN/VI gần như trực giao; identity ở mức chance.</li>
+        <li>Một map <strong>tuyến tính</strong> EN→VI đạt R@1 = 74,1% trên 2.000 câu chưa thấy.</li>
+        <li>Vector sau map còn <strong>đọc được nội dung câu</strong> qua retrieval (3,27 vs 0,24 BLEU).</li>
+        <li>Map giữ <strong>nghĩa</strong> tốt hơn giữ <strong>chữ</strong> (87–92% chrF, 53–64% BLEU của trần).</li>
+        <li>Thông tin “đây là món ăn” <strong>tuyến tính</strong> trong embedding EN (probe 99,27%).</li>
+      </ul>
+    </article>
+    <article class="panel panel-var">
+      <h3>× Chưa chứng minh</h3>
+      <ul class="cross-list">
+        <li><strong>Hệ dịch hoạt động:</strong> chưa có decoder nào sinh câu từ vector map.</li>
+        <li><strong>ANN là cần thiết:</strong> ridge ≥ ANN trên retrieval; chênh BLEU nằm trong nhiễu.</li>
+        <li><strong>Dịch ẩm thực:</strong> corpus là general domain (pháp lý / hằng ngày).</li>
+        <li><strong>Chuyển được văn hoá:</strong> chưa có thí nghiệm nào về văn hoá.</li>
+        <li><strong>Dynamic fact insertion:</strong> chưa có corpus, retrieval hay thí nghiệm chèn fact.</li>
+        <li><strong>So sánh với MT literature:</strong> readout là retrieval, trần do gallery quyết định.</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="callout gold" style="margin-top:18px">
+    <h4>Dynamic fact insertion — phần “dynamic” hiện mới là đề xuất</h4>
+    <div class="pipeline" style="margin:12px 0">
+      <div class="node"><b>1 · Phát hiện</b><small>Xác định cụm là món ăn / khái niệm ẩm thực</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node"><b>2 · Truy xuất</b><small>Lấy fact từ knowledge base ẩm thực</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node mid"><b>3 · Quyết định</b><small>Dùng perplexity của model để chọn fact đáng chèn</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node"><b>4 · Chèn</b><small>Chèn sau cụm trong bản dịch</small></div>
+    </div>
+    <p class="small" style="margin-bottom:0">Ý tưởng “dùng perplexity để quyết định fact nào đáng chèn” lấy từ ghi chú họp <strong>24/10</strong>. Chưa có implementation, chưa có corpus ẩm thực, chưa có metric. Đừng trình bày như kết quả.</p>
+    <p class="source-note">Nguồn: <code>present-Saturday-24th Oct/content.md</code> §4b; <code>PROJECT_WORKFLOW.md</code> §8.</p>
+  </div>
+</section>
+
+<!-- ============================================================ ARCHITECTURE -->
+<section class="section wrap" id="architecture" aria-labelledby="archTitle">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <div>
+      <p class="kicker">Phần quan trọng nhất</p>
+      <h2 id="archTitle">Cái gì cố định, cái gì được thay?</h2>
+      <p class="sub">Kiến trúc là một <strong>hợp đồng trừu tượng</strong>: token → model → representation → lớp giữa → representation → model → token. Model cụ thể và lớp giữa là biến.</p>
+    </div>
+  </div>
+
+  <div class="arch-card">
+    <div class="arch-toolbar">
+      <div class="segmented" role="group" aria-label="Chọn chiều dịch">
+        <button type="button" data-dir="envi">EN → VI</button>
+        <button type="button" data-dir="vien">VI → EN</button>
+        <button type="button" class="active" data-dir="both">Cả hai</button>
+      </div>
+      <label class="select-label">Cặp model
+        <select id="modelSelect">
+          <option value="encoder" selected>Encoder-only · đã chạy</option>
+          <option value="decoder">Decoder-only · đề xuất</option>
+          <option value="mixed">Lai encoder–decoder · đề xuất</option>
+        </select>
+      </label>
+      <label class="select-label">Lớp trung gian
+        <select id="layerSelect">
+          <option value="ridge" selected>Ridge / linear regression · đã chạy</option>
+          <option value="ann">MLP / ANN · đã chạy</option>
+          <option value="wide">Kênh rộng: k-token prefix / decoder hidden · chưa chạy</option>
+        </select>
+      </label>
+    </div>
+
+    <p class="pipeline-label">Chiều EN → VI</p>
+    <div class="pipeline" id="pipelineEnVi">
+      <div class="node token"><span class="node-icon">Aa</span><b>Token EN</b><small>“the soup is sour”</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node model"><span class="node-icon">M₁</span><b id="enModel">EN bi-encoder</b><small>bge-base-en-v1.5</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node"><span class="node-icon">h</span><b>English representation</b><small class="dim-en">h_EN ∈ R^768</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node mid"><span class="node-icon">f</span><b id="midName">Ridge (tuyến tính)</b><small id="midDesc">Đã thắng MLP ở cả 2 experiment</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node"><span class="node-icon">h</span><b>Vietnamese representation</b><small class="dim-vi">h_VI ∈ R^768</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node model"><span class="node-icon">M₂</span><b id="viModel">VI bi-encoder</b><small>bkai-vietnamese-bi-encoder</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node token"><span class="node-icon">Aa</span><b>Token VI</b><small>“canh chua”</small></div>
+    </div>
+
+    <p class="pipeline-label" id="vienLabel">Chiều VI → EN (đảo chiều)</p>
+    <div class="pipeline" id="pipelineViEn">
+      <div class="node token"><span class="node-icon">Aa</span><b>Token VI</b><small>“canh chua”</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node model"><span class="node-icon">M₂</span><b id="viModel2">VI bi-encoder</b><small>bkai-vietnamese-bi-encoder</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node"><span class="node-icon">h</span><b>Vietnamese representation</b><small class="dim-vi">h_VI ∈ R^768</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node mid"><span class="node-icon">g</span><b id="midName2">Ridge (tuyến tính)</b><small id="midDesc2">Đã thắng MLP ở cả 2 experiment</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node"><span class="node-icon">h</span><b>English representation</b><small class="dim-en">h_EN ∈ R^768</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node model"><span class="node-icon">M₁</span><b id="enModel2">EN bi-encoder</b><small>bge-base-en-v1.5</small></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node token"><span class="node-icon">Aa</span><b>Token EN</b><small>“the soup is sour”</small></div>
+    </div>
+
+    <div class="arch-status">
+      <span>Trạng thái cấu hình đang chọn:</span>
+      <span class="chip" id="archChip">Đã chạy</span>
+    </div>
+    <p class="arch-note" id="archNote">Đã chạy trong cả hai experiment. Đây là cấu hình mạnh nhất hiện có: hai encoder 768-d, map tuyến tính. Lưu ý: encoder-only <strong>không sinh được token</strong>, nên mũi tên “model đích sinh chữ” chưa từng được test.</p>
+  </div>
+
+  <div class="two-col" style="margin-top:20px">
+    <article class="panel panel-fixed">
+      <h3>Bất biến · không đổi</h3>
+      <ul>
+        <li><strong>Giao diện hai chiều:</strong> token nguồn → model nguồn → representation nguồn → lớp giữa → representation đích → model đích → token đích.</li>
+        <li><strong>EN→VI và VI→EN là hai bài toán riêng.</strong> Có thể dùng hai mạng trung gian riêng; có chia sẻ tham số hay không vẫn là câu hỏi mở.</li>
+        <li><strong>Chỉ train lớp trung gian.</strong> Model hai bên được giả định frozen — đây là <em>lựa chọn thiết kế</em>, cần test, không phải chân lý.</li>
+        <li><strong>Đánh giá cả hai tầng:</strong> representation-level (MSE, cosine, R@k) và translation-level (BLEU, chrF, …). Không được chỉ nhìn vector gần nhau.</li>
+        <li><strong>Dữ liệu huấn luyện:</strong> cặp câu song ngữ; mỗi cặp cho một cặp representation.</li>
+      </ul>
+    </article>
+    <article class="panel panel-var">
+      <h3>Biến · được phép thay</h3>
+      <ul>
+        <li><strong>Model cụ thể:</strong> encoder-only, decoder-only, lai; model family; số chiều; tokenizer.</li>
+        <li><strong>Lớp trung gian:</strong> ridge / linear regression, MLP / ANN, hoặc cơ chế khác.</li>
+        <li><strong>Layer được map:</strong> final hidden, earlier layer, một nhóm layer, hoặc representation khác.</li>
+        <li><strong>Pooling:</strong> mean / cls / last. Thực nghiệm cho thấy mean ≥ cls &gt; last.</li>
+        <li><strong>Độ rộng kênh:</strong> một vector 768-d, k-token prefix, hay decoder hidden states.</li>
+        <li><strong>Dữ liệu:</strong> general domain (hiện tại) hay corpus ẩm thực (tương lai).</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="callout danger" style="margin-top:20px">
+    <h4>Điều kiện sống còn: model phía Việt phải sinh được token Việt</h4>
+    <p>Trong chuỗi <span class="mono">h_VI → [VI model] → token VI</span>, token đầu ra do <strong>tokenizer + LM head</strong> của model phía Việt quyết định. Vì vậy model này phải là <strong>model ngôn ngữ Việt đơn ngữ</strong>, hoặc <strong>rất tốt tiếng Việt</strong>. Nếu model đa ngữ nhưng yếu tiếng Việt, map có tốt đến đâu thì câu sinh ra vẫn sai — và lỗi đó không phải lỗi của lớp map.</p>
+    <p style="margin-bottom:0"><strong>Thực tế hiện tại:</strong> hai checkpoint có sẵn trên đĩa là <strong>encoder-only, không có <code>lm_head</code></strong>. Vì vậy mũi tên “model đích sinh chữ” trong sơ đồ <strong>chưa từng được test</strong>. Đây là khoảng trống lớn nhất giữa sơ đồ và bằng chứng.</p>
+    <p class="source-note">Nguồn: <code>PROJECT_WORKFLOW.md</code> §2; <code>paperOverview.md</code> §3.1–3.2.</p>
+  </div>
+
+  <div class="callout gold" style="margin-top:16px">
+    <h4>Nút thắt có thể không phải lớp map, mà là kênh</h4>
+    <p style="margin-bottom:0">Ngay cả <strong>oracle</strong> (vector đúng, không qua map) cũng chỉ đạt <strong>5,10 BLEU</strong> qua retrieval. Ridge đạt 3,27. Nếu mọi nhánh đều sát nhau, tăng độ phức tạp của map không giải quyết được gì; phải mở rộng kênh (k-token prefix hoặc decoder hidden state). Đây là <strong>giả thuyết đang được xem xét</strong>, chưa phải kết luận.</p>
+    <p class="source-note">Nguồn: <code>small-experiment-02/results/summary.md</code> §5; <code>PROJECT_WORKFLOW.md</code> §5.</p>
+  </div>
+</section>
+
+<!-- ============================================================ EVIDENCE -->
+<section class="section wrap" id="evidence" aria-labelledby="evidenceTitle">
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <div>
+      <p class="kicker">Bảng bằng chứng</p>
+      <h2 id="evidenceTitle">Nói được gì, không nói được gì</h2>
+      <p class="sub">Mỗi dòng là một tuyên bố có thể kiểm tra. Lọc theo trạng thái để thấy ngay đâu là kết quả, đâu là đề xuất.</p>
+    </div>
+  </div>
+
+  <div class="table-tools" role="group" aria-label="Lọc bảng bằng chứng">
+    <button type="button" class="filter-btn active" data-filter="all">Tất cả</button>
+    <button type="button" class="filter-btn" data-filter="done">✓ Đã chứng minh</button>
+    <button type="button" class="filter-btn" data-filter="warn">◐ Có điều kiện</button>
+    <button type="button" class="filter-btn" data-filter="prop">◇ Đề xuất / chưa chạy</button>
+    <button type="button" class="filter-btn" data-filter="open">× Chưa chứng minh</button>
+  </div>
+
+  <div class="table-wrap">
+    <table id="evidenceTable">
+      <thead><tr><th style="width:38%">Tuyên bố</th><th style="width:14%">Trạng thái</th><th>Bằng chứng / con số</th><th style="width:22%">Nguồn</th></tr></thead>
+      <tbody>
+        <tr data-status="done"><td>Hai không gian embedding EN/VI gần như trực giao; không map thì identity ở mức chance.</td><td><span class="chip chip-done">Đã chứng minh</span></td><td>paired cosine <strong>−0,0124</strong>; identity R@1 <strong>0,1%</strong> (chance 0,05%).</td><td><code>small-experiment/results/summary.md</code> §1</td></tr>
+        <tr data-status="done"><td>Một map tuyến tính EN→VI tìm được câu đúng trong 2.000 câu chưa thấy.</td><td><span class="chip chip-done">Đã chứng minh</span></td><td>R@1 <strong>74,1%</strong>, R@10 <strong>92,2%</strong> (ridge, mean pooling).</td><td><code>mapping_metrics.csv</code></td></tr>
+        <tr data-status="warn"><td>MLP/ANN không cần thiết ở quy mô 9k cặp; ridge đã đủ.</td><td><span class="chip chip-warn">Có điều kiện</span></td><td>R@1 ridge 74,1% vs MLP 66,0%. Ở token level ANN +0,6% / +6,5% BLEU nhưng <strong>chưa test significance</strong>.</td><td><code>summary.md</code> §3; <code>small-experiment-02/results/summary.md</code> §2</td></tr>
+        <tr data-status="done"><td>Vector sau map còn mang <strong>nội dung câu</strong>, không chỉ topic.</td><td><span class="chip chip-done">Đã chứng minh</span></td><td>ridge <strong>3,27 BLEU</strong> vs shuffled <strong>0,24</strong> = <strong>13,7×</strong> (EN→VI); 1,35 vs 0,13 = 10,7× (VI→EN).</td><td><code>small-experiment-02/results/summary.md</code> §2</td></tr>
+        <tr data-status="done"><td>Map giữ nghĩa tốt hơn giữ chữ.</td><td><span class="chip chip-done">Đã chứng minh</span></td><td>Giữ <strong>87–92% chrF</strong> của trần nhưng chỉ <strong>53–64% BLEU</strong>.</td><td><code>small-experiment-02/results/summary.md</code> §2</td></tr>
+        <tr data-status="warn"><td>Thông tin “đây là món ăn” tuyến tính trong embedding EN.</td><td><span class="chip chip-warn">Có điều kiện</span></td><td>Accuracy <strong>99,27%</strong>, F1 <strong>99,26%</strong>, AUC <strong>0,9997</strong>; controlled 99,33%. Còn confound culinary vocabulary.</td><td><code>probe_food.json</code>; <code>summary.md</code> §4</td></tr>
+        <tr data-status="open"><td>Embedding inversion đọc được câu từ vector.</td><td><span class="chip chip-open">Chưa chứng minh</span></td><td>Overlap 0,033–0,068; identity tốt nhất ở VI→EN (0,068); chỉ bắt topic. Chi phí ~18,7 h cho 2.000 item.</td><td><code>small-experiment-02/results/summary.md</code> §3</td></tr>
+        <tr data-status="prop"><td>Decoder sinh token từ vector đã map.</td><td><span class="chip chip-prop">Chưa chạy</span></td><td>R2 đã thiết kế (decoder 4 lớp, cross-attention vào 1 vector, ~20 phút/chiều) nhưng chưa execute.</td><td><code>PROJECT_WORKFLOW.md</code> §5, §8</td></tr>
+        <tr data-status="open"><td>ANN là thành phần cần thiết của kiến trúc.</td><td><span class="chip chip-open">Chưa chứng minh</span></td><td>Ridge ≥ ANN trên retrieval; chênh BLEU nhỏ, chưa có paired bootstrap.</td><td><code>small-experiment-02/results/summary.md</code> §2, §4</td></tr>
+        <tr data-status="open"><td>Hệ dịch ẩm thực hoạt động.</td><td><span class="chip chip-open">Chưa chứng minh</span></td><td>Corpus hiện tại là general domain (pháp lý / hằng ngày); chưa có generation.</td><td><code>PROJECT_WORKFLOW.md</code> §7</td></tr>
+        <tr data-status="prop"><td>Dynamic fact insertion cải thiện bản dịch.</td><td><span class="chip chip-prop">Đề xuất</span></td><td>Chưa có corpus ẩm thực, retrieval hay thí nghiệm chèn fact; perplexity chỉ là ý tưởng.</td><td><code>PROJECT_WORKFLOW.md</code> §8; <code>content.md</code> §4b</td></tr>
+        <tr data-status="open"><td>Hệ “chuyển được văn hoá”.</td><td><span class="chip chip-open">Chưa chứng minh</span></td><td>Chưa có thí nghiệm nào về văn hoá; không được claim.</td><td><code>PROJECT_WORKFLOW.md</code> §7</td></tr>
+        <tr data-status="warn"><td>ICOCO Full Fusion vượt FoodBERT ở PA mọi granularity.</td><td><span class="chip chip-warn">Cần xác minh</span></td><td>Paper tuyên bố; audit nội bộ nói sai tại K=6 (Entity 26,07; No-Entropy 29,18 &lt; FoodBERT 30,07).</td><td><code>paper_facts.md</code>; <code>paper_audit.md</code> §2</td></tr>
+        <tr data-status="warn"><td>Country-level SF1 của ICOCO xấp xỉ 2× FoodBERT.</td><td><span class="chip chip-warn">Cần xác minh</span></td><td><code>labeled.csv</code>: 0,0951 / 0,0539 = 1,76×; audit dưới metric nhất quán: 0,0618 / 0,0542 = <strong>1,14×</strong>.</td><td><code>paper_audit.md</code> §2</td></tr>
+        <tr data-status="done"><td>Representation 304-D của ICOCO có cấu trúc nội tại tốt.</td><td><span class="chip chip-done">Đã chứng minh</span></td><td>Silhouette tới <strong>0,908</strong>; Davies–Bouldin <strong>1,71–2,02</strong>; audit tái lập metric nội bộ.</td><td><code>paper_facts.md</code>; <code>paper_audit.md</code> §2</td></tr>
+        <tr data-status="warn"><td>Kênh 768-d là nút thắt, không phải lớp map.</td><td><span class="chip chip-warn">Giả thuyết</span></td><td>Oracle chỉ 5,10 BLEU qua retrieval; ridge 3,27; chưa test kênh rộng.</td><td><code>small-experiment-02/results/summary.md</code> §5</td></tr>
+        <tr data-status="prop"><td>Corpus đầy đủ có khoảng 8 triệu cặp câu.</td><td><span class="chip chip-prop">Cần xác minh</span></td><td>Ghi chú họp ghi “8M cặp”; chưa đối chiếu với nguồn dữ liệu gốc.</td><td><code>present-Saturday-24th Oct/content.md</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tbl-note">“Có điều kiện” = kết quả đúng trong phạm vi thí nghiệm nhưng chưa đủ để khái quát. “Cần xác minh” = có nguồn nhưng nguồn không thống nhất hoặc chưa tái lập độc lập.</p>
+</section>
+
+<!-- ============================================================ REPRODUCE -->
+<section class="section wrap" id="reproduce" aria-labelledby="reproTitle">
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <div>
+      <p class="kicker">Tái lập</p>
+      <h2 id="reproTitle">Chạy lại trong khoảng 10 phút</h2>
+      <p class="sub">Mọi thứ chạy từ <code>small-experiment/</code> hoặc <code>small-experiment-02/</code>. Không ghi ra ổ C. Pipeline idempotent: chạy lại được, stage nào cũng có kiểm tra.</p>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <article class="card">
+      <h3 style="font-size:18px">Môi trường</h3>
+      <dl class="kv">
+        <dt>Python</dt><dd><code>small-experiment/.venv</code></dd>
+        <dt>PyTorch</dt><dd><code>2.7.1+cu128</code> (RTX 3050, sm_86)</dd>
+        <dt>Transformers</dt><dd><code>4.57.6</code></dd>
+        <dt>Database</dt><dd>MySQL 9.4 · Docker · <code>127.0.0.1:3307</code></dd>
+        <dt>Metrics</dt><dd><code>sacrebleu 2.5.1</code>, <code>rouge-score 0.1.2</code>, <code>nltk 3.9.2</code></dd>
+        <dt>Tài nguyên</dt><dd>~4 GB đĩa; ~2,5 GB RAM khi encode; exp 02 ~10 phút</dd>
+      </dl>
+      <p class="source-note">Nguồn: <code>small-experiment/REPRODUCE.md</code> §0–1; <code>small-experiment-02/REPRODUCE.md</code> §0.</p>
+    </article>
+    <article class="card">
+      <h3 style="font-size:18px">Dữ liệu</h3>
+      <dl class="kv">
+        <dt>Shard</dt><dd><code>data/data/train-00008-of-00014.parquet</code><br><span class="small">594.836 dòng</span></dd>
+        <dt>RecipeNLG</dt><dd><code>data/RecipeNLG.csv</code><br><span class="small">2.231.142 dòng</span></dd>
+        <dt>Cặp sạch</dt><dd>267.475 cặp (lọc ≤ 64 từ, seed 42)</dd>
+        <dt>Mẫu dùng</dt><dd>12.000 cặp = 10.000 train + 2.000 test</dd>
+        <dt>Model</dt><dd>936 MB, nằm trong <code>small-experiment/models/hf</code></dd>
+      </dl>
+      <p class="source-note">Nguồn: <code>PROJECT_WORKFLOW.md</code> §3; <code>small-experiment-02/REPRODUCE.md</code> §0.</p>
+    </article>
+    <article class="card">
+      <h3 style="font-size:18px">Trước khi chạy</h3>
+      <ul class="cross-list" style="margin-bottom:8px">
+        <li>Đừng chạy model khi RAM còn quá ít. Máy hiện tại chỉ còn khoảng <strong>1,6 GB</strong> trống — pipeline này cần nhiều hơn.</li>
+        <li>Đừng cài package mới nếu chưa cần; venv đã có pin.</li>
+        <li>Đừng đặt <code>NLTK_DATA</code> lên ổ C; phải trỏ vào <code>agent-work/nltk_data</code>.</li>
+      </ul>
+      <p class="source-note">Cảnh báo tài nguyên từ phiên làm việc hiện tại; các trap khác từ <code>small-experiment-02/REPRODUCE.md</code> §5.</p>
+    </article>
+  </div>
+
+  <h3 style="margin-top:28px">Lệnh chạy — Experiment 01</h3>
+  <div class="code-block">
+    <button class="copy-btn" type="button" data-copy="exp1">Copy</button>
+    <pre><code id="cmd-exp1">cd small-experiment
+powershell -ExecutionPolicy Bypass -File .\install_env.ps1
+
+docker compose up -d
+docker compose ps
+
+.\.venv\Scripts\python.exe -m src.pipeline sample
+.\.venv\Scripts\python.exe -m src.pipeline encode
+.\.venv\Scripts\python.exe -m src.pipeline verify
+.\.venv\Scripts\python.exe -m src.pipeline mapping
+.\.venv\Scripts\python.exe -m src.pipeline probe</code></pre>
+  </div>
+  <p class="small" style="margin-top:8px">Stage nào cũng chạy lại được. <code>--force</code> ở <code>sample</code>/<code>encode</code> sẽ rút lại 12k cặp — chỉ dùng nếu chạy lại toàn bộ downstream.</p>
+
+  <h3 style="margin-top:24px">Lệnh chạy — Experiment 02</h3>
+  <div class="code-block">
+    <button class="copy-btn" type="button" data-copy="exp2">Copy</button>
+    <pre><code id="cmd-exp2">cd small-experiment-02
+$env:PYTHONIOENCODING = "utf-8"
+$env:HF_HOME = "$PWD\..\small-experiment\models\hf"
+$py = "..\small-experiment\.venv\Scripts\python.exe"
+
+& $py -m src.pipeline cache     # ~2 min
+& $py -m src.pipeline maps      # ~30 s
+& $py -m src.pipeline nn        # ~8 min  -> results/nn_metrics.csv
+
+# tùy chọn: thử inversion (chậm, kết quả âm)
+& $py -m src.pipeline invert --n=64 --steps=100   # ~27 min</code></pre>
+  </div>
+  <p class="small" style="margin-top:8px">Không chạy inversion trên 2.000 item: 4,2 s/item → ~18,7 giờ. Kết quả âm đã được ghi lại, không cần lặp.</p>
+
+  <h3 style="margin-top:28px">Kết quả nằm ở đâu?</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>File</th><th>Nội dung</th><th>Dùng để kiểm tra</th></tr></thead>
+      <tbody>
+        <tr><td><code>small-experiment/results/mapping_metrics.csv</code></td><td>MSE / MAE / cosine / R@k cho identity, ridge, MLP × 3 pooling</td><td>R@1 ridge mean = 74,1%</td></tr>
+        <tr><td><code>small-experiment/results/probe_food.json</code></td><td>Accuracy / F1 / balanced acc / ROC-AUC, 5-fold</td><td>Accuracy 0,99265</td></tr>
+        <tr><td><code>small-experiment/results/summary.md</code></td><td>Diễn giải experiment 01 + threats</td><td>Đọc trước khi trích số</td></tr>
+        <tr><td><code>small-experiment-02/results/nn_metrics.csv</code></td><td>30 dòng × 8 metric cho 5 nhánh</td><td>ridge en2vi mean BLEU 3,27</td></tr>
+        <tr><td><code>small-experiment-02/results/map_sanity.csv</code></td><td>Cosine raw / centered / norm ratio sau map</td><td>raw cosine 0,485; norm ratio 0,53</td></tr>
+        <tr><td><code>small-experiment-02/results/token_metrics.csv</code></td><td>Metric của output inversion</td><td>BLEU 0,07–0,22; chrF 24–26</td></tr>
+        <tr><td><code>small-experiment-02/results/summary.md</code></td><td>Kết quả chính + negative result + threats</td><td>Đọc §2–§5</td></tr>
+        <tr><td><code>small-experiment/agent-work/manifest.json</code></td><td>Seed, SQL, package versions, git commit, SHA-256</td><td>Kiểm tra reproducibility</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout green" style="margin-top:18px">
+    <h4>Checkpoint: chạy đúng thì thấy gì?</h4>
+    <ul class="check-list" style="margin-bottom:0">
+      <li><code>map_sanity.csv</code>: en2vi/mean ridge raw cosine <strong>0,485</strong>, norm ratio <strong>0,53</strong>.</li>
+      <li><code>nn_metrics.csv</code>: en2vi/mean ridge BLEU <strong>3,27</strong>, roundtrip <strong>5,10</strong>, shuffled <strong>0,24</strong>.</li>
+      <li><code>cache_summary.json</code>: <code>pairs_sha256 = 8ac9561b…60bc</code>; sáu mảng shape <code>[12000, 768]</code>.</li>
+      <li>Sai lệch &lt; 1% là bình thường: fp16 trên GPU khác nhau không bit-identical.</li>
+    </ul>
+    <p class="source-note">Nguồn: <code>small-experiment-02/REPRODUCE.md</code> §4.</p>
+  </div>
+
+  <div class="callout blue" style="margin-top:16px">
+    <h4>Nếu chỉ muốn xem kết quả, không chạy lại</h4>
+    <p style="margin-bottom:0">Mở trực tiếp các file trong <code>results/</code> và đọc <code>summary.md</code>. Không cần cài gì, không cần Docker, không cần model. Đây là cách nhanh nhất để kiểm tra một con số trước khi trích dẫn.</p>
+  </div>
+</section>
+
+<!-- ============================================================ READING PATH -->
+<section class="section wrap" id="reading" aria-labelledby="readingTitle">
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <div>
+      <p class="kicker">Lộ trình đọc</p>
+      <h2 id="readingTitle">Đọc theo thứ tự này, đừng đọc repo theo alphabet</h2>
+      <p class="sub">Thời gian là ước lượng. Tick vào từng bước để lưu tiến độ trên máy — không gửi đi đâu cả.</p>
+    </div>
+  </div>
+
+  <div class="reading-list" id="readingList">
+    <div class="reading-step">
+      <input type="checkbox" id="r1" data-step="r1">
+      <label for="r1"><b>1 · Bản đồ dự án</b><span><code>PROJECT_WORKFLOW.md</code> §0–§2. Hiểu quy ước nét liền / nét đứt / nét chấm và hai experiment đã xong. Đây là file quan trọng nhất để không bị lạc.</span></label>
+      <span class="time">5 phút</span>
+    </div>
+    <div class="reading-step">
+      <input type="checkbox" id="r2" data-step="r2">
+      <label for="r2"><b>2 · Kiến trúc mong muốn</b><span><code>paperOverview.md</code> §3–§4 và §9. Đọc kỹ “Which representations should be mapped?” và danh sách “Still Undecided”. Đừng biến giả định thành sự thật.</span></label>
+      <span class="time">10 phút</span>
+    </div>
+    <div class="reading-step">
+      <input type="checkbox" id="r3" data-step="r3">
+      <label for="r3"><b>3 · Experiment 01</b><span><code>small-experiment/results/summary.md</code> §1–§4. Chú ý: closed-set retrieval, 10k cặp, và lý do α được chọn sai metric.</span></label>
+      <span class="time">15 phút</span>
+    </div>
+    <div class="reading-step">
+      <input type="checkbox" id="r4" data-step="r4">
+      <label for="r4"><b>4 · Experiment 02</b><span><code>small-experiment-02/results/summary.md</code> §2–§5. Đọc bảng BLEU, rồi đọc “Threats to validity”. Đây là nơi bằng chứng mạnh nhất và cũng dễ trích sai nhất.</span></label>
+      <span class="time">15 phút</span>
+    </div>
+    <div class="reading-step">
+      <input type="checkbox" id="r5" data-step="r5">
+      <label for="r5"><b>5 · Ranh giới claim</b><span><code>PROJECT_WORKFLOW.md</code> §7 “Ranh giới của những gì đã chứng minh”. Đọc trước khi viết slide hoặc abstract.</span></label>
+      <span class="time">5 phút</span>
+    </div>
+    <div class="reading-step">
+      <input type="checkbox" id="r6" data-step="r6">
+      <label for="r6"><b>6 · Paper 1 + audit</b><span><code>ICOCO_reproducible/final/presentation/paper_facts.md</code>, sau đó <code>paper_audit.md</code> phần Executive Summary và §2. Mục tiêu: biết số nào là claim của paper, số nào là tái lập.</span></label>
+      <span class="time">15 phút</span>
+    </div>
+    <div class="reading-step">
+      <input type="checkbox" id="r7" data-step="r7">
+      <label for="r7"><b>7 · Tái lập</b><span><code>small-experiment/REPRODUCE.md</code> và <code>small-experiment-02/REPRODUCE.md</code>. Chỉ cần đọc, chưa cần chạy. Nếu chạy, làm theo checkpoint ở mục 05.</span></label>
+      <span class="time">10 phút</span>
+    </div>
+    <div class="reading-step">
+      <input type="checkbox" id="r8" data-step="r8">
+      <label for="r8"><b>8 · Tự kiểm tra</b><span>Quay lại bảng bằng chứng ở mục 04. Chọn 3 dòng “chưa chứng minh” và tự hỏi: cần thí nghiệm gì để chứng minh? Đó là cách nghĩ của dự án.</span></label>
+      <span class="time">5 phút</span>
+    </div>
+  </div>
+  <div class="reading-progress">
+    <span id="readingCount">0/8 bước</span>
+    <span class="track"><span class="fill" id="readingFill"></span></span>
+    <button class="filter-btn" type="button" id="resetReading">Đặt lại</button>
+  </div>
+
+  <div class="callout" style="margin-top:22px">
+    <h4>Nếu chỉ có 15 phút</h4>
+    <p style="margin-bottom:0">Đọc mục <a href="#overview">00 · 60 giây</a>, rồi <a href="#architecture">03 · Kiến trúc</a>, rồi hai bảng “Đã chứng minh / Chưa chứng minh” ở mục 02. Đủ để biết dự án đang ở đâu và không nói sai.</p>
+  </div>
+</section>
+
+<!-- ============================================================ GLOSSARY -->
+<section class="section wrap" id="glossary" aria-labelledby="glossTitle">
+  <div class="section-head">
+    <span class="section-num">07</span>
+    <div>
+      <p class="kicker">Glossary</p>
+      <h2 id="glossTitle">Thuật ngữ, nói ngắn</h2>
+      <p class="sub">Các từ sẽ gặp trong repo. Giữ tiếng Anh khi cần, nhưng hiểu bằng tiếng Việt trước.</p>
+    </div>
+  </div>
+
+  <dl class="glossary">
+    <div class="term"><dt>Representation / embedding</dt><dd>Vector số học đại diện cho một câu / token / món ăn trong không gian mà model hiểu.</dd></div>
+    <div class="term"><dt>Bi-encoder</dt><dd>Model encode câu thành một vector; hai câu so sánh bằng cosine. Không sinh token.</dd></div>
+    <div class="term"><dt>Frozen</dt><dd>Đóng băng trọng số, không cập nhật khi train. Ở đây chỉ train lớp ánh xạ.</dd></div>
+    <div class="term"><dt>Probe / linear probing</dt><dd>Train một classifier tuyến tính trên representation để xem thông tin nào “đọc được” từ đó.</dd></div>
+    <div class="term"><dt>Pooling</dt><dd>Cách gộp nhiều token thành một vector câu: mean, cls, last. Thực nghiệm: mean ≥ cls &gt; last.</dd></div>
+    <div class="term"><dt>Ridge regression</dt><dd>Hồi quy tuyến tính có regularization L2. Ở đây là baseline map mạnh nhất.</dd></div>
+    <div class="term"><dt>ANN / MLP</dt><dd>Mạng nơ-ron nhiều lớp. Trong dự án là ứng viên cho lớp trung gian, nhưng chưa vượt ridge.</dd></div>
+    <div class="term"><dt>R@1 / R@10</dt><dd>Recall@k: trong top-k kết quả retrieval có chứa đáp án đúng. R@1 = đúng ngay vị trí đầu.</dd></div>
+    <div class="term"><dt>BLEU</dt><dd>Điểm trùng n-gram giữa bản dịch và reference. Nhạy với cách chọn từ / trật tự từ.</dd></div>
+    <div class="term"><dt>chrF</dt><dd>Điểm trùng ký tự. Giữ nghĩa tốt hơn BLEU nhưng có thể bị “ăn gian” bởi từ vựng cùng topic.</dd></div>
+    <div class="term"><dt>Oracle / roundtrip</dt><dd>Nhánh dùng vector đúng (không qua map) để đo trần trên của kênh.</dd></div>
+    <div class="term"><dt>Shuffled control</dt><dd>Đối chứng dùng vector của cặp câu khác. Nếu nhánh thật không hơn shuffled, map vô dụng.</dd></div>
+    <div class="term"><dt>Closed-set / open-set</dt><dd>Closed-set: gallery hẹp, dễ. Open-set: test tách khỏi train, khó hơn. Exp 02 dùng gallery 10k train, test 2k.</dd></div>
+    <div class="term"><dt>Anisotropy</dt><dd>Không gian embedding bị lệch theo một hướng chung; cosine thô vì thế bị thổi phồng. Phải trừ mean.</dd></div>
+    <div class="term"><dt>Encoder-only / decoder-only</dt><dd>Encoder-only tạo embedding, không sinh token. Decoder-only sinh token, có LM head.</dd></div>
+    <div class="term"><dt>LM head</dt><dd>Lớp cuối ánh xạ hidden state sang phân phối token. Không có nó thì không sinh được chữ.</dd></div>
+    <div class="term"><dt>K-means / Hungarian matching</dt><dd>Phân cụm rồi gán cụm → nhãn bằng bài toán ghép tối ưu một-một.</dd></div>
+    <div class="term"><dt>PA / Soft-MacroF1</dt><dd>Partial-Match Accuracy và Soft-MacroF1: hai metric external của ICOCO khi so cụm với nhãn địa lý.</dd></div>
+    <div class="term"><dt>Silhouette / Davies–Bouldin</dt><dd>Metric nội tại đo cụm có tách tốt không. Silhouette cao tốt; DB thấp tốt.</dd></div>
+    <div class="term"><dt>Dynamic fact insertion</dt><dd>Chèn fact ẩm thực vào bản dịch khi cần. Hiện là đề xuất, chưa có implementation.</dd></div>
+    <div class="term"><dt>RAG</dt><dd>Retrieval-Augmented Generation: truy xuất tri thức ngoài rồi đưa vào quá trình sinh.</dd></div>
+    <div class="term"><dt>Confound</dt><dd>Yếu tố gây nhiễu khiến kết quả trông tốt vì lý do khác (ví dụ độ dài câu thay vì ngữ nghĩa món ăn).</dd></div>
+    <div class="term"><dt>Ablation</dt><dd>Bỏ / thay một thành phần để xem thành phần đó có thực sự đóng góp.</dd></div>
+    <div class="term"><dt>SHA-256 freeze</dt><dd>Băm dữ liệu để đảm bảo lần chạy sau dùng đúng cùng một tập, không âm thầm đổi mẫu.</dd></div>
+  </dl>
+</section>
+
+<!-- ============================================================ FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <h4>Về trang này</h4>
+      <p>Trang onboarding nội bộ cho dự án <strong>Culinary CSI Translation Through Dynamic Fact Insertion</strong>. Không phải bài báo, không phải tài liệu chính thức để trích dẫn. Mọi con số đều lấy từ file trong repo; chỗ chưa chắc chắn được đánh dấu “cần xác minh”.</p>
+      <p>Biên soạn: 31/10/2026 · HTML tự chứa, không webfont, không CDN, không JavaScript ngoài. Hoạt động khi mở bằng <code>file://</code>.</p>
+      <p><a href="#top">↑ Về đầu trang</a></p>
+    </div>
+    <div>
+      <h4>Nguồn chính</h4>
+      <ul>
+        <li>paperOverview.md</li>
+        <li>PROJECT_WORKFLOW.md</li>
+        <li>small-experiment/results/summary.md</li>
+        <li>small-experiment-02/results/summary.md</li>
+        <li>small-experiment/REPRODUCE.md</li>
+        <li>small-experiment-02/REPRODUCE.md</li>
+        <li>ICOCO_reproducible/final/presentation/paper_facts.md</li>
+        <li>ICOCO_reproducible/final/paper_audit.md</li>
+        <li>ICOCO_reproducible/final/huge_notebook_docs_note.md</li>
+        <li>present-Saturday-24th Oct/content.md</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+</main>
+
+<button class="to-top" id="toTop" type="button" aria-label="Về đầu trang" title="Về đầu trang">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- progress + back to top ---------- */
+  var fill = document.getElementById("progressFill");
+  var toTop = document.getElementById("toTop");
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    if (fill) fill.style.width = (p * 100).toFixed(2) + "%";
+    if (toTop) toTop.classList.toggle("show", (h.scrollTop || document.body.scrollTop) > 700);
+  }
+  window.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+  if (toTop) toTop.addEventListener("click", function(){ window.scrollTo({top:0, behavior:"smooth"}); });
+
+  /* ---------- mobile nav ---------- */
+  var navToggle = document.getElementById("navToggle");
+  var nav = document.getElementById("siteNav");
+  if (navToggle && nav){
+    navToggle.addEventListener("click", function(){
+      var open = nav.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    nav.addEventListener("click", function(e){
+      if (e.target.tagName === "A"){
+        nav.classList.remove("open");
+        navToggle.setAttribute("aria-expanded","false");
+      }
+    });
+  }
+
+  /* ---------- active nav ---------- */
+  var sections = Array.prototype.slice.call(document.querySelectorAll("main section[id]"));
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".site-nav a[href^='#']"));
+  function updateActiveNav(){
+    var pos = (window.scrollY || document.documentElement.scrollTop || 0) + 150;
+    var current = sections[0];
+    sections.forEach(function(s){ if (s.offsetTop <= pos) current = s; });
+    if (!current) return;
+    navLinks.forEach(function(a){
+      a.classList.toggle("active", a.getAttribute("href") === "#" + current.id);
+    });
+  }
+  window.addEventListener("scroll", updateActiveNav, {passive:true});
+  updateActiveNav();
+
+  /* ---------- print ---------- */
+  function openDetails(){ document.querySelectorAll("details").forEach(function(d){ d.dataset.wasOpen = d.open ? "1" : "0"; d.open = true; }); }
+  function restoreDetails(){ document.querySelectorAll("details").forEach(function(d){ if (d.dataset.wasOpen === "0") d.open = false; }); }
+  window.addEventListener("beforeprint", openDetails);
+  window.addEventListener("afterprint", restoreDetails);
+  var printBtn = document.getElementById("printBtn");
+  if (printBtn) printBtn.addEventListener("click", function(){ openDetails(); window.print(); });
+
+  /* ---------- copy buttons ---------- */
+  function copyText(text, btn){
+    var done = function(){
+      var old = btn.textContent;
+      btn.textContent = "Đã copy";
+      setTimeout(function(){ btn.textContent = old; }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, function(){ fallback(text, done); });
+    } else { fallback(text, done); }
+  }
+  function fallback(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly",""); ta.style.position="fixed"; ta.style.left="-9999px";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); done(); } catch(e) {}
+    document.body.removeChild(ta);
+  }
+  document.querySelectorAll(".copy-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var id = btn.getAttribute("data-copy");
+      var el = document.getElementById("cmd-" + id);
+      if (el) copyText(el.textContent, btn);
+    });
+  });
+
+  /* ---------- evidence filter ---------- */
+  var filterBtns = Array.prototype.slice.call(document.querySelectorAll(".filter-btn[data-filter]"));
+  var evidenceRows = Array.prototype.slice.call(document.querySelectorAll("#evidenceTable tbody tr"));
+  filterBtns.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      filterBtns.forEach(function(b){ b.classList.remove("active"); });
+      btn.classList.add("active");
+      var f = btn.getAttribute("data-filter");
+      evidenceRows.forEach(function(row){
+        row.classList.toggle("is-hidden", f !== "all" && row.getAttribute("data-status") !== f);
+      });
+    });
+  });
+
+  /* ---------- reading path ---------- */
+  var steps = Array.prototype.slice.call(document.querySelectorAll(".reading-step"));
+  var countEl = document.getElementById("readingCount");
+  var readFill = document.getElementById("readingFill");
+  var resetBtn = document.getElementById("resetReading");
+  function updateReading(){
+    var done = 0;
+    steps.forEach(function(step){
+      var cb = step.querySelector("input[type=checkbox]");
+      if (cb && cb.checked){ done++; step.classList.add("done"); }
+      else step.classList.remove("done");
+    });
+    if (countEl) countEl.textContent = done + "/" + steps.length + " bước";
+    if (readFill) readFill.style.width = steps.length ? (done / steps.length * 100) + "%" : "0%";
+  }
+  steps.forEach(function(step){
+    var cb = step.querySelector("input[type=checkbox]");
+    if (!cb) return;
+    try {
+      if (localStorage.getItem("csi-onboarding-" + cb.id) === "1") cb.checked = true;
+    } catch(e) {}
+    cb.addEventListener("change", function(){
+      try { localStorage.setItem("csi-onboarding-" + cb.id, cb.checked ? "1" : "0"); } catch(e) {}
+      updateReading();
+    });
+  });
+  if (resetBtn){
+    resetBtn.addEventListener("click", function(){
+      steps.forEach(function(step){
+        var cb = step.querySelector("input[type=checkbox]");
+        if (cb){ cb.checked = false; try { localStorage.removeItem("csi-onboarding-" + cb.id); } catch(e) {} }
+      });
+      updateReading();
+    });
+  }
+  updateReading();
+
+  /* ---------- architecture ---------- */
+  var modelSelect = document.getElementById("modelSelect");
+  var layerSelect = document.getElementById("layerSelect");
+  var archChip = document.getElementById("archChip");
+  var archNote = document.getElementById("archNote");
+  var pipelineEnVi = document.getElementById("pipelineEnVi");
+  var pipelineViEn = document.getElementById("pipelineViEn");
+  var vienLabel = document.getElementById("vienLabel");
+  var segButtons = Array.prototype.slice.call(document.querySelectorAll(".segmented button[data-dir]"));
+
+  var MODEL = {
+    encoder: {
+      en: "EN bi-encoder", enSub: "bge-base-en-v1.5",
+      vi: "VI bi-encoder", viSub: "bkai-vietnamese-bi-encoder",
+      dim: "h ∈ R^768", status: "Đã chạy", ran: true
+    },
+    decoder: {
+      en: "EN decoder", enSub: "chưa chọn checkpoint",
+      vi: "VI decoder", viSub: "chưa chọn checkpoint",
+      dim: "hidden size chưa chốt", status: "Đề xuất", ran: false
+    },
+    mixed: {
+      en: "EN encoder", enSub: "chưa chọn checkpoint",
+      vi: "VI decoder", viSub: "chưa chọn checkpoint",
+      dim: "chưa chốt", status: "Đề xuất", ran: false
+    }
+  };
+  var LAYER = {
+    ridge: {name:"Ridge (tuyến tính)", desc:"Đã thắng MLP ở cả 2 experiment", ran:true, kind:"ridge"},
+    ann: {name:"MLP / ANN", desc:"Đã chạy; không vượt ridge", ran:true, kind:"ann"},
+    wide: {name:"k-token prefix / decoder hidden", desc:"Đề xuất; mở rộng kênh, chưa chạy", ran:false, kind:"wide"}
+  };
+  var NOTES = {
+    "encoder|ridge": "Đã chạy trong cả hai experiment. Đây là cấu hình mạnh nhất hiện có: hai encoder 768-d, map tuyến tính. Lưu ý: encoder-only <strong>không sinh được token</strong>, nên mũi tên “model đích sinh chữ” chưa từng được test.",
+    "encoder|ann": "Đã chạy. ANN không vượt ridge trên retrieval; chênh lệch BLEU ở token level nằm trong nhiễu và chưa có significance test. Cấu hình này vẫn là encoder-only nên chưa sinh được token.",
+    "encoder|wide": "Chưa chạy. Đây là hướng mở rộng kênh: thay vì một vector 768-d, dùng k-token prefix hoặc decoder hidden state. Vẫn cần một model phía Việt có LM head để sinh token.",
+    "decoder|ridge": "Đề xuất, chưa chạy. Hai checkpoint hiện có là encoder-only, không có <code>lm_head</code>; chưa có decoder nào được train hay evaluate.",
+    "decoder|ann": "Đề xuất, chưa chạy. Chưa có decoder Việt nào được chọn; đây là khoảng trống lớn nhất giữa sơ đồ và bằng chứng.",
+    "decoder|wide": "Đề xuất, chưa chạy. Kênh rộng + decoder là hướng đúng về mặt kiến trúc, nhưng chưa có implementation hay kết quả.",
+    "mixed|ridge": "Đề xuất, chưa chạy. Lai encoder–decoder có thể hợp lý nếu encoder EN mạnh và decoder VI tốt, nhưng chưa được thử.",
+    "mixed|ann": "Đề xuất, chưa chạy. Chưa có checkpoint, chưa có thí nghiệm.",
+    "mixed|wide": "Đề xuất, chưa chạy. Chưa có checkpoint, chưa có thí nghiệm."
+  };
+
+  function setText(id, text){
+    var el = document.getElementById(id);
+    if (el) el.textContent = text;
+  }
+  function applyArch(){
+    if (!modelSelect || !layerSelect) return;
+    var m = MODEL[modelSelect.value] || MODEL.encoder;
+    var l = LAYER[layerSelect.value] || LAYER.ridge;
+
+    setText("enModel", m.en); setText("enModel2", m.en);
+    setText("viModel", m.vi); setText("viModel2", m.vi);
+    setText("midName", l.name); setText("midName2", l.name);
+    setText("midDesc", l.desc); setText("midDesc2", l.desc);
+
+    document.querySelectorAll(".dim-en").forEach(function(el){ el.textContent = m.dim; });
+    document.querySelectorAll(".dim-vi").forEach(function(el){ el.textContent = m.dim; });
+
+    // model sublabels (the small text right after the model name)
+    var modelNodes = [document.getElementById("enModel"), document.getElementById("enModel2")];
+    modelNodes.forEach(function(n){ if (n && n.nextElementSibling) n.nextElementSibling.textContent = m.enSub; });
+    var viNodes = [document.getElementById("viModel"), document.getElementById("viModel2")];
+    viNodes.forEach(function(n){ if (n && n.nextElementSibling) n.nextElementSibling.textContent = m.viSub; });
+
+    var ran = m.ran && l.ran;
+    if (archChip){
+      archChip.textContent = ran ? "Đã chạy" : (m.ran || l.ran ? "Một phần đã chạy" : "Đề xuất / chưa chạy");
+      archChip.className = "chip " + (ran ? "chip-done" : "chip-prop");
+    }
+    if (archNote){
+      var key = modelSelect.value + "|" + layerSelect.value;
+      archNote.innerHTML = NOTES[key] || NOTES["encoder|ridge"];
+    }
+  }
+  if (modelSelect) modelSelect.addEventListener("change", applyArch);
+  if (layerSelect) layerSelect.addEventListener("change", applyArch);
+  applyArch();
+
+  segButtons.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      segButtons.forEach(function(b){ b.classList.remove("active"); });
+      btn.classList.add("active");
+      var dir = btn.getAttribute("data-dir");
+      var showEn = dir === "envi" || dir === "both";
+      var showVi = dir === "vien" || dir === "both";
+      if (pipelineEnVi) pipelineEnVi.hidden = !showEn;
+      if (pipelineViEn) pipelineViEn.hidden = !showVi;
+      if (vienLabel) vienLabel.hidden = !showVi;
+    });
+  });
+})();
+</script>
+</body>
+</html>

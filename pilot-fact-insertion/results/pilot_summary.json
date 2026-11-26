@@ -1,0 +1,38 @@
+{
+  "model": "qwen2.5:1.5b",
+  "sentences": 15,
+  "facts": 20,
+  "retrieval": {
+    "lexical_top1_acc": 0.933,
+    "embedding_top1_acc": 0.933,
+    "lexical_errors": [
+      "S03"
+    ],
+    "embedding_errors": [
+      "S14"
+    ]
+  },
+  "generation": {
+    "A_lexical_direct": {
+      "n": 15,
+      "fact_pass_80_rate": 0.867,
+      "mean_keyword_coverage": 0.911,
+      "judge_faithful_rate": 0.933,
+      "judge_fluent_mean": 4.067,
+      "one_sentence_rate": 0.933,
+      "mean_gen_seconds": 0.529,
+      "mean_tokens_per_second": 102.889
+    },
+    "B_embedding_task": {
+      "n": 15,
+      "fact_pass_80_rate": 0.8,
+      "mean_keyword_coverage": 0.867,
+      "judge_faithful_rate": 0.933,
+      "judge_fluent_mean": 3.867,
+      "one_sentence_rate": 0.933,
+      "mean_gen_seconds": 0.509,
+      "mean_tokens_per_second": 101.334
+    }
+  },
+  "note": "Self-judged by the same model; treat faithful/fluent as a screening signal, not a human gold label."
+}

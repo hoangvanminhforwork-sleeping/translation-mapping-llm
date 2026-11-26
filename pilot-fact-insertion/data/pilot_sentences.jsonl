@@ -1,0 +1,15 @@
+{"id":"S01","dish":"phở bò","sentence_vi":"Phở là món nước nổi tiếng của Việt Nam, thường được ăn vào buổi sáng.","expected_fact_id":"F01"}
+{"id":"S02","dish":"bánh chưng","sentence_vi":"Bánh chưng là món ăn truyền thống trong dịp Tết của người Việt.","expected_fact_id":"F02"}
+{"id":"S03","dish":"bánh mì","sentence_vi":"Bánh mì Việt Nam là món ăn đường phố quen thuộc với du khách.","expected_fact_id":"F03"}
+{"id":"S04","dish":"cơm tấm","sentence_vi":"Cơm tấm là món cơm đặc trưng của Sài Gòn.","expected_fact_id":"F04"}
+{"id":"S05","dish":"bún chả","sentence_vi":"Bún chả là món bún ăn kèm thịt nướng, rất phổ biến ở Hà Nội.","expected_fact_id":"F05"}
+{"id":"S06","dish":"cao lầu","sentence_vi":"Cao lầu là món mì đặc sản của Hội An.","expected_fact_id":"F06"}
+{"id":"S07","dish":"mì Quảng","sentence_vi":"Mì Quảng là món mì có nước dùng ít, thường ăn kèm bánh tráng.","expected_fact_id":"F07"}
+{"id":"S08","dish":"bún bò Huế","sentence_vi":"Bún bò Huế là món bún có vị cay và thơm mùi sả.","expected_fact_id":"F08"}
+{"id":"S09","dish":"chả cá Lã Vọng","sentence_vi":"Chả cá Lã Vọng là món cá nướng đặc trưng của Hà Nội.","expected_fact_id":"F09"}
+{"id":"S10","dish":"gỏi cuốn","sentence_vi":"Gỏi cuốn là món cuốn tươi mát, thường dùng làm món khai vị.","expected_fact_id":"F10"}
+{"id":"S11","dish":"bánh xèo","sentence_vi":"Bánh xèo là món bánh giòn, thường ăn bằng tay với rau sống.","expected_fact_id":"F11"}
+{"id":"S12","dish":"xôi xéo","sentence_vi":"Xôi xéo là món xôi quen thuộc trong bữa sáng của người Hà Nội.","expected_fact_id":"F12"}
+{"id":"S13","dish":"bánh cuốn","sentence_vi":"Bánh cuốn là món bánh hấp mỏng, ăn kèm nước chấm.","expected_fact_id":"F13"}
+{"id":"S14","dish":"hủ tiếu","sentence_vi":"Hủ tiếu là món nước có sợi bánh làm từ gạo, phổ biến ở miền Nam.","expected_fact_id":"F14"}
+{"id":"S15","dish":"bò kho","sentence_vi":"Bò kho là món thịt bò hầm, thường ăn với bánh mì hoặc bún.","expected_fact_id":"F15"}

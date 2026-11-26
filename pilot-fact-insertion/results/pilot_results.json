@@ -1,0 +1,824 @@
+{
+  "summary": {
+    "model": "qwen2.5:1.5b",
+    "sentences": 15,
+    "facts": 20,
+    "retrieval": {
+      "lexical_top1_acc": 0.933,
+      "embedding_top1_acc": 0.933,
+      "lexical_errors": [
+        "S03"
+      ],
+      "embedding_errors": [
+        "S14"
+      ]
+    },
+    "generation": {
+      "A_lexical_direct": {
+        "n": 15,
+        "fact_pass_80_rate": 0.867,
+        "mean_keyword_coverage": 0.911,
+        "judge_faithful_rate": 0.933,
+        "judge_fluent_mean": 4.067,
+        "one_sentence_rate": 0.933,
+        "mean_gen_seconds": 0.529,
+        "mean_tokens_per_second": 102.889
+      },
+      "B_embedding_task": {
+        "n": 15,
+        "fact_pass_80_rate": 0.8,
+        "mean_keyword_coverage": 0.867,
+        "judge_faithful_rate": 0.933,
+        "judge_fluent_mean": 3.867,
+        "one_sentence_rate": 0.933,
+        "mean_gen_seconds": 0.509,
+        "mean_tokens_per_second": 101.334
+      }
+    },
+    "note": "Self-judged by the same model; treat faithful/fluent as a screening signal, not a human gold label."
+  },
+  "retrieval": [
+    {
+      "id": "S01",
+      "expected": "F01",
+      "lexical_top1": "F01",
+      "embedding_top1": "F01",
+      "lexical_ok": true,
+      "embedding_ok": true
+    },
+    {
+      "id": "S02",
+      "expected": "F02",
+      "lexical_top1": "F02",
+      "embedding_top1": "F02",
+      "lexical_ok": true,
+      "embedding_ok": true
+    },
+    {
+      "id": "S03",
+      "expected": "F03",
+      "lexical_top1": "F15",
+      "embedding_top1": "F03",
+      "lexical_ok": false,
+      "embedding_ok": true
+    },
+    {
+      "id": "S04",
+      "expected": "F04",
+      "lexical_top1": "F04",
+      "embedding_top1": "F04",
+      "lexical_ok": true,
+      "embedding_ok": true
+    },
+    {
+      "id": "S05",
+      "expected": "F05",
+      "lexical_top1": "F05",
+      "embedding_top1": "F05",
+      "lexical_ok": true,
+      "embedding_ok": true
+    },
+    {
+      "id": "S06",
+      "expected": "F06",
+      "lexical_top1": "F06",
+      "embedding_top1": "F06",
+      "lexical_ok": true,
+      "embedding_ok": true
+    },
+    {
+      "id": "S07",
+      "expected": "F07",
+      "lexical_top1": "F07",
+      "embedding_top1": "F07",
+      "lexical_ok": true,
+      "embedding_ok": true
+    },
+    {
+      "id": "S08",
+      "expected": "F08",
+      "lexical_top1": "F08",
+      "embedding_top1": "F08",
+      "lexical_ok": true,
+      "embedding_ok": true
+    },
+    {
+      "id": "S09",
+      "expected": "F09",
+      "lexical_top1": "F09",
+      "embedding_top1": "F09",
+      "lexical_ok": true,
+      "embedding_ok": true
+    },
+    {
+      "id": "S10",
+      "expected": "F10",
+      "lexical_top1": "F10",
+      "embedding_top1": "F10",
+      "lexical_ok": true,
+      "embedding_ok": true
+    },
+    {
+      "id": "S11",
+      "expected": "F11",
+      "lexical_top1": "F11",
+      "embedding_top1": "F11",
+      "lexical_ok": true,
+      "embedding_ok": true
+    },
+    {
+      "id": "S12",
+      "expected": "F12",
+      "lexical_top1": "F12",
+      "embedding_top1": "F12",
+      "lexical_ok": true,
+      "embedding_ok": true
+    },
+    {
+      "id": "S13",
+      "expected": "F13",
+      "lexical_top1": "F13",
+      "embedding_top1": "F13",
+      "lexical_ok": true,
+      "embedding_ok": true
+    },
+    {
+      "id": "S14",
+      "expected": "F14",
+      "lexical_top1": "F14",
+      "embedding_top1": "F11",
+      "lexical_ok": true,
+      "embedding_ok": false
+    },
+    {
+      "id": "S15",
+      "expected": "F15",
+      "lexical_top1": "F15",
+      "embedding_top1": "F15",
+      "lexical_ok": true,
+      "embedding_ok": true
+    }
+  ],
+  "rows": [
+    {
+      "id": "S01",
+      "dish": "phở bò",
+      "arm": "A_lexical_direct",
+      "source": "Phở là món nước nổi tiếng của Việt Nam, thường được ăn vào buổi sáng.",
+      "expected_fact": "Nước dùng phở bò Hà Nội được ninh từ xương bò nhiều giờ, thêm gừng nướng, quế và hồi.",
+      "used_fact_id": "F01",
+      "retrieval_ok": true,
+      "output": "Phở là món nước nổi tiếng của Việt Nam, thường được ăn vào buổi sáng, đặc biệt là với nước dùng phở bò Hà Nội được ninh từ xương bò nhiều giờ, thêm gừng nướng, quế và hồi.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.879,
+      "eval_count": 52,
+      "eval_duration_ns": 453727000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence accurately includes the fact about the phở bò Hà Nội's preparation and matches the source text.",
+        "judge_wall_seconds": 0.6408467999426648
+      }
+    },
+    {
+      "id": "S01",
+      "dish": "phở bò",
+      "arm": "B_embedding_task",
+      "source": "Phở là món nước nổi tiếng của Việt Nam, thường được ăn vào buổi sáng.",
+      "expected_fact": "Nước dùng phở bò Hà Nội được ninh từ xương bò nhiều giờ, thêm gừng nướng, quế và hồi.",
+      "used_fact_id": "F01",
+      "retrieval_ok": true,
+      "output": "Phở là món nước nổi tiếng của Việt Nam, thường được ăn vào buổi sáng, đặc biệt là nước dùng phở bò Hà Nội được ninh từ xương bò nhiều giờ, thêm gừng nướng, quế và hồi.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.556,
+      "eval_count": 51,
+      "eval_duration_ns": 480260000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence accurately includes the fact about the phở bò Hà Nội's preparation method and matches the source text.",
+        "judge_wall_seconds": 0.7547602000413463
+      }
+    },
+    {
+      "id": "S02",
+      "dish": "bánh chưng",
+      "arm": "A_lexical_direct",
+      "source": "Bánh chưng là món ăn truyền thống trong dịp Tết của người Việt.",
+      "expected_fact": "Bánh chưng được gói bằng lá dong, nhân đỗ xanh và thịt lợn, tượng trưng cho đất trong quan niệm truyền thống.",
+      "used_fact_id": "F02",
+      "retrieval_ok": true,
+      "output": "Bánh chưng, món ăn truyền thống của người Việt, được gói bằng lá dong, nhân từ đỗ xanh và thịt lợn, tượng trưng cho đất trong quan niệm truyền thống.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.581,
+      "eval_count": 43,
+      "eval_duration_ns": 438673000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence accurately includes the fact and maintains a natural Vietnamese structure.",
+        "judge_wall_seconds": 0.6174220000393689
+      }
+    },
+    {
+      "id": "S02",
+      "dish": "bánh chưng",
+      "arm": "B_embedding_task",
+      "source": "Bánh chưng là món ăn truyền thống trong dịp Tết của người Việt.",
+      "expected_fact": "Bánh chưng được gói bằng lá dong, nhân đỗ xanh và thịt lợn, tượng trưng cho đất trong quan niệm truyền thống.",
+      "used_fact_id": "F02",
+      "retrieval_ok": true,
+      "output": "Bánh chưng, món ăn truyền thống của người Việt, được gói bằng lá dong, nhân đỗ xanh và thịt lợn, tượng trưng cho đất trong quan niệm truyền thống.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.518,
+      "eval_count": 42,
+      "eval_duration_ns": 430843000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence accurately includes the fact and maintains a natural Vietnamese structure.",
+        "judge_wall_seconds": 0.656436900026165
+      }
+    },
+    {
+      "id": "S03",
+      "dish": "bánh mì",
+      "arm": "A_lexical_direct",
+      "source": "Bánh mì Việt Nam là món ăn đường phố quen thuộc với du khách.",
+      "expected_fact": "Bánh mì Việt Nam chịu ảnh hưởng từ bánh mì Pháp, thường có vỏ giòn và nhân thịt, chả hoặc trứng.",
+      "used_fact_id": "F15",
+      "retrieval_ok": false,
+      "output": "Bánh mì Việt Nam là món ăn đường phố quen thuộc với du khách, thường ăn kèm với bò kho hầm với cà rốt, sả, gừng và gia vị, hoặc bún.",
+      "keyword_coverage": 0.0,
+      "fact_pass_80": false,
+      "gen_wall_seconds": 0.558,
+      "eval_count": 46,
+      "eval_duration_ns": 449080000,
+      "judge": {
+        "faithful": 0,
+        "fluent": 1,
+        "one_sentence": 0,
+        "note": "The rewritten sentence does not contain the fact about Bánh mì Việt Nam being influenced by French bread and having a crispy exterior and meat, egg, or egg white filling. It also includes an incorrect ingredient (bò kho hầm with cà rốt, sả, gừng and gia vị) that is not mentioned in the source.",
+        "judge_wall_seconds": 1.0604559000348672
+      }
+    },
+    {
+      "id": "S03",
+      "dish": "bánh mì",
+      "arm": "B_embedding_task",
+      "source": "Bánh mì Việt Nam là món ăn đường phố quen thuộc với du khách.",
+      "expected_fact": "Bánh mì Việt Nam chịu ảnh hưởng từ bánh mì Pháp, thường có vỏ giòn và nhân thịt, chả hoặc trứng.",
+      "used_fact_id": "F03",
+      "retrieval_ok": true,
+      "output": "Bánh mì Việt Nam, món ăn đường phố quen thuộc với du khách, là sự kết hợp của bánh mì Pháp với nhân thịt, chả hoặc trứng, tạo nên một món ăn giòn và hấp dẫn.",
+      "keyword_coverage": 0.667,
+      "fact_pass_80": false,
+      "gen_wall_seconds": 0.527,
+      "eval_count": 48,
+      "eval_duration_ns": 448272000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence accurately incorporates the fact about the influence of French baguettes and the addition of meat, sausage, or eggs, while maintaining a natural Vietnamese phrasing.",
+        "judge_wall_seconds": 0.7820603000000119
+      }
+    },
+    {
+      "id": "S04",
+      "dish": "cơm tấm",
+      "arm": "A_lexical_direct",
+      "source": "Cơm tấm là món cơm đặc trưng của Sài Gòn.",
+      "expected_fact": "Cơm tấm dùng hạt gạo tấm bị vỡ, ăn kèm sườn nướng, bì, chả và nước mắm.",
+      "used_fact_id": "F04",
+      "retrieval_ok": true,
+      "output": "Cơm tấm là món cơm đặc trưng của Sài Gòn, dùng hạt gạo tấm bị vỡ, ăn kèm với sườn nướng, bì, chả và nước mắm.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.458,
+      "eval_count": 42,
+      "eval_duration_ns": 382084000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence closely follows the source and includes the fact without introducing new information.",
+        "judge_wall_seconds": 0.5951546999858692
+      }
+    },
+    {
+      "id": "S04",
+      "dish": "cơm tấm",
+      "arm": "B_embedding_task",
+      "source": "Cơm tấm là món cơm đặc trưng của Sài Gòn.",
+      "expected_fact": "Cơm tấm dùng hạt gạo tấm bị vỡ, ăn kèm sườn nướng, bì, chả và nước mắm.",
+      "used_fact_id": "F04",
+      "retrieval_ok": true,
+      "output": "Cơm tấm là món cơm đặc trưng của Sài Gòn, dùng hạt gạo tấm bị vỡ, ăn kèm với sườn nướng, bì, chả và nước mắm.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.503,
+      "eval_count": 42,
+      "eval_duration_ns": 417137000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "Rewritten sentence closely follows the source and includes the fact without introducing new claims.",
+        "judge_wall_seconds": 0.593133999966085
+      }
+    },
+    {
+      "id": "S05",
+      "dish": "bún chả",
+      "arm": "A_lexical_direct",
+      "source": "Bún chả là món bún ăn kèm thịt nướng, rất phổ biến ở Hà Nội.",
+      "expected_fact": "Bún chả Hà Nội gồm thịt lợn nướng than, bún rối, rau sống và nước mắm chua ngọt.",
+      "used_fact_id": "F05",
+      "retrieval_ok": true,
+      "output": "Bún chả Hà Nội là món bún ăn kèm thịt nướng, gồm thịt lợn nướng than, bún rối, rau sống và nước mắm chua ngọt, rất phổ biến ở Hà Nội.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.568,
+      "eval_count": 48,
+      "eval_duration_ns": 468628000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 5,
+        "one_sentence": 1,
+        "note": "The rewritten sentence accurately includes the fact and maintains a natural Vietnamese structure.",
+        "judge_wall_seconds": 0.5982873999746516
+      }
+    },
+    {
+      "id": "S05",
+      "dish": "bún chả",
+      "arm": "B_embedding_task",
+      "source": "Bún chả là món bún ăn kèm thịt nướng, rất phổ biến ở Hà Nội.",
+      "expected_fact": "Bún chả Hà Nội gồm thịt lợn nướng than, bún rối, rau sống và nước mắm chua ngọt.",
+      "used_fact_id": "F05",
+      "retrieval_ok": true,
+      "output": "Bún chả Hà Nội là bún ăn kèm thịt lợn nướng than, bún rối, rau sống và nước mắm chua ngọt, rất phổ biến ở thành phố này.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.506,
+      "eval_count": 43,
+      "eval_duration_ns": 410314000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence accurately includes the fact and maintains a natural Vietnamese structure.",
+        "judge_wall_seconds": 0.6749040998984128
+      }
+    },
+    {
+      "id": "S06",
+      "dish": "cao lầu",
+      "arm": "A_lexical_direct",
+      "source": "Cao lầu là món mì đặc sản của Hội An.",
+      "expected_fact": "Cao lầu Hội An dùng sợi mì làm từ gạo ngâm nước tro, ăn với thịt xá xíu và da heo giòn.",
+      "used_fact_id": "F06",
+      "retrieval_ok": true,
+      "output": "Cao lầu là món mì đặc sản của Hội An, dùng sợi mì làm từ gạo ngâm nước tro, ăn với thịt xá xíu và da heo giòn.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.527,
+      "eval_count": 43,
+      "eval_duration_ns": 429743000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 5,
+        "one_sentence": 1,
+        "note": "The rewritten sentence accurately includes the fact and maintains the original structure without adding new factual claims.",
+        "judge_wall_seconds": 0.6513496999396011
+      }
+    },
+    {
+      "id": "S06",
+      "dish": "cao lầu",
+      "arm": "B_embedding_task",
+      "source": "Cao lầu là món mì đặc sản của Hội An.",
+      "expected_fact": "Cao lầu Hội An dùng sợi mì làm từ gạo ngâm nước tro, ăn với thịt xá xíu và da heo giòn.",
+      "used_fact_id": "F06",
+      "retrieval_ok": true,
+      "output": "Cao lầu là món mì đặc sản của Hội An, dùng sợi mì từ gạo ngâm nước tro, ăn kèm với thịt xá xíu và da heo giòn.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.505,
+      "eval_count": 43,
+      "eval_duration_ns": 414980000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence closely follows the source and includes the fact about the ingredients.",
+        "judge_wall_seconds": 0.691023200051859
+      }
+    },
+    {
+      "id": "S07",
+      "dish": "mì Quảng",
+      "arm": "A_lexical_direct",
+      "source": "Mì Quảng là món mì có nước dùng ít, thường ăn kèm bánh tráng.",
+      "expected_fact": "Mì Quảng dùng bột gạo trộn nghệ, nước dùng ít, ăn kèm tôm, thịt, đậu phộng và bánh tráng.",
+      "used_fact_id": "F07",
+      "retrieval_ok": true,
+      "output": "Mì Quảng là món mì dùng bột gạo trộn nghệ, nước dùng ít, thường ăn kèm với tôm, thịt, đậu phộng và bánh tráng.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.428,
+      "eval_count": 38,
+      "eval_duration_ns": 338663000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence closely follows the source and includes the fact about the use of bột gạo trộn nghệ and the fact about the use of tôm, thịt, đậu phộng, and bánh tráng.",
+        "judge_wall_seconds": 0.8453347000759095
+      }
+    },
+    {
+      "id": "S07",
+      "dish": "mì Quảng",
+      "arm": "B_embedding_task",
+      "source": "Mì Quảng là món mì có nước dùng ít, thường ăn kèm bánh tráng.",
+      "expected_fact": "Mì Quảng dùng bột gạo trộn nghệ, nước dùng ít, ăn kèm tôm, thịt, đậu phộng và bánh tráng.",
+      "used_fact_id": "F07",
+      "retrieval_ok": true,
+      "output": "Mì Quảng là món mì gạo trộn nghệ, nước dùng ít, thường ăn kèm với tôm, thịt, đậu phộng và bánh tráng.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.433,
+      "eval_count": 35,
+      "eval_duration_ns": 342762000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence closely follows the source and includes the fact about the use of bột gạo trộn nghệ and the fact about the use of tôm, thịt, đậu phộng, and bánh tráng.",
+        "judge_wall_seconds": 0.9147964000003412
+      }
+    },
+    {
+      "id": "S08",
+      "dish": "bún bò Huế",
+      "arm": "A_lexical_direct",
+      "source": "Bún bò Huế là món bún có vị cay và thơm mùi sả.",
+      "expected_fact": "Bún bò Huế có nước dùng nấu từ xương bò và sả, thêm mắm ruốc tạo vị đậm.",
+      "used_fact_id": "F08",
+      "retrieval_ok": true,
+      "output": "Bún bò Huế là món bún có vị cay và thơm mùi sả, nước dùng nấu từ xương bò và sả, thêm mắm ruốc tạo vị đậm.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.481,
+      "eval_count": 42,
+      "eval_duration_ns": 395511000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 5,
+        "one_sentence": 1,
+        "note": "The rewritten sentence accurately includes the fact and maintains a natural Vietnamese structure.",
+        "judge_wall_seconds": 0.591534600011073
+      }
+    },
+    {
+      "id": "S08",
+      "dish": "bún bò Huế",
+      "arm": "B_embedding_task",
+      "source": "Bún bò Huế là món bún có vị cay và thơm mùi sả.",
+      "expected_fact": "Bún bò Huế có nước dùng nấu từ xương bò và sả, thêm mắm ruốc tạo vị đậm.",
+      "used_fact_id": "F08",
+      "retrieval_ok": true,
+      "output": "Bún bò Huế là món bún có vị cay và thơm mùi sả, nấu từ nước dùng từ xương bò và sả, thêm mắm ruốc tạo vị đậm.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.497,
+      "eval_count": 43,
+      "eval_duration_ns": 425379000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 5,
+        "one_sentence": 1,
+        "note": "The rewritten sentence accurately reflects the fact and maintains a natural Vietnamese structure.",
+        "judge_wall_seconds": 0.6698915000306442
+      }
+    },
+    {
+      "id": "S09",
+      "dish": "chả cá Lã Vọng",
+      "arm": "A_lexical_direct",
+      "source": "Chả cá Lã Vọng là món cá nướng đặc trưng của Hà Nội.",
+      "expected_fact": "Chả cá Lã Vọng dùng cá lăng ướp nghệ, nướng rồi áp chảo với thì là và hành.",
+      "used_fact_id": "F09",
+      "retrieval_ok": true,
+      "output": "Chả cá Lã Vọng là món cá nướng đặc trưng của Hà Nội, dùng cá lăng ướp nghệ, nướng rồi áp chảo với thì là và hành.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.485,
+      "eval_count": 40,
+      "eval_duration_ns": 376125000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence accurately includes the fact and maintains a natural Vietnamese structure.",
+        "judge_wall_seconds": 0.6106677999487147
+      }
+    },
+    {
+      "id": "S09",
+      "dish": "chả cá Lã Vọng",
+      "arm": "B_embedding_task",
+      "source": "Chả cá Lã Vọng là món cá nướng đặc trưng của Hà Nội.",
+      "expected_fact": "Chả cá Lã Vọng dùng cá lăng ướp nghệ, nướng rồi áp chảo với thì là và hành.",
+      "used_fact_id": "F09",
+      "retrieval_ok": true,
+      "output": "Chả cá Lã Vọng là món cá nướng đặc trưng của Hà Nội, được làm từ cá lăng ướp nghệ, nướng rồi áp chảo với thì là và hành.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.48,
+      "eval_count": 42,
+      "eval_duration_ns": 395898000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence accurately reflects the fact and maintains a natural Vietnamese structure.",
+        "judge_wall_seconds": 0.6756411000387743
+      }
+    },
+    {
+      "id": "S10",
+      "dish": "gỏi cuốn",
+      "arm": "A_lexical_direct",
+      "source": "Gỏi cuốn là món cuốn tươi mát, thường dùng làm món khai vị.",
+      "expected_fact": "Gỏi cuốn dùng bánh tráng mỏng cuốn tôm, thịt, bún và rau sống, chấm nước mắm hoặc tương.",
+      "used_fact_id": "F10",
+      "retrieval_ok": true,
+      "output": "Gỏi cuốn là món ăn tươi mát, thường được làm từ bánh tráng mỏng cuốn tôm, thịt, bún và rau sống, chấm với nước mắm hoặc tương.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.516,
+      "eval_count": 42,
+      "eval_duration_ns": 422487000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence closely follows the source and includes the fact about the ingredients.",
+        "judge_wall_seconds": 0.6510736999334767
+      }
+    },
+    {
+      "id": "S10",
+      "dish": "gỏi cuốn",
+      "arm": "B_embedding_task",
+      "source": "Gỏi cuốn là món cuốn tươi mát, thường dùng làm món khai vị.",
+      "expected_fact": "Gỏi cuốn dùng bánh tráng mỏng cuốn tôm, thịt, bún và rau sống, chấm nước mắm hoặc tương.",
+      "used_fact_id": "F10",
+      "retrieval_ok": true,
+      "output": "Gỏi cuốn là món cuốn tươi mát, thường dùng làm món khai vị, gồm bánh tráng mỏng cuốn tôm, thịt, bún và rau sống, chấm nước mắm hoặc tương.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.546,
+      "eval_count": 46,
+      "eval_duration_ns": 453770000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence accurately includes the fact and maintains a natural Vietnamese structure.",
+        "judge_wall_seconds": 0.6656026999698952
+      }
+    },
+    {
+      "id": "S11",
+      "dish": "bánh xèo",
+      "arm": "A_lexical_direct",
+      "source": "Bánh xèo là món bánh giòn, thường ăn bằng tay với rau sống.",
+      "expected_fact": "Bánh xèo miền Nam có bột gạo pha nghệ, nhân tôm thịt và giá đỗ, ăn kèm rau sống.",
+      "used_fact_id": "F11",
+      "retrieval_ok": true,
+      "output": "Bánh xèo miền Nam, giòn và thơm ngon, thường được ăn bằng tay với rau sống, nhân tôm thịt và giá đỗ.",
+      "keyword_coverage": 0.667,
+      "fact_pass_80": false,
+      "gen_wall_seconds": 0.478,
+      "eval_count": 37,
+      "eval_duration_ns": 364583000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence closely follows the source and includes the fact about the ingredients, maintaining the natural Vietnamese phrasing.",
+        "judge_wall_seconds": 0.6764074000529945
+      }
+    },
+    {
+      "id": "S11",
+      "dish": "bánh xèo",
+      "arm": "B_embedding_task",
+      "source": "Bánh xèo là món bánh giòn, thường ăn bằng tay với rau sống.",
+      "expected_fact": "Bánh xèo miền Nam có bột gạo pha nghệ, nhân tôm thịt và giá đỗ, ăn kèm rau sống.",
+      "used_fact_id": "F11",
+      "retrieval_ok": true,
+      "output": "Bánh xèo miền Nam là món bánh giòn, thường ăn bằng tay với rau sống, nhân từ bột gạo pha nghệ, tôm thịt và giá đỗ.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.543,
+      "eval_count": 41,
+      "eval_duration_ns": 419802000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence closely follows the source and includes the fact about the ingredients, maintaining a natural Vietnamese phrasing.",
+        "judge_wall_seconds": 0.7363823000341654
+      }
+    },
+    {
+      "id": "S12",
+      "dish": "xôi xéo",
+      "arm": "A_lexical_direct",
+      "source": "Xôi xéo là món xôi quen thuộc trong bữa sáng của người Hà Nội.",
+      "expected_fact": "Xôi xéo Hà Nội gồm gạo nếp, đỗ xanh hấp, hành phi và mỡ nước.",
+      "used_fact_id": "F12",
+      "retrieval_ok": true,
+      "output": "Xôi xéo Hà Nội là món xôi quen thuộc trong bữa sáng, gồm gạo nếp, đỗ xanh hấp, hành phi và mỡ nước.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.44,
+      "eval_count": 35,
+      "eval_duration_ns": 336783000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence accurately includes the fact and maintains a natural Vietnamese structure.",
+        "judge_wall_seconds": 0.6145967999473214
+      }
+    },
+    {
+      "id": "S12",
+      "dish": "xôi xéo",
+      "arm": "B_embedding_task",
+      "source": "Xôi xéo là món xôi quen thuộc trong bữa sáng của người Hà Nội.",
+      "expected_fact": "Xôi xéo Hà Nội gồm gạo nếp, đỗ xanh hấp, hành phi và mỡ nước.",
+      "used_fact_id": "F12",
+      "retrieval_ok": true,
+      "output": "Xôi xéo Hà Nội là món xôi quen thuộc trong bữa sáng, gồm gạo nếp, đỗ xanh hấp, hành phi và mỡ nước.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.472,
+      "eval_count": 35,
+      "eval_duration_ns": 355140000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence accurately includes the fact and maintains a natural Vietnamese structure.",
+        "judge_wall_seconds": 0.606716200010851
+      }
+    },
+    {
+      "id": "S13",
+      "dish": "bánh cuốn",
+      "arm": "A_lexical_direct",
+      "source": "Bánh cuốn là món bánh hấp mỏng, ăn kèm nước chấm.",
+      "expected_fact": "Bánh cuốn miền Bắc là bánh tráng mỏng hấp chín, nhân thịt băm và mộc nhĩ.",
+      "used_fact_id": "F13",
+      "retrieval_ok": true,
+      "output": "Bánh cuốn miền Bắc là bánh tráng mỏng hấp chín, nhân thịt băm và mộc nhĩ, ăn kèm nước chấm.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.489,
+      "eval_count": 33,
+      "eval_duration_ns": 340649000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence closely follows the source and includes the fact about the ingredients.",
+        "judge_wall_seconds": 0.6233195000095293
+      }
+    },
+    {
+      "id": "S13",
+      "dish": "bánh cuốn",
+      "arm": "B_embedding_task",
+      "source": "Bánh cuốn là món bánh hấp mỏng, ăn kèm nước chấm.",
+      "expected_fact": "Bánh cuốn miền Bắc là bánh tráng mỏng hấp chín, nhân thịt băm và mộc nhĩ.",
+      "used_fact_id": "F13",
+      "retrieval_ok": true,
+      "output": "Bánh cuốn là món bánh mỏng miền Bắc, ăn kèm nước chấm.",
+      "keyword_coverage": 0.0,
+      "fact_pass_80": false,
+      "gen_wall_seconds": 0.316,
+      "eval_count": 19,
+      "eval_duration_ns": 196695000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence closely follows the source and includes the fact about the origin of bánh cuốn in the north.",
+        "judge_wall_seconds": 0.6976122000487521
+      }
+    },
+    {
+      "id": "S14",
+      "dish": "hủ tiếu",
+      "arm": "A_lexical_direct",
+      "source": "Hủ tiếu là món nước có sợi bánh làm từ gạo, phổ biến ở miền Nam.",
+      "expected_fact": "Hủ tiếu có nguồn gốc từ ẩm thực Hoa, nước dùng thường nấu từ xương heo.",
+      "used_fact_id": "F14",
+      "retrieval_ok": true,
+      "output": "Hủ tiếu là món nước có sợi bánh làm từ gạo, phổ biến ở miền Nam, có nguồn gốc từ ẩm thực Hoa và nước dùng thường nấu từ xương heo.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.572,
+      "eval_count": 41,
+      "eval_duration_ns": 453044000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence accurately includes the fact about the origin of hủ tiếu being from Chinese cuisine and the use of pig's bones in the broth.",
+        "judge_wall_seconds": 0.9563808999955654
+      }
+    },
+    {
+      "id": "S14",
+      "dish": "hủ tiếu",
+      "arm": "B_embedding_task",
+      "source": "Hủ tiếu là món nước có sợi bánh làm từ gạo, phổ biến ở miền Nam.",
+      "expected_fact": "Hủ tiếu có nguồn gốc từ ẩm thực Hoa, nước dùng thường nấu từ xương heo.",
+      "used_fact_id": "F11",
+      "retrieval_ok": false,
+      "output": "Hủ tiếu là món nước có sợi bánh làm từ gạo, phổ biến ở miền Nam, thường ăn kèm với bánh xèo miền Nam có bột gạo pha nghệ, nhân tôm thịt và giá đỗ, ăn kèm rau sống.",
+      "keyword_coverage": 0.333,
+      "fact_pass_80": false,
+      "gen_wall_seconds": 0.75,
+      "eval_count": 55,
+      "eval_duration_ns": 554343000,
+      "judge": {
+        "faithful": 0,
+        "fluent": 1,
+        "one_sentence": 0,
+        "note": "Rewritten sentence contains additional information not present in the source and fact.",
+        "judge_wall_seconds": 0.6951087999623269
+      }
+    },
+    {
+      "id": "S15",
+      "dish": "bò kho",
+      "arm": "A_lexical_direct",
+      "source": "Bò kho là món thịt bò hầm, thường ăn với bánh mì hoặc bún.",
+      "expected_fact": "Bò kho là món bò hầm với cà rốt, sả, gừng và gia vị, ăn kèm bánh mì hoặc bún.",
+      "used_fact_id": "F15",
+      "retrieval_ok": true,
+      "output": "Bò kho là món bò hầm với cà rốt, sả, gừng và gia vị, ăn kèm bánh mì hoặc bún.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.479,
+      "eval_count": 33,
+      "eval_duration_ns": 333563000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 5,
+        "one_sentence": 1,
+        "note": "The rewritten sentence is a direct copy of the source, containing all the required keywords and fact.",
+        "judge_wall_seconds": 0.6883435000199825
+      }
+    },
+    {
+      "id": "S15",
+      "dish": "bò kho",
+      "arm": "B_embedding_task",
+      "source": "Bò kho là món thịt bò hầm, thường ăn với bánh mì hoặc bún.",
+      "expected_fact": "Bò kho là món bò hầm với cà rốt, sả, gừng và gia vị, ăn kèm bánh mì hoặc bún.",
+      "used_fact_id": "F15",
+      "retrieval_ok": true,
+      "output": "Bò kho là món thịt bò hầm với cà rốt, sả, gừng và gia vị, thường ăn kèm với bánh mì hoặc bún.",
+      "keyword_coverage": 1.0,
+      "fact_pass_80": true,
+      "gen_wall_seconds": 0.478,
+      "eval_count": 36,
+      "eval_duration_ns": 369377000,
+      "judge": {
+        "faithful": 1,
+        "fluent": 4,
+        "one_sentence": 1,
+        "note": "The rewritten sentence closely follows the source and includes the fact about bò kho being a meat stew with vegetables, without introducing new factual claims.",
+        "judge_wall_seconds": 0.8171396000543609
+      }
+    }
+  ]
+}
