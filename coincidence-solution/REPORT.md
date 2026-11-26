@@ -11,7 +11,7 @@ find it from another encoder's states?
 
 | # | finding | number | file |
 |---|---|---|---|
-| 1 | Fitting the **same** 263 200-parameter map on the decoder's cross-entropy instead of MSE | **2.47 → 7.90 BLEU** at 16 epochs (2.67 → **8.46** at max_new 48) · CE 3.232 → 2.738 · degenerate 16.7 % → 6.7 % · COMET 0.4797 → 0.5830 | `behaviour_maps.json`, `maxnew48.json`, `comet.json` |
+| 1 | Fitting the **same** 262 656-parameter (263 k) map on the decoder's cross-entropy instead of MSE | **2.47 → 7.90 BLEU** at 16 epochs (2.67 → **8.46** at max_new 48) · CE 3.232 → 2.738 · degenerate 16.7 % → 6.7 % · COMET 0.4797 → 0.5830 | `behaviour_maps.json`, `maxnew48.json`, `comet.json` |
 | 2 | The gain is **not** scale correction: pure isotropic rescaling to the same ‖H‖ | +0.39 BLEU (14 % of the 2-epoch gain) | `bootstrap.json` |
 | 3 | It is **not** extra data: ridge refitted on the *same* 20 k pairs | 2.47 vs 2.50, ΔBLEU −0.03 [−0.22, +0.17] | `bootstrap.json` |
 | 4 | The decoder's level set is **thin and anisotropic**: a 5 % random displacement of the oracle memory changes 22 % of outputs; the steepest direction at the same norm raises CE 2.1× and halves BLEU | anisotropy ≥ 100× | `coincidence.json` |
@@ -45,7 +45,7 @@ vi token positions and one at en token positions have no position correspondence
 ## 2. Setup and calibration (nothing downstream is interpretable without this)
 
 Everything reuses E8/E9's assets so numbers are comparable: `chosen.parquet` (479 394 rows,
-80/10/10 by `md5(vi)`), `map_vi_en.npz` (263 200 params), the `trans-t5-small-vi-en` LoRA adapter
+80/10/10 by `md5(vi)`), `map_vi_en.npz` (262 656 params), the `trans-t5-small-vi-en` LoRA adapter
 (decoder-only, 1.18 M trainable params), both 60 M checkpoints. New: `coincidence-solution/src/cc.py`
 re-implements the channels (the two `src` packages cannot be imported together — see
 `research-phase01-1.2/HANDOFF.md`).
@@ -134,7 +134,7 @@ a badly conditioned map.* A random (isotropic) error is not a benign error here.
 
 `ce_ridge`: W initialised from ridge, then 2 epochs of AdamW (lr 1e-4, batch 32) on the **decoder's
 mean per-token CE** of the reference, teacher-forced, decoder frozen, 20 000 train pairs, cached
-encoder states. Only `W` (512²) and `b` (512) move — **263 200 parameters, unchanged**.
+encoder states. Only `W` (512²) and `b` (512) move — **262 656 parameters (263 k), unchanged**.
 
 All rows n = 1 000 held-out test sentences; BLEU/chrF/CE/degen at `max_new=64` (and 48 in brackets).
 

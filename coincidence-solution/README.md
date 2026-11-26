@@ -3,7 +3,7 @@
 Testing the "coincidence" idea from `mental-model.md`: instead of making the mapped vector *close* to
 the target vector, find a memory that makes the decoder *behave*. Session 2026-11-26, $0 API.
 
-**Result:** the same 263 200-parameter map, fitted on the frozen decoder's cross-entropy instead of
+**Result:** the same 262 656-parameter (263 k) map, fitted on the frozen decoder's cross-entropy instead of
 least squares, goes from **2.47 to 7.04 BLEU** (2.67 → 7.59 at E9's decoding setting) with
 degeneration down from 16.7 % to 9.0 %. Data, scale and covariance controls are in the report.
 

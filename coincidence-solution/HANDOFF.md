@@ -6,7 +6,7 @@ are traceable to a file in `results/`, the working tree is committed. The `disti
 
 ## The one-paragraph state
 
-Fitting the 263 200-parameter bridge on the frozen decoder's **cross-entropy** instead of
+Fitting the 262 656-parameter (263 k) bridge on the frozen decoder's **cross-entropy** instead of
 least-squares gives **2.47 → 7.90 BLEU** at 16 epochs (**2.67 → 8.46** at E9's `max_new=48`) on the
 same 1 000 held-out sentences, with CE 3.232 → 2.738, degeneration 16.7 % → 6.7 % and COMET
 0.4797 → 0.5830. Controls separate the causes: the data is identical (`ridge_sub` = 2.47), pure
