@@ -27,13 +27,14 @@ null-space argument rescues it. Distillation from the oracle memory adds nothing
 | anisotropy at equal displacement | CE ×2.1 (grad) vs ×1.002 (random) | `results/coincidence.json` |
 | map's error in the read subspace | 1.4× chance (top-64) → isotropic | `results/coincidence.json` |
 | CE-fitted map, 2 / 6 epochs | 5.33 / 7.04 BLEU (max64) | `results/behaviour_maps.json` |
-| bootstrap vs published map | +2.83 [+2.28, +3.49] / +4.55 (see note) | `results/bootstrap.json` |
+| bootstrap vs published map | +5.40 [+4.50, +6.27] at 16 epochs | `results/bootstrap.json` |
+| replication on a disjoint sample | 2.68 → 8.08 BLEU (rows 1000–1999) | `results/replicate.json` |
+| COMET | monotone in BLEU, 0.4797 → 0.5830 | `results/comet.json` |
 | E9 recolour replication | 2.67 → 3.43 at max_new 48 | `results/maxnew48.json` |
 
-> **Note on `bootstrap.json`:** it is written per invocation and the harness killed the 9-arm run
-> after one arm, so the file may contain a subset. `ce_ridge`'s CI (+2.83 [+2.28, +3.49], 500
-> resamples) is confirmed by two independent runs. Regenerate any missing row with
-> `python -m src.bootstrap_all <arm> [<arm> ...]` (≈75 s per arm, CPU only).
+> **Note on `bootstrap.json`:** it is appended per arm and per invocation, so it always reflects the
+> arms that were actually run. Regenerate any missing row with
+> `python -m src.bootstrap_all <arm> [<arm> ...]` (≈35 s per arm at 200 resamples, CPU only).
 
 ## What is NOT done (in priority order)
 

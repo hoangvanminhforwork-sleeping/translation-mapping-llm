@@ -7,20 +7,21 @@ find it from another encoder's states?
 
 ---
 
-## 0. TL;DR — five numbers
+## 0. TL;DR — seven numbers
 
 | # | finding | number | file |
 |---|---|---|---|
-| 1 | Fitting the **same** 263 200-parameter map on the decoder's cross-entropy instead of MSE | **2.47 -> 7.90 BLEU** at 16 epochs (2.67 -> **8.46** at max_new 48) - CE 3.232 -> 2.738 - degenerate 16.7 % -> 6.7 % - COMET 0.4797 -> 0.5830 | `behaviour_maps.json`, `maxnew48.json`, `comet.json` |
-| 2 | The gain is **not** scale correction: pure isotropic rescaling to the same ‖H‖ | +0.42 BLEU (17 % of the 2-epoch gain) | `behaviour_maps.json` |
-| 3 | It is **not** extra data: ridge refitted on the *same* 20 k pairs | 2.47 vs 2.50, ΔBLEU −0.03 [−0.25, +0.17] | `bootstrap.json` |
+| 1 | Fitting the **same** 263 200-parameter map on the decoder's cross-entropy instead of MSE | **2.47 → 7.90 BLEU** at 16 epochs (2.67 → **8.46** at max_new 48) · CE 3.232 → 2.738 · degenerate 16.7 % → 6.7 % · COMET 0.4797 → 0.5830 | `behaviour_maps.json`, `maxnew48.json`, `comet.json` |
+| 2 | The gain is **not** scale correction: pure isotropic rescaling to the same ‖H‖ | +0.39 BLEU (14 % of the 2-epoch gain) | `bootstrap.json` |
+| 3 | It is **not** extra data: ridge refitted on the *same* 20 k pairs | 2.47 vs 2.50, ΔBLEU −0.03 [−0.22, +0.17] | `bootstrap.json` |
 | 4 | The decoder's level set is **thin and anisotropic**: a 5 % random displacement of the oracle memory changes 22 % of outputs; the steepest direction at the same norm raises CE 2.1× and halves BLEU | anisotropy ≥ 100× | `coincidence.json` |
 | 5 | E9's "recolour = +16 % BLEU for free" **replicates in magnitude** (+28 % at its own decoding setting) but is not significant on 1 000 sentences — and is 5× smaller than behaviour fitting | 2.67 → 3.43 BLEU | `maxnew48.json` |
-| 6 | An independent learned metric agrees: **COMET is monotone in BLEU across all seven arms** | 0.4797 → **0.5641** | `comet.json` |
+| 6 | An independent learned metric agrees: **COMET is monotone in BLEU across all nine arms** | 0.4797 → **0.5830** | `comet.json` |
+| 7 | The effect **replicates on a disjoint 1 000-sentence sample** | 2.68 → 8.08 BLEU | `replicate.json` |
 
 **One sentence:** a linear bridge between two frozen monolingual models should be fitted on the
 quantity it is judged by — the target decoder's likelihood — and when it is, the same 0.26 M
-parameters produce **2.8× the BLEU** of the least-squares bridge that the project has used since E1.
+parameters produce **3.2× the BLEU** of the least-squares bridge that the project has used since E1.
 
 ---
 
@@ -226,8 +227,22 @@ represent a distribution whose CE is 0.30, and forcing it to try adds nothing to
 The `ce_ridge_e12` arm was killed by a server restart before generation, so its BLEU is unavailable;
 only its val-CE trajectory (2.8190 → 2.8089) survives.
 
-### 5.4 Convergence: CE plateaus, BLEU keeps rising
+### 5.4 Replication on a disjoint sample
 
+The table above uses test rows 0–999. The same fitted maps, evaluated on **rows 1000–1999** (never
+used for anything in this session, `results/replicate.json`):
+
+| arm | rows 0–999 BLEU / CE | rows 1000–1999 BLEU / CE |
+|---|---|---|
+| `ridge_full` | 2.50 / 3.228 | 2.68 / 3.200 |
+| `ridge_recolor10` | 3.08 / 3.262 | 2.90 / 3.235 |
+| `ce_ridge_e6` | 7.04 / 2.761 | 7.20 / 2.729 |
+| `ce_ridge_e16` | 7.90 / 2.738 | **8.08 / 2.704** |
+
+The gap reproduces (+5.40 BLEU on the second sample, vs +5.40 on the first) and the CE ordering is
+identical. The effect is not a split artefact.
+
+### 5.5 Convergence: CE plateaus, BLEU keeps rising
 `val CE` per epoch, 16 epochs total (`ce_ridge_e16`, warm-started from `ce_ridge_e6`):
 
 ```
@@ -244,7 +259,7 @@ Practical reading: 2 epochs of CE already captures most of the effect (+2.83 of 
 buys the rest for 20 minutes of GPU. A cosine schedule would probably reach the same place faster,
 and the method's ceiling is still unmeasured — CE has converged, BLEU has not stopped moving.
 
-### 5.5 What the improvement looks like (verified by eye, not only by BLEU)
+### 5.6 What the improvement looks like (verified by eye, not only by BLEU)
 
 From `NOTEBOOK.ipynb` §5, same test rows:
 
@@ -350,6 +365,8 @@ $py = "..\research-scale-100k\.venv\Scripts\python.exe"
 & $py -m src.diag_recolor          # fold == literal check     -> results/diag_recolor.json
 & $py -m src.diag_maxnew           # decoding confound         -> results/diag_maxnew.json
 & $py -m src.eval_comet --n 400   # independent metric        -> results/comet.json
+& $py -m src.cache_states --sets test2   # disjoint 1 000-sentence sample
+& $py -m src.replicate         # replication check         -> results/replicate.json
 ```
 
 Every script is idempotent: caches and `.npz` maps are skipped if present, `--force` rebuilds.
@@ -366,6 +383,7 @@ Total GPU time for the whole night ≈ 75 min on an RTX 3050 4 GB.
 | `results/basis_analysis.json` | oracle overlap, gradient spectrum, per-arm subspace energy |
 | `results/bootstrap.json` | paired CIs vs `ridge_full` |
 | `results/comet.json` | COMET per arm (n=400) |
+| `results/replicate.json` | the same arms on a disjoint 1 000-sentence sample |
 | `results/diag_recolor.json`, `results/diag_maxnew.json` | the two validity checks |
 | `results/train_*.csv` | per-25-step training logs |
 | `agent-work/maps/*.npz` | fitted (W, b) per arm — **committed**, 1 MB each |

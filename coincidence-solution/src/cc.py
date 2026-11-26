@@ -56,11 +56,13 @@ SEED = 1234
 
 
 # ---------------------------------------------------------------- data
-def load_pairs(split: str, n: int | None = None) -> dict:
+def load_pairs(split: str, n: int | None = None, offset: int = 0) -> dict:
     """Rows of `chosen.parquet` whose `split` equals `split`, in file order (= E8/E9 order)."""
     import pyarrow.parquet as pq
     d = pq.read_table(CHOSEN, columns=["vi", "en", "split"]).to_pydict()
     idx = [i for i, s in enumerate(d["split"]) if s == split]
+    if offset:
+        idx = idx[offset:]
     if n is not None:
         idx = idx[:n]
     return {"vi": [d["vi"][i] for i in idx], "en": [d["en"][i] for i in idx], "row": idx}

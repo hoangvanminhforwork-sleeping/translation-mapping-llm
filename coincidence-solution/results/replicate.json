@@ -1,0 +1,30 @@
+{
+  "split": "test rows 1000-1999",
+  "n": 1000,
+  "arms": {
+    "ridge_full": {
+      "bleu": 2.68,
+      "chrf": 20.123,
+      "ce": 3.1997,
+      "degen": 0.135
+    },
+    "ridge_recolor10": {
+      "bleu": 2.901,
+      "chrf": 20.595,
+      "ce": 3.2349,
+      "degen": 0.125
+    },
+    "ce_ridge_e16": {
+      "bleu": 8.079,
+      "chrf": 29.531,
+      "ce": 2.7038,
+      "degen": 0.061
+    },
+    "ce_ridge_e6": {
+      "bleu": 7.199,
+      "chrf": 27.79,
+      "ce": 2.7293,
+      "degen": 0.089
+    }
+  }
+}

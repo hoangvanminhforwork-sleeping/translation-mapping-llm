@@ -35,7 +35,8 @@ from . import cc
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-SETS = {"test": cc.N_TEST, "val": cc.N_VAL, "fit": cc.N_TRAIN_FIT}
+SETS = {"test": (cc.N_TEST, 0), "test2": (1_000, 1_000), "val": (cc.N_VAL, 0),
+        "fit": (cc.N_TRAIN_FIT, 0)}
 
 
 def paths(set_name: str):
@@ -71,8 +72,9 @@ def build(set_name: str, vi_enc, en_enc, batch: int):
         print(f"{set_name}: cached, skip")
         return
     t0 = time.time()
-    n = SETS[set_name]
-    pairs = cc.load_fit_pairs(n) if set_name == "fit" else cc.load_pairs(set_name, n)
+    n, offset = SETS[set_name]
+    split = "test" if set_name.startswith("test") else set_name
+    pairs = cc.load_fit_pairs(n) if set_name == "fit" else cc.load_pairs(split, n, offset)
     vi, en = pairs["vi"], pairs["en"]
     print(f"{set_name}: {len(vi):,} pairs", flush=True)
 
